@@ -36,6 +36,7 @@
 <p>Right-click a note for more: Rename, Show in Finder, Copy Relative Path, Copy Absolute Path, Open in Split View and Move to Trash.</p>
 <h2 id="several-notes-at-once">Several notes at once</h2>
 <p>⌘-click or ⇧-click to pick several notes, then right-click to:</p>
+<p class="figure"><img src="../media/several-notes.jpg" alt="Two notes picked in the contents"></p>
 <ul>
 <li><strong>Merge</strong> them into one note, with a section for each. Every link to the originals points at the right section, and the originals go to the Trash. Undo brings them back. (Also Project ▸ Merge Selected Notes….)</li>
 <li><strong>Export</strong> them to Anki. See <a href="publishing.html">Publishing</a>.</li>
@@ -44,12 +45,14 @@
 <p>Deleted notes go to the Mac’s Trash, so you can get them back from there. Grasmere asks first before trashing a folder or more than five items.</p>
 <h2 id="the-order-of-a-folder">The order of a folder</h2>
 <p>Without instructions, a folder lists its subfolders first, then its notes by name, as the Finder does. You can give any folder an order of its own.</p>
+<p class="figure"><img src="../media/folder-order.jpg" alt="A folder’s index.md setting the order of its chapters"></p>
 <p><strong>By hand.</strong> Drag a note to the top or bottom half of another note’s row and it moves there. The order is kept in the folder’s <code>index.md</code>: the folder is listed in the order that file’s links reach its notes, and anything not linked follows. A folder without an index.md gets one the first time you drag an item into a new place, listing its items as they were. Right-click a folder and choose Edit Order of … (index.md) to open it, or Order … with index.md to make one straight away.</p>
 <p>The <code>index.md</code> is an ordinary note, so it can say something about the folder too. This project’s <a href="index.html">Guides</a> are in reading order this way.</p>
 <p><strong>By a rule.</strong> Right-click a folder and choose Sort Folder By ▸ Name, Date Created or Date Modified, each either way round. The rule is written into the folder’s index.md as an invisible comment, such as <code>&lt;!-- sort: modified, newest first --&gt;</code>, and the folder stays in that order as notes change. Drag an item and the rule becomes a list of links in the order shown (Sort Folder By ▸ Custom (Drag to Reorder)), with Undo in the bar if you didn’t mean it.</p>
 <p>The top level can have a rule too: right-click the contents list itself, away from any row, and choose Sort Top Level By. That rule is kept in project.md’s Order section.</p>
 <h2 id="projectmd">project.md</h2>
 <p>Every project has a <code>project.md</code> at its top, made when the project is first opened. It’s an ordinary note with a few sections Grasmere reads:</p>
+<p class="figure"><img src="../media/project-md.jpg" alt="project.md"></p>
 <ul>
 <li><strong>Summary:</strong> a short overview of the project, shown at the top of the contents. Write it yourself, or let Project ▸ Generate Summary write it (see <a href="ask-your-notes-and-ai.html">Ask Your Notes and AI</a>). It’s also the home page when you build a website.</li>
 <li><strong>Order:</strong> links to the top-level notes and folders, in the order the contents list them. Dragging at the top level rewrites it.</li>
@@ -58,6 +61,7 @@
 <p>Anything else you write in project.md is left as it is.</p>
 <h2 id="settings">Settings</h2>
 <p>In Settings ▸ Appearance:</p>
+<p class="figure"><img src="../media/appearance-settings.jpg" alt="Settings ▸ Appearance"></p>
 <ul>
 <li><strong>Name notes in the sidebar by</strong> Title (the first heading), File name, or File name with .md.</li>
 <li><strong>Show images in the contents</strong> lists pictures alongside notes. Click one to look at it, double-click to rename it (links follow), or drag it into a note to link it.</li>

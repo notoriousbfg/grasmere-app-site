@@ -19,6 +19,7 @@
 <p>Your notes are your own files, so Grasmere is careful with them. It saves as you go, never overwrites a change made somewhere else without asking, and keeps a copy of unsaved work safe through a crash.</p>
 <h2 id="saving">Saving</h2>
 <p>With Settings ▸ General ▸ <strong>Save automatically</strong> on (the default), a note is saved a couple of seconds after you stop typing, and whenever you switch to another note or another app. “Saved” appears briefly in the bar beneath the page.</p>
+<p class="figure"><img src="../media/edited-marker.jpg" alt="The running head marking a note edited"></p>
 <p>Turn it off and notes are saved when you switch notes, close the window or quit, and with File ▸ Save (⌘S). Until then, the running head marks the note <em>edited</em>.</p>
 <p>Undo history survives saving, so ⌘Z still works after a save.</p>
 <h2 id="when-another-app-changes-a-note">When another app changes a note</h2>
@@ -31,12 +32,14 @@
 <p>If you have no unsaved changes, the note simply shows the new version.</p>
 <h2 id="after-a-crash">After a crash</h2>
 <p>While you type, Grasmere keeps a copy of your unsaved changes on your Mac, separate from your notes. If the Mac or the app stops unexpectedly, open the note again and Grasmere offers to <strong>Restore</strong> your changes or <strong>Discard</strong> them. The copy is removed once the note is saved.</p>
+<p class="figure"><img src="../media/recovery-offer.jpg" alt="Grasmere offering to restore unsaved changes"></p>
 <p>If something stops a note being saved when you quit, Grasmere asks before quitting, and your changes are kept for recovery either way.</p>
 <h2 id="links-and-undo">Links and undo</h2>
 <p>When Grasmere rewrites links after a note is renamed or moved, a message says how many notes changed, with <strong>Undo</strong>. Edit ▸ Link Updates… lists recent updates, and each can be undone. See <a href="links-and-backlinks.html">Links and Backlinks</a>.</p>
 <p>Notes you delete go to the Mac’s Trash.</p>
 <h2 id="git">Git</h2>
 <p>If your project folder is a git repository, Grasmere can work with it.</p>
+<p class="figure"><img src="../media/note-history.jpg" alt="A note’s history from git, in the margin"></p>
 <ul>
 <li><strong>History:</strong> the margin lists the commits that changed the open note, with <strong>Restore This Version</strong>. See <a href="the-margin.html">The Margin</a>.</li>
 <li><strong>Commit automatically:</strong> Settings ▸ Automation ▸ <strong>Commit changes after saving</strong> commits every change in the project together, two minutes after you stop saving, or when you close the window or quit. The message lists the notes that changed. Nothing is ever amended or force-pushed.</li>
@@ -51,6 +54,7 @@
 </ul>
 <h2 id="shortcuts">Shortcuts</h2>
 <p>Settings ▸ Automation ▸ <strong>Run a shortcut when…</strong> runs a Shortcut of your choosing when a note is saved, created, or renamed or moved, or when the project is opened. The note, or the project folder, is passed to the Shortcut as its input. Shortcuts run outside the sandbox, so a “Run Shell Script” action can do anything you can do in Terminal.</p>
+<p class="figure"><img src="../media/automation-settings.jpg" alt="Settings ▸ Automation"></p>
 <p>The Shortcuts app also has Grasmere actions: <strong>Get Current Note</strong>, <strong>Get Current Project Folder</strong>, <strong>Save Current Note</strong> and <strong>Add to Today’s Note</strong>.</p>
 <h2 id="backing-up">Backing up</h2>
 <p>Everything that matters is in your project folder, as ordinary files. Time Machine, a sync service or git all back it up. See <a href="../support.html">Support</a>.</p>
