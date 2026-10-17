@@ -5,9 +5,9 @@
   --code: #3c4f8a; --quote: #6e655a; --list-marker: #8a6a4c; --heading-marker: #b5862b; }
 @media (prefers-color-scheme: dark) {
   :root { color-scheme: dark;
-    --background: #1f232a; --raised: #282d35; --border: #2f343d; --text: #d2d6dd;
-  --muted: #8b93a1; --faint: #5d6472; --heading: #e7eaef; --link: #74a9db; --accent: #e0925e;
-  --code: #b39dde; --quote: #98a0ad; --list-marker: #e0925e; --heading-marker: #a68bd6; }
+    --background: #222222; --raised: #2b2b2b; --border: #323232; --text: #d6d6d6;
+  --muted: #929292; --faint: #626262; --heading: #ededed; --link: #74a9db; --accent: #e0925e;
+  --code: #b39dde; --quote: #9c9c9c; --list-marker: #e0925e; --heading-marker: #a68bd6; }
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
