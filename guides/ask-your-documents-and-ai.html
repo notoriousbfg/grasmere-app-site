@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Grasmere">
+<title>Ask Your Documents and AI · Grasmere</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="page">
+<header class="site">
+<nav aria-label="Breadcrumbs"><ol class="crumbs"><li><a class="home" href="../index.html">Grasmere</a></li><li><a href="../contents.html#folder-guides">guides</a></li></ol></nav>
+<a href="../contents.html">Contents</a>
+</header>
+<main>
+<article>
+<h1 id="ask-your-documents-and-ai">Ask Your Documents and AI</h1>
+<p>Grasmere has a few optional tools that use a language model to work with your documents. They’re off to one side: you can ignore them entirely, and nothing is sent anywhere until you ask.</p>
+<h2 id="ask-your-documents-a">Ask Your Documents (⇧⌘A)</h2>
+<p>Project ▸ Ask Your Documents (⇧⌘A) opens the Ask tab in the margin. Type a question, and the answer is written from your documents alone, with numbered citations. Click a citation to open the document at the passage it came from.</p>
+<p class="figure"><img src="../media/ask-your-notes.jpg" alt="Ask Your Documents in the margin, with an answer and its sources"></p>
+<ul>
+<li><strong>Copy</strong> copies the answer, with its citations as links.</li>
+<li><strong>Save as Insight</strong> saves it as a document in your insights folder, titled with the question, with the citations as links and <code>confidence: unverified</code> until you’ve checked it.</li>
+<li>Questions you’ve asked are listed under Asked earlier until you close the window. They aren’t saved.</li>
+</ul>
+<h2 id="new-document-with-questions">New Document with Questions</h2>
+<p><em>New in 1.1.</em> <strong>File ▸ New Document with Questions</strong> starts a document the way a good tutor would: with questions. Say what the document is about (a title, a claim, a question, or a few lines), choose what kind of piece it is (an essay, an argument, a research document, a decision, a runbook, a story scene, a reflection, or just questions) and how many questions you want, and the model writes Socratic questions for it: ones that make you say what you mean, what you’re assuming, what your evidence is, what someone who disagrees would say, and what follows. <em>New in 1.2:</em> a runbook (how to deploy something, what to do when an alarm fires, how to onboard someone) gets the questions a runbook must answer instead, in the order its reader needs them: what it’s for and when, what must be true first, the steps, how you know it worked, what to do if it didn’t, who to tell; the document starts a checklist under the first of those and a numbered list under the steps. Edit or remove any, then Make Document. In a project the document goes where a new document would; with no project open, Grasmere asks where to save it.</p>
+<p class="figure"><img src="../media/note-questions.jpg" alt="The New Document with Questions sheet, with questions written for a subject"></p>
+<p>The document has the questions as its headings, nothing else: the writing beneath them is yours. It goes where a new document would, titled from the subject, with the cursor under the first question. The model is the one in Settings ▸ AI (on your Mac by default); with Claude or ChatGPT, only the subject is sent.</p>
+<h2 id="ask-a-follow-up-question-">Ask a Follow-up Question (⌥⌘/)</h2>
+<p><em>New in 1.1.</em> While you’re writing under any heading, <strong>Edit ▸ Ask a Follow-up Question</strong> (⌥⌘/, or the line at the top of the Ask tab) has the model read what you’ve written in that section and ask one question back: the question a good tutor asks after reading a paragraph. It appears in the margin, not the document. <strong>Add as heading</strong> puts it after the section as a <code>##</code> heading with the cursor beneath, for you to answer; <strong>Another</strong> asks something else; <strong>Dismiss</strong> forgets it. It never suggests wording and never answers for you, and it only speaks when you ask. With Claude or ChatGPT, the document’s title, the heading and the passage are sent.</p>
+<p class="figure"><img src="../media/follow-up-question.jpg" alt="A follow-up question in the margin, with Add as heading, Another and Dismiss"></p>
+<h2 id="generate-summary">Generate Summary</h2>
+<p>Project ▸ Generate Summary writes a short overview of the project into the Summary section of project.md, which is shown at the top of the contents. The rest of project.md is left as it is, and you can edit the summary like any other text.</p>
+<p class="figure"><img src="../media/project-summary.jpg" alt="The project summary at the top of the contents"></p>
+<h2 id="copy-as-context-c">Copy as Context (⌥⌘C)</h2>
+<p>Edit ▸ Copy as Context (⌥⌘C), or its button in the running head, copies the open document together with the titles and openings of every document it links to and from, ready to paste into a conversation with Claude, ChatGPT or any other assistant. Grasmere itself sends nothing anywhere. Settings ▸ AI ▸ Copy as Context sets how many words it copies (4,000 by default).</p>
+<p class="figure"><img src="../media/copy-as-context-setting.jpg" alt="Settings ▸ AI ▸ Copy as Context"></p>
+<h2 id="which-model-answers">Which model answers</h2>
+<p>Settings ▸ AI ▸ <strong>Provider</strong> chooses the model for Ask Your Documents and Generate Summary:</p>
+<ul>
+<li><strong>On-device (Apple Intelligence)</strong>, the default. It runs privately on your Mac, is free, and works offline. It needs Apple Intelligence to be turned on.</li>
+<li><strong>Claude (Anthropic)</strong> or <strong>ChatGPT (OpenAI)</strong>, with your own API key from that company. You can choose the model too.</li>
+</ul>
+<p>Your API keys are stored in your Mac’s keychain.</p>
+<p class="figure"><img src="../media/ai-settings.jpg" alt="Settings ▸ AI, with the on-device model chosen"></p>
+<h2 id="what-is-sent-and-when">What is sent, and when</h2>
+<p>With the on-device model, nothing leaves your Mac.</p>
+<p class="figure"><img src="../media/ask-privacy-note.jpg" alt="The Ask tab saying which model answers"></p>
+<p>With Claude or ChatGPT:</p>
+<ul>
+<li>When you <strong>ask a question</strong>, your question and excerpts from the documents Grasmere picks as relevant are sent to that company to answer it.</li>
+<li>When you <strong>generate a summary</strong>, the text of the documents being summarised is sent.</li>
+</ul>
+<p>Nothing is sent until you ask, and only for that request. The Ask tab says which provider is answering. Your use is covered by your own agreement with that company. See <a href="../privacy.html">Privacy</a>.</p>
+<h2 id="merging-documents">Merging documents</h2>
+<p>Not an AI feature, but a way of thinking with your documents: pick two or more documents in the contents, right-click and choose Merge, and you get one document with a section for each. See <a href="the-contents.html">The Contents</a>.</p>
+<p class="figure"><img src="../media/merge-notes.jpg" alt="Merging two documents"></p>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="quick-capture-and-sharing.html">Quick Capture and Sharing</a>, for saving passages from AI conversations as insights</li>
+</ul>
+</article>
+<aside class="backlinks" aria-labelledby="grasmere-linked-from">
+<h2 id="grasmere-linked-from">Linked from</h2>
+<ul>
+<li><a href="../ai.html">AI in Grasmere</a></li>
+<li><a href="../feature-tour.html">Feature Tour</a></li>
+<li><a href="find-and-search.html">Find and Search</a> <span class="folder">guides</span></li>
+<li><a href="index.html">Guides</a> <span class="folder">guides</span></li>
+<li><a href="quick-capture-and-sharing.html">Quick Capture and Sharing</a> <span class="folder">guides</span></li>
+<li><a href="../support.html">Support</a></li>
+<li><a href="the-contents.html">The Contents</a> <span class="folder">guides</span></li>
+<li><a href="the-margin.html">The Margin</a> <span class="folder">guides</span></li>
+<li><a href="themes-and-settings.html">Themes and Settings</a> <span class="folder">guides</span></li>
+<li><a href="../whats-new.html">What’s New</a></li>
+</ul>
+</aside>
+</main>
+<footer><a href="../index.html">Grasmere</a></footer>
+</div>
+</body>
+</html>
