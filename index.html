@@ -62,16 +62,18 @@
 .chip:hover,.chip:focus-visible{background:var(--c);border-color:var(--c);color:#F8F3EA!important;outline:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
-/* Hover / keyboard focus */
-.phase:hover,.phase:focus-within{background:var(--tint);color:var(--c);border-top-color:var(--c)}
-.phase:hover .num,.phase:focus-within .num{color:var(--c)}
-.phase:hover .word,.phase:focus-within .word{font-style:italic}
-.phase:hover>*,.phase:focus-within>*{transform:translateY(-20px)}
-.phase:hover .desc,.phase:focus-within .desc{color:#3A332C}
-.phase:hover .chip,.phase:focus-within .chip{border-color:var(--soft);color:var(--c)}
-.phases:hover .phase:not(:hover){color:var(--dim);border-top-color:#D9CFBF}
-.phases:hover .phase:not(:hover) .desc{color:var(--dim)}
-.phases:hover .phase:not(:hover) .links{opacity:.5}
+/* Hover / keyboard focus: only with a mouse or trackpad (on a phone a tap would leave a tile stuck) */
+@media (hover:hover) and (pointer:fine){
+  .phase:hover,.phase:focus-within{background:var(--tint);color:var(--c);border-top-color:var(--c)}
+  .phase:hover .num,.phase:focus-within .num{color:var(--c)}
+  .phase:hover .word,.phase:focus-within .word{font-style:italic}
+  .phase:hover>*,.phase:focus-within>*{transform:translateY(-20px)}
+  .phase:hover .desc,.phase:focus-within .desc{color:#3A332C}
+  .phase:hover .chip,.phase:focus-within .chip{border-color:var(--soft);color:var(--c)}
+  .phases:hover .phase:not(:hover){color:var(--dim);border-top-color:#D9CFBF}
+  .phases:hover .phase:not(:hover) .desc{color:var(--dim)}
+  .phases:hover .phase:not(:hover) .links{opacity:.5}
+}
 
 /* Small screens: scroll, stack */
 @media (max-width:900px){
