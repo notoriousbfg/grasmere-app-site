@@ -31,7 +31,7 @@
 
 /* Phase columns */
 .phases{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.phase{display:flex;flex-direction:column;gap:10px;padding:14px 18px 18px;min-height:0;text-decoration:none;color:var(--ink);border-top:2px solid var(--ink);border-radius:0 0 18px 18px;transition:background .3s ease,color .3s ease,border-color .3s ease}
+.phase{display:flex;flex-direction:column;gap:10px;padding:40px 18px 18px;min-height:0;text-decoration:none;color:var(--ink);border-top:2px solid var(--ink);border-radius:0 0 18px 18px;transition:background .3s ease,color .3s ease,border-color .3s ease}
 .plan{--c:#A9471F;--tint:#EFDCCC;--soft:#DDB49C}
 .draft{--c:#85600C;--tint:#EEE2C2;--soft:#D8C084}
 .feedback{--c:#365583;--tint:#DEE1E2;--soft:#AEBCD0}
@@ -39,7 +39,8 @@
 .top{display:flex;align-items:center;min-height:28px}
 .num{font-family:var(--mono);font-size:13px;color:#8C8072;transition:color .3s ease}
 .word{font-family:var(--serif);font-size:clamp(50px,8vh,76px);line-height:.95;letter-spacing:-.025em;margin-top:-6px}
-.word{align-self:flex-start;transition:transform .4s ease}
+.word{align-self:flex-start}
+.phase>*{transition:transform .4s ease}
 .desc{font-size:15px;line-height:1.45;color:var(--ink-soft);max-width:30ch;transition:color .3s ease}
 
 /* Each phase's guides */
@@ -51,7 +52,8 @@
 /* Hover / keyboard focus */
 .phase:hover,.phase:focus-within{background:var(--tint);color:var(--c);border-top-color:var(--c)}
 .phase:hover .num,.phase:focus-within .num{color:var(--c)}
-.phase:hover .word,.phase:focus-within .word{font-style:italic;transform:translateY(-20px)}
+.phase:hover .word,.phase:focus-within .word{font-style:italic}
+.phase:hover>*,.phase:focus-within>*{transform:translateY(-20px)}
 .phase:hover .desc,.phase:focus-within .desc{color:#3A332C}
 .phase:hover .chip,.phase:focus-within .chip{border-color:var(--soft);color:var(--c)}
 .phases:hover .phase:not(:hover){color:var(--dim);border-top-color:#D9CFBF}
