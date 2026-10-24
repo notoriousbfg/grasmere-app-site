@@ -10,8 +10,8 @@
 <style>
 
 /* Page fits one screen on desktop */
-.page{height:100vh;height:100dvh;min-height:780px}
-.wrap{height:100%;padding:24px 40px 28px;display:flex;flex-direction:column;gap:clamp(18px,3.4vh,34px)}
+.page{min-height:100vh;min-height:100dvh}
+.wrap{min-height:100vh;min-height:100dvh;padding:24px 40px 28px;display:flex;flex-direction:column;gap:clamp(18px,3.4vh,34px)}
 
 /* Header */
 .head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(32px,5vw,72px);align-items:center}
@@ -43,7 +43,7 @@
 .page:has(.publish:hover) .next,.page:has(.publish:focus-within) .next{color:#46653A}
 
 /* Phase columns */
-.phases{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.phases{flex:1 0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .phase{display:flex;flex-direction:column;gap:10px;padding:40px 18px 18px;min-height:0;text-decoration:none;color:var(--ink);border-top:2px solid var(--ink);border-radius:0 0 18px 18px;transition:background .3s ease,color .3s ease,border-color .3s ease}
 .plan{--c:#A9471F;--tint:#EFDCCC;--soft:#DDB49C}
 .draft{--c:#85600C;--tint:#EEE2C2;--soft:#D8C084}
