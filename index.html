@@ -10,12 +10,24 @@
 <style>
 
 /* Page fits one screen on desktop */
-.page{height:100vh;height:100dvh;min-height:660px}
+.page{height:100vh;height:100dvh;min-height:780px}
 .wrap{height:100%;padding:24px 40px 28px;display:flex;flex-direction:column;gap:clamp(18px,3.4vh,34px)}
 
 /* Header */
-.head{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:40px;align-items:center}
-.head h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(60px,10.5vh,100px);line-height:.92;letter-spacing:-.025em}
+.head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(32px,5vw,72px);align-items:center}
+.lead{display:flex;flex-direction:column;gap:26px;max-width:620px}
+.head h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(48px,7.4vh,76px);line-height:.95;letter-spacing:-.025em}
+.intro p{max-width:46ch}
+
+/* The app beside the headline: the hovered phase's picture fades in */
+.shots{position:relative;height:clamp(240px,40vh,440px);aspect-ratio:16/10;max-width:100%;border-radius:12px;overflow:hidden;background:var(--paper-deep);box-shadow:0 0 0 1px rgba(42,37,32,.10),0 24px 60px rgba(60,40,20,.18)}
+.shots img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;opacity:0;transition:opacity .45s ease}
+.shots .shot-default{opacity:1}
+.page:has(.phase:hover,.phase:focus-within) .shots .shot-default{opacity:0}
+.page:has(.plan:hover,.plan:focus-within) .shot-plan,
+.page:has(.draft:hover,.draft:focus-within) .shot-draft,
+.page:has(.feedback:hover,.feedback:focus-within) .shot-review,
+.page:has(.publish:hover,.publish:focus-within) .shot-publish{opacity:1}
 .next{transition:color .3s ease}
 .intro{display:flex;flex-direction:column;gap:18px;padding-bottom:8px}
 .intro p{margin:0;font-size:17px;line-height:1.5;color:var(--ink-soft)}
@@ -66,6 +78,7 @@
   .page{height:auto;min-height:0}
   .wrap{height:auto;padding:20px 16px 32px}
   .head{grid-template-columns:1fr;gap:24px}
+  .shots{height:auto;width:100%}
   .phases{grid-template-columns:1fr}
 }
 </style>
@@ -83,6 +96,7 @@
 </nav>
 
 <header class="head">
+<div class="lead">
 <h1>What will you write <em class="next">next?</em></h1>
 <div class="intro">
 <p>Grasmere is a Markdown editor for writers and researchers, with sophisticated features to take you from an idea to a manuscript or thesis.</p>
@@ -90,6 +104,14 @@
 <a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
 <span class="version">Free for 7 days, then a single purchase · 1.2 · macOS 26+</span>
 </div>
+</div>
+</div>
+<div class="shots">
+<img class="shot-default" src="assets/home-default.jpg" alt="Grasmere with a character document open, its links, and the margin listing what links to it">
+<img class="shot-plan" src="assets/home-plan.jpg" alt="" loading="lazy">
+<img class="shot-draft" src="assets/home-draft.jpg" alt="" loading="lazy">
+<img class="shot-review" src="assets/home-review.jpg" alt="" loading="lazy">
+<img class="shot-publish" src="assets/home-publish.jpg" alt="" loading="lazy">
 </div>
 </header>
 
