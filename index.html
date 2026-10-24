@@ -39,9 +39,7 @@
 .top{display:flex;align-items:center;min-height:28px}
 .num{font-family:var(--mono);font-size:13px;color:#8C8072;transition:color .3s ease}
 .word{font-family:var(--serif);font-size:clamp(50px,8vh,76px);line-height:.95;letter-spacing:-.025em;margin-top:-6px}
-.word{position:relative;align-self:flex-start}
-.word>span,.word::after{display:block;transition:transform .4s ease,opacity .4s ease}
-.word::after{content:attr(data-word);position:absolute;left:0;top:0;font-style:italic;transform:translateY(20px);opacity:0}
+.word{align-self:flex-start;transition:transform .4s ease}
 .desc{font-size:15px;line-height:1.45;color:var(--ink-soft);max-width:30ch;transition:color .3s ease}
 
 /* Each phase's guides */
@@ -53,8 +51,7 @@
 /* Hover / keyboard focus */
 .phase:hover,.phase:focus-within{background:var(--tint);color:var(--c);border-top-color:var(--c)}
 .phase:hover .num,.phase:focus-within .num{color:var(--c)}
-.phase:hover .word>span,.phase:focus-within .word>span{transform:translateY(-20px);opacity:0}
-.phase:hover .word::after,.phase:focus-within .word::after{opacity:1;transform:none}
+.phase:hover .word,.phase:focus-within .word{font-style:italic;transform:translateY(-20px)}
 .phase:hover .desc,.phase:focus-within .desc{color:#3A332C}
 .phase:hover .chip,.phase:focus-within .chip{border-color:var(--soft);color:var(--c)}
 .phases:hover .phase:not(:hover){color:var(--dim);border-top-color:#D9CFBF}
@@ -97,7 +94,7 @@
 
 <div class="phase plan">
 <span class="top"><span class="num">01</span></span>
-<span class="word" data-word="Plan"><span>Plan</span></span>
+<span class="word">Plan</span>
 <span class="desc">Make a plan for your project. Collect your research from websites, books and papers so you can cite it later. Bring together all your tasks in one list.</span>
 <span class="links">
 <a class="chip" href="guides/research.html#save-web-page">Web Clipping</a>
@@ -110,7 +107,7 @@
 
 <div class="phase draft">
 <span class="top"><span class="num">02</span></span>
-<span class="word" data-word="Draft"><span>Draft</span></span>
+<span class="word">Draft</span>
 <span class="desc">A pure Markdown writing experience, free from distraction. Find interesting links between your documents and brainstorm ideas with the on-device model.</span>
 <span class="links">
 <a class="chip" href="guides/writing-and-formatting.html">Writing</a>
@@ -124,7 +121,7 @@
 
 <div class="phase feedback">
 <span class="top"><span class="num">03</span></span>
-<span class="word" data-word="Review"><span>Review</span></span>
+<span class="word">Review</span>
 <span class="desc">Share your documents with colleagues &amp; peers and extract their feedback. Finalise your sequence as you prepare to publish.</span>
 <span class="links">
 <a class="chip" href="guides/review.html">Review</a>
@@ -136,7 +133,7 @@
 
 <div class="phase publish">
 <span class="top"><span class="num">04</span></span>
-<span class="word" data-word="Publish"><span>Publish</span></span>
+<span class="word">Publish</span>
 <span class="desc">Publish your manuscript in PDF or Word Doc, complete with citations and formatting. Publish your project as a website with one click.</span>
 <span class="links">
 <a class="chip" href="guides/the-manuscript-view.html">Manuscript</a>
