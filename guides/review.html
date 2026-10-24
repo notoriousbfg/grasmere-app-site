@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review · Grasmere</title>
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="review">Review</h1>
+<p><em>New in 1.3.</em> Send a document to someone as Word, let them comment and suggest changes in whatever they use, and bring their copy back: every comment and suggestion appears in the margin beside its passage, for you to accept, reject or resolve one at a time. Your Markdown stays clean the whole way, and nothing goes into it until you say so.</p>
+<h2 id="sending-it">Sending it</h2>
+<p>Choose <strong>File ▸ Export as Word Document</strong> (⇧⌘E) and send the file as you would any other. Reviewers can use:</p>
+<ul>
+<li><strong>Microsoft Word</strong>: comments, replies and Track Changes all come back.</li>
+<li><strong>Pages</strong>: comments and tracked changes come back when they export to Word (File ▸ Export To ▸ Word).</li>
+<li><strong>Google Docs</strong>: upload the file, comment and use Suggesting mode, then File ▸ Download ▸ Microsoft Word. Suggestions come back as tracked changes.</li>
+</ul>
+<p>Every paragraph in the file carries a hidden marker (a Word bookmark whose name starts with an underscore, which Word hides from its Bookmarks list). It tells Grasmere which paragraph is which when the file comes back. Reviewers don’t see it and don’t need to do anything about it. Word keeps the markers; whether Pages and Google Docs do isn’t documented, and it doesn’t matter much: Grasmere matches paragraphs by their words when the markers are gone.</p>
+<p>Grasmere also keeps a copy of exactly what it sent, so it can tell what the reviewer changed even if you’ve gone on writing since.</p>
+<h2 id="bringing-it-back">Bringing it back</h2>
+<p>Open the document and choose <strong>File ▸ Import Review</strong>, then pick the reviewer’s file (or several at once). The margin opens on the Page tab with a <strong>Review</strong> section at the top: each reviewer’s name, then their comments and changes in the order they come in the document.</p>
+<ul>
+<li>A <strong>comment</strong> shows what they wrote, the passage it’s on, and any replies.</li>
+<li>A <strong>change</strong> shows a small before and after: what goes struck through, what comes underlined. A change made with Track Changes shows the reviewer’s name and the date. A change the reviewer made without tracking is found anyway, by comparing their copy with the one sent, and is marked <em>not tracked</em>.</li>
+<li>A paragraph the reviewer added, or took out, is one item.</li>
+</ul>
+<p>Click an item to go to its passage: it’s washed faintly on the page while the item is selected.</p>
+<p>Import a second reviewer’s file and their items join the list under their name. Importing the same file twice adds nothing.</p>
+<h2 id="accepting-and-rejecting">Accepting and rejecting</h2>
+<ul>
+<li><strong>Accept</strong> puts the change into your text. It’s an ordinary edit: ⌘Z takes it back.</li>
+<li><strong>Reject</strong> leaves your text as it is.</li>
+<li><strong>Resolve</strong> marks a comment dealt with. <strong>Reply</strong> lets you write a line back first; your reply is kept with the comment.</li>
+<li><strong>Accept All</strong> and <strong>Reject All</strong>, beside a reviewer’s name, deal with all their changes at once (their comments stay). Accept All is one step for Undo.</li>
+</ul>
+<p>You can go on writing while a document is out for review. When you accept a change in a paragraph you’ve edited since, Grasmere puts the reviewer’s change into your new version: if you rewrote the start of a sentence and they changed a word at the end, both changes stand. Only when you both changed the same words is it a real conflict. Then the item shows three versions, one above the other: <strong>Sent</strong> (what they saw, their words struck through), <strong>Suggested</strong> (their version, their words underlined) and <strong>Now</strong> (yours, the words you changed picked out). Make the change by hand if you want it, then reject it. A change that would cut through a link or bold text can’t be accepted either, so a link is never left half-written: the item says so.</p>
+<p>With VoiceOver, each item reads as one sentence (who, when, what), and its Accept, Reject and Resolve are in the Actions rotor.</p>
+<h2 id="a-whole-book">A whole book</h2>
+<p>The Manuscript view sends a whole book the same way. Its <strong>Export ▸ Export as Word Document</strong> marks every paragraph, and Grasmere notes which chapter each one came from. When the copy comes back, choose <strong>Import Review</strong> from the Manuscript view’s Export menu, or <strong>File ▸ Import Review</strong> with any chapter open (Grasmere sees that it’s the book’s copy). The whole book is compared at once, so it still works when the markers are lost, and each comment and change goes to its chapter: open a chapter and they’re in its margin, as for a single document. The running order shows how many each chapter has left to deal with (“3 open”).</p>
+<p>If you’ve moved a passage to another chapter since, its comments and changes follow it there. What isn’t on any one chapter (a comment on the title page, a part’s title or the references), and anything on a chapter you’ve since deleted, goes to <strong>Review notes</strong>, a document in the book’s folder: one task line each, with the reviewer, the date, what they said and what it was on, so they show in Tasks and can be ticked off. Review notes is an ordinary document, but its front matter says <code>review: notes</code>, so the Manuscript view, Publish to PDF and Export as Word leave it out of the book. Importing the same copy twice adds nothing to it.</p>
+<h2 id="going-back">Going back</h2>
+<p>Each time you import a review, Grasmere first keeps a copy of every document it covers, as it is then: the one document, or every chapter of the book (and its Review notes). If you change your mind about what you accepted, choose <strong>File ▸ Restore to Before the Review…</strong> (or the same command in the Review section’s ⋯ menu). It lists the documents that have changed since the review came in and puts them back as they were, all of them at once for a book; the changes you’d accepted show in the margin again. The open document’s restore is an ordinary edit, so ⌘Z takes it back. What the documents said just before is kept too: choose the command again to reverse the restore.</p>
+<p>The copies are kept in the hidden <code>.review</code> folder (only the documents a review can change, never the whole project), and the ten most recent are kept in each folder.</p>
+<h2 id="whats-ignored">What’s ignored</h2>
+<p>Only words count. Changes to fonts, styles, spacing, colours, page size or layout are never shown and never applied: the reviewer can reformat the whole document and you’ll see only what they changed in the text. Headers, footers, text boxes and pictures aren’t compared either.</p>
+<h2 id="unplaced-items">Unplaced items</h2>
+<p>When an item’s passage isn’t in the document any more (you deleted that paragraph, say), it goes to <strong>Unplaced</strong> at the end of the section, with the text it was about. Nothing is dropped. Resolve it when you’ve read it.</p>
+<h2 id="where-review-files-live">Where review files live</h2>
+<p>Each document’s review is kept in a small file beside it, in a hidden <code>.review</code> folder: <code>Chapter One.md</code> has <code>.review/Chapter One.md.json</code>. It holds the copies sent, the reviews imported, and every comment and change, open or dealt with. It’s plain JSON, readable in any text editor.</p>
+<ul>
+<li>It goes wherever the folder goes, and Grasmere moves it when you rename or move the document in the app.</li>
+<li>Copying a document on its own in the Finder leaves its review behind, in the <code>.review</code> folder where it was.</li>
+<li>To find it, choose <strong>Show Review File in Finder</strong> from the Review section’s ⋯ menu. (Press ⇧⌘. in a Finder window to see hidden folders.)</li>
+<li>A book’s record of which chapter each paragraph came from, and its restore copies, are in the <code>.review</code> folder of the book’s own folder.</li>
+<li>Like every hidden folder, it’s left out of the contents, links, search and your website.</li>
+<li>Git ignores it: the folder has its own <code>.gitignore</code>, and Grasmere’s lines in your project’s <code>.gitignore</code> list it too.</li>
+</ul>
+<p>Your Markdown never holds review marks: comments wait in the review file until you deal with them, and accepted changes go into the text as ordinary writing.</p>
+
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>

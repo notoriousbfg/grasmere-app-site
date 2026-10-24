@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research · Grasmere</title>
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="research">Research</h1>
+<p><em>New in 1.3.</em> Web pages you want to keep are documents in your project, the way journal entries are: each one is a page’s article in plain Markdown, with a few lines at the top saying where it came from. They live in one folder, <code>research</code>, so they’re easy to find, link to and search with the rest of your writing.</p>
+<h2 id="the-research-folder">The research folder</h2>
+<p>Every project has a research folder, made the first time you save something into it. It’s called <code>research</code> unless you choose another name in Settings ▸ General ▸ Research. A project that already has a <code>Research</code> folder keeps using it.</p>
+<p>Saved web pages go there, and so do the PDFs and pictures you save from the web. They’re documents like any other: open them, write notes beneath the article, link to them from your own writing.</p>
+<h2 id="save-web-page">Save Web Page</h2>
+<p>Choose File ▸ Save Web Page, give the page’s address (if you’ve copied one, it’s already filled in) and press Save. Grasmere fetches the page, keeps its article and leaves the rest: menus, adverts, cookie notices, sharing buttons, comments and scripts. The article becomes Markdown: its headings, paragraphs, lists, quotations, code and tables, with links and pictures pointing at their places on the web. The new document opens straight away, named after the page’s title.</p>
+<p class="figure"><img src="../media/save-web-page.jpg" alt="Save Web Page"></p>
+<ul>
+<li><strong>A page saved before</strong> isn’t saved twice: Grasmere offers to open the document you already have.</li>
+<li><strong>A page that can’t be fetched,</strong> or one with no article to read (a home page, a sign-in form), is explained in the sheet, with the choice to save the link on its own: a document with the address and what the page says about itself, to read later.</li>
+<li><strong>New Document from Clipboard</strong> (⇧⌘K) with a web address on the clipboard does the same, without typing anything.</li>
+</ul>
+<p>Grasmere fetches only the page you asked for, as Safari would but with no cookies and nothing signed in, so pages behind a login or a paywall save as far as they show to anyone. Pictures aren’t downloaded: they stay on the web, linked by their addresses.</p>
+<h2 id="whats-at-the-top">What’s at the top</h2>
+<p>Each saved page starts with front matter, the fields between the <code>---</code> lines. You can see and edit them in the margin’s Front Matter section.</p>
+<pre><code class="language-yaml">---
+<span class="k">title</span>: How Sourdough Rises
+<span class="k">url</span>: https://theloaf.example/<span class="n">2026</span>/<span class="n">03</span>/how-sourdough-rises/
+<span class="k">author</span>: Rosa Field
+<span class="k">site</span>: The Loaf
+<span class="k">published</span>: <span class="n">2026</span>-<span class="n">03</span>-<span class="n">14</span>
+<span class="k">accessed</span>: <span class="n">2026</span>-<span class="n">10</span>-<span class="n">23</span>
+<span class="k">type</span>: webpage
+---
+</code></pre>
+<ul>
+<li><strong>title:</strong> the page’s own title, also the document’s heading.</li>
+<li><strong>url:</strong> the page’s address, so you can go back to it, and how Grasmere knows it’s saved already.</li>
+<li><strong>author</strong> and <strong>published:</strong> when the page says who wrote it and when.</li>
+<li><strong>site:</strong> the website’s name, or its address when it doesn’t give one.</li>
+<li><strong>accessed:</strong> the day you saved it, the date a citation asks for.</li>
+<li><strong>type: webpage:</strong> marks it as a saved page, and makes it a source you can cite.</li>
+</ul>
+<p>The fields are the ones citation styles use, so a saved page is ready to cite: type <code>[@</code> in a document and choose it. <em>New in 1.3:</em> File ▸ New Source makes a source from a book’s ISBN or a paper’s DOI, or a blank one to fill in, and Grasmere keeps a table of the folder’s sources in <code>research.md</code>. See <a href="citations.html">Citations</a>.</p>
+<h2 id="from-other-apps">From other apps</h2>
+<ul>
+<li><strong>The Share menu:</strong> in Safari, choose Share ▸ Grasmere and pick a project. The page is saved into that project’s research folder in the same way, with your comment under its title. See <a href="quick-capture-and-sharing.html">Quick Capture and Sharing</a>.</li>
+<li><strong>Shortcuts:</strong> the Save Web Page action takes an address (and, if you like, a project) and returns the new document’s file, or the one you saved before. A page with no article is saved as its link. See <a href="shortcuts-and-the-command-line.html">Shortcuts and the Command Line</a>.</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<ul>
+<li>Settings ▸ General ▸ Research ▸ <strong>Folder</strong> names the research folder (<code>research</code> by default).</li>
+<li>Saved pages are often other people’s writing, so websites you build leave the research folder out unless you turn on Publish the research folder in Settings ▸ Automation. See <a href="publishing.html">Publishing</a>.</li>
+</ul>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="citations.html">Citations</a></li>
+<li><a href="journal.html">Journal</a></li>
+<li><a href="quick-capture-and-sharing.html">Quick Capture and Sharing</a></li>
+<li><a href="../privacy.html">Privacy</a>, for what Grasmere fetches from the web</li>
+</ul>
+
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>

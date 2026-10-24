@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Manuscript View · Grasmere</title>
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="the-manuscript-view">The Manuscript View</h1>
+<p><em>New in 1.3.</em> A novel, a thesis or a long report is easier to write in many documents: a chapter each, in folders for the parts. The Manuscript view puts them back together. It shows a folder as one book: the running order on the left, with every chapter’s length and what happens in it, and the whole piece on the right, read straight through from the first page to the last. Nothing else is on screen: the contents and the margin step aside until you close it.</p>
+<h2 id="opening-it">Opening it</h2>
+<ul>
+<li>Right-click a folder in the contents and choose <strong>Open as Manuscript</strong>. Right-click below the contents for <strong>Open Project as Manuscript</strong>.</li>
+<li>Or use the <strong>View</strong> menu: <strong>Open Project as Manuscript</strong>, or <strong>Open “chapters” as Manuscript</strong> while a folder is highlighted in the contents with the arrow keys.</li>
+</ul>
+<p>Press Escape or ⌘W, or click the × at the top right or the window’s own close button, to close it. The window comes back exactly as it was; close it again to close the window.</p>
+<p>The Feature Tour’s <code>chapters</code> folder is a short novella, <em>The Winter Ferry</em>, to try it on.</p>
+<h2 id="the-running-order">The running order</h2>
+<p>The left side lists the folder’s documents and folders in the order the contents show them. A folder inside is a part: click its arrow to show or hide its chapters (Grasmere remembers which parts are open until you quit). Each row shows the chapter’s title (its first heading), its word count, and its synopsis if it has one. The top of the window gives the whole manuscript’s words and chapters.</p>
+<p>A synopsis is a line of front matter at the top of the document:</p>
+<pre><code class="language-yaml">---
+<span class="k">synopsis</span>: Ellen takes the ferry out alone in the mist, steering by her father<span class="s">'s rules.</span>
+---
+</code></pre>
+<p>You can type it there, or add a <code>synopsis</code> field in the margin’s Front Matter section. Other editors and GitHub ignore it, so it does no harm anywhere else.</p>
+<h2 id="changing-the-order">Changing the order</h2>
+<p>Drag a chapter up or down, or select it and press ⌥⌘↑ or ⌥⌘↓. A chapter moves within its own folder; to move one into another part, drag it in the contents. With VoiceOver, the rows have Move Up and Move Down actions, and right-clicking a row offers them too.</p>
+<p>The order is kept where the contents keep it: in the folder’s <code>index.md</code> (the project’s <code>project.md</code> for the top level), as a list of links. The Manuscript view and the contents always agree, and the order goes with your files to any other editor. A folder that has no <code>index.md</code> gets one the first time you move something in it. See <a href="the-contents.html">The Contents</a>.</p>
+<h2 id="reading-it-through">Reading it through</h2>
+<p>The right side is the whole manuscript as one continuous page, in your theme’s type and colours, with Markdown shown as it reads rather than as it’s written: each part titled, each chapter starting under its own heading. Select a row and the page goes to that chapter; scroll the page and the chapter you’re reading is marked in the list.</p>
+<p>Double-click a passage to go and change it: the view closes and the document opens in the editor at that paragraph. (A single click leaves you reading, so you can select and copy.) Return, or double-clicking a row, opens a chapter at its start.</p>
+<p>Even a long book opens in a second or so, and stays quick to scroll and reorder: chapters are drawn as you reach them.</p>
+<h2 id="exporting">Exporting</h2>
+<p><strong>Export</strong> at the top right:</p>
+<ul>
+<li><strong>Publish to PDF</strong> typesets the manuscript as Publish to PDF does from the contents: Manuscript style (standard manuscript format, double-spaced Times with a title page and word count) or Book style (your theme’s typography, a page for each part). See <a href="publishing.html">Publishing</a>.</li>
+<li><strong>Export as Word Document</strong> saves the whole manuscript as one <code>.docx</code>: a title page, then each part and chapter in order, every chapter from a new page under its title. The chapters’ own headings, lists, quotations and pictures come out in Word’s own styles, as Export as Word Document does for a single document, so the navigation pane lists the parts and chapters.</li>
+</ul>
+<p>Front matter (synopses included) is left out of both.</p>
+<p>The Word document can go out for review: every paragraph carries a hidden marker, and Grasmere notes which chapter each came from. When a reviewer’s copy comes back, choose <strong>Export ▸ Import Review</strong>: each comment and change goes to its chapter’s margin, and each chapter in the running order shows how many are still open (“3 open”). Comments on the title page, a part’s title or the references go to a <strong>Review notes</strong> document in the folder, which is left out of the book. The review data lives in a hidden <code>.review</code> folder beside each chapter, and moves with it when Grasmere renames or moves it; copying a chapter on its own in the Finder leaves its review behind. See <a href="review.html">Review</a>.</p>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="the-contents.html">The Contents</a>, for ordering folders</li>
+<li><a href="publishing.html">Publishing</a></li>
+<li><a href="review.html">Review</a>, for sending the book out and bringing comments back</li>
+<li><a href="writing-goals.html">Writing Goals</a>, for a word target on the folder</li>
+</ul>
+
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shortcuts and the Command Line · Grasmere</title>
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="shortcuts-and-the-command-line">Shortcuts and the Command Line</h1>
+<p><em>New in 1.3.</em> Grasmere’s everyday work is offered to the Shortcuts app as actions: open a document, make one, add to today’s entry, search, check the Markdown and the links, export a PDF or Word document, compile a folder, publish the website. Each is a building block for your own shortcuts, and because the <code>shortcuts</code> command in Terminal runs a shortcut, each is also a command: <code>shortcuts run</code> sends the work to the running app, which does it with the folder access it already has, and prints the result.</p>
+<h2 id="in-shortcuts">In Shortcuts</h2>
+<p>Open the Shortcuts app, make a new shortcut, and search the actions for <em>Grasmere</em>: they are listed together in the app’s own category. Ten of them are also in Spotlight and Siri, as “Open a document in Grasmere”, “Append to today’s entry in Grasmere”, “Search Grasmere”, “Check Markdown in Grasmere”, and so on.</p>
+<p>Every action works on the project in the front window. The ones that take a document or a folder also take a path to any project Grasmere has opened before (it keeps permission to those folders), so a shortcut can work on a project that isn’t open. A folder Grasmere has never opened gives an error that names it: open it once (File ▸ Open Project), and from then on it’s reachable.</p>
+<p>Where an action takes a document, there are two fields: <strong>Document</strong>, for a file from another action or from the shortcut’s input, and <strong>Path</strong>, for a path typed in, or a document’s name or path in the front project (<code>Low Water</code> finds <code>chapters/Low Water.md</code>). Leave both empty for the document open on the page. Where an action takes a project, give the folder’s path or a recent project’s name, or leave it empty for the front window’s.</p>
+<p>Results are plain values, so they chain: a path or a line of text, a file, or a list of lines (one per document, or one per problem).</p>
+<div class="keep">
+<h2 id="the-actions">The actions</h2>
+<table>
+<thead>
+<tr><th>Action</th><th>Takes</th><th>Returns</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Open Document</strong></td><td>Document or Path</td><td>The document’s path. Opens it in the front window, or its project if that isn’t open, or on its own.</td></tr>
+<tr><td><strong>Open Project</strong></td><td>Folder: a path or a recent project’s name</td><td>The folder’s path. In the front window if it’s empty, else a new window.</td></tr>
+<tr><td><strong>New Document</strong></td><td>Title; Folder (optional); Text (optional)</td><td>The new file, titled with a heading, opened if its project is in a window.</td></tr>
+<tr><td><strong>Save Web Page</strong> <em>(new in 1.3)</em></td><td>Web Address; Project (optional)</td><td>The new document in the research folder: the page’s article as Markdown, as File ▸ Save Web Page saves it. A page with no article (or that can’t be fetched) is saved as its link; a page saved before isn’t saved again, and its document is returned. See <a href="research.html">Research</a>.</td></tr>
+<tr><td><strong>Append to Today’s Entry</strong></td><td>Text; Project (optional)</td><td>Today’s entry, with the text added as quick capture adds it (a paragraph starting with the time); the entry is made if need be.</td></tr>
+<tr><td><strong>Append to Document</strong></td><td>Text; Document or Path</td><td>The document, with the text added at the end as a paragraph of its own: through the editor if it’s open with unsaved changes, else into the file.</td></tr>
+<tr><td><strong>Get Document Text</strong></td><td>Document or Path (optional)</td><td>The Markdown, as it is in the editor if it’s open, else the file’s.</td></tr>
+<tr><td><strong>Search Documents</strong></td><td>Query; Project (optional); Passages (on by default)</td><td>A line per matching document: its path, then <code>: </code> and the first matching passage. Turn Passages off for paths alone.</td></tr>
+<tr><td><strong>List Documents</strong></td><td>Folder (optional): a project or a folder in one</td><td>The path of every Markdown document in it, subfolders included, ignored folders left out.</td></tr>
+<tr><td><strong>Today’s Entry Path</strong></td><td>Project (optional); Make It (on by default)</td><td>Today’s entry’s path, made as ⌘T would unless Make It is off (then an error when there’s none).</td></tr>
+<tr><td><strong>Check Markdown</strong></td><td>Document or Path (optional)</td><td>A line per problem, <code>path:line: error: message</code> or <code>warning</code>, from the same check as the margin’s Problems section, whether or not that setting is on. Links to headings are judged when the project is open in a window.</td></tr>
+<tr><td><strong>Check Links</strong></td><td>Project (optional)</td><td>A line per link that leads nowhere, <code>path:line: error: message</code>: a missing document or picture, or a heading or passage that isn’t where the link says.</td></tr>
+<tr><td><strong>Export PDF</strong></td><td>Document or Path (optional); Output (optional)</td><td>The PDF, as File ▸ Export as PDF makes it. Output is a file path or a folder; left empty, the PDF goes beside the document.</td></tr>
+<tr><td><strong>Export Word Document</strong></td><td>The same</td><td>The <code>.docx</code>, as File ▸ Export as Word Document makes it.</td></tr>
+<tr><td><strong>Compile Folder to PDF</strong></td><td>Folder (optional); Output (optional); Layout (Book or Manuscript); Title; Author</td><td>The PDF, a chapter per document, as File ▸ Publish to PDF makes it.</td></tr>
+<tr><td><strong>Publish Website</strong></td><td>Project (optional); Site Folder (optional)</td><td>The site folder’s path, once the website is built (the action waits). The first build of a project doesn’t ask what will be published, as the menu does, so look at the site.</td></tr>
+<tr><td><strong>Get Current Document</strong></td><td></td><td>The document open in the front window (from 1.0).</td></tr>
+<tr><td><strong>Get Current Project Folder</strong></td><td></td><td>The front window’s project folder, as a path (from 1.0).</td></tr>
+<tr><td><strong>Save Current Document</strong></td><td></td><td>Saves the front window’s document (from 1.0).</td></tr>
+<tr><td><strong>Add to Today’s Entry</strong></td><td>Text; Project (optional)</td><td>The same as Append to Today’s Entry, answering with a sentence rather than the file (from 1.0; kept for shortcuts that use it).</td></tr>
+</tbody>
+</table>
+</div>
+<p>An action that changes a document needs the trial running or Grasmere bought, as the app does; otherwise it says so. Nothing an action does changes your settings.</p>
+<h2 id="from-the-command-line">From the command line</h2>
+<p>The <code>shortcuts</code> command (<code>man shortcuts</code>) runs a shortcut by name: <code>shortcuts run &quot;&lt;shortcut&gt;&quot;</code>. It runs a <strong>shortcut, not an action</strong>, so for each action you want from Terminal, make a shortcut of one step, once, in the Shortcuts app: add the Grasmere action, and name the shortcut after it (“Check Markdown”, say). From then on it’s a command.</p>
+<p>The shortcut’s input comes from <code>-i</code> (<code>--input-path</code>): a file’s path, or <code>-</code> for what’s piped in. Its result is printed with <code>-o -</code> (<code>--output-path</code>), or written to a file with <code>-o &lt;path&gt;</code>; leave <code>-o</code> out and the result goes nowhere. So in the one-step shortcut, put <strong>Shortcut Input</strong> in the action’s field: in the <em>Document</em> field when you’ll give a file with <code>-i &lt;path&gt;</code>, or in the <em>Text</em>, <em>Path</em> or <em>Query</em> field when you’ll pipe text in with <code>-i -</code>. (A file piped to a text field arrives as its contents, not its path, so a path typed at the prompt goes in through the pipe.)</p>
+<pre><code class="language-sh"><span class="c"># Add a thought to today's entry in the front project</span>
+<span class="t">echo</span> <span class="s">&quot;a thought&quot;</span> | shortcuts run <span class="s">&quot;Append to Today's Entry&quot;</span> -i - -o -
+
+<span class="c"># Check a document's Markdown (Shortcut Input in the Document field)</span>
+shortcuts run <span class="s">&quot;Check Markdown&quot;</span> -i ~/Notes/post.md -o -
+
+<span class="c"># Search, a line per document</span>
+<span class="t">echo</span> ferry | shortcuts run <span class="s">&quot;Search Documents&quot;</span> -i - -o - | <span class="t">head</span>
+
+<span class="c"># Publish the front project's website, or a project by its folder</span>
+shortcuts run <span class="s">&quot;Publish Website&quot;</span> -o -
+<span class="t">echo</span> ~/Notes | shortcuts run <span class="s">&quot;Publish Website&quot;</span> -i - -o -
+
+<span class="c"># Export a PDF next to the document (the Output field left empty)</span>
+shortcuts run <span class="s">&quot;Export PDF&quot;</span> -i ~/Notes/post.md
+
+<span class="c"># The list of broken links, in the front project</span>
+shortcuts run <span class="s">&quot;Check Links&quot;</span> -o -
+</code></pre>
+<p>A small function makes this read like a command:</p>
+<pre><code class="language-sh">grasmere() { <span class="k">local</span> name=<span class="t">$1</span>; <span class="k">shift</span>; <span class="t">printf</span> <span class="s">'%s'</span> <span class="s">&quot;$*&quot;</span> | shortcuts run <span class="s">&quot;$name&quot;</span> -i - -o -; }
+
+grasmere <span class="s">&quot;Append to Today's Entry&quot;</span> bread rose well today
+grasmere <span class="s">&quot;Open Document&quot;</span> <span class="s">&quot;chapters/Low Water.md&quot;</span>
+grasmere <span class="s">&quot;Get Document Text&quot;</span> Revisions | <span class="t">wc</span> -w
+</code></pre>
+<p>Two things to know:</p>
+<ul>
+<li>An action that returns a <strong>file</strong> (New Document, Append to Today’s Entry, Append to Document, the exports, Compile Folder) gives <code>-o -</code> the file’s contents: a new document’s text, or a PDF’s bytes. For a document that’s what you want; for an export, use the action’s Output field to say where the file goes and leave <code>-o</code> out, or write it with <code>-o out.pdf</code>.</li>
+<li>A shortcut can run only while Grasmere is running or can be launched; <code>shortcuts run</code> opens it if need be. Publish Website and Compile Folder take as long as they take; the command waits, and the app stays usable meanwhile.</li>
+</ul>
+<h2 id="running-shortcuts-from-grasmere">Running shortcuts from Grasmere</h2>
+<p>The other way round, Settings ▸ Automation runs a shortcut of yours when a document is saved, created or renamed, or when a project is opened: see <a href="saving-and-safety.html">Saving, Safety and Git</a>.</p>
+
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>
