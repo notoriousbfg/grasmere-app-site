@@ -30,7 +30,7 @@
 <li><strong>changed outside Grasmere</strong> (another app, sync, git), picked up when Grasmere next reads the file</li>
 <li><strong>sent by another program</strong>, for keystrokes that didn’t come from the keyboard itself</li>
 </ul>
-<p>Text that was already in the document when recording began counts as <em>there at the start</em>. Recording is per document: other documents aren’t touched, and opening another document doesn’t stop it; the dot is shown on the document being recorded. Choose Record Writing again to stop; the record is kept, and covers what was written up to then. You can go on editing the document afterwards, and the replay says so. File ▸ Delete This Document’s Writing Record removes it.</p>
+<p>Text that was already in the document when recording began counts as <em>there at the start</em>. Recording is per document: other documents aren’t touched, and opening another document doesn’t stop it; the dot is shown on the document being recorded. Choose Record This Document’s Writing again to stop; the record is kept, and covers what was written up to then. You can go on editing the document afterwards, and the replay says so. File ▸ Delete This Document’s Writing Record removes it.</p>
 <p>The record is kept on your Mac, in Grasmere’s own storage beside the project’s other app data, never in the document, which stays a plain Markdown file. It follows the document if you rename or move it in Grasmere, and goes when the document is deleted or merged away.</p>
 <h2 id="timestamps">Timestamps</h2>
 <p>A record on its own is only the writer’s word, so Grasmere fixes it in time as you go. A minute after you stop typing, when you close the document, and when you quit, it makes a <strong>checkpoint</strong>: a hash of the record so far. The hash is sent to a public timestamp service, which signs it with the time (RFC 3161, the standard used for signing software). Only the hash goes out, never any text; the service does see your Mac’s internet address and when you write. The receipt is kept with the record.</p>
@@ -47,14 +47,8 @@
 <li><a href="saving-and-safety.html">Saving and Safety</a></li>
 <li><a href="../privacy.html">Privacy</a></li>
 </ul>
+
 </article>
-<aside class="backlinks" aria-labelledby="grasmere-linked-from">
-<h2 id="grasmere-linked-from">Linked from</h2>
-<ul>
-<li><a href="index.html">Guides</a> <span class="folder">guides</span></li>
-<li><a href="../whats-new.html">What’s New</a></li>
-</ul>
-</aside>
 </main>
 <footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
 </div>

@@ -57,19 +57,24 @@
 <li>Tab and ⇧Tab move between cells, and line the columns up as they go.</li>
 <li>The colons in the second line set each column’s alignment: left, centre or right.</li>
 </ul>
+<h2 id="diagrams">Diagrams</h2>
+<p><em>New in 1.3.</em> A code block whose language is <code>mermaid</code> is a diagram, written as text in <a href="https://mermaid.js.org">Mermaid’s</a> notation, and Grasmere draws it beneath the block:</p>
+<pre><code>```mermaid
+flowchart LR
+    L[The landing] --&gt;|8 min| F[Fold End]
+    F --&gt;|bus| S[School]
+```
+</code></pre>
+<p>The text stays on the page to edit, and the drawing follows a moment after you stop typing. While a change is half-made, the last good drawing stays; if Mermaid can’t read the block, a quiet line under it says why. Click a drawing to put the cursor in its block.</p>
+<p>Drawings take the theme’s colours and type, and go into a PDF, a Word document and a website you build (on a website, in its light and dark colours). Everything is drawn on your Mac: nothing is sent anywhere. The same block shows as a diagram on GitHub, and as code in any other Markdown editor.</p>
+<p class="figure"><img src="../media/diagram.jpg" alt="A Mermaid flowchart block, with its diagram drawn on the page beneath it"></p>
 <h2 id="related">Related</h2>
 <ul>
 <li><a href="writing-and-formatting.html">Writing and Formatting</a></li>
 <li><a href="quick-capture-and-sharing.html">Quick Capture and Sharing</a>, for saving pictures and PDFs from the web</li>
 </ul>
+
 </article>
-<aside class="backlinks" aria-labelledby="grasmere-linked-from">
-<h2 id="grasmere-linked-from">Linked from</h2>
-<ul>
-<li><a href="index.html">Guides</a> <span class="folder">guides</span></li>
-<li><a href="writing-and-formatting.html">Writing and Formatting</a> <span class="folder">guides</span></li>
-</ul>
-</aside>
 </main>
 <footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
 </div>
