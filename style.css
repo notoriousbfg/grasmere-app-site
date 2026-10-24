@@ -25,7 +25,8 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:2p
 .brand img{width:32px;height:32px;border-radius:8px;box-shadow:0 0 0 1px rgba(42,37,32,.10),0 1px 3px rgba(42,37,32,.14)}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{text-decoration:none}
-.btn-ghost{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid var(--rule);border-radius:10px;color:var(--ink)!important;font-weight:500}
+.btn-ghost{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid var(--rule);border-radius:10px;color:var(--ink)!important;font-weight:500;transition:background .2s ease,border-color .2s ease,color .2s ease}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--ink);border-color:var(--ink);color:#F8F3EA!important}
 
 /* Reading pages: guides, support, privacy… */
 .doc{padding:24px 40px 0}
