@@ -39,9 +39,9 @@
 .top{display:flex;align-items:center;min-height:28px}
 .num{font-family:var(--mono);font-size:13px;color:#8C8072;transition:color .3s ease}
 .word{font-family:var(--serif);font-size:clamp(50px,8vh,76px);line-height:.95;letter-spacing:-.025em;margin-top:-6px}
-.word{position:relative;align-self:flex-start;overflow:hidden;padding:.06em .08em .14em 0;margin-bottom:-.14em}
-.word>span,.word::after{display:block;transition:transform .5s cubic-bezier(.65,0,.25,1),opacity .5s cubic-bezier(.65,0,.25,1)}
-.word::after{content:attr(data-word);position:absolute;left:0;top:.06em;font-style:italic;transform:translateY(105%);opacity:0}
+.word{position:relative;align-self:flex-start}
+.word>span,.word::after{display:block;transition:transform .4s ease,opacity .4s ease}
+.word::after{content:attr(data-word);position:absolute;left:0;top:0;font-style:italic;transform:translateY(20px);opacity:0}
 .desc{font-size:15px;line-height:1.45;color:var(--ink-soft);max-width:30ch;transition:color .3s ease}
 
 /* Each phase's guides */
@@ -53,7 +53,7 @@
 /* Hover / keyboard focus */
 .phase:hover,.phase:focus-within{background:var(--tint);color:var(--c);border-top-color:var(--c)}
 .phase:hover .num,.phase:focus-within .num{color:var(--c)}
-.phase:hover .word>span,.phase:focus-within .word>span{transform:translateY(-105%);opacity:0}
+.phase:hover .word>span,.phase:focus-within .word>span{transform:translateY(-20px);opacity:0}
 .phase:hover .word::after,.phase:focus-within .word::after{opacity:1;transform:none}
 .phase:hover .desc,.phase:focus-within .desc{color:#3A332C}
 .phase:hover .chip,.phase:focus-within .chip{border-color:var(--soft);color:var(--c)}
