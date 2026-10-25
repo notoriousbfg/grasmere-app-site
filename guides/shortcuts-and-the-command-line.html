@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shortcuts and the Command Line · Grasmere</title>
-<meta name="description" content="Grasmere’s everyday work is offered to the Shortcuts app as actions: open a document, make one, add to today’s entry, search, check the Markdown and the…">
+<meta name="description" content="If you do the same things in Grasmere again and again, you can build them into your own shortcuts. Grasmere gives the Shortcuts app actions for its everyday…">
 <link rel="canonical" href="https://grasmere.app/guides/shortcuts-and-the-command-line.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grasmere">
 <meta property="og:title" content="Shortcuts and the Command Line · Grasmere">
-<meta property="og:description" content="Grasmere’s everyday work is offered to the Shortcuts app as actions: open a document, make one, add to today’s entry, search, check the Markdown and the…">
+<meta property="og:description" content="If you do the same things in Grasmere again and again, you can build them into your own shortcuts. Grasmere gives the Shortcuts app actions for its everyday…">
 <meta property="og:url" content="https://grasmere.app/guides/shortcuts-and-the-command-line.html">
 <meta property="og:image" content="https://grasmere.app/assets/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,12 +31,14 @@
 <main>
 <article>
 <h1 id="shortcuts-and-the-command-line">Shortcuts and the Command Line</h1>
-<p><em>New in 1.3.</em> Grasmere’s everyday work is offered to the Shortcuts app as actions: open a document, make one, add to today’s entry, search, check the Markdown and the links, export a PDF or Word document, compile a folder, publish the website. Each is a building block for your own shortcuts, and because the <code>shortcuts</code> command in Terminal runs a shortcut, each is also a command: <code>shortcuts run</code> sends the work to the running app, which does it with the folder access it already has, and prints the result.</p>
+<p><em>New in 1.3.</em></p>
+<p>If you do the same things in Grasmere again and again, you can build them into your own shortcuts. Grasmere gives the Shortcuts app actions for its everyday work, such as opening or making a document, adding to today’s entry, searching, checking the Markdown and links, exporting, and publishing the website.</p>
+<p>Because the <code>shortcuts</code> command in Terminal runs shortcuts, each of these is a command too. <code>shortcuts run</code> hands the work to the running app, which does it with the folder access it already has, and prints the result.</p>
 <h2 id="in-shortcuts">In Shortcuts</h2>
-<p>Open the Shortcuts app, make a new shortcut, and search the actions for <em>Grasmere</em>: they are listed together in the app’s own category. Ten of them are also in Spotlight and Siri, as “Open a document in Grasmere”, “Append to today’s entry in Grasmere”, “Search Grasmere”, “Check Markdown in Grasmere”, and so on.</p>
-<p>Every action works on the project in the front window. The ones that take a document or a folder also take a path to any project Grasmere has opened before (it keeps permission to those folders), so a shortcut can work on a project that isn’t open. A folder Grasmere has never opened gives an error that names it: open it once (File ▸ Open Folder), and from then on it’s reachable.</p>
-<p>Where an action takes a document, there are two fields: <strong>Document</strong>, for a file from another action or from the shortcut’s input, and <strong>Path</strong>, for a path typed in, or a document’s name or path in the front project (<code>Low Water</code> finds <code>chapters/Low Water.md</code>). Leave both empty for the document open on the page. Where an action takes a project, give the folder’s path or a recent project’s name, or leave it empty for the front window’s.</p>
-<p>Results are plain values, so they chain: a path or a line of text, a file, or a list of lines (one per document, or one per problem).</p>
+<p>Open the Shortcuts app, make a new shortcut and search the actions for <em>Grasmere</em>. They’re listed together under Grasmere’s own category. Ten of them are in Spotlight and Siri too, with names like “Open a document in Grasmere”, “Search Grasmere” and “Check Markdown in Grasmere”.</p>
+<p>Every action works on the project in the front window unless you tell it otherwise. Actions that take a document or a folder will also take a path to any project Grasmere has opened before, because it keeps permission to those folders. So a shortcut can work on a project that isn’t open. If Grasmere has never opened the folder, you get an error naming it. Open it once with File ▸ Open Folder and it’s reachable from then on.</p>
+<p>Actions that take a document have two fields. <strong>Document</strong> is for a file from another action or from the shortcut’s input. <strong>Path</strong> is for something typed, either a path or a document’s name or path in the front project, so <code>Low Water</code> finds <code>chapters/Low Water.md</code>. Leave both empty to use the document open on the page. Where an action takes a project, give the folder’s path or a recent project’s name. Leave it empty for the front window’s project.</p>
+<p>Results are plain values, so you can pass them from one action to the next. You get a path or a line of text, a file, or a list of lines, one per document or one per problem.</p>
 <div class="keep">
 <h2 id="the-actions">The actions</h2>
 <table>
@@ -67,10 +69,11 @@
 </tbody>
 </table>
 </div>
-<p>An action that changes a document needs the trial running or Grasmere bought, as the app does; otherwise it says so. Nothing an action does changes your settings.</p>
+<p>Actions that change a document need the trial running or Grasmere bought, as the app itself does. If neither is true, the action says so. No action ever changes your settings.</p>
 <h2 id="from-the-command-line">From the command line</h2>
-<p>The <code>shortcuts</code> command (<code>man shortcuts</code>) runs a shortcut by name: <code>shortcuts run &quot;&lt;shortcut&gt;&quot;</code>. It runs a <strong>shortcut, not an action</strong>, so for each action you want from Terminal, make a shortcut of one step, once, in the Shortcuts app: add the Grasmere action, and name the shortcut after it (“Check Markdown”, say). From then on it’s a command.</p>
-<p>The shortcut’s input comes from <code>-i</code> (<code>--input-path</code>): a file’s path, or <code>-</code> for what’s piped in. Its result is printed with <code>-o -</code> (<code>--output-path</code>), or written to a file with <code>-o &lt;path&gt;</code>; leave <code>-o</code> out and the result goes nowhere. So in the one-step shortcut, put <strong>Shortcut Input</strong> in the action’s field: in the <em>Document</em> field when you’ll give a file with <code>-i &lt;path&gt;</code>, or in the <em>Text</em>, <em>Path</em> or <em>Query</em> field when you’ll pipe text in with <code>-i -</code>. (A file piped to a text field arrives as its contents, not its path, so a path typed at the prompt goes in through the pipe.)</p>
+<p>The <code>shortcuts</code> command runs a shortcut by name, as <code>shortcuts run &quot;&lt;shortcut&gt;&quot;</code>. See <code>man shortcuts</code> for the rest. It runs a <strong>shortcut, not an action</strong>. So for each action you want in Terminal, make a one-step shortcut in the Shortcuts app, once. Add the Grasmere action and name the shortcut after it, “Check Markdown”, say. From then on it’s a command.</p>
+<p>The shortcut’s input comes from <code>-i</code> (<code>--input-path</code>), either a file’s path or <code>-</code> for whatever’s piped in. To print the result, add <code>-o -</code> (<code>--output-path</code>), or write it to a file with <code>-o &lt;path&gt;</code>. Leave <code>-o</code> out and the result goes nowhere.</p>
+<p>In the one-step shortcut, put <strong>Shortcut Input</strong> in the action’s field. Use the <em>Document</em> field when you’ll give a file with <code>-i &lt;path&gt;</code>. Use the <em>Text</em>, <em>Path</em> or <em>Query</em> field when you’ll pipe text in with <code>-i -</code>. A file sent to a text field arrives as its contents rather than its path, so if you want to give a path, pipe it in as text.</p>
 <pre><code class="language-sh"><span class="c"># Add a thought to today's entry in the front project</span>
 <span class="t">echo</span> <span class="s">&quot;a thought&quot;</span> | shortcuts run <span class="s">&quot;Append to Today's Entry&quot;</span> -i - -o -
 
@@ -99,11 +102,11 @@ grasmere <span class="s">&quot;Get Document Text&quot;</span> Revisions | <span 
 </code></pre>
 <p>Two things to know:</p>
 <ul>
-<li>An action that returns a <strong>file</strong> (New Document, Append to Today’s Entry, Append to Document, the exports, Compile Folder) gives <code>-o -</code> the file’s contents: a new document’s text, or a PDF’s bytes. For a document that’s what you want; for an export, use the action’s Output field to say where the file goes and leave <code>-o</code> out, or write it with <code>-o out.pdf</code>.</li>
-<li>A shortcut can run only while Grasmere is running or can be launched; <code>shortcuts run</code> opens it if need be. Publish Website and Compile Folder take as long as they take; the command waits, and the app stays usable meanwhile.</li>
+<li>Some actions return a <strong>file</strong>. These are New Document, Append to Today’s Entry, Append to Document, the exports and Compile Folder. With <code>-o -</code> you get the file’s contents, so a new document’s text, or a PDF’s bytes. That’s what you want for a document. For an export, either set the action’s Output field and leave <code>-o</code> out, or write the file with <code>-o out.pdf</code>.</li>
+<li>A shortcut runs only while Grasmere is running or can be launched, and <code>shortcuts run</code> opens it if need be. Publish Website and Compile Folder take as long as they take. The command waits, and you can carry on using the app meanwhile.</li>
 </ul>
 <h2 id="running-shortcuts-from-grasmere">Running shortcuts from Grasmere</h2>
-<p>The other way round, Settings ▸ Automation runs a shortcut of yours when a document is saved, created or renamed, or when a project is opened: see <a href="saving-and-safety.html">Saving, Safety and Git</a>.</p>
+<p>It works the other way round too. In Settings ▸ Automation, you can have Grasmere run one of your shortcuts whenever a document is saved, created or renamed, or a project is opened. See <a href="saving-and-safety.html">Saving, Safety and Git</a>.</p>
 
 </article>
 </main>

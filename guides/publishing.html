@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Publishing · Grasmere</title>
-<meta name="description" content="Your documents are plain files, so they already work anywhere. When you want something more finished, Grasmere can typeset them as a PDF, build a website, or…">
+<meta name="description" content="Your documents are plain files, so they already work anywhere. When you want something more finished, Grasmere can typeset them as a PDF, build a website or…">
 <link rel="canonical" href="https://grasmere.app/guides/publishing.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grasmere">
 <meta property="og:title" content="Publishing · Grasmere">
-<meta property="og:description" content="Your documents are plain files, so they already work anywhere. When you want something more finished, Grasmere can typeset them as a PDF, build a website, or…">
+<meta property="og:description" content="Your documents are plain files, so they already work anywhere. When you want something more finished, Grasmere can typeset them as a PDF, build a website or…">
 <meta property="og:url" content="https://grasmere.app/guides/publishing.html">
 <meta property="og:image" content="https://grasmere.app/assets/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,35 +31,39 @@
 <main>
 <article>
 <h1 id="publishing">Publishing</h1>
-<p>Your documents are plain files, so they already work anywhere. When you want something more finished, Grasmere can typeset them as a PDF, build a website, or make flash cards.</p>
+<p>Your documents are plain files, so they already work anywhere. When you want something more finished, Grasmere can typeset them as a PDF, build a website or make flash cards.</p>
 <h2 id="publish-a-folder-to-pdf">Publish a folder to PDF</h2>
-<p>Right-click a folder in the contents and choose Publish to PDF, or use the File menu: it reads Publish Project to PDF, or Publish “chapters” to PDF while a folder is highlighted in the contents with the arrow keys. Grasmere typesets all its documents as one PDF, in the folder’s order: each document becomes a chapter on a new page, titled by its first heading, and each folder inside becomes a part.</p>
+<p>To turn a folder of chapters into one PDF, right-click the folder in the contents and choose Publish to PDF. You can also use the File menu, which offers Publish Project to PDF, or Publish “chapters” to PDF when you’ve highlighted a folder in the contents with the arrow keys.</p>
+<p>Grasmere typesets the documents in the folder’s order. Each document becomes a chapter on a new page, titled by its first heading, and each folder inside becomes a part.</p>
 <p class="figure"><img src="../media/publish-to-pdf.jpg" alt="Publishing a folder to PDF"></p>
-<p>Give the PDF a title and, if you like, an author, then choose a style:</p>
+<p>Give the PDF a title, and an author if you like, then choose a style:</p>
 <ul>
 <li><strong>Manuscript:</strong> standard manuscript format, as publishers and agents ask for. Double-spaced 12 pt Times, one-inch margins, a title page with the word count, and the author, title and page number at the top of each page.</li>
 <li><strong>Book:</strong> your theme’s typography, large chapter titles, a divider page for each part, and page numbers at the foot.</li>
 </ul>
-<p>The order comes from the folder’s <code>index.md</code>; see <a href="the-contents.html">The Contents</a>. When the PDF is saved, Show in Finder takes you to it.</p>
-<p>To put a long piece in order and read it through before you publish it, open the folder as a manuscript: see <a href="the-manuscript-view.html">The Manuscript View</a>. Its Export button publishes the same PDF, or the whole folder as one Word document.</p>
+<p>The order comes from the folder’s <code>index.md</code>. See <a href="the-contents.html">The Contents</a>. When the PDF is saved, Show in Finder takes you to it.</p>
+<p>If you’d like to put a long piece in order and read it through first, open the folder as a manuscript. Its Export button makes the same PDF, or the whole folder as one Word document. See <a href="the-manuscript-view.html">The Manuscript View</a>.</p>
 <h2 id="export-a-document-as-a-pdf">Export a document as a PDF</h2>
 <p>File ▸ Export as PDF (⌘P) typesets the open document on A4 or Letter pages.</p>
 <p class="figure"><img src="../media/note-as-pdf.jpg" alt="A document exported as a PDF"></p>
 <h2 id="export-a-document-as-a-word-document">Export a document as a Word document</h2>
-<p><em>New in 1.1.</em> File ▸ Export as Word Document (⇧⌘E) saves the open document as a <code>.docx</code>, for handing in, or for someone who edits in Word. It’s a proper Word document, not a picture of one: the headings are Word’s Heading 1, 2 and 3 (so they fill the navigation pane and a table of contents), the lists, tables, quotations and code are Word’s own styles, pictures are embedded, and web links are clickable. Change the style set in Word and the whole document follows. Links to other documents are shown as their text; a link to a heading in the same document jumps to it. The pages are A4 or Letter, with page numbers at the foot.</p>
+<p><em>New in 1.1.</em></p>
+<p>When you need to hand something in, or send it to someone who edits in Word, choose File ▸ Export as Word Document (⇧⌘E). Grasmere saves the open document as a <code>.docx</code> on A4 or Letter pages, with page numbers at the foot.</p>
+<p>It’s a proper Word document, not a picture of one. Headings use Word’s Heading 1, 2 and 3, so they fill the navigation pane and a table of contents. Lists, tables, quotations and code use Word’s own styles too, so if you change the style set in Word, the whole document follows. Pictures are embedded and web links can be clicked.</p>
+<p>Links to other documents become plain text. A link to a heading in the same document still jumps to it.</p>
 <h2 id="build-a-website">Build a website</h2>
-<p>Project ▸ Build Website (⌥⌘B) turns your project into a website, in a <code>_site</code> folder inside it: a page for each document, with links that work, the pictures in them, and a list of the documents that link to each page.</p>
+<p>Project ▸ Build Website (⌥⌘B) turns your project into a website, in a <code>_site</code> folder inside it. Each document gets a page, with working links, its pictures, and a list of the documents that link to it.</p>
 <p class="figure"><img src="../media/website-home.jpg" alt="The home page of a website built from a project"></p>
+<p>The home page shows the project’s name, the Summary section of project.md, and the contents. Pages are styled with your light and dark themes. There’s no JavaScript and nothing that tracks visitors.</p>
+<p>A few things worth knowing:</p>
 <ul>
-<li>The home page shows the project’s name, the Summary section of project.md, and the contents.</li>
-<li>Each page is styled with your light and dark themes. There’s no JavaScript and nothing that tracks visitors.</li>
-<li>A document with <code>draft: true</code> or <code>publish: false</code> in its front matter is left out, and links to it become plain text.</li>
-<li>Linked files (such as PDFs), saved web pages (the research folder) and saved insights are often other people’s work, so they’re left out unless you include them in Settings ▸ Automation.</li>
-<li>Grasmere shows you what will be published before the first build. After that, rebuilding only changes what has changed, and it never touches files it didn’t write.</li>
+<li>To leave a document out, put <code>draft: true</code> or <code>publish: false</code> in its front matter. Links to it become plain text.</li>
+<li>Linked files such as PDFs, saved web pages in the research folder, and saved insights are often other people’s work, so they’re left out unless you include them in Settings ▸ Automation.</li>
+<li>Before the first build, Grasmere shows you what will be published. After that, a rebuild only changes what has changed, and never touches files Grasmere didn’t write.</li>
 </ul>
 <p>When it’s done, Open in Browser shows you the site.</p>
 <h2 id="publish">Publish</h2>
-<p>Project ▸ Publish (⇧⌘P) saves your documents, builds the website if you’ve asked it to, commits anything waiting to git, then runs a Shortcut of your choosing with the project folder: to upload the site, say, or to push it. Choose the Shortcut in Settings ▸ Automation ▸ Publish with.</p>
+<p>Project ▸ Publish (⇧⌘P) does the whole round in one go. It saves your documents, builds the website if you’ve asked it to and commits anything waiting to git. Then it runs a Shortcut of your choosing with the project folder, to upload the site or push it, say. Choose the Shortcut in Settings ▸ Automation ▸ Publish with.</p>
 <p class="figure"><img src="../media/automation-settings.jpg" alt="Settings ▸ Automation"></p>
 <h2 id="export-to-anki">Export to Anki</h2>
 <p>Grasmere can turn documents into flash cards for <a href="https://apps.ankiweb.net">Anki</a>, with the document’s title on the front and the document on the back.</p>
@@ -68,7 +72,7 @@
 <li>Right-click a folder and choose Export Folder to Anki for every document in it.</li>
 <li>Pick several documents in the contents, right-click, and choose Export Documents to Anki.</li>
 </ul>
-<p>Importing a later export into Anki updates the cards and keeps your reviews.</p>
+<p>If you import a later export, Anki updates the cards and keeps your reviews.</p>
 <h2 id="related">Related</h2>
 <ul>
 <li><a href="the-manuscript-view.html">The Manuscript View</a></li>

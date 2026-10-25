@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pictures and Tables · Grasmere</title>
-<meta name="description" content="Pictures and tables are ordinary Markdown in Grasmere, drawn on the page so you see what they look like.">
+<meta name="description" content="Pictures and tables are written in ordinary Markdown, and Grasmere draws them on the page so you can see how they’ll look.">
 <link rel="canonical" href="https://grasmere.app/guides/pictures-and-tables.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grasmere">
 <meta property="og:title" content="Pictures and Tables · Grasmere">
-<meta property="og:description" content="Pictures and tables are ordinary Markdown in Grasmere, drawn on the page so you see what they look like.">
+<meta property="og:description" content="Pictures and tables are written in ordinary Markdown, and Grasmere draws them on the page so you can see how they’ll look.">
 <meta property="og:url" content="https://grasmere.app/guides/pictures-and-tables.html">
 <meta property="og:image" content="https://grasmere.app/assets/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,33 +31,33 @@
 <main>
 <article>
 <h1 id="pictures-and-tables">Pictures and Tables</h1>
-<p>Pictures and tables are ordinary Markdown in Grasmere, drawn on the page so you see what they look like.</p>
+<p>Pictures and tables are written in ordinary Markdown, and Grasmere draws them on the page so you can see how they’ll look.</p>
 <h2 id="pictures">Pictures</h2>
-<p>A line that’s just a picture link shows the picture beneath it:</p>
+<p>Put a picture link on a line of its own and the picture appears beneath it.</p>
 <pre><code>![The plot, from the gate](media/plot-plan.png)
 </code></pre>
-<p>The Markdown stays on the line above the picture, so you can still edit the caption and the address.</p>
+<p>The Markdown stays on the line above, so you can still change the caption and the address.</p>
 <p><strong>Adding a picture</strong></p>
 <ul>
-<li><strong>Paste</strong> a screenshot or a copied image, or <strong>drop</strong> an image file onto a document. Grasmere saves it in the project’s <code>media</code> folder and links it where you were typing.</li>
-<li><strong>Drop</strong> a video onto a document in the same way. It’s linked like a picture, and plays on a website you build from the project.</li>
-<li><strong>Drag</strong> a picture from the contents into a document to link it.</li>
-<li><strong>Link</strong> to a picture on the web with <code>![](https://…)</code>. Grasmere downloads it to show it.</li>
+<li>Paste a screenshot or a copied image, or drop an image file onto a document. Grasmere saves it in the project’s <code>media</code> folder and links it where you were typing.</li>
+<li>Drop a video on the same way. It’s linked like a picture, and plays on a website you build from the project.</li>
+<li>Drag a picture from the contents into a document to link to it.</li>
+<li>Link to a picture on the web with <code>![](https://…)</code>. Grasmere downloads it to show it.</li>
 </ul>
 <p><strong>Working with pictures</strong></p>
 <ul>
 <li>Right-click a picture for Copy Image and Show in Finder.</li>
 <li>Rest the pointer on a link to a picture to see a preview.</li>
-<li>Rename a picture in the contents and the links to it follow, just like a document’s.</li>
+<li>Rename a picture in the contents and the links to it follow, as they do for a document.</li>
 </ul>
 <p><strong>Settings</strong></p>
 <ul>
-<li>Settings ▸ General ▸ Save in these folders ▸ <strong>Pictures and videos</strong> chooses the folder for pasted and dropped pictures and videos (<code>media</code> by default, or <code>images</code> in a project that already has that folder).</li>
-<li>Settings ▸ General ▸ <strong>Show images from the web</strong> can be turned off. Downloading a picture tells its website that you opened the document.</li>
+<li>Settings ▸ General ▸ Save in these folders ▸ <strong>Pictures and videos</strong> chooses where pasted and dropped pictures and videos go. It’s <code>media</code> unless your project already has an <code>images</code> folder.</li>
+<li>Settings ▸ General ▸ <strong>Show images from the web</strong> can be turned off. Downloading a picture lets its website know you opened the document.</li>
 <li>Settings ▸ Appearance ▸ <strong>Show images in the contents</strong> lists pictures alongside your documents.</li>
 </ul>
 <h2 id="tables">Tables</h2>
-<p>Tables are drawn as tables until you click into them. Then you edit the Markdown, and when you click away, the table is drawn again.</p>
+<p>A table looks like a table until you click into it. Then you’re editing the Markdown, and when you click away it’s drawn again.</p>
 <p class="figure"><img src="../media/ferry-timetable-table.jpg" alt="A table drawn on the page"></p>
 <pre><code>| Crop | Sow | Harvest |
 |:---|:---:|:---:|
@@ -65,19 +65,20 @@
 </code></pre>
 <ul>
 <li>Format ▸ Insert Table (⌥⌘T) starts a new one.</li>
-<li>Tab and ⇧Tab move between cells, and line the columns up as they go.</li>
-<li>The colons in the second line set each column’s alignment: left, centre or right.</li>
+<li>Tab and ⇧Tab move between cells, lining the columns up as they go.</li>
+<li>The colons in the second line set whether each column lines up left, centre or right.</li>
 </ul>
 <h2 id="diagrams">Diagrams</h2>
-<p><em>New in 1.3.</em> A code block whose language is <code>mermaid</code> is a diagram, written as text in <a href="https://mermaid.js.org">Mermaid’s</a> notation, and Grasmere draws it beneath the block:</p>
+<p><em>New in 1.3.</em></p>
+<p>To draw a diagram, describe it in <a href="https://mermaid.js.org">Mermaid’s</a> notation inside a code block marked <code>mermaid</code>. Grasmere draws it beneath the block.</p>
 <pre><code>```mermaid
 flowchart LR
     L[The landing] --&gt;|8 min| F[Fold End]
     F --&gt;|bus| S[School]
 ```
 </code></pre>
-<p>The text stays on the page to edit, and the drawing follows a moment after you stop typing. While a change is half-made, the last good drawing stays; if Mermaid can’t read the block, a quiet line under it says why. Click a drawing to put the cursor in its block.</p>
-<p>Drawings take the theme’s colours and type, and go into a PDF, a Word document and a website you build (on a website, in its light and dark colours). Everything is drawn on your Mac: nothing is sent anywhere. The same block shows as a diagram on GitHub, and as code in any other Markdown editor.</p>
+<p>The text stays on the page for you to edit, and the drawing catches up a moment after you stop typing. While a change is half-made, you keep the last drawing that worked. If Mermaid can’t read the block, a quiet line under it says why. Click a drawing to put the cursor in its block.</p>
+<p>Diagrams take the theme’s colours and type. They go into PDFs, Word documents and websites you build, and on a website they follow its light and dark colours. Everything is drawn on your Mac and nothing is sent anywhere. On GitHub the same block shows as a diagram. Other Markdown editors show it as code.</p>
 <p class="figure"><img src="../media/diagram.jpg" alt="A Mermaid flowchart block, with its diagram drawn on the page beneath it"></p>
 <h2 id="related">Related</h2>
 <ul>

@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Journal · Grasmere</title>
-<meta name="description" content="A journal entry is a place to write without deciding where: what you did, what you read, what you’re thinking about. Grasmere keeps one document for each…">
+<meta name="description" content="When you want to write something down without deciding where it belongs, put it in today’s journal entry. What you did, what you read, what you’re turning…">
 <link rel="canonical" href="https://grasmere.app/guides/journal.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grasmere">
 <meta property="og:title" content="Journal · Grasmere">
-<meta property="og:description" content="A journal entry is a place to write without deciding where: what you did, what you read, what you’re thinking about. Grasmere keeps one document for each…">
+<meta property="og:description" content="When you want to write something down without deciding where it belongs, put it in today’s journal entry. What you did, what you read, what you’re turning…">
 <meta property="og:url" content="https://grasmere.app/guides/journal.html">
 <meta property="og:image" content="https://grasmere.app/assets/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,19 +31,20 @@
 <main>
 <article>
 <h1 id="journal">Journal</h1>
-<p>A journal entry is a place to write without deciding where: what you did, what you read, what you’re thinking about. Grasmere keeps one document for each day, in a folder of their own. (Web pages you save have a folder of their own too: see <a href="research.html">Research</a>.)</p>
+<p>When you want to write something down without deciding where it belongs, put it in today’s journal entry. What you did, what you read, what you’re turning over. Grasmere keeps one document for each day, all in one folder.</p>
+<p>Web pages you save get a folder of their own too. See <a href="research.html">Research</a>.</p>
 <h2 id="todays-entry-t">Today’s entry (⌘T)</h2>
-<p>Go ▸ Today (⌘T), or the calendar button above the contents, opens today’s entry, making it if it isn’t there yet. It’s called something like <code>journal/2026-10-11.md</code> and titled like a diary: “Sunday 11th October”.</p>
+<p>Choose Go ▸ Today (⌘T), or click the calendar button above the contents, and today’s entry opens. If there isn’t one yet, Grasmere makes it. It’s called something like <code>journal/2026-10-11.md</code>, with a title like a diary’s, “Sunday 11th October”.</p>
 <p class="figure"><img src="../media/daily-note.jpg" alt="A journal entry in the journal folder"></p>
-<p>An entry that’s already there is never written over, so ⌘T is always safe to press.</p>
+<p>Grasmere never writes over an entry that’s already there, so ⌘T is always safe to press.</p>
 <h2 id="stepping-between-days">Stepping between days</h2>
-<p>Go ▸ Previous Day (⌥⌘←) and Next Day (⌥⌘→) step between the days that have entries, skipping the days that don’t. From a journal entry, they step through the folder that document is in. From any other document, they start from today in the journal folder.</p>
+<p>Go ▸ Previous Day (⌥⌘←) and Next Day (⌥⌘→) take you back and forward through your entries, skipping days you didn’t write. From a journal entry, they move through the folder it’s in. From any other document, they start at today in the journal folder.</p>
 <p class="figure"><img src="../media/daily-notes-list.jpg" alt="Journal entries in the journal folder"></p>
 <h2 id="templates">Templates</h2>
-<p>A template is an ordinary document in your project whose text starts each new day’s entry. Give its path in Settings ▸ General ▸ Journal ▸ Template, such as <code>templates/Daily.md</code>.</p>
+<p>If you start each day the same way, write that once as a template. It’s an ordinary document in your project, and its text begins every new entry. Give its path in Settings ▸ General ▸ Journal ▸ Template, such as <code>templates/Daily.md</code>.</p>
 <p class="figure"><img src="../media/daily-template.jpg" alt="A daily template"></p>
 <ul>
-<li>The template’s own first heading is left out; the new entry gets the day’s title instead.</li>
+<li>The template’s own first heading is left out. The new entry gets the day’s title instead.</li>
 <li><code>{{date}}</code> becomes the day’s date, as <code>2026-10-11</code>, and <code>{{title}}</code> the day’s title.</li>
 <li>Links in the template are adjusted so they still work from the journal folder.</li>
 </ul>
@@ -61,12 +62,12 @@ Written on {{date}}.
 <p class="figure"><img src="../media/daily-note-settings.jpg" alt="Settings ▸ General ▸ Journal"></p>
 <ul>
 <li><strong>Folder</strong> sets where journal entries go (<code>journal</code> by default).</li>
-<li><strong>File names</strong> chooses how new entries are named: <code>2026-10-11</code> (year first, the default, which sorts by date everywhere), <code>11-10-2026</code> (day first) or <code>10-11-2026</code> (month first). Day first and month first are there for journals brought from another app.</li>
+<li><strong>File names</strong> chooses how new entries are named. Year first, <code>2026-10-11</code>, is the default and sorts by date everywhere. Day first (<code>11-10-2026</code>) and month first (<code>10-11-2026</code>) are there for journals brought from another app.</li>
 </ul>
 <p>Grasmere finds a day’s entry under any of the three names, so changing the setting never makes a second entry for the same day.</p>
-<p>Settings ▸ General ▸ <strong>Date order</strong> (Automatic, Day first, Month first or Year first) sets how the titles of new journal entries are written, such as “Friday 9th October” or “Friday, October 9”. Automatic follows your Mac’s region. Existing entries keep their titles.</p>
+<p>Settings ▸ General ▸ <strong>Date order</strong> sets how new entries’ titles are written, such as “Friday 9th October” or “Friday, October 9”. You can choose Automatic, Day first, Month first or Year first. Automatic follows your Mac’s region. Entries you already have keep their titles.</p>
 <h2 id="quick-capture">Quick capture</h2>
-<p>You can add a line to today’s entry from any app without switching to Grasmere: press ⌃⌥⌘N or click the book in the menu bar. See <a href="quick-capture-and-sharing.html">Quick Capture and Sharing</a>.</p>
+<p>To add a line to today’s entry while you’re in another app, press ⌃⌥⌘N or click the book in the menu bar. You don’t have to switch to Grasmere. See <a href="quick-capture-and-sharing.html">Quick Capture and Sharing</a>.</p>
 <p class="figure"><img src="../media/captured-line.jpg" alt="A line added by quick capture, with the time"></p>
 <h2 id="related">Related</h2>
 <ul>

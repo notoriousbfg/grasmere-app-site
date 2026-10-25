@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Contents · Grasmere</title>
-<meta name="description" content="The contents on the left list the documents and folders in your project. Documents are listed by their titles, with folders as small headings. View ▸ Hide…">
+<meta name="description" content="The contents down the left side show everything in your project. Documents are listed by their titles, and folders appear as small headings. To hide the…">
 <link rel="canonical" href="https://grasmere.app/guides/the-contents.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grasmere">
 <meta property="og:title" content="The Contents · Grasmere">
-<meta property="og:description" content="The contents on the left list the documents and folders in your project. Documents are listed by their titles, with folders as small headings. View ▸ Hide…">
+<meta property="og:description" content="The contents down the left side show everything in your project. Documents are listed by their titles, and folders appear as small headings. To hide the…">
 <meta property="og:url" content="https://grasmere.app/guides/the-contents.html">
 <meta property="og:image" content="https://grasmere.app/assets/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,51 +31,53 @@
 <main>
 <article>
 <h1 id="the-contents">The Contents</h1>
-<p>The contents on the left list the documents and folders in your project. Documents are listed by their titles, with folders as small headings. View ▸ Hide Contents (⌃⌘S) hides it and shows it again.</p>
+<p>The contents down the left side show everything in your project. Documents are listed by their titles, and folders appear as small headings. To hide the contents, or bring them back, choose View ▸ Hide Contents (⌃⌘S).</p>
 <p class="figure"><img src="../media/contents-sidebar.jpg" alt="The contents, with the chapters and characters folders open"></p>
 <h2 id="projects">Projects</h2>
-<p>A project is simply a folder of Markdown files.</p>
+<p>A project is a folder of Markdown files, nothing more.</p>
 <ul>
-<li><strong>File ▸ Open Folder (⇧⌘O)</strong> opens a folder, or drop a folder on Grasmere’s icon in the Dock. An empty folder is a fine place to start.</li>
-<li><strong>Double-click a Markdown file in Finder</strong> (once Grasmere opens them: Settings ▸ General ▸ Markdown files, or Finder’s Get Info ▸ Open with) and it opens in its project, if it’s in one you’ve opened before, or on its own if not (<em>new in 1.1</em>). A document on its own has a window of its own: just the page, with its folder named at the top and a button to open that folder as a project. Its links open the documents beside it (Back and Forward work), Export as PDF, Copy as Context, Ask a Follow-up Question and Writing Replay all work, and the things that need a project (the contents, backlinks, history, Tasks, Ask Your Documents) wait until you open one. The first time a document on its own links to other files, Grasmere asks once for permission to open the folder they’re in (the document’s folder, or one above it for links like <code>../people/Rosa.md</code>): macOS only lets an app read the file you opened, not its neighbours. Then links that lead nowhere are underlined with dots, as in a project, and counted beneath the page (“3 links · 2 broken”).</li>
-<li><strong>Quick Look:</strong> press Space on a Markdown file in Finder to see it set as Grasmere sets it, light or dark with your Mac (<em>new in 1.1</em>).</li>
+<li><strong>File ▸ Open Folder (⇧⌘O)</strong> opens a folder. You can also drop a folder on Grasmere’s icon in the Dock. An empty folder is a fine place to start.</li>
+<li><strong>Double-click a Markdown file in Finder</strong> (<em>new in 1.1</em>) to open it in its project, if it’s in one you’ve opened before, or on its own if not. This works once Grasmere is the app that opens Markdown files, which you can set in Settings ▸ General ▸ Markdown files or in Finder’s Get Info ▸ Open with.</li>
+<li><strong>Quick Look</strong> (<em>new in 1.1</em>). Press Space on a Markdown file in Finder to see it set as Grasmere sets it, light or dark to match your Mac.</li>
 <li><strong>File ▸ Open Recent Project</strong> lists the folders you’ve used. Grasmere reopens your last project where you left it.</li>
 <li><strong>File ▸ New Window (⇧⌘N)</strong> opens a second project alongside.</li>
 <li><strong>Project ▸ Ignored Folders</strong> leaves out folders you don’t want in the contents, search or links, such as a folder of build output. You can also right-click a folder and choose Ignore This Folder.</li>
 </ul>
+<p>A document opened on its own gets a window of its own. It’s just the page, with its folder named at the top and a button to open that folder as a project. Its links open the documents beside it, and Back and Forward work. So do Export as PDF, Copy as Context, Ask a Follow-up Question and Writing Replay. The things that need a project wait until you open one: the contents, backlinks, history, Tasks and Ask Your Documents.</p>
+<p>The first time a document on its own links to other files, Grasmere asks once for permission to open the folder they’re in. That’s the document’s own folder, or one above it for links like <code>../people/Rosa.md</code>. macOS only lets an app read the file you opened, not the files next to it. Once you’ve said yes, links that lead nowhere are underlined with dots, as in a project, and counted beneath the page (“3 links · 2 broken”).</p>
 <p class="figure"><img src="../media/note-on-its-own.jpg" alt="A document opened on its own from Finder: just the page, with its folder named at the top"></p>
 <h2 id="documents-and-folders">Documents and folders</h2>
 <ul>
-<li><strong>File ▸ New Document (⌘N)</strong> and <strong>New Folder (⌥⌘N)</strong> make a new item, with its name ready to type. Where it goes depends on what you last did in the contents: inside a folder you’ve just clicked open, at the top level if you’ve just clicked a folder closed, and otherwise beside the open document.</li>
+<li><strong>File ▸ New Document (⌘N)</strong> and <strong>New Folder (⌥⌘N)</strong> make a new item with its name ready to type. Where it goes depends on what you last did in the contents. If you’ve just clicked a folder open, it goes inside. If you’ve just clicked a folder closed, it goes at the top level. Otherwise it goes beside the open document.</li>
 <li><strong>Double-click</strong> a document to rename it. The file name changes and links to it are updated.</li>
 <li><strong>Drag</strong> a document onto a folder to move it. Links follow.</li>
-<li><strong>⌘1</strong> (Go ▸ Select in Contents) moves the keyboard to the contents. Use the arrow keys to move, → and ← to open and close folders, Return to open a document, and type a few letters to jump to a name. Tab or esc goes back to the document.</li>
+<li><strong>⌘1</strong> (Go ▸ Select in Contents) moves the keyboard to the contents. The arrow keys move up and down, → and ← open and close folders, and Return opens a document. Type a few letters to jump to a name. Tab or esc takes you back to the document.</li>
 </ul>
-<p>Right-click a document for more: Rename, Show in Finder, Copy Relative Path, Copy Absolute Path, Open in Split View and Move to Trash. Right-click a folder for Open as Manuscript, Publish to PDF, Set Word Target, Export Folder to Anki, its order, and Ignore This Folder.</p>
-<p><em>New in 1.3:</em> a source in the research folder has an icon for what it is (a book, a globe for a web page, a page for an article), and the research folder has <code>research.md</code>, Grasmere’s table of your sources. See <a href="citations.html">Citations</a>.</p>
+<p>Right-click a document for Rename, Show in Finder, Copy Relative Path, Copy Absolute Path, Open in Split View and Move to Trash. Right-click a folder for Open as Manuscript, Publish to PDF, Set Word Target, Export Folder to Anki, its order, and Ignore This Folder.</p>
+<p><em>New in 1.3:</em> sources in the research folder have an icon for what they are, such as a book, a globe for a web page or a page for an article. The research folder also has <code>research.md</code>, Grasmere’s table of your sources. See <a href="citations.html">Citations</a>.</p>
 <h2 id="several-documents-at-once">Several documents at once</h2>
-<p>⌘-click or ⇧-click to pick several documents, then right-click to:</p>
+<p>To work on several documents together, ⌘-click or ⇧-click to pick them, then right-click.</p>
 <p class="figure"><img src="../media/several-notes.jpg" alt="Two documents picked in the contents"></p>
 <ul>
-<li><strong>Merge</strong> them into one document, with a section for each. Every link to the originals points at the right section, and the originals go to the Trash. Undo brings them back. (Also Project ▸ Merge Selected Documents.)</li>
-<li><strong>Export</strong> them to Anki. See <a href="publishing.html">Publishing</a>.</li>
-<li><strong>Move</strong> them to the Trash (⌘⌫ does the same).</li>
+<li><strong>Merge</strong> joins them into one document, with a section for each. Every link to the originals points at the right section, and the originals go to the Trash. Undo brings them back. It’s also in Project ▸ Merge Selected Documents.</li>
+<li><strong>Export</strong> sends them to Anki. See <a href="publishing.html">Publishing</a>.</li>
+<li><strong>Move</strong> puts them in the Trash. ⌘⌫ does the same.</li>
 </ul>
 <p>Deleted documents go to the Mac’s Trash, so you can get them back from there. Grasmere asks first before trashing a folder or more than five items.</p>
 <h2 id="the-order-of-a-folder">The order of a folder</h2>
-<p>Without instructions, a folder lists its subfolders first, then its documents by name, as the Finder does. You can give any folder an order of its own.</p>
+<p>Left alone, a folder lists its subfolders first and then its documents by name, the way the Finder does. You can give any folder an order of its own, either by hand or by a rule.</p>
 <p class="figure"><img src="../media/folder-order.jpg" alt="A folder’s index.md setting the order of its chapters"></p>
-<p><strong>By hand.</strong> Drag a document to the top or bottom half of another document’s row and it moves there. The order is kept in the folder’s <code>index.md</code>: the folder is listed in the order that file’s links reach its documents, and anything not linked follows. A folder without an index.md gets one the first time you drag an item into a new place, listing its items as they were. Right-click a folder and choose Edit Order of … (index.md) to open it, or Order … with index.md to make one straight away.</p>
-<p>The <code>index.md</code> is an ordinary document, so it can say something about the folder too. This project’s <a href="index.html">Guides</a> are in reading order this way.</p>
-<p><strong>By a rule.</strong> Right-click a folder and choose Sort Folder By ▸ Name, Date Created or Date Modified, each either way round. The rule is written into the folder’s index.md as an invisible comment, such as <code>&lt;!-- sort: modified, newest first --&gt;</code>, and the folder stays in that order as documents change. Drag an item and the rule becomes a list of links in the order shown (Sort Folder By ▸ Custom (Drag to Reorder)), with Undo in the bar if you didn’t mean it.</p>
-<p>The top level can have a rule too: right-click the contents list itself, away from any row, and choose Sort Top Level By. That rule is kept in project.md’s Order section.</p>
+<p><strong>By hand.</strong> Drag a document onto the top or bottom half of another document’s row and it moves there. Grasmere keeps the order in the folder’s <code>index.md</code>. The folder is listed in the order that file’s links reach its documents, and anything not linked comes after. A folder without an index.md gets one the first time you drag something into a new place, listing its items as they were. To open it, right-click the folder and choose Edit Order of … (index.md). To make one straight away, choose Order … with index.md.</p>
+<p>The <code>index.md</code> is an ordinary document, so you can write something about the folder in it too. This project’s <a href="index.html">Guides</a> are kept in reading order this way.</p>
+<p><strong>By a rule.</strong> Right-click a folder and choose Sort Folder By ▸ Name, Date Created or Date Modified, each either way round. The rule goes into the folder’s index.md as an invisible comment, such as <code>&lt;!-- sort: modified, newest first --&gt;</code>, and the folder stays in that order as documents change. If you then drag an item, the rule becomes a list of links in the order shown, and the menu says Sort Folder By ▸ Custom (Drag to Reorder). If you didn’t mean it, there’s Undo in the bar.</p>
+<p>The top level can have a rule too. Right-click the contents list itself, away from any row, and choose Sort Top Level By. That rule is kept in project.md’s Order section.</p>
 <h2 id="projectmd">project.md</h2>
-<p>Every project has a <code>project.md</code> at its top, made when the project is first opened. It’s an ordinary document with a few sections Grasmere reads:</p>
+<p>Every project has a <code>project.md</code> at its top, made the first time the project is opened. It’s an ordinary document, and Grasmere reads a few of its sections:</p>
 <p class="figure"><img src="../media/project-md.jpg" alt="project.md"></p>
 <ul>
-<li><strong>Summary:</strong> a short overview of the project, shown at the top of the contents. Write it yourself, or let Project ▸ Generate Summary write it (see <a href="ask-your-documents-and-ai.html">Ask Your Documents and AI</a>). It’s also the home page when you build a website.</li>
-<li><strong>Order:</strong> links to the top-level documents and folders, in the order the contents list them. Dragging at the top level rewrites it.</li>
-<li><strong>Writing:</strong> word targets and the words written each day. See <a href="writing-goals.html">Writing Goals</a>.</li>
+<li><strong>Summary</strong> is a short overview of the project, shown at the top of the contents. Write it yourself, or let Project ▸ Generate Summary write it (see <a href="ask-your-documents-and-ai.html">Ask Your Documents and AI</a>). It’s also the home page when you build a website.</li>
+<li><strong>Order</strong> links to the top-level documents and folders, in the order the contents list them. Dragging at the top level rewrites it.</li>
+<li><strong>Writing</strong> holds word targets and the words written each day. See <a href="writing-goals.html">Writing Goals</a>.</li>
 </ul>
 <p>Anything else you write in project.md is left as it is.</p>
 <h2 id="settings">Settings</h2>
@@ -84,8 +86,8 @@
 <ul>
 <li><strong>Name documents in the sidebar by</strong> Title (the first heading), File name, or File name with .md.</li>
 <li><strong>Show images in the contents</strong> lists pictures alongside documents. Click one to look at it, double-click to rename it (links follow), or drag it into a document to link it.</li>
-<li><strong>Show project.md in the contents</strong> and <strong>Show index.md in the contents</strong> list those files as documents. They’re hidden by default, and their order applies either way.</li>
-<li><strong>Show research.md in the contents and Manuscripts</strong> (<em>new in 1.3</em>) lists the research folder’s table of sources. It’s on by default; turned off, the table is still kept up to date.</li>
+<li><strong>Show project.md in the contents</strong> and <strong>Show index.md in the contents</strong> list those files as documents. They’re hidden by default, and the order they set applies either way.</li>
+<li><strong>Show research.md in the contents and Manuscripts</strong> (<em>new in 1.3</em>) lists the research folder’s table of sources. It’s on by default. Turn it off and the table is still kept up to date.</li>
 </ul>
 <h2 id="related">Related</h2>
 <ul>

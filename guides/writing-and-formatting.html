@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Writing and Formatting · Grasmere</title>
-<meta name="description" content="Grasmere writes plain Markdown. What you type is what’s saved: the page styles headings, emphasis, lists and links as you write, and leaves the markup…">
+<meta name="description" content="You write in plain Markdown, and what you type is what’s saved. As you write, the page styles headings, emphasis, lists and links. The markup stays visible…">
 <link rel="canonical" href="https://grasmere.app/guides/writing-and-formatting.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grasmere">
 <meta property="og:title" content="Writing and Formatting · Grasmere">
-<meta property="og:description" content="Grasmere writes plain Markdown. What you type is what’s saved: the page styles headings, emphasis, lists and links as you write, and leaves the markup…">
+<meta property="og:description" content="You write in plain Markdown, and what you type is what’s saved. As you write, the page styles headings, emphasis, lists and links. The markup stays visible…">
 <meta property="og:url" content="https://grasmere.app/guides/writing-and-formatting.html">
 <meta property="og:image" content="https://grasmere.app/assets/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,12 +31,12 @@
 <main>
 <article>
 <h1 id="writing-and-formatting">Writing and Formatting</h1>
-<p>Grasmere writes plain Markdown. What you type is what’s saved: the page styles headings, emphasis, lists and links as you write, and leaves the markup visible but faint, so you can always see and edit it.</p>
+<p>You write in plain Markdown, and what you type is what’s saved. As you write, the page styles headings, emphasis, lists and links. The markup stays visible but faint, so you can always see it and change it.</p>
 <h2 id="plain-files">Plain files</h2>
-<p>Every document is a <code>.md</code> file in the folder you opened. The first heading is the document’s title, and that’s what the contents list shows. There’s no database and no special syntax, so you can open the same files in any other editor, read them on GitHub, keep them in git, or hand them to an AI tool.</p>
+<p>Every document is a <code>.md</code> file in the folder you opened. Its first heading is its title, and that’s the name the contents show. There’s no database and no special syntax. You can open the same files in another editor, read them on GitHub, keep them in git or hand them to an AI tool.</p>
 <p class="figure"><img src="../media/front-matter.jpg" alt="Front matter, shown faintly at the top of a document"></p>
-<p>Front matter (a block between <code>---</code> lines at the very top of a document) is kept as it is and shown faintly. Its fields can be edited in the margin’s Front Matter section too: see <a href="the-margin.html">The Margin</a>.</p>
-<p>A code block (lines between <code>```</code> fences) is set in a monospaced type, with the fences faint. Name the language after the opening fence (<code>```swift</code>, <code>```python</code>, <code>```json</code>, <code>```sh</code>, and so on) and the block’s keywords, strings, comments, numbers and types take quiet colours from the theme, as they do in the PDFs and websites you make from it. The text stays exactly as you typed it; a block with no language is left in the code colour alone. <em>New in 1.3.</em></p>
+<p>Front matter is the block between <code>---</code> lines at the very top of a document. Grasmere keeps it as it is and shows it faintly. You can also edit its fields in the margin’s Front Matter section. See <a href="the-margin.html">The Margin</a>.</p>
+<p><em>New in 1.3.</em> A code block, the lines between <code>```</code> fences, is set in a monospaced type with the fences faint. Name the language after the opening fence, such as <code>```swift</code>, <code>```python</code>, <code>```json</code> or <code>```sh</code>, and the keywords, strings, comments, numbers and types take quiet colours from the theme. They’re coloured the same way in the PDFs and websites you make. The text stays exactly as you typed it. A block with no language is left in the plain code colour.</p>
 <p class="figure"><img src="../media/code-colours.jpg" alt="A Python code block on the page, its keywords, strings, comments and numbers in the theme’s colours"></p>
 <div class="keep">
 <h2 id="formatting">Formatting</h2>
@@ -55,36 +55,36 @@
 </table>
 </div>
 <p class="figure"><img src="../media/formatting.jpg" alt="Headings, emphasis, links and lists styled on the page"></p>
-<p>Brackets, quotes and backticks come in pairs as you type them.</p>
+<p>When you type a bracket, quote or backtick, its closing partner appears too.</p>
 <h2 id="lists">Lists</h2>
-<p>Lists carry on by themselves:</p>
+<p>Lists carry on by themselves.</p>
 <p class="figure"><img src="../media/numbered-list.jpg" alt="A numbered list"></p>
 <ul>
 <li>Return on a list line starts the next item.</li>
-<li>Tab nests an item; ⇧Tab brings it back out.</li>
+<li>Tab nests an item, and ⇧Tab brings it back out.</li>
 <li>Return on an empty item ends the list.</li>
 <li>Numbered lists renumber themselves as you add and remove items.</li>
 </ul>
 <p>A list item that starts with <code>[ ]</code> is a task. See <a href="tasks-and-due-dates.html">Tasks and Due Dates</a>.</p>
 <h2 id="folding-headings">Folding headings</h2>
-<p>Any heading can fold its section away, to give you a short outline of a long document. Point at a heading and click the chevron in the left margin, or use:</p>
+<p>In a long document, fold sections away under their headings to get a short outline. Point at a heading and click the chevron in the left margin, or use the menu:</p>
 <p class="figure"><img src="../media/folded-headings.jpg" alt="Folded sections"></p>
 <ul>
 <li>View ▸ Fold Section (⌥⌘[) and Unfold Section (⌥⌘])</li>
 <li>View ▸ Fold All (⇧⌥⌘[) and Unfold All (⇧⌥⌘])</li>
 </ul>
-<p>Folding only hides text on screen; the file never changes. Folds are remembered when you quit and reopen.</p>
+<p>Folding only hides text on screen. The file never changes. Grasmere remembers your folds when you quit and reopen.</p>
 <h2 id="dates">Dates</h2>
-<p>A date written as <code>2026-10-03</code> anywhere in your writing is shown as a quiet chip. Click it to choose another day from a calendar; only the date changes. Dates in code or in a link’s address are left alone.</p>
+<p>Write a date as <code>2026-10-03</code> anywhere and it shows as a quiet chip. Click it to pick another day from a calendar. Only the date changes. Dates in code or in a link’s address are left alone.</p>
 <p class="figure"><img src="../media/date-chips.jpg" alt="Dates shown as chips"></p>
 <h2 id="word-count">Word count</h2>
-<p>The bar beneath the page shows the document’s words, links and backlinks. Select some text and it shows how many of the words you’ve selected. View ▸ Show Word Count, or Settings ▸ Appearance ▸ Show word count beneath the page, turns the bar on or off.</p>
+<p>The bar beneath the page shows the document’s words, links and backlinks. Select some text and it counts the words you’ve selected. To turn the bar on or off, choose View ▸ Show Word Count, or use Settings ▸ Appearance ▸ Show word count beneath the page.</p>
 <p class="figure"><img src="../media/word-count.jpg" alt="The word count beneath the page"></p>
 <h2 id="spelling">Spelling</h2>
-<p>Settings ▸ General ▸ Check spelling while typing turns the underline on or off. With the language set to Automatic, Grasmere works out the language of each paragraph as you write. Link addresses, code and front matter are never checked.</p>
+<p>Settings ▸ General ▸ Check spelling while typing turns the underline on or off. With the language set to Automatic, Grasmere works out which language each paragraph is in as you write. Link addresses, code and front matter are never checked.</p>
 <p class="figure"><img src="../media/spelling.jpg" alt="Misspellings underlined"></p>
 <h2 id="undo">Undo</h2>
-<p>⌘Z undoes your typing, and the history survives saving. Things Grasmere does for you, such as rewriting links after a rename, can be undone too: see <a href="links-and-backlinks.html">Links and Backlinks</a>.</p>
+<p>⌘Z undoes your typing, and the history survives saving. You can also undo things Grasmere does for you, such as rewriting links after a rename. See <a href="links-and-backlinks.html">Links and Backlinks</a>.</p>
 <h2 id="related">Related</h2>
 <ul>
 <li><a href="pictures-and-tables.html">Pictures and Tables</a></li>

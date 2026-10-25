@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Links and Backlinks · Grasmere</title>
-<meta name="description" content="Documents in Grasmere link to each other with ordinary Markdown links, written relative to the document they’re in, the way GitHub and website builders read…">
+<meta name="description" content="When one document mentions another, link them. Grasmere uses ordinary Markdown links, written relative to the document they’re in, the way GitHub and website…">
 <link rel="canonical" href="https://grasmere.app/guides/links-and-backlinks.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grasmere">
 <meta property="og:title" content="Links and Backlinks · Grasmere">
-<meta property="og:description" content="Documents in Grasmere link to each other with ordinary Markdown links, written relative to the document they’re in, the way GitHub and website builders read…">
+<meta property="og:description" content="When one document mentions another, link them. Grasmere uses ordinary Markdown links, written relative to the document they’re in, the way GitHub and website…">
 <meta property="og:url" content="https://grasmere.app/guides/links-and-backlinks.html">
 <meta property="og:image" content="https://grasmere.app/assets/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,43 +31,44 @@
 <main>
 <article>
 <h1 id="links-and-backlinks">Links and Backlinks</h1>
-<p>Documents in Grasmere link to each other with ordinary Markdown links, written relative to the document they’re in, the way GitHub and website builders read them: <code>[Margaret](people/Margaret.md)</code>. Grasmere keeps every link correct as your documents move, and shows each document the documents that link to it.</p>
+<p>When one document mentions another, link them. Grasmere uses ordinary Markdown links, written relative to the document they’re in, the way GitHub and website builders read them: <code>[Margaret](people/Margaret.md)</code>. It keeps every link correct as your documents move, and shows each document which others link to it.</p>
 <p class="figure"><img src="../media/link-picker.jpg" alt="The link picker, with matching documents and a preview of the one highlighted"></p>
 <h2 id="making-a-link">Making a link</h2>
+<p>The quickest way is to type <code>[text](</code>. A picker opens at the cursor, with documents that match the text first and a preview of the highlighted one beside the list. Press Return to insert the link. If the document isn’t there yet, choose “New document” to make it.</p>
+<p>Other ways to make a link:</p>
 <ul>
-<li><strong>Type <code>[text](</code></strong> and a picker opens at the cursor. Documents that match the text come first, with a preview of the highlighted one beside the list. Press Return to insert the link. Choose “New document” to make a document that isn’t there yet.</li>
 <li><strong>Select some words and press ⌘K</strong> (Edit ▸ Insert Link), then choose a document.</li>
-<li><strong>Link to a heading:</strong> after a document’s name in the picker, type <code>#</code> and choose one of its headings. The link ends in the heading’s id, as in <code>The%20Allotment.md#the-shed</code>.</li>
-<li><strong>Link to a picture:</strong> the picker lists pictures in the project as well as documents.</li>
-<li><strong>Paste a web address</strong> and it becomes a link titled with the page’s name once the title has loaded. Undo (⌘Z) keeps the bare address.</li>
+<li><strong>Link to a heading.</strong> After a document’s name in the picker, type <code>#</code> and choose one of its headings. The link ends in the heading’s id, as in <code>The%20Allotment.md#the-shed</code>.</li>
+<li><strong>Link to a picture.</strong> The picker lists the project’s pictures as well as its documents.</li>
+<li><strong>Paste a web address.</strong> It becomes a link titled with the page’s name once the title has loaded. Undo (⌘Z) gives you back the bare address.</li>
 </ul>
-<p>Names with spaces are written with <code>%20</code>, as the web expects, so links work in other apps and on a website too.</p>
+<p>Names with spaces are written with <code>%20</code>, as the web expects, so the links work in other apps and on a website too.</p>
 <h2 id="links-to-passages">Links to passages</h2>
-<p>A link can point at a passage rather than a whole document, using the same text fragments that web browsers follow (<code>document.md#:~:text=…</code>). Select some text, choose Edit ▸ Copy Link to Selection (⌥⌘L), and paste the link into any document.</p>
+<p>Sometimes you want to point at a particular passage rather than a whole document. Select the text, choose Edit ▸ Copy Link to Selection (⌥⌘L), and paste the link into any document. It uses the same text fragments web browsers follow (<code>document.md#:~:text=…</code>).</p>
 <p class="figure"><img src="../media/passage-numbers.jpg" alt="Numbered passages quoted by other documents, in the margin"></p>
-<p>In the quoted document, a small number in the margin marks each passage another document links to. Point at the number to see the passage highlighted. If the passage is reworded a little, Grasmere repairs the link to match.</p>
+<p>In the document being quoted, a small number in the margin marks each passage another document links to. Point at the number to see the passage highlighted. If the passage is reworded a little, Grasmere repairs the link to match.</p>
 <h2 id="following-links">Following links</h2>
 <ul>
-<li><strong>Rest the pointer</strong> on a link for a moment to see a preview: a document’s opening, a heading’s section, a quoted passage, a web page’s title and description, or a picture. Move onto the preview and click it to open what it shows.</li>
+<li><strong>Rest the pointer</strong> on a link for a moment to see a preview. It shows a document’s opening, a heading’s section, a quoted passage, a picture, or a web page’s title and description. Move onto the preview and click it to open what it shows.</li>
 <li><strong>⌘-click</strong> a link to follow it straight away.</li>
 <li><strong>⌥-click</strong> a link to open it in a pane beside the page. See <a href="focus-mode-and-split-view.html">Focus Mode and Split View</a>.</li>
-<li>A link to a document that doesn’t exist yet <strong>makes the document</strong> when you follow it, titled from its name, in the folder the link points to (<em>new in 1.1</em>). So you can write links first and fill the documents in later.</li>
+<li>Following a link to a document that doesn’t exist yet <strong>makes the document</strong> (<em>new in 1.1</em>). It’s titled from the link’s name and goes in the folder the link points to. So you can write the links first and fill the documents in later.</li>
 <li>Go ▸ Back (⌘[) and Forward (⌘]) step through the documents you’ve opened. A mouse’s side buttons and a two-finger swipe do the same.</li>
 </ul>
 <h2 id="links-stay-correct">Links stay correct</h2>
-<p>Rename or move a document or a folder, in Grasmere, in Finder or in a terminal, and every link to it is rewritten in every document that links to it. Heading links and passage links are kept pointing at the right text too.</p>
+<p>Rename or move a document or a folder, whether in Grasmere, in Finder or in a terminal, and every link to it is rewritten in every document that has one. Heading links and passage links keep pointing at the right text too.</p>
 <ul>
 <li>A message beneath the page says how many documents were updated, with <strong>Undo</strong>.</li>
-<li>Edit ▸ Link Updates lists recent updates, each of which can be undone.</li>
-<li>A document you’re editing at that moment is never overwritten: its links are updated in the open document instead.</li>
-<li>Grasmere notices changes made in other apps by itself. Project ▸ Update Links Now looks straight away, if you’ve just moved things in Finder and don’t want to wait.</li>
+<li>Edit ▸ Link Updates lists recent updates, and you can undo any of them.</li>
+<li>A document you’re editing at that moment is never overwritten. Its links are updated in the open document instead.</li>
+<li>Grasmere notices changes made in other apps by itself. If you’ve just moved things in Finder and don’t want to wait, Project ▸ Update Links Now looks straight away.</li>
 </ul>
-<p>Settings ▸ Links ▸ Update links automatically when documents move is on by default. Turn it off and Grasmere asks before updating links. Ask first when more than 25 documents would change sets the size of change that always asks first.</p>
+<p>Settings ▸ Links ▸ Update links automatically when documents move is on by default. Turn it off and Grasmere asks before updating links. Ask first when more than 25 documents would change sets how big a change has to be before Grasmere always asks.</p>
 <h2 id="broken-links">Broken links</h2>
-<p>A link to a document that isn’t there is shown muted, over a dotted underline, and its preview says so. When a project has broken links, the contents list them in a section of their own; click one to go to it.</p>
+<p>A link to a document that isn’t there is shown muted, over a dotted underline, and its preview says so. When a project has broken links, the contents list them in a section of their own. Click one to go to it.</p>
 <p class="figure"><img src="../media/broken-links.jpg" alt="A broken link, listed under the contents"></p>
 <h2 id="backlinks">Backlinks</h2>
-<p>The margin on the right shows, for the open document, every document that links to it (Linked from), the documents it links to (Links to), and documents that name it without linking (Mentioned in). See <a href="the-margin.html">The Margin</a>.</p>
+<p>The margin on the right shows three lists for the open document. Linked from has every document that links to it, Links to has the documents it links to, and Mentioned in has documents that name it without linking. See <a href="the-margin.html">The Margin</a>.</p>
 <p class="figure"><img src="../media/linked-from.jpg" alt="The documents that link here, in the margin"></p>
 <h2 id="settings">Settings</h2>
 <p>In Settings ▸ Links:</p>
@@ -77,12 +78,13 @@
 <li><strong>Turn pasted web addresses into titled links</strong> can be turned off.</li>
 </ul>
 <h2 id="wiki-links">Wiki-links</h2>
-<p><em>New in 1.1.</em> Documents from Obsidian link with <code>[[wiki-links]]</code>, which Grasmere doesn’t follow. <strong>Project ▸ Convert Wiki-Links</strong> rewrites every one in the project as a Markdown link, keeping aliases, headings and embedded pictures, and lists any that name a document that isn’t there: link those to new documents, made when you follow them, or leave them as written. The whole conversion can be undone. See <a href="../support.html">Support</a> if you’re bringing documents from Obsidian.</p>
+<p><em>New in 1.1.</em> If your documents came from Obsidian, they probably link with <code>[[wiki-links]]</code>, which Grasmere doesn’t follow. <strong>Project ▸ Convert Wiki-Links</strong> rewrites every one in the project as a Markdown link, keeping aliases, headings and embedded pictures.</p>
+<p>It also lists any that name a document that isn’t there. You can link those to new documents, made when you follow them, or leave them as written. The whole conversion can be undone. See <a href="../support.html">Support</a> if you’re bringing documents over from Obsidian.</p>
 <p class="figure"><img src="../media/convert-wiki-links.jpg" alt="Convert Wiki-Links: how many links in how many documents will change, with examples"></p>
 <h2 id="tips">Tips</h2>
 <ul>
-<li>Grasmere doesn’t use <code>[[wiki-links]]</code>. Standard links are what make your documents work everywhere else; Convert Wiki-Links, above, turns them into standard links.</li>
-<li>A link to a folder’s <code>index.md</code> is a good way to point at a whole folder.</li>
+<li>Grasmere doesn’t use <code>[[wiki-links]]</code>. Standard links are what make your documents work everywhere else, and Convert Wiki-Links, above, turns wiki-links into standard ones.</li>
+<li>To point at a whole folder, link to its <code>index.md</code>.</li>
 </ul>
 
 </article>

@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Margin · Grasmere</title>
-<meta name="description" content="The margin on the right shows how the open document connects to the rest of your project. View ▸ Show Margin (⌃⌥⌘S), or the button at the right of the…">
+<meta name="description" content="The margin on the right shows how the document you’re on connects to the rest of your project. To show or hide it, choose View ▸ Show Margin (⌃⌥⌘S) or click…">
 <link rel="canonical" href="https://grasmere.app/guides/the-margin.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grasmere">
 <meta property="og:title" content="The Margin · Grasmere">
-<meta property="og:description" content="The margin on the right shows how the open document connects to the rest of your project. View ▸ Show Margin (⌃⌥⌘S), or the button at the right of the…">
+<meta property="og:description" content="The margin on the right shows how the document you’re on connects to the rest of your project. To show or hide it, choose View ▸ Show Margin (⌃⌥⌘S) or click…">
 <meta property="og:url" content="https://grasmere.app/guides/the-margin.html">
 <meta property="og:image" content="https://grasmere.app/assets/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,39 +31,53 @@
 <main>
 <article>
 <h1 id="the-margin">The Margin</h1>
-<p>The margin on the right shows how the open document connects to the rest of your project. View ▸ Show Margin (⌃⌥⌘S), or the button at the right of the running head, shows or hides it. Drag its edge to make it wider or narrower.</p>
+<p>The margin on the right shows how the document you’re on connects to the rest of your project. To show or hide it, choose View ▸ Show Margin (⌃⌥⌘S) or click the button at the right of the running head. Drag its edge to make it wider or narrower.</p>
 <p class="figure"><img src="../media/note-and-margin.jpg" alt="A document with the documents that link to it in the margin"></p>
-<p>The margin has three tabs: <strong>Page</strong> (the document you’re on), <strong>Tasks</strong> (⇧⌘T) and <strong>Ask</strong> (⇧⌘A). This guide is about the Page tab; see <a href="tasks-and-due-dates.html">Tasks and Due Dates</a> and <a href="ask-your-documents-and-ai.html">Ask Your Documents and AI</a> for the others.</p>
-<p>Click a section’s heading to close or open it; Grasmere remembers which you keep open. A section with nothing in it (Mentioned in, Front Matter, Git History or Problems) stays closed and says <em>None</em> (Problems says <em>No problems</em>); click it to look, and it opens by itself once there’s something to show.</p>
-<p><em>New in 1.3:</em> while a review is in hand, a <strong>Review</strong> section comes first, with the reviewers’ comments and changes (see <a href="review.html">Review</a>). A document in the research folder says at the top whether it’s a source, such as “A source · Book”, or a research note you can make into one (see <a href="citations.html">Citations</a>).</p>
+<p>It has three tabs, <strong>Page</strong>, <strong>Tasks</strong> (⇧⌘T) and <strong>Ask</strong> (⇧⌘A). This guide covers Page, the tab for the document you’re on. For the other two, see <a href="tasks-and-due-dates.html">Tasks and Due Dates</a> and <a href="ask-your-documents-and-ai.html">Ask Your Documents and AI</a>.</p>
+<p>Click a section’s heading to close or open it, and Grasmere remembers which ones you keep open. Mentioned in, Front Matter, Git History and Problems stay closed when they have nothing to show, and say <em>None</em>, or <em>No problems</em>. Click one to look. It opens by itself once there’s something in it.</p>
+<p><em>New in 1.3:</em> while a review is under way, a <strong>Review</strong> section comes first, with the reviewers’ comments and changes. See <a href="review.html">Review</a>. In the research folder, the top of the margin tells you whether a document is a source, such as “A source · Book”, or a research note you could make into one. See <a href="citations.html">Citations</a>.</p>
 <h2 id="linked-from">Linked from</h2>
-<p>Every document that links to the open document, each as a numbered sidenote with the line that does it. Click a sidenote to open that document at the link.</p>
+<p>Here you see every document that links to this one, each as a numbered sidenote showing the line with the link. Click a sidenote to open that document at the link.</p>
 <p class="figure"><img src="../media/linked-from.jpg" alt="Linked from, in the margin"></p>
-<p>If another document links to a passage in this one, a small number beside the passage matches its sidenote. Point at the number to see the passage highlighted; point at the sidenote to see which passage it quotes.</p>
+<p>When another document links to a particular passage, a small number beside the passage matches its sidenote. Point at the number and the passage is highlighted. Point at the sidenote to see which passage it quotes.</p>
 <h2 id="links-to">Links to</h2>
-<p>The documents the open document links to, with the folder each is in.</p>
+<p>The documents this one links to, with the folder each is in.</p>
 <p class="figure"><img src="../media/links-to.jpg" alt="Links to, in the margin"></p>
 <h2 id="mentioned-in">Mentioned in</h2>
-<p>Documents that name the open document, by its title, without linking to it. The words are highlighted. Click one to open the document at the mention, or click <strong>Link</strong> to turn the mention into an ordinary link, with Undo.</p>
+<p>These are documents that name this one by its title but don’t link to it, with the words highlighted. Click one to open it at the mention, or click <strong>Link</strong> to turn the mention into an ordinary link. You can undo it.</p>
 <p class="figure"><img src="../media/mentioned-in.jpg" alt="Mentioned in, with a mention ready to link"></p>
-<p>If a document goes by other names, list them in its front matter and those are found too:</p>
+<p>If a document goes by other names, list them in its front matter and Grasmere looks for those too.</p>
 <pre><code>---
 aliases: [Peggy, Mrs Hill]
 ---
 </code></pre>
-<p>Very short names, dates and mentions inside headings, code and existing links are left out.</p>
+<p>It leaves out very short names, dates, and mentions inside headings, code or existing links.</p>
 <h2 id="front-matter">Front Matter</h2>
-<p><em>New in 1.3.</em> The fields at the top of the document, between its <code>---</code> lines, as rows: the key, and its value in a field you can edit in place. Press Return, or click elsewhere, and the line in the document changes to match; Escape puts the old value back. The × that appears beside a row removes the field; <strong>Add a field</strong> at the bottom takes a key and a value and writes them as the last line of the block. A document with no front matter shows the section closed, saying <em>None</em>; open it, and the first field you add makes the <code>---</code> block at the top. Each change is one step in Undo (⌘Z), and typing in the block on the page updates the rows a moment later.</p>
+<p><em>New in 1.3.</em></p>
+<p>To change the fields at the top of a document, between its <code>---</code> lines, you can edit them here instead of on the page. Each field is a row, with its key and a value you can edit in place. Press Return or click elsewhere, and the line in the document changes to match. Escape puts the old value back.</p>
+<p>To remove a field, click the × that appears beside its row. To add one, use <strong>Add a field</strong> at the bottom. Give it a key and a value and it becomes the last line of the block. If the document has no front matter, the section is closed and says <em>None</em>. Open it and add a field, and Grasmere makes the <code>---</code> block at the top for you.</p>
+<p>Each change is one step in Undo (⌘Z). If you type in the block on the page instead, the rows catch up a moment later.</p>
 <p class="figure"><img src="../media/front-matter-section.jpg" alt="The Front Matter section in the margin, with four fields and Add a field"></p>
-<p>Values are shown as written: strings without their quotes, numbers, true/false and dates as they are. A list (<code>tags: [a, b]</code>, or <code>- item</code> lines under the key) is one row with its items separated by commas, and goes back in the form it had. A nested value (<code>author:</code> with <code>name:</code> and <code>role:</code> under it) is shown but edited in the text. A value is quoted only when YAML needs it: one with a colon, a leading <code>#</code> or <code>[</code>, or, for a field that holds words, one that would otherwise read as a number or a date. The other lines of the block are never touched. Front Matter is closed until you open it.</p>
+<p>A few things worth knowing:</p>
+<ul>
+<li>Values appear as written. Numbers, true and false, and dates are left as they are, and strings lose their quotes.</li>
+<li>A list, such as <code>tags: [a, b]</code> or <code>- item</code> lines under the key, is one row with commas between the items. When you edit it, it goes back in the form it had.</li>
+<li>A nested value, such as <code>author:</code> with <code>name:</code> and <code>role:</code> under it, is shown here but edited on the page.</li>
+<li>Grasmere adds quotes only when YAML needs them. That means a value with a colon, one starting with <code>#</code> or <code>[</code>, or, in a field that holds words, one that would otherwise read as a number or a date.</li>
+<li>The other lines of the block are never touched.</li>
+<li>Front Matter is closed until you open it.</li>
+</ul>
 <h2 id="git-history">Git History</h2>
-<p>If your project folder is a git repository, Git History lists the commits that changed the open document, following it through renames. Choose one to see that version and what has changed since, then <strong>Restore This Version</strong> to bring it back as a single step you can undo, or <strong>Copy</strong> it. Git History is closed until you open it.</p>
+<p>If your project folder is a git repository, Git History lists the commits that changed this document, following it through renames. Choose one to see that version and what’s changed since. <strong>Restore This Version</strong> brings it back as a single step you can undo, and <strong>Copy</strong> copies it. Git History is closed until you open it.</p>
 <p class="figure"><img src="../media/note-history.jpg" alt="A document’s history from git"></p>
 <p>See <a href="saving-and-safety.html">Saving, Safety and Git</a> for committing automatically.</p>
 <h2 id="problems">Problems</h2>
-<p><em>New in 1.3.</em> With <strong>Settings ▸ General ▸ Check the Markdown as you write</strong> on, the Page tab ends with a Problems section: what’s wrong with the open document’s Markdown, a line each, in plain words that say what to do. A red cross is an error (the Markdown won’t read as meant); an amber triangle is a warning (it reads, but not as well as it could). The header says how many there are, or <em>No problems</em>. Click a problem to put the cursor on its line. The document is checked about half a second after you stop typing, and nothing is ever changed for you.</p>
+<p><em>New in 1.3.</em></p>
+<p>If you’d like to catch Markdown mistakes as you go, turn on <strong>Settings ▸ General ▸ Check the Markdown as you write</strong>. The Page tab then ends with a Problems section, listing what’s wrong with this document a line at a time, in plain words that say what to do. Click a problem to put the cursor on its line.</p>
+<p>A red cross is an error, where the Markdown won’t read the way you meant. An amber triangle is a warning. It reads, but not as well as it could. The header says how many there are, or <em>No problems</em>. Grasmere checks about half a second after you stop typing, and never changes anything for you.</p>
 <p class="figure"><img src="../media/problems-section.jpg" alt="The Problems section in the margin, with five problems and the line each is on"></p>
-<p>The check is off until you turn it on, looks only at the open document, and never at anything inside a code block, front matter or an HTML comment. Broken links are judged the same way as the dotted underlines on the page and the sidebar’s Broken Links, so the three always agree. The rules:</p>
+<p>The check is off until you turn it on. It looks only at the open document, and skips anything inside a code block, front matter or an HTML comment. Broken links are judged the same way as the dotted underlines on the page and the sidebar’s Broken Links, so all three agree.</p>
+<p>These are the rules:</p>
 <table>
 <thead>
 <tr><th>Rule</th><th>Kind</th><th>What it catches</th></tr>
@@ -95,7 +109,7 @@ aliases: [Peggy, Mrs Hill]
 </tbody>
 </table>
 <h2 id="when-the-window-is-narrow">When the window is narrow</h2>
-<p>When there isn’t room for the contents, the page and the margin side by side, the margin hides first. Show it again and it floats over the page. Focus mode hides it too.</p>
+<p>When the window is too narrow for the contents, the page and the margin side by side, the margin is the first to go. Show it again and it floats over the page. Focus mode hides it too.</p>
 <p class="figure"><img src="../media/narrow-window.jpg" alt="A narrow window with the margin floating over the page"></p>
 
 </article>

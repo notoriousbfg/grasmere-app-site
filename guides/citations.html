@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Citations · Grasmere</title>
-<meta name="description" content="Cite the books, papers and web pages you’ve read, and Grasmere writes the citations and the reference list for you when you export, in APA, Harvard, Chicago…">
+<meta name="description" content="Cite the books, papers and web pages you’ve read, and when you export, Grasmere writes the citations and the reference list for you in APA, Harvard, Chicago…">
 <link rel="canonical" href="https://grasmere.app/guides/citations.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grasmere">
 <meta property="og:title" content="Citations · Grasmere">
-<meta property="og:description" content="Cite the books, papers and web pages you’ve read, and Grasmere writes the citations and the reference list for you when you export, in APA, Harvard, Chicago…">
+<meta property="og:description" content="Cite the books, papers and web pages you’ve read, and when you export, Grasmere writes the citations and the reference list for you in APA, Harvard, Chicago…">
 <meta property="og:url" content="https://grasmere.app/guides/citations.html">
 <meta property="og:image" content="https://grasmere.app/assets/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,10 +31,12 @@
 <main>
 <article>
 <h1 id="citations">Citations</h1>
-<p><em>New in 1.3.</em> Cite the books, papers and web pages you’ve read, and Grasmere writes the citations and the reference list for you when you export, in APA, Harvard, Chicago or MLA. There’s nothing to learn: a source is a document in your research folder, and a citation is an ordinary link to it.</p>
+<p><em>New in 1.3.</em></p>
+<p>Cite the books, papers and web pages you’ve read, and when you export, Grasmere writes the citations and the reference list for you in APA, Harvard, Chicago or MLA. There’s no reference manager to learn. A source is a document in your research folder, and a citation is an ordinary link to it.</p>
 <h2 id="sources">Sources</h2>
-<p>A source is any document in the research folder (<code>research</code>, unless you’ve named another in Settings ▸ General ▸ Research) whose front matter has a <code>type</code>: <code>webpage</code>, <code>book</code>, <code>article</code>, <code>chapter</code>, <code>report</code> or <code>other</code>. Every page you keep with File ▸ Save Web Page is one already.</p>
-<p>You can tell a source at a glance: in the contents it has an icon for what it is (a book, a globe for a web page, a page for an article), and at the top of the margin’s Page tab it says “A source · Book”. Any other document in the research folder says it’s a research note, with a Make It a Source menu that writes the <code>type</code> for you. Its fields are the ones a reference needs:</p>
+<p>Any page you’ve kept with File ▸ Save Web Page is a source already. So is any other document in the research folder whose front matter has a <code>type</code>, which can be <code>webpage</code>, <code>book</code>, <code>article</code>, <code>chapter</code>, <code>report</code> or <code>other</code>. The folder is called <code>research</code> unless you’ve named another in Settings ▸ General ▸ Research.</p>
+<p>You can tell a source at a glance. In the contents it has an icon for what it is, such as a book, a globe for a web page or a page for an article. At the top of the margin’s Page tab it says “A source · Book”. Any other document in the research folder says it’s a research note, and has a Make It a Source menu that writes the <code>type</code> for you.</p>
+<p>A source’s fields are the ones a reference needs:</p>
 <pre><code class="language-yaml">---
 <span class="k">title</span>: The Living Loaf
 <span class="k">author</span>:
@@ -54,25 +56,25 @@
 <li><strong>An article:</strong> <code>container</code> (the journal), <code>volume</code>, <code>issue</code>, <code>pages</code> and <code>doi</code>.</li>
 <li><strong>A chapter:</strong> <code>container</code> (the book), <code>pages</code>, <code>publisher</code> and <code>place</code>.</li>
 </ul>
-<p>Write names either way round, “Field, Rosa” or “Rosa Field”; several on one line work too (“Rosa Field and Tom Baker”). A source with no date is cited “n.d.”. Edit the fields in the margin’s Front Matter section, and write your own notes on the source below them: they’re yours, and never exported.</p>
+<p>Names can go either way round, “Field, Rosa” or “Rosa Field”, and several can share a line (“Rosa Field and Tom Baker”). A source with no date is cited “n.d.”. You can edit the fields in the margin, under Front Matter. Anything you write below them is your own notes on the source, and never exported.</p>
 <h2 id="new-source">New Source</h2>
-<p>File ▸ New Source makes a source for you:</p>
+<p>To add a book or paper you haven’t got as a web page, choose File ▸ New Source and give it one of these:</p>
 <ul>
-<li><strong>A DOI</strong> (<code>10.1038/nature12373</code>, or its doi.org address): a paper’s details are looked up at doi.org.</li>
-<li><strong>An ISBN:</strong> a book’s details are looked up at Open Library.</li>
-<li><strong>A web address:</strong> Save Web Page takes over and saves the page.</li>
-<li><strong>Blank Source:</strong> a book (or article, chapter, report, web page) with its fields empty, to fill in by hand.</li>
+<li><strong>A DOI</strong> (<code>10.1038/nature12373</code>, or its doi.org address). Grasmere looks up the paper at doi.org.</li>
+<li><strong>An ISBN.</strong> Grasmere looks up the book at Open Library.</li>
+<li><strong>A web address.</strong> Save Web Page takes over and saves the page.</li>
+<li><strong>Blank Source</strong> gives you a book, article, chapter, report or web page with its fields empty, to fill in by hand.</li>
 </ul>
-<p>The new document opens, named after its title. A DOI or ISBN you’ve saved before isn’t saved twice: Grasmere offers the document you already have. The lookups happen only when you ask, and send only the DOI or ISBN.</p>
+<p>The new document opens, named after its title. If you’ve saved that DOI or ISBN before, Grasmere offers the document you already have instead. Lookups happen only when you ask, and send nothing but the DOI or ISBN.</p>
 <h2 id="citing">Citing</h2>
-<p>Type <code>[@</code> where the citation goes, or choose Edit ▸ Cite Source (⌥⌘K). A list of your sources appears; type part of an author’s name, a word of the title or a year to narrow it, then press Return. Grasmere writes a link to the source:</p>
+<p>Type <code>[@</code> where the citation goes, or choose Edit ▸ Cite Source (⌥⌘K). A list of your sources appears. Type part of an author’s name, a word of the title or a year to narrow it, and press Return. Grasmere writes a link to the source:</p>
 <pre><code class="language-markdown">Starters are alive [Field 2019<span class="t">](../research/The%20Living%20Loaf.md)</span>.
 </code></pre>
-<p>To cite a page, add it after a comma inside the brackets: <code>[Field 2019, p. 12](…)</code>. Pages, ranges (<code>pp. 12–14</code>), chapters (<code>ch. 3</code>), paragraphs (<code>para. 4</code>) and sections are kept, in the style’s own form.</p>
-<p>Because a citation is a link, everything links do, citations do: they follow the source when it’s renamed or moved, show a preview on hover, and list the citing documents under Linked From in the source’s margin. In the editor it stays a link.</p>
-<p>Inside your own brackets, a citation leaves them be, so <code>(see [Field 2019](…), p. 4; [Abbott 2021](…))</code> becomes “(see Field, 2019, p. 4; Abbott, 2021)”.</p>
+<p>To cite a page, add it after a comma inside the brackets, as in <code>[Field 2019, p. 12](…)</code>. Pages, ranges (<code>pp. 12–14</code>), chapters (<code>ch. 3</code>), paragraphs (<code>para. 4</code>) and sections are all kept, and written the way the style wants.</p>
+<p>A citation is a link, so it does everything links do. It follows the source when it’s renamed or moved, shows a preview on hover, and puts the citing document under Linked From in the source’s margin. In the editor it stays a link.</p>
+<p>If you’ve put a citation inside brackets of your own, Grasmere leaves them alone. <code>(see [Field 2019](…), p. 4; [Abbott 2021](…))</code> becomes “(see Field, 2019, p. 4; Abbott, 2021)”.</p>
 <h2 id="styles">Styles</h2>
-<p>When you export (Export as PDF, Export as Word Document, Publish to PDF, the Manuscript view’s exports and Build Website), each citation is written in the project’s style and the sources you cited are listed at the end, in the style’s order:</p>
+<p>When you export, each citation is written in the project’s style and the sources you cited are listed at the end, in the order the style asks for. That covers Export as PDF, Export as Word Document, Publish to PDF, the Manuscript view’s exports and Build Website.</p>
 <table>
 <thead>
 <tr><th style="text-align: left">Style</th><th style="text-align: left">In the text</th><th style="text-align: left">The book in the list</th></tr>
@@ -84,22 +86,24 @@
 <tr><td style="text-align: left">MLA 9</td><td style="text-align: left">(Field 12)</td><td style="text-align: left">Field, Rosa. <em>The Living Loaf</em>. 2nd ed., Riverbank Press, 2019.</td></tr>
 </tbody>
 </table>
-<p>The list is headed References (Works Cited in MLA). Two works by the same authors in one year get letters (2019a, 2019b); in MLA, an author with two works cited has the title in the citation. On a website, each citation links to its entry. Choose None to keep citations as links.</p>
-<p>The style is chosen in the export’s save panel or sheet (APA unless you choose another) and kept in <code>project.md</code>, where you can change it by hand:</p>
+<p>The list is headed References, or Works Cited in MLA. Two works by the same authors in the same year get letters, 2019a and 2019b. In MLA, if you cite two works by one author, the title goes in the citation. On a website, each citation links to its entry in the list. Choose None to leave citations as links.</p>
+<p>You pick the style in the export’s save panel or sheet. It’s APA until you choose another, and Grasmere remembers it in <code>project.md</code>, where you can also change it by hand:</p>
 <pre><code class="language-markdown"><span class="k">## Citations</span>
 
 Style: Chicago
 </code></pre>
-<p>Titles are printed as you wrote them, so write them in the capitalisation your style asks for (APA wants only the first word and proper nouns capitalised in a book’s or article’s title).</p>
+<p>Titles are printed as you wrote them, so use the capitalisation your style asks for. APA, for example, capitalises only the first word and proper nouns in a book’s or article’s title.</p>
 <h2 id="researchmd">research.md</h2>
-<p>Grasmere keeps a table of your sources in the research folder, <code>research.md</code>: each source’s title (linking to it), author, year, type, site or publisher, the day you accessed it, and how many documents cite it. It’s brought up to date whenever a source or a citation changes. Write anything you like above or below the table; the table itself is Grasmere’s, and changes to it are replaced. If you’d rather not see it, turn off Settings ▸ Appearance ▸ Show research.md in the contents and Manuscripts: it’s still kept up to date, but it’s left out of the contents, out of a Manuscript of the research folder, and out of each source’s Linked from.</p>
+<p>Grasmere keeps a table of your sources in <code>research.md</code>, in the research folder. It lists each source’s title, linking to it, with the author, year, type, site or publisher, the day you accessed it, and how many documents cite it. The table is brought up to date whenever a source or a citation changes.</p>
+<p>Write anything you like above or below the table. The table itself is Grasmere’s, and any changes you make to it are replaced.</p>
+<p>If you’d rather not see it, turn off Settings ▸ Appearance ▸ Show research.md in the contents and Manuscripts. It’s still kept up to date, but it’s left out of the contents, out of a Manuscript of the research folder, and out of each source’s Linked from.</p>
 <h2 id="checking">Checking</h2>
-<p>With Settings ▸ General ▸ Check the Markdown as you write on, a link that reads like a citation (“Field 2019”) to a document that isn’t a source is pointed out in the margin’s Problems section, so you can give it a <code>type</code>.</p>
+<p>If you have Settings ▸ General ▸ Check the Markdown as you write turned on, Grasmere looks for links that read like a citation (“Field 2019”) but point at a document that isn’t a source. They show up in the margin’s Problems section, so you can give that document a <code>type</code>.</p>
 <h2 id="what-isnt-supported">What isn’t supported</h2>
 <ul>
 <li>Footnote styles (Chicago notes and bibliography, OSCOLA), numbered styles (Vancouver, IEEE) and journals’ house styles.</li>
-<li>Citing an editor rather than an author, translators, and narrative citations (“Field (2019) argues”): write the name in your sentence and cite the page.</li>
-<li>Zotero, BibTeX, CSL files and other reference managers: sources are documents in your project.</li>
+<li>Citing an editor rather than an author, translators, and narrative citations (“Field (2019) argues”). For those, write the name in your sentence and cite the page.</li>
+<li>Zotero, BibTeX, CSL files and other reference managers. Your sources are documents in your project.</li>
 </ul>
 <h2 id="related">Related</h2>
 <ul>

@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Saving, Safety and Git · Grasmere</title>
-<meta name="description" content="Your documents are your own files, so Grasmere is careful with them. It saves as you go, never overwrites a change made somewhere else without asking, and…">
+<meta name="description" content="Your documents are your own files, so Grasmere is careful with them. It saves as you go and never saves over a change made somewhere else without asking. If…">
 <link rel="canonical" href="https://grasmere.app/guides/saving-and-safety.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grasmere">
 <meta property="og:title" content="Saving, Safety and Git · Grasmere">
-<meta property="og:description" content="Your documents are your own files, so Grasmere is careful with them. It saves as you go, never overwrites a change made somewhere else without asking, and…">
+<meta property="og:description" content="Your documents are your own files, so Grasmere is careful with them. It saves as you go and never saves over a change made somewhere else without asking. If…">
 <meta property="og:url" content="https://grasmere.app/guides/saving-and-safety.html">
 <meta property="og:image" content="https://grasmere.app/assets/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -31,49 +31,51 @@
 <main>
 <article>
 <h1 id="saving-safety-and-git">Saving, Safety and Git</h1>
-<p>Your documents are your own files, so Grasmere is careful with them. It saves as you go, never overwrites a change made somewhere else without asking, and keeps a copy of unsaved work safe through a crash.</p>
+<p>Your documents are your own files, so Grasmere is careful with them. It saves as you go and never saves over a change made somewhere else without asking. If the app or your Mac crashes, your unsaved work is kept safe.</p>
 <h2 id="saving">Saving</h2>
-<p>With Settings ▸ General ▸ <strong>Save automatically</strong> on (the default), a document is saved a couple of seconds after you stop typing, and whenever you switch to another document or another app. “Saved” appears briefly in the bar beneath the page.</p>
+<p>Grasmere saves a document a couple of seconds after you stop typing, and whenever you switch to another document or another app. “Saved” shows briefly in the bar beneath the page. This is Settings ▸ General ▸ <strong>Save automatically</strong>, which is on to begin with.</p>
 <p class="figure"><img src="../media/edited-marker.jpg" alt="The running head marking a document edited"></p>
-<p>Turn it off and documents are saved when you switch documents, close the window or quit, and with File ▸ Save (⌘S). Until then, the running head marks the document <em>edited</em>.</p>
-<p>Undo history survives saving, so ⌘Z still works after a save.</p>
+<p>If you turn it off, documents are saved when you switch documents, close the window or quit, or when you choose File ▸ Save (⌘S). Until then, the running head marks the document <em>edited</em>.</p>
+<p>Saving doesn’t clear your undo history, so ⌘Z still works afterwards.</p>
 <h2 id="when-another-app-changes-a-document">When another app changes a document</h2>
-<p>If a document is changed by another app (a sync service, another editor, git) while you have unsaved changes to it, Grasmere doesn’t save over it. The bar says the document was changed by another app, with <strong>Review</strong>. You can then:</p>
+<p>Sometimes a document changes on disk while you’re still working on it, because of a sync service, another editor or git. If you have unsaved changes, Grasmere won’t save over the other version. The bar says the document was changed by another app, with a <strong>Review</strong> button, and you choose what to keep:</p>
 <ul>
 <li><strong>Keep Both:</strong> your version is saved beside the other as “Name (my version).md”.</li>
 <li><strong>Use the Other Version:</strong> your changes are set aside.</li>
 <li><strong>Keep Mine:</strong> your version replaces the other.</li>
 </ul>
-<p>If you have no unsaved changes, the document simply shows the new version.</p>
+<p>If you have no unsaved changes, the document shows the new version.</p>
 <h2 id="after-a-crash">After a crash</h2>
-<p>While you type, Grasmere keeps a copy of your unsaved changes on your Mac, separate from your documents. If the Mac or the app stops unexpectedly, open the document again and Grasmere offers to <strong>Restore</strong> your changes or <strong>Discard</strong> them. The copy is removed once the document is saved.</p>
+<p>As you type, Grasmere keeps a copy of your unsaved changes on your Mac, apart from your documents. If the app or the Mac stops unexpectedly, open the document again and Grasmere offers to <strong>Restore</strong> your changes or <strong>Discard</strong> them. Once the document is saved, the copy is removed.</p>
 <p class="figure"><img src="../media/recovery-offer.jpg" alt="Grasmere offering to restore unsaved changes"></p>
-<p>If something stops a document being saved when you quit, Grasmere asks before quitting, and your changes are kept for recovery either way.</p>
+<p>If a document can’t be saved when you quit, Grasmere asks before quitting. Either way, your changes are kept so you can recover them.</p>
 <h2 id="links-and-undo">Links and undo</h2>
-<p>When Grasmere rewrites links after a document is renamed or moved, a message says how many documents changed, with <strong>Undo</strong>. Edit ▸ Link Updates lists recent updates, and each can be undone. See <a href="links-and-backlinks.html">Links and Backlinks</a>.</p>
+<p>When you rename or move a document, Grasmere rewrites the links to it. A message says how many documents changed, with <strong>Undo</strong>. Edit ▸ Link Updates lists recent updates, and you can undo any of them. See <a href="links-and-backlinks.html">Links and Backlinks</a>.</p>
 <p>Documents you delete go to the Mac’s Trash.</p>
 <h2 id="git">Git</h2>
 <p>If your project folder is a git repository, Grasmere can work with it.</p>
 <p class="figure"><img src="../media/note-history.jpg" alt="A document’s history from git, in the margin"></p>
 <ul>
-<li><strong>Git History:</strong> the margin lists the commits that changed the open document, with <strong>Restore This Version</strong>. See <a href="the-margin.html">The Margin</a>.</li>
-<li><strong>Commit automatically:</strong> Settings ▸ Automation ▸ <strong>Commit changes after saving</strong> commits every change in the project together, two minutes after you stop saving, or when you close the window or quit. The message lists the documents that changed. Nothing is ever amended or force-pushed.</li>
+<li><strong>Git History:</strong> the margin lists the commits that changed the open document, each with <strong>Restore This Version</strong>. See <a href="the-margin.html">The Margin</a>.</li>
+<li><strong>Commit automatically:</strong> with Settings ▸ Automation ▸ <strong>Commit changes after saving</strong> on, Grasmere commits every change in the project together, two minutes after you stop saving, or when you close the window or quit. The message lists the documents that changed. Nothing is ever amended or force-pushed.</li>
 <li><strong>Push automatically:</strong> <strong>Push after committing</strong> pushes to your remote, using your own git setup and the SSH keys held by ssh-agent.</li>
 </ul>
-<p>A few things to know:</p>
+<p>A few things worth knowing:</p>
 <ul>
 <li>Committing needs git, which comes with Apple’s Command Line Tools. To install them, type <code>xcode-select --install</code> in Terminal.</li>
-<li>Grasmere can use git only when the project folder is the top folder of the repository.</li>
-<li>From inside the Mac App Store’s sandbox, Grasmere can’t read your <code>~/.gitconfig</code>, so give the name and email to commit with in Settings ▸ Automation ▸ Commits, unless the repository sets its own. Commits aren’t signed.</li>
-<li>If Grasmere can’t push, a Shortcut can (see below).</li>
-<li>Grasmere keeps a few lines in your project’s <code>.gitignore</code> (making one if there’s none), between two comments that say they’re Grasmere’s, so its working files stay out of your commits: the hidden <code>.review</code> folders, its temporary save files, and research.md while it’s hidden from the contents. Anything outside those lines is yours and is never touched. project.md and index.md are always committed: they hold the order of your folders, the summary and the citation style. A file already committed stays committed until you remove it from git yourself.</li>
+<li>Grasmere can only use git when the project folder is the top folder of the repository.</li>
+<li>The Mac App Store’s sandbox stops Grasmere reading your <code>~/.gitconfig</code>. Unless the repository sets its own name and email, give the ones to commit with in Settings ▸ Automation ▸ Commits. Commits aren’t signed.</li>
+<li>If Grasmere can’t push, a Shortcut can. See below.</li>
+<li>Grasmere keeps its working files out of your commits with a few lines in your project’s <code>.gitignore</code>, making the file if there isn’t one. The lines sit between two comments that mark them as Grasmere’s, and cover the hidden <code>.review</code> folders, its temporary save files, and research.md while it’s hidden from the contents. Anything outside those lines is yours and is never touched.</li>
+<li>project.md and index.md are always committed, because they hold the order of your folders, the summary and the citation style.</li>
+<li>A file that’s already committed stays committed until you remove it from git yourself.</li>
 </ul>
 <h2 id="shortcuts">Shortcuts</h2>
-<p>Settings ▸ Automation ▸ <strong>Run a shortcut when</strong> runs a Shortcut of your choosing when a document is saved, created, or renamed or moved, or when the project is opened. The document, or the project folder, is passed to the Shortcut as its input. Shortcuts run outside the sandbox, so a “Run Shell Script” action can do anything you can do in Terminal.</p>
+<p>You can have a Shortcut of your own run when a document is saved, created, or renamed or moved, or when the project is opened. Set it up in Settings ▸ Automation ▸ <strong>Run a shortcut when</strong>. The Shortcut gets the document, or the project folder, as its input. Shortcuts run outside the sandbox, so a “Run Shell Script” action can do anything you can do in Terminal.</p>
 <p class="figure"><img src="../media/automation-settings.jpg" alt="Settings ▸ Automation"></p>
-<p>The Shortcuts app also has Grasmere’s own actions, from opening and making documents to checking, exporting and publishing them, and each can be run from Terminal with <code>shortcuts run</code>: see <a href="shortcuts-and-the-command-line.html">Shortcuts and the Command Line</a>.</p>
+<p>The Shortcuts app also has Grasmere’s own actions, for things like opening and making documents or checking, exporting and publishing them. Each can be run from Terminal with <code>shortcuts run</code>. See <a href="shortcuts-and-the-command-line.html">Shortcuts and the Command Line</a>.</p>
 <h2 id="backing-up">Backing up</h2>
-<p>Everything that matters is in your project folder, as ordinary files. Time Machine, a sync service or git all back it up. See <a href="../support.html">Support</a>.</p>
+<p>Everything that matters is in your project folder, as ordinary files, so Time Machine, a sync service or git will all back it up. See <a href="../support.html">Support</a>.</p>
 
 </article>
 </main>
