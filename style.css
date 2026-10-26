@@ -65,6 +65,7 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:2p
 @media (max-width:900px){
   .doc{padding:20px 16px 0}
   .nav-links a:not(.btn-ghost){display:none}
-  .nav-links a.keep{display:inline}
+  .nav-links a.keep,.nav-links a.wide{display:inline}
 }
+@media (max-width:640px){.nav-links a.wide{display:none}}
 @media print{.nav,.foot,.backlinks{display:none}}
