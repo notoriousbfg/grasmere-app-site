@@ -43,6 +43,7 @@
 <li><strong>Link to a heading.</strong> After a document’s name in the picker, type <code>#</code> and choose one of its headings. The link ends in the heading’s id, as in <code>The%20Allotment.md#the-shed</code>.</li>
 <li><strong>Link to a picture.</strong> The picker lists the project’s pictures as well as its documents.</li>
 <li><strong>Paste a web address.</strong> It becomes a link titled with the page’s name once the title has loaded. Undo (⌘Z) gives you back the bare address.</li>
+<li><strong>Make Web Link</strong> (<em>new in 1.4</em>). A web address already in your text becomes a link too: right-click it and choose Make Web Link, or put the cursor in it (or select it) and press ⌘K, which makes a web link instead of opening the picker. It’s written as <code>[Page title](address)</code>, with the address itself as the text if the page can’t be reached. One ⌘Z gives you back the bare address.</li>
 </ul>
 <p>Names with spaces are written with <code>%20</code>, as the web expects, so the links work in other apps and on a website too.</p>
 <h2 id="links-to-passages">Links to passages</h2>
@@ -68,6 +69,7 @@
 <p>Settings ▸ Links ▸ Update links automatically when documents move is on by default. Turn it off and Grasmere asks before updating links. Ask first when more than 25 documents would change sets how big a change has to be before Grasmere always asks.</p>
 <h2 id="broken-links">Broken links</h2>
 <p>A link to a document that isn’t there is shown muted, over a dotted underline, and its preview says so. When a project has broken links, the contents list them in a section of their own. Click one to go to it.</p>
+<p><em>New in 1.4.</em> A link spelt with different capitals from the document’s name, <code>Research/Notes.md</code> for a folder called <code>research</code>, is found and works on your Mac, but the web and other disks tell capitals apart, so the contents list it as “spelt research, not Research” and the Markdown check offers Match the Name, which rewrites the address as the document is spelt.</p>
 <p class="figure"><img src="../media/broken-links.jpg" alt="A broken link, listed under the contents"></p>
 <h2 id="backlinks">Backlinks</h2>
 <p>The margin on the right shows three lists for the open document. Linked from has every document that links to it, Links to has the documents it links to, and Mentioned in has documents that name it without linking. See <a href="the-margin.html">The Margin</a>.</p>

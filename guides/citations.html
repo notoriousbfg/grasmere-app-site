@@ -68,15 +68,29 @@
 <li><strong>Blank Source</strong> gives you a book, article, chapter, report or web page with its fields empty, to fill in by hand.</li>
 </ul>
 <p>The new document opens, named after its title. If you’ve saved that DOI or ISBN before, Grasmere offers the document you already have instead. Lookups happen only when you ask, and send nothing but the DOI or ISBN.</p>
+<p>A paper’s PDF dropped into the research folder becomes a source by itself, looked up by the DOI or arXiv number in its first pages. See <a href="research.html">Research</a>.</p>
+<h2 id="import-sources">Import Sources</h2>
+<p><em>New in 1.4.</em> If your references live in Zotero or another reference manager, export them as BibTeX (<code>.bib</code>, Better BibTeX included) or CSL JSON (<code>.json</code>) and choose File ▸ Import Sources. A sheet says how many entries the file has and what will change. Press Import and each entry becomes a source document in the research folder, with its citation key in the front matter as <code>key:</code>, ready to cite.</p>
+<p>Import the same file again after you’ve added or corrected entries and the sources are brought up to date rather than doubled. Grasmere matches each entry to a source by its key, then its DOI, then its ISBN, and a source you wrote by hand is matched by its title, year and first author. An update rewrites only the front matter fields the file has; anything you’ve written below them is never changed. While you’re reading a document in the research folder, a line at the top of the margin says when the library file has changed since it was imported, with Update, which shows the same sheet.</p>
+<p>File ▸ Undo Last Import puts everything back as it was: the sources an import added are removed, and the ones it updated are restored. After that the item reads Redo Import.</p>
+<p>RIS and Zotero RDF aren’t read. Export as BibTeX or CSL JSON instead.</p>
+<h2 id="from-pandoc">From Pandoc</h2>
+<p><em>New in 1.4.</em> A draft written for Pandoc cites by key: <code>[@field2019, p. 12]</code>, <code>[see @field2019; @abbott2021]</code>, or <code>@field2019</code> in a sentence. Once the sources are in your project with their keys, Project ▸ Convert Pandoc Citations rewrites every one as a citation link. <code>[@field2019, p. 12]</code> becomes <code>[Field 2019, p. 12](…)</code>; several in one bracket become links inside brackets of your own, <code>(see [Field 2019](…); [Abbott 2021](…))</code>; and <code>@field2019 argues</code> becomes <code>[Field (2019)](…) argues</code>, a citation written into the sentence (see Citing, below). The sheet shows what will change and lists any keys that name no source; those citations are left as written. The whole conversion can be undone.</p>
 <h2 id="citing">Citing</h2>
 <p>Type <code>[@</code> where the citation goes, or choose Edit ▸ Cite Source (⌥⌘K). A list of your sources appears. Type part of an author’s name, a word of the title or a year to narrow it, and press Return. Grasmere writes a link to the source:</p>
 <pre><code class="language-markdown">Starters are alive [Field 2019<span class="t">](../research/The%20Living%20Loaf.md)</span>.
 </code></pre>
 <p>To cite a page, add it after a comma inside the brackets, as in <code>[Field 2019, p. 12](…)</code>. Pages, ranges (<code>pp. 12–14</code>), chapters (<code>ch. 3</code>), paragraphs (<code>para. 4</code>) and sections are all kept, and written the way the style wants.</p>
+<p><em>New in 1.4.</em> To put the author in your sentence, write the year in brackets inside the link: <code>[Field (2019)](…) argues</code> exports as “Field (2019) argues”, and <code>[Field (2019, p. 12)](…)</code> as “Field (2019, p. 12)”. In MLA the year goes and the page stays, “Field (12)”. Convert Pandoc Citations writes <code>@key</code> this way.</p>
 <p>A citation is a link, so it does everything links do. It follows the source when it’s renamed or moved, shows a preview on hover, and puts the citing document under Linked From in the source’s margin. In the editor it stays a link.</p>
 <p>If you’ve put a citation inside brackets of your own, Grasmere leaves them alone. <code>(see [Field 2019](…), p. 4; [Abbott 2021](…))</code> becomes “(see Field, 2019, p. 4; Abbott, 2021)”.</p>
+<h2 id="quoting-a-source">Quoting a source</h2>
+<p><em>New in 1.4.</em> In a source, select the passage and choose Edit ▸ Copy as Quotation, or right-click it. Paste it into your draft and it arrives as a block quote with its citation after the last words, the link written relative to the document you pasted into:</p>
+<pre><code class="language-markdown"><span class="c">&gt; Starters are alive, and they are hungry. [Field 2019](../research/The%20Living%20Loaf.md)</span>
+</code></pre>
+<p>The Research stage does the same without the clipboard: Quote on a highlight puts it into the document open on Draft as a block quote with its citation. See <a href="research.html">Research</a>.</p>
 <h2 id="styles">Styles</h2>
-<p>When you export, each citation is written in the project’s style and the sources you cited are listed at the end, in the order the style asks for. That covers Export as PDF, Export as Word Document, Publish to PDF, the Manuscript view’s exports and Build Website.</p>
+<p>When you export, each citation is written in the project’s style and the sources you cited are listed at the end, in the order the style asks for. That covers File ▸ Export ▸ PDF and Word Document, the Publish stage and Build Website.</p>
 <table>
 <thead>
 <tr><th style="text-align: left">Style</th><th style="text-align: left">In the text</th><th style="text-align: left">The book in the list</th></tr>
@@ -89,7 +103,7 @@
 </tbody>
 </table>
 <p>The list is headed References, or Works Cited in MLA. Two works by the same authors in the same year get letters, 2019a and 2019b. In MLA, if you cite two works by one author, the title goes in the citation. On a website, each citation links to its entry in the list. Choose None to leave citations as links.</p>
-<p>You pick the style in the export’s save panel or sheet. It’s APA until you choose another, and Grasmere remembers it in <code>project.md</code>, where you can also change it by hand:</p>
+<p>You pick the style in the export’s save panel, or under Citations on the Publish stage. It’s APA until you choose another, and Grasmere remembers it in <code>project.md</code>, where you can also change it by hand:</p>
 <pre><code class="language-markdown"><span class="k">## Citations</span>
 
 Style: Chicago
@@ -98,14 +112,14 @@ Style: Chicago
 <h2 id="researchmd">research.md</h2>
 <p>Grasmere keeps a table of your sources in <code>research.md</code>, in the research folder. It lists each source’s title, linking to it, with the author, year, type, site or publisher, the day you accessed it, and how many documents cite it. The table is brought up to date whenever a source or a citation changes.</p>
 <p>Write anything you like above or below the table. The table itself is Grasmere’s, and any changes you make to it are replaced.</p>
-<p>If you’d rather not see it, turn off Settings ▸ Appearance ▸ Show research.md in the contents and Manuscripts. It’s still kept up to date, but it’s left out of the contents, out of a Manuscript of the research folder, and out of each source’s Linked from.</p>
+<p>If you’d rather not see it, turn off Settings ▸ Appearance ▸ Show research.md in the contents and Manuscripts. It’s still kept up to date, but it’s left out of the contents, out of a Manuscript of the research folder, and out of each source’s Linked from. <em>New in 1.4:</em> its neighbour <code>highlights.md</code>, the book of passages you’ve highlighted, is hidden the same way unless Show highlights.md is on. See <a href="research.html">Research</a>.</p>
 <h2 id="checking">Checking</h2>
 <p>If you have Settings ▸ General ▸ Check the Markdown as you write turned on, Grasmere looks for links that read like a citation (“Field 2019”) but point at a document that isn’t a source. They show up in the margin’s Problems section, so you can give that document a <code>type</code>.</p>
 <h2 id="what-isnt-supported">What isn’t supported</h2>
 <ul>
 <li>Footnote styles (Chicago notes and bibliography, OSCOLA), numbered styles (Vancouver, IEEE) and journals’ house styles.</li>
-<li>Citing an editor rather than an author, translators, and narrative citations (“Field (2019) argues”). For those, write the name in your sentence and cite the page.</li>
-<li>Zotero, BibTeX, CSL files and other reference managers. Your sources are documents in your project.</li>
+<li>Citing an editor rather than an author, and translators. Write the name in your sentence and cite the page.</li>
+<li>RIS and Zotero RDF. Import Sources reads BibTeX and CSL JSON.</li>
 </ul>
 <h2 id="related">Related</h2>
 <ul>

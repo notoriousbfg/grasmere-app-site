@@ -37,7 +37,7 @@
 <h2 id="plain-files">Plain files</h2>
 <p>Every document is a <code>.md</code> file in the folder you opened. Its first heading is its title, and that’s the name the contents show. There’s no database and no special syntax. You can open the same files in another editor, read them on GitHub, keep them in git or hand them to an AI tool.</p>
 <p class="figure"><img src="../media/front-matter.jpg" alt="Front matter, shown faintly at the top of a document"></p>
-<p>Front matter is the block between <code>---</code> lines at the very top of a document. Grasmere keeps it as it is and shows it faintly. You can also edit its fields in the margin’s Front Matter section. See <a href="the-margin.html">The Margin</a>.</p>
+<p>Front matter is the block between <code>---</code> lines at the very top of a document. Grasmere keeps it as it is and shows it faintly. You can also edit its fields in the margin’s Front Matter section. See <a href="the-margin.html">The Margin</a>. A few fields mean something to Grasmere: <code>synopsis</code>, a line about a chapter, and <code>status</code> (<em>new in 1.4</em>), one of Unwritten, Draft, Revised or Final, which the Review stage’s cards set for you. See <a href="the-manuscript-view.html">The Manuscript View</a>. <code>draft: true</code> or <code>publish: false</code> keeps a document out of the website. See <a href="publishing.html">Publishing</a>.</p>
 <p><em>New in 1.3.</em> A code block, the lines between <code>```</code> fences, is set in a monospaced type with the fences faint. Name the language after the opening fence, such as <code>```swift</code>, <code>```python</code>, <code>```json</code> or <code>```sh</code>, and the keywords, strings, comments, numbers and types take quiet colours from the theme. They’re coloured the same way in the PDFs and websites you make. The text stays exactly as you typed it. A block with no language is left in the plain code colour.</p>
 <p class="figure"><img src="../media/code-colours.jpg" alt="A Python code block on the page, its keywords, strings, comments and numbers in the theme’s colours"></p>
 <div class="keep">
@@ -68,6 +68,22 @@
 <li>Numbered lists renumber themselves as you add and remove items.</li>
 </ul>
 <p>A list item that starts with <code>[ ]</code> is a task. See <a href="tasks-and-due-dates.html">Tasks and Due Dates</a>.</p>
+<h2 id="footnotes">Footnotes</h2>
+<p><em>New in 1.4.</em></p>
+<p>Put a mark in the text, <code>[^1]</code>, and the note itself on a line of its own, usually at the end of the document:</p>
+<pre><code class="language-markdown">The ferry ran twice a day until 1954.[^1]
+
+[^1]: Lakeland Ferries, *Timetables 1920–1960*, p. 14.
+</code></pre>
+<p>The label can be anything, <code>[^ferry]</code> as well as <code>[^1]</code>; the notes are numbered in the order they’re first mentioned, and a note referred to twice keeps one number. A note can run on: lines straight after it carry on, and a paragraph indented after a blank line belongs to it too. A citation inside a note is written in the project’s style like any other.</p>
+<p>On the page, the mark is small and raised, as it will be printed, with its label in the link colour. The note’s text stays faint until the cursor is in it, so the notes sit back from the writing. Labels aren’t spell-checked.</p>
+<p>Where the notes go depends on what you make:</p>
+<ul>
+<li>In a PDF, at the foot of the page the mark is on, under a short rule, numbered from 1 in each chapter of a book.</li>
+<li>In a Word document, real Word footnotes, which start again at 1 in each chapter of a book.</li>
+<li>On a website, in Quick Look and in the Manuscript (the Publish stage’s page), as numbered notes under the page or chapter, each number linking down to its note and the note linking back up.</li>
+</ul>
+<p>See <a href="publishing.html">Publishing</a>.</p>
 <h2 id="folding-headings">Folding headings</h2>
 <p>In a long document, fold sections away under their headings to get a short outline. Point at a heading and click the chevron in the left margin, or use the menu:</p>
 <p class="figure"><img src="../media/folded-headings.jpg" alt="Folded sections"></p>

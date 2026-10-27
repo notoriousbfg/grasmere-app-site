@@ -34,7 +34,7 @@
 <article>
 <h1 id="research">Research</h1>
 <p><em>New in 1.3.</em></p>
-<p>When you find a web page worth keeping, save it into your project. Grasmere keeps the article, turns it into Markdown and files it in your research folder, where you can read it, write notes under it and link to it like anything else you’ve written.</p>
+<p>When you find a web page worth keeping, save it into your project. Grasmere keeps the article, turns it into Markdown and files it in your research folder, where you can read it, write notes under it and link to it like anything else you’ve written. <em>New in 1.4:</em> the Research stage gathers your sources, highlights, tasks and loose ends on one screen, and you can read a source there, highlight it and annotate it. Both are described further down.</p>
 <h2 id="save-web-page">Save Web Page</h2>
 <p>Choose File ▸ Save Web Page, paste the address and press Save. If you’ve just copied an address, it’s already filled in. The article opens as a new document, named after the page.</p>
 <p>Grasmere keeps the writing and drops what’s around it, like menus, adverts and cookie banners. Headings, lists, quotes and tables come across as Markdown. Pictures stay on the web, linked rather than downloaded.</p>
@@ -48,6 +48,9 @@
 <p>Grasmere fetches the page the way a private browser window would, with no cookies and nobody signed in. A page behind a paywall saves only as much as it shows to anyone.</p>
 <h2 id="the-research-folder">The research folder</h2>
 <p>Saved pages go in a folder called <code>research</code>, which Grasmere makes the first time you save something. PDFs and pictures you save from the web go there too. If your project already has a <code>Research</code> folder, Grasmere uses that.</p>
+<p><em>New in 1.4.</em> The folder is yours to rename. Rename or move it in the contents and it stays your research folder: a notice beneath the page says so, with Undo, and the project remembers the name you gave it. With that project open, Settings ▸ General ▸ Research shows the new name, and typing another there renames the folder on disk the same way, links following. A research folder renamed outside Grasmere is still found, by its <code>research.md</code>, as long as there’s only one.</p>
+<h2 id="pdf-papers">PDF papers</h2>
+<p><em>New in 1.4.</em> Drop a paper’s PDF into the research folder from the Finder, or save one there from the web, and Grasmere reads its first pages for a DOI or an arXiv number, looks the paper up as New Source does, and writes a source document beside the PDF, linking to it. When no number is found, or the lookup fails, it offers a blank source titled from the PDF for you to fill in. A PDF that already has its document, one linking to it or a source with its DOI, is left alone. For a PDF that’s been in the folder a while, right-click it in the contents and choose Make a Source from This PDF.</p>
 <h2 id="whats-at-the-top">What’s at the top</h2>
 <p>Each saved page starts with a few lines of front matter between <code>---</code> markers. You can see and edit them in the margin, under Front Matter.</p>
 <pre><code class="language-yaml">---
@@ -72,12 +75,50 @@
 <h2 id="from-other-apps">From other apps</h2>
 <p>In Safari, choose Share ▸ Grasmere and pick a project. The page is saved the same way, with anything you type in the share sheet added under its title. See <a href="quick-capture-and-sharing.html">Quick Capture and Sharing</a>.</p>
 <p>In Shortcuts, the Save Web Page action takes an address, and a project if you like, and gives you back the new document. If you’ve saved that page before, you get the existing one. See <a href="shortcuts-and-the-command-line.html">Shortcuts and the Command Line</a>.</p>
+<h2 id="the-research-stage">The Research stage</h2>
+<p><em>New in 1.4.</em> Research is the first of the four stages in the strip at the top of the window. Press ⌃1, or choose Go ▸ Research, and the editor gives way to one screen for the work around the writing:</p>
+<ul>
+<li><strong>Ask</strong>, across the top. Type a question and the answer, written from your documents with citations, appears in a card beneath the field. See <a href="ask-your-documents-and-ai.html">Ask Your Documents and AI</a>.</li>
+<li><strong>Brainstorm a document</strong>, beside it, which starts a document from questions.</li>
+<li><strong>Sources</strong>: a card for each source in the research folder, saying how many documents cite it, with + New Source and Save Web Page above them.</li>
+<li><strong>Highlights</strong>: every passage you’ve highlighted, by document. See below.</li>
+<li><strong>Tasks</strong>: every task in the project, by document, with All, Done and By date. Tick one here and it’s ticked in its document. See <a href="tasks-and-due-dates.html">Tasks and Due Dates</a>.</li>
+<li><strong>Loose Ends</strong>: links that lead nowhere, each with Create Document, which makes the document where the link points; documents that link to nothing; and sources never cited. Click a name to open it.</li>
+<li><strong>Open the Index</strong>, which shows the Index in place of the screen. See <a href="the-index.html">The Index</a>.</li>
+</ul>
+<p>The title bar says how many documents, sources and tasks the project has. There’s no contents or margin on Research. View ▸ Show Contents (⌃⌘S), or the glyph in the title bar, puts the contents beside the screen, and they stay as you set them when you come back. ⌃2, or Draft in the strip, takes you back to the editor, and Go ▸ Back (⌘[) steps back through the stages as it does through documents.</p>
+<h2 id="reading-highlights-and-annotations">Reading, highlights and annotations</h2>
+<p><em>New in 1.4.</em></p>
+<h3 id="reading-in-a-pane">Reading in a pane</h3>
+<p>Click a source’s card, a loose end’s name or a citation in an answer, and the document opens read-only in a pane on the right of the Research screen, with its title, Open in Draft and × in its header. Drag the hairline between the screen and the pane to make it wider or narrower. Links you follow in the pane open there too, and esc or × closes it. ⌥-click a card to open the document on Draft beside the page instead. Tasks are different: click a task and its document opens on Draft, where it’s written.</p>
+<h3 id="highlights">Highlights</h3>
+<p>Select words in the pane and a bar appears over the top with Highlight, Annotate and Quote. Highlight copies the words into <code>highlights.md</code> in your research folder, your commonplace book: a heading for each document, linking to it, and a block quote for each passage. The document itself isn’t touched. In the pane the words are washed, with a number in the margin, and the header counts them.</p>
+<p>The book is ordinary Markdown, in the order of each document, and you can edit it by hand:</p>
+<pre><code class="language-markdown"><span class="k"># Highlights</span>
+
+<span class="k">## [Parish Records of Kelder, 1890–1940](Parish%20Records.md)</span>
+
+<span class="c">&gt; The ferry ran until the ice came, and then the parish paid a boy to walk the shore.</span>
+</code></pre>
+<p>On Draft, select words in any document and choose Format ▸ Highlight (⇧⌘H). It works in the side pane too.</p>
+<p>The HIGHLIGHTS section of the Research screen lists every highlight by document, with Open highlights.md at the right. Click a passage to read it in its document, or rest the pointer on it for Quote and Annotate. In the pane, right-click a highlight for Annotate, Quote and Remove Highlight. Each change to the book has Undo in the notice beneath the page.</p>
+<p>When you ask a question, Ask reads a document’s highlights before the rest of it, so what you marked is what it quotes first.</p>
+<p>The book is hidden from the contents and from Manuscripts unless you turn on Settings ▸ Appearance ▸ Show highlights.md in the contents and Manuscripts. The Research screen lists its highlights and opens it either way. While it’s hidden it isn’t counted as linking to the documents it quotes, and the Research stage’s count of documents leaves it out either way.</p>
+<h3 id="annotations">Annotations</h3>
+<p>Annotate opens a small field beside the words. Write your note and press Return. The note becomes a document in <code>research/annotations</code>, titled from your first words, with the passage as a block quote, a link back to the document it came from, and your note beneath. In the book, the note is linked under its quote. And in the document, the highlighted words themselves become a link to the note, so an annotation is a link like any other: rest the pointer on it for a preview, or ⌘-click to read the note. One Undo on the notice puts the book and the document back; the note stays. You stay on Research throughout.</p>
+<p>In the HIGHLIGHTS section an annotated passage shows the note’s first line beneath it, and Open the note opens it on Draft. In the pane, click its number in the margin.</p>
+<h3 id="quote">Quote</h3>
+<p>With a document open on Draft, Quote, on the bar, the right-click or a highlight in the HIGHLIGHTS section, puts the passage into that document at the cursor as a block quote with its citation, a paragraph of its own, and switches to Draft to show it. For a source the citation is the short one, <code>[Field 2019](…)</code>, as Cite Source writes it; for any other document it’s the title, linking to it. See <a href="citations.html">Citations</a>.</p>
 <h2 id="settings">Settings</h2>
-<p>To give the research folder another name, go to Settings ▸ General ▸ Research ▸ Folder.</p>
+<p>To give the research folder another name, go to Settings ▸ General ▸ Research ▸ Folder. <em>New in 1.4:</em> with no project open, that’s the name new projects start with; with a project open, the field shows that project’s folder and renames it.</p>
+<p>The insights folder, where Save as Insight files an answer, is called <code>insights</code> from 1.4, lower case like research, journal and media. A project with an <code>Insights</code> folder from before keeps using it.</p>
 <p>Saved pages are usually other people’s writing, so they’re left out when you publish your project as a website. To include them, turn on Publish the research folder in Settings ▸ Automation. See <a href="publishing.html">Publishing</a>.</p>
 <h2 id="related">Related</h2>
 <ul>
 <li><a href="citations.html">Citations</a></li>
+<li><a href="ask-your-documents-and-ai.html">Ask Your Documents and AI</a></li>
+<li><a href="tasks-and-due-dates.html">Tasks and Due Dates</a></li>
+<li><a href="the-index.html">The Index</a></li>
 <li><a href="journal.html">Journal</a></li>
 <li><a href="quick-capture-and-sharing.html">Quick Capture and Sharing</a></li>
 <li><a href="../privacy.html">Privacy</a>, for what Grasmere fetches from the web</li>

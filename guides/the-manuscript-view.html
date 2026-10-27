@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Manuscript View · Grasmere</title>
-<meta name="description" content="A novel, a thesis or a long report is easier to write as many documents, a chapter each, in folders for the parts. The Manuscript view puts them back…">
+<meta name="description" content="A novel, a thesis or a long report is easier to write as many documents, a chapter each, in folders for the parts. Opening a folder as a manuscript puts them…">
 <link rel="canonical" href="https://grasmere.app/guides/the-manuscript-view.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Grasmere">
 <meta property="og:title" content="The Manuscript View · Grasmere">
-<meta property="og:description" content="A novel, a thesis or a long report is easier to write as many documents, a chapter each, in folders for the parts. The Manuscript view puts them back…">
+<meta property="og:description" content="A novel, a thesis or a long report is easier to write as many documents, a chapter each, in folders for the parts. Opening a folder as a manuscript puts them…">
 <meta property="og:url" content="https://grasmere.app/guides/the-manuscript-view.html">
 <meta property="og:image" content="https://grasmere.app/assets/share.jpg">
 <meta property="og:image:width" content="1200">
@@ -34,47 +34,55 @@
 <article>
 <h1 id="the-manuscript-view">The Manuscript View</h1>
 <p><em>New in 1.3.</em></p>
-<p>A novel, a thesis or a long report is easier to write as many documents, a chapter each, in folders for the parts. The Manuscript view puts them back together so you can see the whole book. The running order is on the left, with each chapter’s length and what happens in it. The book itself is on the right, to read straight through. The contents and the margin step aside until you close it.</p>
+<p>A novel, a thesis or a long report is easier to write as many documents, a chapter each, in folders for the parts. Opening a folder as a manuscript puts them back together so you can see the whole book: the running order on the left, with each chapter’s length and what happens in it, and the book itself beside it, to read straight through.</p>
+<p><em>New in 1.4.</em> The manuscript is now the Publish stage. Open as Manuscript puts the folder’s documents in hand and takes you there, where the running order, the read-through and how the book will be published sit side by side. The cards, the chapters as index cards with their statuses, are on the Review stage. This guide says where each part of the view is now.</p>
 <h2 id="opening-it">Opening it</h2>
 <ul>
 <li>Right-click a folder in the contents and choose <strong>Open as Manuscript</strong>. To open the whole project, right-click below the contents and choose <strong>Open Project as Manuscript</strong>.</li>
 <li>Or use the <strong>View</strong> menu. It has <strong>Open Project as Manuscript</strong>, and <strong>Open “chapters” as Manuscript</strong> when you’ve highlighted a folder in the contents with the arrow keys.</li>
+<li><strong>Publish to PDF</strong>, in the same places, does the same. See <a href="publishing.html">Publishing</a>.</li>
 </ul>
-<p>To close it, press Escape or ⌘W, or click the × at the top right or the window’s own close button. The window comes back exactly as it was. Close it again to close the window.</p>
+<p>The folder’s documents go in hand, in the folder’s order, and the window goes to the Publish stage. Anything already in hand stays there. You can also go to the stage any time with ⌃4, Go ▸ Publish, or PUBLISH in the strip at the top of the window. To get back to the editor, click DRAFT in the strip or press ⌃2; ⌘[ goes back the way you came.</p>
 <p>To try it out, open the Feature Tour’s <code>chapters</code> folder. It’s a short novella, <em>The Winter Ferry</em>.</p>
 <h2 id="the-running-order">The running order</h2>
-<p>The left side lists the folder’s documents and folders in the same order as the contents. A folder inside is a part. Click its arrow to show or hide its chapters, and Grasmere remembers which parts are open until you quit.</p>
-<p>Each row shows the chapter’s title, taken from its first heading, with its word count and its synopsis if it has one. The top of the window gives the word and chapter count for the whole manuscript.</p>
+<p>The left side lists the documents in hand in the order they’ll be read and published. Each row shows the chapter’s title, taken from its first heading, with its word count and its synopsis if it has one, and a dot for its status, hollow until it has one. A chapter with review comments or changes still open says “3 open”; click that to deal with them. The title bar gives the words and the number of chapters for the whole manuscript, with a guess at the pages: “4 in hand · 1,341 words · about 6 pages”.</p>
 <p>A synopsis is a line of front matter at the top of the document:</p>
 <pre><code class="language-yaml">---
 <span class="k">synopsis</span>: Ellen takes the ferry out alone in the mist, steering by her father<span class="s">'s rules.</span>
 ---
 </code></pre>
-<p>Type it there, or add a <code>synopsis</code> field in the margin, under Front Matter. Other editors and GitHub ignore it, so it does no harm anywhere else.</p>
+<p>Type it there, or add a <code>synopsis</code> field in the margin, under Front Matter. Other editors and GitHub ignore it, so it does no harm anywhere else. A status is a line of front matter too, <code>status: Draft</code>; the cards set it for you, below.</p>
 <h2 id="changing-the-order">Changing the order</h2>
-<p>Drag a chapter up or down, or select it and press ⌥⌘↑ or ⌥⌘↓. Right-clicking a row offers Move Up and Move Down too, and VoiceOver has them as actions.</p>
-<p>A chapter only moves within its own folder. To move one into another part, drag it in the contents.</p>
-<p>The Manuscript view and the contents share one order, so they always agree. It’s kept as a list of links in the folder’s <code>index.md</code>, or in <code>project.md</code> for the top level of the project, which means the order goes with your files to any other editor. If a folder has no <code>index.md</code>, Grasmere makes one the first time you move something in it. See <a href="the-contents.html">The Contents</a>.</p>
+<p>Drag a row up or down. Right-clicking a row offers Move Up and Move Down too, and VoiceOver has them as actions. The page follows at once, and Undo is in the notice.</p>
+<p>This is the order of what’s in hand, kept in project.md’s In Hand section, so it goes with your files. The folder’s own order, the one the contents show, is set in the contents, where dragging a document into another folder moves the file and keeps its links right. See <a href="the-contents.html">The Contents</a>.</p>
 <h2 id="reading-it-through">Reading it through</h2>
-<p>The right side is the whole manuscript as one long page, in your theme’s type and colours. Markdown is shown as it reads, not as it’s written. Each part has its title and each chapter starts under its own heading.</p>
-<p>Select a row and the page goes to that chapter. As you scroll, the chapter you’re reading is marked in the list.</p>
-<p>When you spot something to change, double-click the passage. The view closes and the document opens in the editor at that paragraph. A single click leaves you reading, so you can select and copy. To open a chapter at its start, double-click its row or press Return.</p>
+<p>The middle of the window is the whole manuscript as one long page, in your theme’s type and colours, under a title page that follows the options on the right. Markdown is shown as it reads, not as it’s written. When the documents in hand come from more than one folder, each part has its title, and each chapter starts under its own heading. Citations are written in the project’s style and link to the bibliography after the last chapter, and footnotes become numbered notes under their chapter, each linking back.</p>
+<p>Click a row and the page goes to that chapter. As you scroll, the chapter you’re reading is marked in the list.</p>
+<p>When you spot something to change, double-click the passage. The document opens in the editor at that paragraph. A single click leaves you reading, so you can select and copy. To open a chapter at its start, double-click its row or press Return.</p>
 <p>Even a long book opens in a second or so and stays quick to scroll and reorder, because chapters are drawn as you reach them.</p>
-<h2 id="exporting">Exporting</h2>
-<p>Click <strong>Export</strong> at the top right.</p>
+<h2 id="cards">Cards</h2>
+<p><em>New in 1.4.</em> The Review stage (⌃3, or REVIEW in the strip) shows the documents in hand as index cards, grouped under their folders, with each folder’s chapter and word count in its heading. Each card has the chapter’s title, synopsis and word count, and a coloured strip along the top for its status; the key at the bottom counts them.</p>
 <ul>
-<li><strong>Publish to PDF</strong> typesets the manuscript the same way Publish to PDF does from the contents. Manuscript style is standard manuscript format, double-spaced Times with a title page and word count. Book style uses your theme’s typography, with a page for each part. See <a href="publishing.html">Publishing</a>.</li>
-<li><strong>Export as Word Document</strong> saves the whole manuscript as one <code>.docx</code>. There’s a title page, then each part and chapter in order, every chapter on a new page under its title. Headings, lists, quotations and pictures come out in Word’s own styles, as they do when you export a single document, so Word’s navigation pane lists the parts and chapters.</li>
+<li>Double-click a card’s synopsis, or “Add a synopsis”, and type; Return keeps it and Escape puts it back. Double-click the title to change it, which changes the document’s first heading.</li>
+<li>Right-click a card to give it a status: <strong>Unwritten</strong>, <strong>Draft</strong>, <strong>Revised</strong>, <strong>Final</strong> or <strong>No Status</strong>. It’s kept as <code>status: Draft</code> in the chapter’s front matter, with Undo in the notice. The dot in the running order and the readiness lines on the Publish stage follow.</li>
+<li>Drag a card to put it somewhere else, or select it and press ⌥⌘↑ or ⌥⌘↓. Right-click offers Move Earlier and Move Later. This is the same order as the running order. The arrow keys move between cards, and Return, or a click, opens the chapter on the Review screen with its comments and changes. Right-click also offers Open in Editor and Untrack.</li>
 </ul>
-<p>Neither includes front matter, so synopses are left out.</p>
-<p>You can send the Word document out for review. Every paragraph carries a hidden marker, and Grasmere notes which chapter each came from. When the reviewer’s copy comes back, choose <strong>Export ▸ Import Review</strong>. Each comment and change goes to its chapter’s margin, and each chapter in the running order shows how many are still open (“3 open”).</p>
-<p>Comments on the title page, a part’s title or the references go to a <strong>Review notes</strong> document in the folder, which is left out of the book.</p>
-<p>The review data lives in a hidden <code>.review</code> folder beside each chapter, and moves with it when Grasmere renames or moves the chapter. If you copy a chapter on its own in the Finder, its review stays behind. See <a href="review.html">Review</a>.</p>
+<p>See <a href="review.html">Review</a> for the rest of the stage.</p>
+<h2 id="review">Review</h2>
+<p>File ▸ Review (⇧⌘R) opens the Review screen for the document open in the editor, or for the folder highlighted in the contents as one page of chapters, with its reviews, the copies sent, restore points and commits. From the running order, “3 open” on a row opens that chapter there. See <a href="review.html">Review</a>.</p>
+<h2 id="exporting">Exporting</h2>
+<p>Publishing is on the same stage. Choose the title, the author and the style on the right, then click <strong>Publish PDF</strong>, in the title bar or beneath the options.</p>
+<ul>
+<li><strong>Manuscript</strong> style is standard manuscript format, double-spaced Times with a title page and word count, as publishers and agents ask for.</li>
+<li><strong>Book</strong> style uses your theme’s typography, with a page for each part, a contents page and page numbers at the foot.</li>
+<li><strong>Word</strong>, beneath Publish PDF, saves the whole manuscript as one <code>.docx</code>. There’s a title page, then each part and chapter in order, every chapter on a new page under its title. Headings, lists, quotations and pictures come out in Word’s own styles, as they do when you export a single document, so Word’s navigation pane lists the parts and chapters. Footnotes are real footnotes, numbered from 1 in each chapter.</li>
+</ul>
+<p>Neither includes front matter, so synopses are left out. The Word document here is a plain copy; nothing is kept for a review. To send the book to a reviewer and bring their comments and changes back, use the Review stage’s Send. See <a href="review.html">Review</a> and <a href="publishing.html">Publishing</a>.</p>
 <h2 id="related">Related</h2>
 <ul>
+<li><a href="publishing.html">Publishing</a>, for the Publish stage</li>
+<li><a href="review.html">Review</a>, for the cards, and for sending the book out and bringing comments back</li>
 <li><a href="the-contents.html">The Contents</a>, for ordering folders</li>
-<li><a href="publishing.html">Publishing</a></li>
-<li><a href="review.html">Review</a>, for sending the book out and bringing comments back</li>
 <li><a href="writing-goals.html">Writing Goals</a>, for a word target on the folder</li>
 </ul>
 
