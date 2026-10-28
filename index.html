@@ -70,6 +70,27 @@
 .pane{display:none;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:var(--tint) left top/cover no-repeat;box-shadow:0 0 0 1px rgba(42,37,32,.10),0 24px 60px rgba(60,40,20,.16)}
 .pane[data-active]{display:block}
 .pane img,.pane video{display:block;width:100%;height:100%;object-fit:cover;object-position:left top}
+.pane{cursor:zoom-in}
+
+/* The gallery: a picture or recording near full screen, with the others of its stage a key away */
+.gallery{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;background:rgba(42,37,32,.86);padding:48px 72px 56px}
+.gallery[data-open]{display:flex}
+.gallery-media{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.5);background:#000}
+.gallery-media img,.gallery-media video{display:block;max-width:calc(100vw - 144px);max-height:calc(100vh - 104px);width:auto;height:auto;border-radius:10px}
+.gallery-caption{position:absolute;left:0;right:0;bottom:16px;text-align:center;font-size:14px;color:#D9CFBF;pointer-events:none}
+.gallery-caption b{font-weight:600;color:#F8F3EA}
+.gallery-btn{position:absolute;appearance:none;border:0;padding:0;margin:0;background:rgba(248,243,234,.12);color:#F8F3EA;width:44px;height:44px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s ease}
+.gallery-btn svg{display:block;width:20px;height:20px}
+.gallery-btn:hover,.gallery-btn:focus-visible{background:rgba(248,243,234,.28);outline:none}
+.gallery-close{top:16px;right:16px}
+.gallery-prev{left:14px;top:50%;margin-top:-22px}
+.gallery-next{right:14px;top:50%;margin-top:-22px}
+body.gallery-open{overflow:hidden}
+@media (max-width:900px){
+  .gallery{padding:56px 12px 48px}
+  .gallery-media img,.gallery-media video{max-width:calc(100vw - 24px);max-height:calc(100vh - 104px)}
+  .gallery-prev{left:6px}.gallery-next{right:6px}
+}
 
 /* Download, and the foot */
 .get{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;padding:clamp(56px,9vh,112px) 0;border-top:1px solid var(--rule)}
@@ -110,7 +131,7 @@ html{scroll-behavior:smooth}
 <p>Grasmere is a Markdown editor for writers and researchers, with sophisticated features to take you from an idea to a manuscript or thesis.</p>
 <div class="cta-row">
 <a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
-<span class="version">Free for 7 days, then a single purchase · 1.3 · macOS 26+</span>
+<span class="version">Free for 7 days, then $14.99 forever · 1.3 · macOS 26+</span>
 </div>
 </div>
 </header>
@@ -133,10 +154,11 @@ html{scroll-behavior:smooth}
 <p class="desc">Make a plan for your project. Collect your research from websites, books and papers so you can cite it later. Bring together all your tasks in one list.</p>
 <div class="links">
 <a class="chip" href="guides/research.html#save-web-page">Web Clipping</a>
-<a class="chip" href="guides/research.html">Research</a>
-<a class="chip" href="guides/tasks-and-due-dates.html">Tasks</a>
+<a class="chip" href="guides/research.html#reading-highlights-and-annotations">Highlights &amp; Annotations</a>
+<a class="chip" href="guides/research.html#from-readwise-and-zotero">Zotero</a>
+<a class="chip" href="guides/research.html#the-research-folder">Reader Import</a>
+<a class="chip" href="guides/ask-your-documents-and-ai.html#brainstorm">Brainstorm</a>
 <a class="chip" href="guides/the-index.html">Index Cards</a>
-<a class="chip" href="guides/journal.html">Journal</a>
 </div>
 </div>
 <div class="frame">
@@ -159,10 +181,13 @@ html{scroll-behavior:smooth}
 <div class="links">
 <a class="chip" href="guides/writing-and-formatting.html">Writing</a>
 <a class="chip" href="guides/links-and-backlinks.html">Links</a>
+<a class="chip" href="guides/tasks-and-due-dates.html">Tasks</a>
+<a class="chip" href="guides/journal.html">Journal</a>
 <a class="chip" href="guides/citations.html">Citations</a>
+<a class="chip" href="guides/pictures-and-tables.html#diagrams">Mermaid</a>
 <a class="chip" href="guides/focus-mode-and-split-view.html">Focus Mode</a>
 <a class="chip" href="guides/writing-goals.html">Writing Goals</a>
-<a class="chip" href="guides/ask-your-documents-and-ai.html#brainstorm">Brainstorm</a>
+<a class="chip" href="guides/writing-replay.html">Writing Replay</a>
 </div>
 </div>
 <div class="frame">
@@ -170,10 +195,12 @@ html{scroll-behavior:smooth}
 <button class="tab" role="tab" aria-selected="true">Links &amp; Tasks</button>
 <button class="tab" role="tab" aria-selected="false">Journal</button>
 <button class="tab" role="tab" aria-selected="false">Sticky Links</button>
+<button class="tab" role="tab" aria-selected="false">Replay</button>
 </div>
 <div class="pane" data-active style="background-image:url(assets/draft-links-tasks.jpg)"><video src="assets/draft-links-tasks.mp4" poster="assets/draft-links-tasks.jpg" muted loop playsinline preload="metadata" aria-label="Writing a chapter: links between documents and tasks in the text"></video></div>
 <div class="pane" style="background-image:url(assets/draft-journal.jpg)"><video src="assets/draft-journal.mp4" poster="assets/draft-journal.jpg" muted loop playsinline preload="metadata" aria-label="The journal: a dated entry for the day"></video></div>
 <div class="pane" style="background-image:url(assets/draft-sticky-links.jpg)"><video src="assets/draft-sticky-links.mp4" poster="assets/draft-sticky-links.jpg" muted loop playsinline preload="metadata" aria-label="Links that stay correct when a document is renamed or moved"></video></div>
+<div class="pane" style="background-image:url(assets/draft-replay.jpg)"><video src="assets/draft-replay.mp4" poster="assets/draft-replay.jpg" muted loop playsinline preload="metadata" aria-label="Writing Replay: a chapter's text written back in the order it was typed"></video></div>
 </div>
 </section>
 
@@ -187,7 +214,6 @@ html{scroll-behavior:smooth}
 <a class="chip" href="guides/review.html#sending-it">Word Round Trip</a>
 <a class="chip" href="guides/the-margin.html">The Margin</a>
 <a class="chip" href="guides/the-manuscript-view.html#the-running-order">Running Order</a>
-<a class="chip" href="guides/writing-replay.html">Writing Replay</a>
 </div>
 </div>
 <div class="frame">
@@ -229,13 +255,21 @@ html{scroll-behavior:smooth}
 <section class="get" aria-label="Download">
 <h2>Start writing today.</h2>
 <a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
-<span class="version">Free for 7 days, then a single purchase · 1.3 · macOS 26+</span>
+<span class="version">Free for 7 days, then $14.99 forever · 1.3 · macOS 26+</span>
 </section>
 
 </main>
 
 <footer class="foot"><a href="whats-new.html">What’s New</a><a href="guides/index.html">Guides</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></footer>
 
+</div>
+
+<div class="gallery" role="dialog" aria-modal="true" aria-label="Screenshot" hidden>
+<button class="gallery-btn gallery-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<button class="gallery-btn gallery-prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6l-6 6 6 6"/></svg></button>
+<div class="gallery-media"></div>
+<button class="gallery-btn gallery-next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></button>
+<div class="gallery-caption"></div>
 </div>
 
 <script>
@@ -259,6 +293,56 @@ document.querySelectorAll('.frame').forEach(function (frame) {
     });
   });
   show(0);
+  // A click on the picture opens it in the gallery, with the stage's other pictures beside it.
+  panes.forEach(function (p, i) { p.addEventListener('click', function () { openGallery(frame, i); }); });
+});
+
+var gallery = document.querySelector('.gallery'), galleryMedia = gallery.querySelector('.gallery-media'),
+    galleryCaption = gallery.querySelector('.gallery-caption'), galleryFrame = null, galleryIndex = 0, galleryOpener = null;
+function openGallery(frame, i) {
+  galleryFrame = frame; galleryOpener = document.activeElement;
+  gallery.hidden = false; gallery.setAttribute('data-open', ''); document.body.classList.add('gallery-open');
+  showGallery(i);
+  gallery.querySelector('.gallery-close').focus();
+}
+function showGallery(i) {
+  var panes = galleryFrame.querySelectorAll('.pane'), tabs = galleryFrame.querySelectorAll('.tab');
+  galleryIndex = (i + panes.length) % panes.length;
+  var pane = panes[galleryIndex], source = pane.querySelector('img, video'), copy;
+  galleryFrame.querySelectorAll('video').forEach(function (v) { v.pause(); });
+  galleryMedia.textContent = '';
+  if (source.tagName === 'VIDEO') {
+    copy = document.createElement('video');
+    copy.src = source.getAttribute('src'); copy.poster = source.getAttribute('poster');
+    copy.muted = true; copy.loop = true; copy.autoplay = true; copy.controls = true; copy.playsInline = true;
+    copy.setAttribute('aria-label', source.getAttribute('aria-label') || '');
+  } else {
+    copy = document.createElement('img');
+    copy.src = source.getAttribute('src'); copy.alt = source.getAttribute('alt') || '';
+  }
+  galleryMedia.appendChild(copy);
+  var stage = galleryFrame.closest('.stage').querySelector('.word').textContent;
+  galleryCaption.innerHTML = '<b></b> · ' + stage + ' · ' + (galleryIndex + 1) + ' of ' + panes.length;
+  galleryCaption.querySelector('b').textContent = tabs[galleryIndex].textContent;
+}
+function closeGallery() {
+  gallery.removeAttribute('data-open'); gallery.hidden = true; document.body.classList.remove('gallery-open');
+  galleryMedia.textContent = '';
+  var active = galleryFrame && galleryFrame.querySelector('.pane[data-active] video');
+  if (active) active.play().catch(function () {});
+  if (galleryOpener && galleryOpener.focus) galleryOpener.focus();
+}
+gallery.querySelector('.gallery-close').addEventListener('click', closeGallery);
+gallery.querySelector('.gallery-prev').addEventListener('click', function () { showGallery(galleryIndex - 1); });
+gallery.querySelector('.gallery-next').addEventListener('click', function () { showGallery(galleryIndex + 1); });
+gallery.addEventListener('click', function (e) { if (e.target === gallery) closeGallery(); });
+document.addEventListener('keydown', function (e) {
+  if (gallery.hidden) return;
+  if (e.key === 'Escape') closeGallery();
+  else if (e.key === 'ArrowRight') showGallery(galleryIndex + 1);
+  else if (e.key === 'ArrowLeft') showGallery(galleryIndex - 1);
+  else return;
+  e.preventDefault();
 });
 
 // The stage bar lights the stage that's in view.
