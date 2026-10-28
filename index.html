@@ -20,84 +20,78 @@
 <link rel="stylesheet" href="style.css">
 <style>
 
-/* Page fits one screen on desktop */
-.page{min-height:100vh;min-height:100dvh}
-.wrap{min-height:100vh;min-height:100dvh;padding:24px 40px 28px;display:flex;flex-direction:column;gap:clamp(18px,3.4vh,34px)}
+.wrap{max-width:1180px;margin:0 auto;padding:24px 40px 28px}
 
-/* Header */
-.head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(32px,5vw,72px);align-items:center}
-.lead{display:flex;flex-direction:column;gap:26px;max-width:620px}
-.head h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(48px,7.4vh,76px);line-height:.95;letter-spacing:-.025em}
-.intro p{max-width:46ch}
-
-/* The app beside the headline: the hovered phase's picture fades in */
-.shots{position:relative;height:clamp(240px,40vh,440px);aspect-ratio:16/10;max-width:100%;border-radius:12px;overflow:hidden;background:var(--paper-deep);box-shadow:0 0 0 1px rgba(42,37,32,.10),0 24px 60px rgba(60,40,20,.18)}
-.shots img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;opacity:0;transition:opacity .45s ease}
-.shots .shot-default{opacity:1}
-.page:has(.phase:hover,.phase:focus-within) .shots .shot-default{opacity:0}
-.page:has(.plan:hover,.plan:focus-within) .shot-plan,
-.page:has(.draft:hover,.draft:focus-within) .shot-draft,
-.page:has(.feedback:hover,.feedback:focus-within) .shot-review,
-.page:has(.publish:hover,.publish:focus-within) .shot-publish{opacity:1}
+/* Header: the headline on the left, the words and the button on the right */
+.head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;padding:clamp(72px,14vh,160px) 0 clamp(64px,12vh,136px)}
+.head h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(52px,7.4vw,96px);line-height:.95;letter-spacing:-.025em}
 .next{transition:color .3s ease}
-.intro{display:flex;flex-direction:column;gap:18px;padding-bottom:8px}
-.intro p{margin:0;font-size:17px;line-height:1.5;color:var(--ink-soft)}
+.intro{display:flex;flex-direction:column;gap:20px}
+.intro p{margin:0;font-size:18px;line-height:1.5;color:var(--ink-soft);max-width:44ch}
 .cta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;background:var(--ink);color:#F8F3EA!important;border-radius:10px;font-weight:500;font-size:15px;text-decoration:none;transition:background .2s ease}
 .btn:hover,.btn:focus-visible{background:#4A4038}
 .version{font-family:var(--mono);font-size:12px;color:var(--ink-faint)}
 
-/* Headline "next?" takes the colour of the hovered phase */
-.page:has(.plan:hover) .next,.page:has(.plan:focus-within) .next{color:#A9471F}
-.page:has(.draft:hover) .next,.page:has(.draft:focus-within) .next{color:#85600C}
-.page:has(.feedback:hover) .next,.page:has(.feedback:focus-within) .next{color:#365583}
-.page:has(.publish:hover) .next,.page:has(.publish:focus-within) .next{color:#46653A}
+/* The stage bar, as the app draws it: small tracked capitals in the serif, the lit stage on the
+   selection colour in the accent. It sticks to the top of the window and follows the scroll. */
+.stages-wrap{position:sticky;top:0;z-index:10;display:flex;justify-content:center;padding:10px 0 12px;pointer-events:none}
+.stages{display:flex;gap:0;padding:3px;border-radius:7px;background:#E9E2D4;box-shadow:0 0 0 1px rgba(42,37,32,.06),0 4px 14px rgba(60,40,20,.08);pointer-events:auto}
+.stage-tab{display:inline-flex;align-items:center;padding:5px 14px;border-radius:5px;font-family:var(--serif);font-size:13.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);text-decoration:none;cursor:pointer;transition:background .2s ease,color .2s ease}
+.stage-tab:hover{color:var(--ink)}
+.stage-tab.lit{background:rgba(207,195,175,.55);color:var(--c)}
+.stage-tab.research{--c:#A9471F}.stage-tab.draft{--c:#85600C}.stage-tab.review{--c:#365583}.stage-tab.publish{--c:#46653A}
 
-/* Phase columns */
-.phases{flex:1 0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.phase{display:flex;flex-direction:column;gap:10px;padding:40px 18px 18px;min-height:0;text-decoration:none;color:var(--ink);border-top:2px solid var(--ink);border-radius:0 0 18px 18px;transition:background .3s ease,color .3s ease,border-color .3s ease}
-.plan{--c:#A9471F;--tint:#EFDCCC;--soft:#DDB49C}
+/* The four stages: the words on one side, the pictures on the other, swapping sides each time */
+.stage{display:grid;grid-template-columns:minmax(0,1fr) 700px;gap:clamp(32px,4vw,56px);align-items:center;padding:clamp(56px,9vh,112px) 0;scroll-margin-top:72px}
+.stage:nth-of-type(even){grid-template-columns:700px minmax(0,1fr)}
+.stage+.stage{border-top:1px solid var(--rule)}
+.stage:nth-of-type(even) .copy{order:2}
+@media (max-width:1140px){.stage,.stage:nth-of-type(even){grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)}.stage:nth-of-type(even){grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.research{--c:#A9471F;--tint:#EFDCCC;--soft:#DDB49C}
 .draft{--c:#85600C;--tint:#EEE2C2;--soft:#D8C084}
-.feedback{--c:#365583;--tint:#DEE1E2;--soft:#AEBCD0}
+.review{--c:#365583;--tint:#DEE1E2;--soft:#AEBCD0}
 .publish{--c:#46653A;--tint:#E0E3CF;--soft:#B6C7A2}
-.top{display:flex;align-items:center;min-height:28px}
-.num{font-family:var(--mono);font-size:13px;color:#8C8072;transition:color .3s ease}
-.word{font-family:var(--serif);font-size:clamp(50px,8vh,76px);line-height:.95;letter-spacing:-.025em;margin-top:-6px}
-.word{align-self:flex-start}
-.phase>*{transition:transform .4s ease,color .3s ease,opacity .3s ease}
-.desc{font-size:15px;line-height:1.45;color:var(--ink-soft);max-width:30ch}
-
-/* Each phase's guides */
-.links{display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px;margin-top:10px}
-.chip{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--rule);font-size:14px;font-weight:500;color:var(--ink-soft);text-decoration:none;background:transparent;transition:border-color .3s ease,color .3s ease,background .2s ease}
+.copy{display:flex;flex-direction:column;gap:12px}
+.num{font-family:var(--mono);font-size:13px;color:#8C8072}
+.word{font-family:var(--serif);font-size:clamp(50px,6.5vw,76px);line-height:.95;letter-spacing:-.025em;color:var(--c);margin:0}
+.desc{font-size:16px;line-height:1.5;color:var(--ink-soft);max-width:36ch;margin:4px 0 0}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--soft);font-size:14px;font-weight:500;color:var(--c);text-decoration:none;background:transparent;transition:border-color .2s ease,color .2s ease,background .2s ease}
 .chip:hover,.chip:focus-visible{background:var(--c);border-color:var(--c);color:#F8F3EA!important;outline:none}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
-/* Hover / keyboard focus: only with a mouse or trackpad (on a phone a tap would leave a tile stuck) */
-@media (hover:hover) and (pointer:fine){
-  .phase:hover,.phase:focus-within{background:var(--tint);color:var(--c);border-top-color:var(--c)}
-  .phase:hover .num,.phase:focus-within .num{color:var(--c)}
-  .phase:hover .word,.phase:focus-within .word{font-style:italic}
-  .phase:hover>*,.phase:focus-within>*{transform:translateY(-20px)}
-  .phase:hover .desc,.phase:focus-within .desc{color:#3A332C}
-  .phase:hover .chip,.phase:focus-within .chip{border-color:var(--soft);color:var(--c)}
-  .phases:hover .phase:not(:hover){color:var(--dim);border-top-color:#D9CFBF}
-  .phases:hover .phase:not(:hover) .desc{color:var(--dim)}
-  .phases:hover .phase:not(:hover) .links{opacity:.5}
-}
+/* The pictures: a row of small tabs above, the picture below. Three per stage. */
+.frame{display:flex;flex-direction:column;gap:10px;min-width:0}
+.tabs{display:flex;gap:2px;align-self:flex-start;padding:3px;border-radius:8px;background:rgba(207,195,175,.32)}
+.tab{appearance:none;border:0;background:transparent;padding:5px 12px;border-radius:5px;font:inherit;font-size:13px;font-weight:500;color:var(--ink-soft);cursor:pointer;transition:background .2s ease,color .2s ease}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected=true]{background:var(--paper-light);color:var(--ink);box-shadow:0 0 0 1px rgba(42,37,32,.08),0 1px 2px rgba(42,37,32,.10)}
+.tab:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.pane{display:none;aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:var(--tint) left top/cover no-repeat;box-shadow:0 0 0 1px rgba(42,37,32,.10),0 24px 60px rgba(60,40,20,.16)}
+.pane[data-active]{display:block}
+.pane img,.pane video{display:block;width:100%;height:100%;object-fit:cover;object-position:left top}
 
-/* Small screens: scroll, stack */
+/* Download, and the foot */
+.get{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;padding:clamp(56px,9vh,112px) 0;border-top:1px solid var(--rule)}
+.get h2{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.5vw,56px);line-height:1;letter-spacing:-.02em}
+.foot{max-width:none;margin:0;justify-content:center}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* Small screens: stack, the bar scrolls sideways, the words always above the pictures */
 @media (max-width:900px){
-  .page{height:auto;min-height:0}
-  .wrap{height:auto;padding:20px 16px 32px}
-  .head{grid-template-columns:1fr;gap:24px}
-  .shots{height:auto;width:100%}
-  .phases{grid-template-columns:1fr}
+  .wrap{padding:20px 16px 32px}
+  .head{grid-template-columns:1fr;gap:28px;padding:48px 0 44px}
+  .stages-wrap{margin:0 -16px;padding:8px 16px 12px;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}
+  .stages-wrap::-webkit-scrollbar{display:none}
+  .stage-tab{padding:5px 11px;font-size:12.5px;letter-spacing:.1em}
+  .stage,.stage:nth-of-type(even){grid-template-columns:1fr;gap:24px;padding:40px 0;scroll-margin-top:60px}
+  .stage:nth-of-type(even) .copy{order:0}
 }
 </style>
 </head>
 <body>
-<div class="page">
 <div class="wrap">
 
 <nav class="nav">
@@ -111,82 +105,179 @@
 </nav>
 
 <header class="head">
-<div class="lead">
 <h1>What will you write <em class="next">next?</em></h1>
 <div class="intro">
 <p>Grasmere is a Markdown editor for writers and researchers, with sophisticated features to take you from an idea to a manuscript or thesis.</p>
 <div class="cta-row">
 <a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
-<span class="version">Free for 7 days, then a single purchase · 1.2 · macOS 26+</span>
+<span class="version">Free for 7 days, then a single purchase · 1.3 · macOS 26+</span>
 </div>
-</div>
-</div>
-<div class="shots">
-<img class="shot-default" src="assets/home-default.jpg" alt="Grasmere with a character document open, its links, and the margin listing what links to it">
-<img class="shot-plan" src="assets/home-plan.jpg" alt="" loading="lazy">
-<img class="shot-draft" src="assets/home-draft.jpg" alt="" loading="lazy">
-<img class="shot-review" src="assets/home-review.jpg" alt="" loading="lazy">
-<img class="shot-publish" src="assets/home-publish.jpg" alt="" loading="lazy">
 </div>
 </header>
 
-<section class="phases" aria-label="Phases">
+<div class="stages-wrap">
+<nav class="stages" aria-label="Stages">
+<a class="stage-tab research" href="#research">Research</a>
+<a class="stage-tab draft" href="#draft">Draft</a>
+<a class="stage-tab review" href="#review">Review</a>
+<a class="stage-tab publish" href="#publish">Publish</a>
+</nav>
+</div>
 
-<div class="phase plan">
-<span class="top"><span class="num">01</span></span>
-<span class="word">Plan</span>
-<span class="desc">Make a plan for your project. Collect your research from websites, books and papers so you can cite it later. Bring together all your tasks in one list.</span>
-<span class="links">
+<main>
+
+<section class="stage research" id="research" aria-labelledby="research-h">
+<div class="copy">
+<span class="num">01</span>
+<h2 class="word" id="research-h">Research</h2>
+<p class="desc">Make a plan for your project. Collect your research from websites, books and papers so you can cite it later. Bring together all your tasks in one list.</p>
+<div class="links">
 <a class="chip" href="guides/research.html#save-web-page">Web Clipping</a>
 <a class="chip" href="guides/research.html">Research</a>
 <a class="chip" href="guides/tasks-and-due-dates.html">Tasks</a>
 <a class="chip" href="guides/the-index.html">Index Cards</a>
 <a class="chip" href="guides/journal.html">Journal</a>
-</span>
 </div>
+</div>
+<div class="frame">
+<div class="tabs" role="tablist" aria-label="Research screenshots">
+<button class="tab" role="tab" aria-selected="true">Research</button>
+<button class="tab" role="tab" aria-selected="false">Ask</button>
+<button class="tab" role="tab" aria-selected="false">Brainstorm</button>
+</div>
+<div class="pane" data-active><img src="assets/research-1.jpg" alt="The Research stage: a question box, the project's sources as cards, highlights, tasks and loose ends"></div>
+<div class="pane" style="background-image:url(assets/research-ask.jpg)"><video src="assets/research-ask.mp4" poster="assets/research-ask.jpg" muted loop playsinline preload="metadata" aria-label="Asking a question about the documents and getting an answer that cites them"></video></div>
+<div class="pane" style="background-image:url(assets/research-brainstorm.jpg)"><video src="assets/research-brainstorm.mp4" poster="assets/research-brainstorm.jpg" muted loop playsinline preload="metadata" aria-label="Brainstorming a document: a subject becomes questions, and the questions become headings"></video></div>
+</div>
+</section>
 
-<div class="phase draft">
-<span class="top"><span class="num">02</span></span>
-<span class="word">Draft</span>
-<span class="desc">A pure Markdown writing experience, free from distraction. Find interesting links between your documents and brainstorm ideas with the on-device model.</span>
-<span class="links">
+<section class="stage draft" id="draft" aria-labelledby="draft-h">
+<div class="copy">
+<span class="num">02</span>
+<h2 class="word" id="draft-h">Draft</h2>
+<p class="desc">A pure Markdown writing experience, free from distraction. Find interesting links between your documents and brainstorm ideas with the on-device model.</p>
+<div class="links">
 <a class="chip" href="guides/writing-and-formatting.html">Writing</a>
 <a class="chip" href="guides/links-and-backlinks.html">Links</a>
 <a class="chip" href="guides/citations.html">Citations</a>
 <a class="chip" href="guides/focus-mode-and-split-view.html">Focus Mode</a>
 <a class="chip" href="guides/writing-goals.html">Writing Goals</a>
 <a class="chip" href="guides/ask-your-documents-and-ai.html#brainstorm">Brainstorm</a>
-</span>
 </div>
+</div>
+<div class="frame">
+<div class="tabs" role="tablist" aria-label="Draft screenshots">
+<button class="tab" role="tab" aria-selected="true">Links &amp; Tasks</button>
+<button class="tab" role="tab" aria-selected="false">Journal</button>
+<button class="tab" role="tab" aria-selected="false">Sticky Links</button>
+</div>
+<div class="pane" data-active style="background-image:url(assets/draft-links-tasks.jpg)"><video src="assets/draft-links-tasks.mp4" poster="assets/draft-links-tasks.jpg" muted loop playsinline preload="metadata" aria-label="Writing a chapter: links between documents and tasks in the text"></video></div>
+<div class="pane" style="background-image:url(assets/draft-journal.jpg)"><video src="assets/draft-journal.mp4" poster="assets/draft-journal.jpg" muted loop playsinline preload="metadata" aria-label="The journal: a dated entry for the day"></video></div>
+<div class="pane" style="background-image:url(assets/draft-sticky-links.jpg)"><video src="assets/draft-sticky-links.mp4" poster="assets/draft-sticky-links.jpg" muted loop playsinline preload="metadata" aria-label="Links that stay correct when a document is renamed or moved"></video></div>
+</div>
+</section>
 
-<div class="phase feedback">
-<span class="top"><span class="num">03</span></span>
-<span class="word">Review</span>
-<span class="desc">Share your documents with colleagues &amp; peers and extract their feedback. Finalise your sequence as you prepare to publish.</span>
-<span class="links">
+<section class="stage review" id="review" aria-labelledby="review-h">
+<div class="copy">
+<span class="num">03</span>
+<h2 class="word" id="review-h">Review</h2>
+<p class="desc">Share your documents with colleagues &amp; peers and extract their feedback. Finalise your sequence as you prepare to publish.</p>
+<div class="links">
 <a class="chip" href="guides/review.html">Review</a>
 <a class="chip" href="guides/review.html#sending-it">Word Round Trip</a>
 <a class="chip" href="guides/the-margin.html">The Margin</a>
 <a class="chip" href="guides/the-manuscript-view.html#the-running-order">Running Order</a>
 <a class="chip" href="guides/writing-replay.html">Writing Replay</a>
-</span>
 </div>
+</div>
+<div class="frame">
+<div class="tabs" role="tablist" aria-label="Review screenshots">
+<button class="tab" role="tab" aria-selected="true">Reorder</button>
+<button class="tab" role="tab" aria-selected="false">Word</button>
+<button class="tab" role="tab" aria-selected="false">Comment</button>
+</div>
+<div class="pane" data-active style="background-image:url(assets/review-reorder.jpg)"><video src="assets/review-reorder.mp4" poster="assets/review-reorder.jpg" muted loop playsinline preload="metadata" aria-label="Reordering the chapters of a manuscript by dragging"></video></div>
+<div class="pane" style="background-image:url(assets/review-word.jpg)"><video src="assets/review-word.mp4" poster="assets/review-word.jpg" muted loop playsinline preload="metadata" aria-label="Sending a chapter as a Word file and bringing the reviewer's changes back into it"></video></div>
+<div class="pane"><img src="assets/review-comment.jpg" alt="A comment being added beside a sentence in the Review stage"></div>
+</div>
+</section>
 
-<div class="phase publish">
-<span class="top"><span class="num">04</span></span>
-<span class="word">Publish</span>
-<span class="desc">Publish your manuscript in PDF or Word Doc, complete with citations and formatting. Publish your project as a website with one click.</span>
-<span class="links">
+<section class="stage publish" id="publish" aria-labelledby="publish-h">
+<div class="copy">
+<span class="num">04</span>
+<h2 class="word" id="publish-h">Publish</h2>
+<p class="desc">Publish your manuscript in PDF or Word Doc, complete with citations and formatting. Publish your project as a website with one click.</p>
+<div class="links">
 <a class="chip" href="guides/the-manuscript-view.html">Manuscript</a>
 <a class="chip" href="guides/publishing.html#publish-a-folder-to-pdf">PDF</a>
 <a class="chip" href="guides/publishing.html#export-a-document-as-a-word-document">Word</a>
 <a class="chip" href="guides/publishing.html#build-a-website">Website</a>
-</span>
 </div>
-
+</div>
+<div class="frame">
+<div class="tabs" role="tablist" aria-label="Publish screenshots">
+<button class="tab" role="tab" aria-selected="true">Preview</button>
+<button class="tab" role="tab" aria-selected="false">Formatting</button>
+<button class="tab" role="tab" aria-selected="false">Footnotes</button>
+</div>
+<div class="pane" data-active><img src="assets/publish-preview.jpg" alt="The Publish stage: four chapters in hand, laid out as the pages of a book, with the title, author, style and citation options beside them"></div>
+<div class="pane"><img src="assets/publish-formatting.jpg" alt="A page with a table, a diagram and a list, formatted for the book"></div>
+<div class="pane"><img src="assets/publish-footnotes.jpg" alt="A chapter's page with a footnote at its foot and the page number below"></div>
+</div>
 </section>
 
+<section class="get" aria-label="Download">
+<h2>Start writing today.</h2>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="version">Free for 7 days, then a single purchase · 1.3 · macOS 26+</span>
+</section>
+
+</main>
+
+<footer class="foot"><a href="whats-new.html">What’s New</a><a href="guides/index.html">Guides</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a></footer>
+
 </div>
-</div>
+
+<script>
+// The screenshot tabs: a click (or the arrow keys) shows that pane.
+document.querySelectorAll('.frame').forEach(function (frame) {
+  var tabs = frame.querySelectorAll('.tab'), panes = frame.querySelectorAll('.pane');
+  function show(i) {
+    tabs.forEach(function (t, j) { t.setAttribute('aria-selected', i === j ? 'true' : 'false'); t.tabIndex = i === j ? 0 : -1; });
+    panes.forEach(function (p, j) {
+      var video = p.querySelector('video');
+      if (i === j) { p.setAttribute('data-active', ''); if (video) { video.currentTime = 0; video.play().catch(function () {}); } }
+      else { p.removeAttribute('data-active'); if (video) video.pause(); }
+    });
+  }
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () { show(i); });
+    tab.addEventListener('keydown', function (e) {
+      var n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : -1;
+      if (n < 0 || n >= tabs.length) return;
+      show(n); tabs[n].focus(); e.preventDefault();
+    });
+  });
+  show(0);
+});
+
+// The stage bar lights the stage that's in view.
+var stageTabs = document.querySelectorAll('.stage-tab'), stages = document.querySelectorAll('.stage');
+function light(id) {
+  stageTabs.forEach(function (t) {
+    var on = t.getAttribute('href') === '#' + id;
+    t.classList.toggle('lit', on);
+    if (on) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current');
+  });
+}
+function spy() {
+  var line = window.innerHeight * 0.4, current = null;
+  stages.forEach(function (s) { if (s.getBoundingClientRect().top <= line) current = s.id; });
+  if (current) light(current); else stageTabs.forEach(function (t) { t.classList.remove('lit'); t.removeAttribute('aria-current'); });
+}
+window.addEventListener('scroll', spy, { passive: true });
+window.addEventListener('resize', spy);
+spy();
+</script>
 </body>
 </html>
