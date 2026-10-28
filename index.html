@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
 
-.wrap{max-width:1180px;margin:0 auto;padding:24px 40px 28px}
+.wrap{max-width:1500px;margin:0 auto;padding:24px 40px 28px}
 
 /* Header: the headline on the left, the words and the button on the right */
 .head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;padding:clamp(72px,14vh,160px) 0 clamp(64px,12vh,136px)}
@@ -43,11 +43,11 @@
 .stage-tab.research{--c:#A9471F}.stage-tab.draft{--c:#85600C}.stage-tab.review{--c:#365583}.stage-tab.publish{--c:#46653A}
 
 /* The four stages: the words on one side, the pictures on the other, swapping sides each time */
-.stage{display:grid;grid-template-columns:minmax(0,1fr) 700px;gap:clamp(32px,4vw,56px);align-items:center;padding:clamp(56px,9vh,112px) 0;scroll-margin-top:72px}
-.stage:nth-of-type(even){grid-template-columns:700px minmax(0,1fr)}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) 920px;gap:clamp(32px,4vw,56px);align-items:center;padding:clamp(56px,9vh,112px) 0;scroll-margin-top:72px}
+.stage:nth-of-type(even){grid-template-columns:920px minmax(0,1fr)}
 .stage+.stage{border-top:1px solid var(--rule)}
 .stage:nth-of-type(even) .copy{order:2}
-@media (max-width:1140px){.stage,.stage:nth-of-type(even){grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)}.stage:nth-of-type(even){grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+@media (max-width:1400px){.stage,.stage:nth-of-type(even){grid-template-columns:minmax(0,1fr) minmax(0,1.7fr)}.stage:nth-of-type(even){grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}}
 .research{--c:#A9471F;--tint:#EFDCCC;--soft:#DDB49C}
 .draft{--c:#85600C;--tint:#EEE2C2;--soft:#D8C084}
 .review{--c:#365583;--tint:#DEE1E2;--soft:#AEBCD0}
