@@ -26,6 +26,8 @@
 .head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;padding:clamp(72px,14vh,160px) 0 clamp(64px,12vh,136px)}
 .head h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(52px,7.4vw,96px);line-height:.95;letter-spacing:-.025em}
 .next{transition:color .3s ease}
+.verb{display:inline-block;transition:opacity .28s ease,transform .28s ease,color .28s ease}
+.verb.out{opacity:0;transform:translateY(.12em)}
 .intro{display:flex;flex-direction:column;gap:20px}
 .intro p{margin:0;font-size:18px;line-height:1.5;color:var(--ink-soft);max-width:44ch}
 .cta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
@@ -126,7 +128,7 @@ html{scroll-behavior:smooth}
 </nav>
 
 <header class="head">
-<h1>What will you write <em class="next">next?</em></h1>
+<h1>What will you<br><span class="verb">write</span> <em class="next">next?</em></h1>
 <div class="intro">
 <p>Grasmere is a Markdown editor for writers and researchers, with sophisticated features to take you from an idea to a manuscript or thesis.</p>
 <div class="cta-row">
@@ -273,6 +275,24 @@ html{scroll-behavior:smooth}
 </div>
 
 <script>
+// On arrival the headline's "write" turns through the four stages, each in its colour, then settles.
+(function () {
+  var verb = document.querySelector('.verb');
+  if (!verb || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var words = [['research', '#A9471F'], ['draft', '#85600C'], ['review', '#365583'], ['publish', '#46653A'], ['write', '']];
+  var i = 0;
+  function step() {
+    verb.classList.add('out');
+    setTimeout(function () {
+      verb.textContent = words[i][0]; verb.style.color = words[i][1];
+      verb.classList.remove('out');
+      i += 1;
+      if (i < words.length) setTimeout(step, 1000);
+    }, 300);
+  }
+  setTimeout(step, 1200);
+})();
+
 // The screenshot tabs: a click (or the arrow keys) shows that pane.
 document.querySelectorAll('.frame').forEach(function (frame) {
   var tabs = frame.querySelectorAll('.tab'), panes = frame.querySelectorAll('.pane');
