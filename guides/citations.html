@@ -65,13 +65,14 @@
 <li><strong>A DOI</strong> (<code>10.1038/nature12373</code>, or its doi.org address). Grasmere looks up the paper at doi.org.</li>
 <li><strong>An ISBN.</strong> Grasmere looks up the book at Open Library.</li>
 <li><strong>A web address.</strong> Save Web Page takes over and saves the page.</li>
-<li><strong>Blank Source</strong> gives you a book, article, chapter, report or web page with its fields empty, to fill in by hand.</li>
+<li><strong>Blank Source</strong> is a menu of Blank Book, Blank Article, Blank Chapter, Blank Report, Blank Web page and Blank Source of Another Kind, each with its fields empty, to fill in by hand. A DOI, ISBN or address you’d already typed goes into the blank source.</li>
 </ul>
 <p>The new document opens, named after its title. If you’ve saved that DOI or ISBN before, Grasmere offers the document you already have instead. Lookups happen only when you ask, and send nothing but the DOI or ISBN.</p>
 <p>A paper’s PDF dropped into the research folder becomes a source by itself, looked up by the DOI or arXiv number in its first pages. See <a href="research.html">Research</a>.</p>
 <h2 id="import-sources">Import Sources</h2>
 <p><em>New in 1.4.</em> If your references live in Zotero or another reference manager, export them as BibTeX (<code>.bib</code>, Better BibTeX included) or CSL JSON (<code>.json</code>) and choose File ▸ Import Sources. A sheet says how many entries the file has and what will change. Press Import and each entry becomes a source document in the research folder, with its citation key in the front matter as <code>key:</code>, ready to cite.</p>
 <p>Import the same file again after you’ve added or corrected entries and the sources are brought up to date rather than doubled. Grasmere matches each entry to a source by its key, then its DOI, then its ISBN, and a source you wrote by hand is matched by its title, year and first author. An update rewrites only the front matter fields the file has; anything you’ve written below them is never changed. While you’re reading a document in the research folder, a line at the top of the margin says when the library file has changed since it was imported, with Update, which shows the same sheet.</p>
+<p><em>New in 1.4.</em> A Zotero export names each entry’s files too, and Import Sources brings them with it. In the sheet, Attachments chooses <strong>Copy into the project</strong>, which copies each PDF and EPUB into <code>research/Attachments</code>, named after its source, so the project has everything it needs, or <strong>Link where they are</strong>, which names the file where Zotero keeps it (it opens on this Mac only). Each source lists its files in its front matter as <code>attachment:</code>. A web page’s snapshot is read into the source’s text, as Save Web Page reads a page, for you to trim. If the files are in a folder Grasmere hasn’t been allowed to read, the sheet says how many and offers <strong>Allow…</strong>: choose Zotero’s storage folder, or the export’s, once.</p>
 <p>File ▸ Undo Last Import puts everything back as it was: the sources an import added are removed, and the ones it updated are restored. After that the item reads Redo Import.</p>
 <p>RIS and Zotero RDF aren’t read. Export as BibTeX or CSL JSON instead.</p>
 <p><em>New in 1.4.</em> <strong>Import Highlights</strong> is the companion for what you marked while reading: a Readwise export, the notes Zotero makes from a PDF's annotations, or a Readwise Reader library of saved articles. Highlights land on their source document (made if it's new) and in <code>highlights.md</code>; articles are saved as web pages. See <a href="research.html">Research</a>.</p>
@@ -81,7 +82,7 @@
 <p>Type <code>[@</code> where the citation goes, or choose Edit ▸ Cite Source (⌥⌘K). A list of your sources appears. Type part of an author’s name, a word of the title or a year to narrow it, and press Return. Grasmere writes a link to the source:</p>
 <pre><code class="language-markdown">Starters are alive [Field 2019<span class="t">](../research/The%20Living%20Loaf.md)</span>.
 </code></pre>
-<p>To cite a page, add it after a comma inside the brackets, as in <code>[Field 2019, p. 12](…)</code>. Pages, ranges (<code>pp. 12–14</code>), chapters (<code>ch. 3</code>), paragraphs (<code>para. 4</code>) and sections are all kept, and written the way the style wants.</p>
+<p>To cite a page, add it after a comma inside the brackets, as in <code>[Field 2019, p. 12](…)</code>. Pages, ranges (<code>pp. 12–14</code>), chapters (<code>ch. 3</code>), paragraphs (<code>para. 4</code>) and sections are all kept, and written the way the style wants. <em>New in 1.4:</em> Chicago and MLA shorten the second number of a range as their rules say, so <code>pp. 1243–1248</code> is written 1243–48.</p>
 <p><em>New in 1.4.</em> To put the author in your sentence, write the year in brackets inside the link: <code>[Field (2019)](…) argues</code> exports as “Field (2019) argues”, and <code>[Field (2019, p. 12)](…)</code> as “Field (2019, p. 12)”. In MLA the year goes and the page stays, “Field (12)”. Convert Pandoc Citations writes <code>@key</code> this way.</p>
 <p>A citation is a link, so it does everything links do. It follows the source when it’s renamed or moved, shows a preview on hover, and puts the citing document under Linked From in the source’s margin. In the editor it stays a link.</p>
 <p>If you’ve put a citation inside brackets of your own, Grasmere leaves them alone. <code>(see [Field 2019](…), p. 4; [Abbott 2021](…))</code> becomes “(see Field, 2019, p. 4; Abbott, 2021)”.</p>
@@ -115,11 +116,11 @@ Style: Chicago
 <p>Write anything you like above or below the table. The table itself is Grasmere’s, and any changes you make to it are replaced.</p>
 <p>If you’d rather not see it, turn off Settings ▸ Appearance ▸ Show research.md in the contents and Manuscripts. It’s still kept up to date, but it’s left out of the contents, out of a Manuscript of the research folder, and out of each source’s Linked from. <em>New in 1.4:</em> its neighbour <code>highlights.md</code>, the book of passages you’ve highlighted, is hidden the same way unless Show highlights.md is on. See <a href="research.html">Research</a>.</p>
 <h2 id="checking">Checking</h2>
-<p>If you have Settings ▸ General ▸ Check the Markdown as you write turned on, Grasmere looks for links that read like a citation (“Field 2019”) but point at a document that isn’t a source. They show up in the margin’s Problems section, so you can give that document a <code>type</code>.</p>
+<p>With Settings ▸ General ▸ Check the Markdown as you write on (as it is to begin with), Grasmere looks for links that read like a citation (“Field 2019”) but point at a document that isn’t a source. They show up in the margin’s Problems section, so you can give that document a <code>type</code>.</p>
 <h2 id="what-isnt-supported">What isn’t supported</h2>
 <ul>
 <li>Footnote styles (Chicago notes and bibliography, OSCOLA), numbered styles (Vancouver, IEEE) and journals’ house styles.</li>
-<li>Citing an editor rather than an author, and translators. Write the name in your sentence and cite the page.</li>
+<li>Citing an editor in place of an author, and translators. Write the name in your sentence and cite the page. (<em>New in 1.4:</em> a chapter’s <code>editor:</code>, the editors of the book it’s in, does appear in its reference, in every style.)</li>
 <li>RIS and Zotero RDF. Import Sources reads BibTeX and CSL JSON.</li>
 </ul>
 <h2 id="related">Related</h2>
