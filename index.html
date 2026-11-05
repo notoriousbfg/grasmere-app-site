@@ -25,15 +25,15 @@
 /* Header: the headline on the left, the words and the button on the right */
 .head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;padding:clamp(72px,14vh,160px) 0 clamp(64px,12vh,136px)}
 .head h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(52px,7.4vw,96px);line-height:.95;letter-spacing:-.025em}
-.next{transition:color .3s ease}
-.verb{display:inline-block;transition:opacity .28s ease,transform .28s ease,color .28s ease}
-.verb.out{opacity:0;transform:translateY(.12em)}
 .intro{display:flex;flex-direction:column;gap:20px}
 .intro p{margin:0;font-size:18px;line-height:1.5;color:var(--ink-soft);max-width:44ch}
 .cta-row{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;background:var(--ink);color:#F8F3EA!important;border-radius:10px;font-weight:500;font-size:15px;text-decoration:none;transition:background .2s ease}
 .btn:hover,.btn:focus-visible{background:#4A4038}
 .version{font-family:var(--mono);font-size:12px;color:var(--ink-faint)}
+.stage-word{font-weight:500;color:var(--c)}
+.fine{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.fine p{font-size:15px;color:var(--ink-faint);max-width:46ch}
 
 /* The stage bar, as the app draws it: small tracked capitals in the serif, the lit stage on the
    selection colour in the accent. It sticks to the top of the window and follows the scroll. */
@@ -74,6 +74,32 @@
 .pane img,.pane video{display:block;width:100%;height:100%;object-fit:cover;object-position:left top}
 .pane{cursor:zoom-in}
 
+/* Three cards in a row: Privacy & AI, and the steps under Review */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{display:flex;flex-direction:column;gap:14px;padding:28px 26px 32px;border-radius:12px;background:var(--paper-light);box-shadow:0 0 0 1px rgba(42,37,32,.10);min-width:0}
+.card-top{display:flex;align-items:center;justify-content:space-between;color:var(--ink-soft)}
+.card h3{margin:0;font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.05;letter-spacing:-.015em;color:var(--ink);min-height:64px}
+.card p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-soft)}
+
+/* Privacy & AI: not a stage of the app, so in ink, the heading above the cards */
+.stage.privacy{display:flex;flex-direction:column;align-items:stretch;gap:48px;--c:var(--ink)}
+.stage.privacy .copy{max-width:760px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
+.card-num{font-family:var(--serif);font-size:44px;line-height:1;color:var(--ink)}
+
+/* Review, bigger: the words across the top, the picture the full width, the three steps below */
+.stage.review-big{display:flex;flex-direction:column;align-items:stretch;gap:44px}
+.review-head{flex-direction:row;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:32px}
+.review-head>div:first-child{display:flex;flex-direction:column;gap:12px;flex:1 1 560px;min-width:0}
+.review-head .links{flex:0 1 420px;justify-content:flex-end;margin-top:0}
+.strap{margin:10px 0 0;font-family:var(--serif);font-size:clamp(30px,3.2vw,40px);line-height:1.02;letter-spacing:-.02em;color:var(--ink)}
+.strap em{display:block;color:var(--c)}
+.steps .card.tint{background:var(--tint);box-shadow:none}
+.steps .card-top{color:var(--c)}
+.step{font-family:var(--serif);font-size:13.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--c)}
+.steps .card h3{font-size:34px;line-height:1;min-height:0}
+@media (max-width:1100px){.review-head .links{flex-basis:100%;justify-content:flex-start}}
+
 /* The gallery: a picture or recording near full screen, with the others of its stage a key away */
 .gallery{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;background:rgba(42,37,32,.86);padding:48px 72px 56px}
 .gallery[data-open]{display:flex}
@@ -111,6 +137,8 @@ html{scroll-behavior:smooth}
   .stage-tab{padding:5px 11px;font-size:12.5px;letter-spacing:.1em}
   .stage,.stage:nth-of-type(even){grid-template-columns:1fr;gap:24px;padding:40px 0;scroll-margin-top:60px}
   .stage:nth-of-type(even) .copy{order:0}
+  .cards{grid-template-columns:1fr}
+  .card h3{min-height:0}
 }
 </style>
 </head>
@@ -128,12 +156,16 @@ html{scroll-behavior:smooth}
 </nav>
 
 <header class="head">
-<h1>What will you<br><span class="verb">write</span> <em class="next">next?</em></h1>
+<h1>From Plan<br>to <em>Publication</em></h1>
 <div class="intro">
-<p>Grasmere is a Markdown editor for writers and researchers, with sophisticated features to take you from an idea to a manuscript or thesis.</p>
+<p>Grasmere is a Mac app for long writing projects in Markdown. <span class="stage-word research">Research</span> your subject and import your sources, <span class="stage-word draft">draft</span> your manuscript, <span class="stage-word review">review</span> it with peers then <span class="stage-word publish">publish</span> it with all the right formatting &amp; citations, to Word, PDF or the Web.</p>
 <div class="cta-row">
 <a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
-<span class="version">Free for 14 days, then $14.99 forever · 1.4 · macOS 26+</span>
+<span class="version">1.4 · macOS 26+</span>
+</div>
+<div class="fine">
+<p>Try it free for 14 days. Then $14.99 forever.</p>
+<p>There’s no subscription, no account and no proprietary formats. Just plain Markdown files on your Mac.</p>
 </div>
 </div>
 </header>
@@ -214,11 +246,13 @@ html{scroll-behavior:smooth}
 </div>
 </section>
 
-<section class="stage review" id="review" aria-labelledby="review-h">
-<div class="copy">
+<section class="stage review review-big" id="review" aria-labelledby="review-h">
+<div class="copy review-head">
+<div>
 <span class="num">03</span>
 <h2 class="word" id="review-h">Review</h2>
-<p class="desc">Share your documents with colleagues &amp; peers and extract their feedback. Finalise your sequence as you prepare to publish.</p>
+<p class="strap">Your reviewer uses Word. <em>You stay in Markdown.</em></p>
+</div>
 <div class="links">
 <a class="chip" href="guides/review.html">Review</a>
 <a class="chip" href="guides/review.html#sending-it">Word Round Trip</a>
@@ -226,15 +260,47 @@ html{scroll-behavior:smooth}
 <a class="chip" href="guides/the-manuscript-view.html#the-running-order">Running Order</a>
 </div>
 </div>
+
 <div class="frame">
 <div class="tabs" role="tablist" aria-label="Review screenshots">
-<button class="tab" role="tab" aria-selected="true">Reorder</button>
-<button class="tab" role="tab" aria-selected="false">Word</button>
+<button class="tab" role="tab" aria-selected="true">Word</button>
 <button class="tab" role="tab" aria-selected="false">Comment</button>
+<button class="tab" role="tab" aria-selected="false">Reorder</button>
 </div>
-<div class="pane" data-active style="background-image:url(assets/review-reorder.jpg)"><video src="assets/review-reorder.mp4" poster="assets/review-reorder.jpg" muted loop playsinline preload="metadata" aria-label="Reordering the chapters of a manuscript by dragging"></video></div>
-<div class="pane" style="background-image:url(assets/review-word.jpg)"><video src="assets/review-word.mp4" poster="assets/review-word.jpg" muted loop playsinline preload="metadata" aria-label="Sending a chapter as a Word file and bringing the reviewer's changes back into it"></video></div>
+<div class="pane" data-active style="background-image:url(assets/review-word.jpg)"><video src="assets/review-word.mp4" poster="assets/review-word.jpg" muted loop playsinline preload="metadata" aria-label="Sending a chapter as a Word file and bringing the reviewer's changes back into it"></video></div>
 <div class="pane"><img src="assets/review-comment.jpg" alt="A comment being added beside a sentence in the Review stage"></div>
+<div class="pane" style="background-image:url(assets/review-reorder.jpg)"><video src="assets/review-reorder.mp4" poster="assets/review-reorder.jpg" muted loop playsinline preload="metadata" aria-label="Reordering the chapters of a manuscript by dragging"></video></div>
+</div>
+
+<div class="cards steps">
+
+<article class="card tint">
+<div class="card-top">
+<span class="step">Step 1</span>
+<svg role="img" aria-label="A Markdown file with an arrow leaving it" width="44" height="40" viewBox="0 0 44 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h16l8 8v24H6z"/><path d="M22 4v8h8"/><path d="M11 29V19l4 5 4-5v10"/><path d="M30 22h12"/><path d="M38 18l4 4-4 4"/></svg>
+</div>
+<h3>Send.</h3>
+<p>Export a Word file from the Review screen. Your open comments go with it.</p>
+</article>
+
+<article class="card">
+<div class="card-top">
+<span class="step">Step 2</span>
+<svg role="img" aria-label="A document with a comment bubble" width="44" height="40" viewBox="0 0 44 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h18l6 6v26H4z"/><path d="M9 16h12M9 21h12M9 26h8"/><path d="M30 12h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-5l-4 4v-4h-1a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/></svg>
+</div>
+<h3>They review.</h3>
+<p>In Word, Pages or Google Docs, with comments and tracked changes as usual. They don’t need Grasmere.</p>
+</article>
+
+<article class="card tint">
+<div class="card-top">
+<span class="step">Step 3</span>
+<svg role="img" aria-label="An arrow returning into a Markdown file" width="44" height="40" viewBox="0 0 44 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 4h16l8 8v24H18z"/><path d="M34 4v8h8"/><path d="M23 29V19l4 5 4-5v10"/><path d="M2 22h12"/><path d="M10 18l4 4-4 4"/></svg>
+</div>
+<h3>Import.</h3>
+<p>Drop the file back in. Every comment and change appears beside your text, ready to accept, reject or reply to. Changes you made in the meantime are kept.</p>
+</article>
+
 </div>
 </section>
 
@@ -262,6 +328,43 @@ html{scroll-behavior:smooth}
 </div>
 </section>
 
+<section class="stage privacy" id="privacy" aria-labelledby="privacy-h">
+<div class="copy">
+<span class="eyebrow">Privacy &amp; AI</span>
+<h2 class="word" id="privacy-h">Your Writing Belongs To You</h2>
+</div>
+<div class="cards">
+
+<article class="card">
+<div class="card-top">
+<span class="card-num">1</span>
+<svg role="img" aria-label="A Mac with a closed lock" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="30" height="20" rx="2"/><path d="M3 32h34"/><rect x="15" y="16" width="10" height="8" rx="1.5"/><path d="M17 16v-2.5a3 3 0 0 1 6 0V16"/></svg>
+</div>
+<h3>Nothing leaves your Mac unless you send it.</h3>
+<p>No account, no analytics, no tracking. Grasmere has no server. Your documents are Markdown files in folders you choose.</p>
+</article>
+
+<article class="card">
+<div class="card-top">
+<span class="card-num">2</span>
+<svg role="img" aria-label="A processor chip" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="10" width="20" height="20" rx="3"/><rect x="16" y="16" width="8" height="8" rx="1"/><path d="M14 4v6M20 4v6M26 4v6M14 30v6M20 30v6M26 30v6M4 14h6M4 20h6M4 26h6M30 14h6M30 20h6M30 26h6"/></svg>
+</div>
+<h3>AI that runs on your Mac.</h3>
+<p>Ask and Brainstorm use Apple’s on‑device model by default. They work offline and send nothing anywhere.</p>
+</article>
+
+<article class="card">
+<div class="card-top">
+<span class="card-num">3</span>
+<svg role="img" aria-label="A speech bubble with a question mark" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H16l-7 6v-6h-1a4 4 0 0 1-4-4z"/><path d="M16 14.5a4 4 0 1 1 5.5 3.7c-1 .5-1.5 1.2-1.5 2.3"/><path d="M20 24.5h.01"/></svg>
+</div>
+<h3>AI that leaves the writing to you.</h3>
+<p>Brainstorm an essay, research or runbook. Grasmere asks you questions and you get the ball rolling.</p>
+</article>
+
+</div>
+</section>
+
 <section class="get" aria-label="Download">
 <h2>Start writing today.</h2>
 <a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
@@ -283,32 +386,16 @@ html{scroll-behavior:smooth}
 </div>
 
 <script>
-// On arrival the headline's "write" turns through the four stages, each in its colour, then settles.
-(function () {
-  var verb = document.querySelector('.verb');
-  if (!verb || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var words = [['research', '#A9471F'], ['draft', '#85600C'], ['review', '#365583'], ['publish', '#46653A'], ['write', '']];
-  var i = 0;
-  function step() {
-    verb.classList.add('out');
-    setTimeout(function () {
-      verb.textContent = words[i][0]; verb.style.color = words[i][1];
-      verb.classList.remove('out');
-      i += 1;
-      if (i < words.length) setTimeout(step, 1000);
-    }, 300);
-  }
-  setTimeout(step, 1200);
-})();
-
-// The screenshot tabs: a click (or the arrow keys) shows that pane.
+// The screenshot tabs: a click (or the arrow keys) shows that pane. A recording plays only while
+// its stage's pictures are in the window: it starts as they scroll in and pauses as they leave.
 document.querySelectorAll('.frame').forEach(function (frame) {
   var tabs = frame.querySelectorAll('.tab'), panes = frame.querySelectorAll('.pane');
+  var inView = !('IntersectionObserver' in window);
   function show(i) {
     tabs.forEach(function (t, j) { t.setAttribute('aria-selected', i === j ? 'true' : 'false'); t.tabIndex = i === j ? 0 : -1; });
     panes.forEach(function (p, j) {
       var video = p.querySelector('video');
-      if (i === j) { p.setAttribute('data-active', ''); if (video) { video.currentTime = 0; video.play().catch(function () {}); } }
+      if (i === j) { p.setAttribute('data-active', ''); if (video) { video.currentTime = 0; if (inView) video.play().catch(function () {}); } }
       else { p.removeAttribute('data-active'); if (video) video.pause(); }
     });
   }
@@ -321,6 +408,12 @@ document.querySelectorAll('.frame').forEach(function (frame) {
     });
   });
   show(0);
+  if (!inView) new IntersectionObserver(function (entries) {
+    inView = entries[entries.length - 1].isIntersecting;
+    var video = frame.querySelector('.pane[data-active] video');
+    if (!video) return;
+    if (inView) video.play().catch(function () {}); else video.pause();
+  }, { threshold: 0.3 }).observe(frame);
   // A click on the picture opens it in the gallery, with the stage's other pictures beside it.
   panes.forEach(function (p, i) { p.addEventListener('click', function () { openGallery(frame, i); }); });
 });
