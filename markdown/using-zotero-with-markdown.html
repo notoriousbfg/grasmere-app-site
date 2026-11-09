@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using Zotero with Markdown on a Mac · Grasmere</title>
+<meta name="description" content="How to use Zotero with Markdown: export your library as BibTeX or CSL JSON, cite as you write, and get APA, Harvard, Chicago or MLA references in Word and PDF.">
+<link rel="canonical" href="https://grasmere.app/markdown/using-zotero-with-markdown.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Using Zotero with Markdown on a Mac · Grasmere">
+<meta property="og:description" content="How to use Zotero with Markdown: export your library as BibTeX or CSL JSON, cite as you write, and get APA, Harvard, Chicago or MLA references in Word and PDF.">
+<meta property="og:url" content="https://grasmere.app/markdown/using-zotero-with-markdown.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="using-zotero-with-markdown">Using Zotero with Markdown</h1>
+<p class="lede">Your references live in Zotero and you’d like to write in Markdown. The two don’t know about each other, so something has to sit between them. This page covers the usual way of joining them with Pandoc, and how Grasmere does it on a Mac without plugins or a command line.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<p class="figure wide"><img src="../assets/research-documents.jpg" alt="A source in Grasmere with its PDF open beside it, words selected in the PDF and Highlight over them" width="1920" height="1204"></p>
+<h2 id="the-usual-way">The usual way: Better BibTeX and Pandoc</h2>
+<p>Most guides describe the same set-up. Install the Better BibTeX plugin in Zotero, so each reference has a steady citation key. Export your library to a <code>.bib</code> file. Write your citations by key, then run Pandoc to turn them into formatted references.</p>
+<pre><code>Starters are alive [@field2019, p. 12].
+
+pandoc essay.md --citeproc --bibliography library.bib --csl apa.csl -o essay.docx</code></pre>
+<p>It works, and it can write thousands of citation styles. It also means remembering keys, keeping a style file about, and not seeing a formatted citation until you’ve run the command. And when your supervisor returns the Word file with tracked changes, the only way back into your Markdown is by hand.</p>
+<h2 id="bring-your-zotero-library-into-grasmere">Bring your Zotero library into Grasmere</h2>
+<ol>
+<li>In Zotero, choose File ▸ Export Library, or right-click a collection and choose Export Collection. Pick BibTeX, Better BibTeX or CSL JSON as the format.</li>
+<li>In Grasmere, choose Project ▸ Import Sources and pick the file. A sheet says how many entries it has and what will change.</li>
+<li>Press Import.</li>
+</ol>
+<p>Each entry becomes a source in your project’s research folder. A source is an ordinary Markdown document, with the reference’s details at the top and room for your own notes beneath.</p>
+<pre><code>---
+title: The Living Loaf
+author: Field, Rosa
+published: 2019
+publisher: Riverbank Press
+place: London
+type: book
+key: field2019
+---</code></pre>
+<p>A Zotero export names each entry’s attached files too. Grasmere can copy those PDFs and EPUBs into the project, so it has everything it needs, or link to them where Zotero keeps them.</p>
+<h2 id="keeping-the-two-in-step">Keeping the two in step</h2>
+<p>Carry on adding to Zotero as you read. Import the same file again and your sources are brought up to date, not doubled. Grasmere matches each entry by its citation key, then its DOI, then its ISBN. Only the details at the top of a source are rewritten. The notes you wrote beneath them are never changed.</p>
+<p>With Better BibTeX, tick Keep updated when you export and Zotero rewrites the file whenever your library changes. Grasmere notices the file has changed and offers Update. If an import goes wrong, Project ▸ Undo Last Import puts everything back.</p>
+<h2 id="cite-as-you-write">Cite as you write</h2>
+<p>Type <code>[@</code>, or press ⌥⌘K, and a list of your sources appears. Type part of an author’s name, a word of the title or a year, and press Return. There are no keys to remember.</p>
+<pre><code>Starters are alive [Field 2019, p. 12](../research/The%20Living%20Loaf.md).</code></pre>
+<p>A citation is an ordinary Markdown link to the source. Rest the pointer on it for a preview. Rename or move the source and the link follows. And the source lists every document that cites it.</p>
+<h2 id="formatted-references">Formatted references in Word, PDF and on the web</h2>
+<p>When you export, each citation is written in the project’s style and the sources you cited are listed at the end. Grasmere writes APA 7, Harvard, Chicago author-date and MLA 9, in Word documents, PDFs and websites. The styles are set out in <a href="markdown-citations.html">Citations and bibliographies in Markdown</a>.</p>
+<h2 id="your-highlights-and-annotations">Your highlights and annotations</h2>
+<p>What you marked while reading can come too. Project ▸ Import Highlights reads the notes Zotero makes from a PDF’s annotations, exported as Markdown. Each highlight is quoted on its source with its page, and a note you wrote on a highlight becomes an annotation. Import again later and only what’s new is added.</p>
+<h2 id="if-you-already-write-with-pandoc-citations">If you already write with Pandoc citations</h2>
+<p>A draft written for Pandoc cites by key, as in <code>[@field2019, p. 12]</code> or <code>@field2019</code> in a sentence. Once your sources are in the project with their keys, Project ▸ Convert Pandoc Citations rewrites every one as a citation link. A sheet shows what will change and lists any keys that name no source. The whole conversion can be undone.</p>
+<h2 id="what-isnt-supported">What isn’t supported</h2>
+<ul>
+<li>RIS and Zotero RDF. Export as BibTeX or CSL JSON instead.</li>
+<li>Numbered styles (Vancouver, IEEE), footnote styles (Chicago notes and bibliography, OSCOLA) and journals’ house styles.</li>
+<li>A live connection to Zotero. Grasmere reads the file you export, and only when you ask.</li>
+</ul>
+<h2 id="questions">Questions</h2>
+<h3 id="do-i-need-the-better-bibtex-plugin">Do I need the Better BibTeX plugin?</h3>
+<p>No. Zotero’s own BibTeX and CSL JSON exports both work. Better BibTeX is worth having for its steady citation keys, and because it can keep the exported file up to date by itself.</p>
+<h3 id="does-grasmere-change-my-zotero-library">Does Grasmere change my Zotero library?</h3>
+<p>No. It reads the exported file. Nothing in Zotero is touched.</p>
+<h3 id="do-i-need-zotero-at-all">Do I need Zotero at all?</h3>
+<p>No. Project ▸ New Source looks a paper up by its DOI or a book by its ISBN, a PDF dropped into the research folder becomes a source, and so does any web page you save. Zotero is for when your library is already there.</p>
+<h3 id="will-it-work-with-mendeley-or-endnote">Will it work with Mendeley, EndNote or another reference manager?</h3>
+<p>If it can export BibTeX or CSL JSON, yes. Import Sources reads the file the same way.</p>
+<section class="get" aria-label="Download">
+<h2>Cite from your Zotero library today.</h2>
+<p>Export a .bib, import it, and type [@. The trial is free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="markdown-citations.html">Citations and bibliographies in Markdown</a></li>
+<li><a href="writing-a-thesis-in-markdown.html">Writing a thesis in Markdown</a></li>
+<li><a href="writing-research-papers-in-markdown.html">Writing research papers in Markdown</a></li>
+<li><a href="../guides/citations.html#import-sources">Import Sources, in the Citations guide</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing Research Papers in Markdown · Grasmere</title>
+<meta name="description" content="Write a research paper in Markdown on a Mac: papers by DOI, PDF highlights, citations in APA, Harvard, Chicago or MLA, and tracked changes back from Word.">
+<link rel="canonical" href="https://grasmere.app/markdown/writing-research-papers-in-markdown.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Writing Research Papers in Markdown · Grasmere">
+<meta property="og:description" content="Write a research paper in Markdown on a Mac: papers by DOI, PDF highlights, citations in APA, Harvard, Chicago or MLA, and tracked changes back from Word.">
+<meta property="og:url" content="https://grasmere.app/markdown/writing-research-papers-in-markdown.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="writing-research-papers-in-markdown">Writing research papers in Markdown</h1>
+<p class="lede">A paper is mostly reading, citing and revising with co-authors. Markdown has always been good for the writing and awkward for the rest. Grasmere is a Mac app that does the rest, and leaves the paper a plain Markdown file.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<p class="figure wide"><img src="../assets/research-documents.jpg" alt="A source in Grasmere with its PDF open beside it, words selected in the PDF and Highlight over them" width="1920" height="1204"></p>
+<h2 id="collect-the-literature">Collect the literature</h2>
+<p>Drop a paper’s PDF into the project’s research folder. Grasmere reads its first pages for a DOI or an arXiv number, looks the paper up, and writes a source beside the PDF with its authors, journal, volume and pages filled in. A paper you haven’t got the PDF for can be added by its DOI alone, with Project ▸ New Source.</p>
+<p>If your library is in a reference manager, export it as BibTeX or CSL JSON and import the lot. See <a href="using-zotero-with-markdown.html">Using Zotero with Markdown</a>.</p>
+<h2 id="read-and-highlight">Read and highlight</h2>
+<p>Open a paper beside its source and select a passage. Highlight keeps it in your highlights document under the paper’s heading, with a link that opens the PDF at that page. The PDF itself isn’t written to.</p>
+<p>When you want the passage in your draft, Quote puts it there as a block quote with its citation already attached.</p>
+<h2 id="write">Write</h2>
+<p>The paper is a Markdown document. Headings, footnotes, tables and code blocks are written the ordinary Markdown way. Tables are drawn as tables, and you edit them a cell at a time. Diagrams are written in Mermaid inside a code block and drawn beneath it, and they go into the PDF and the Word file with everything else.</p>
+<h2 id="cite">Cite</h2>
+<p>Type <code>[@</code> and pick the paper by author, title or year. Put a page after a comma. To write the author into your sentence, put the year in brackets.</p>
+<pre><code>Starters are alive [Field 2019, p. 12](../research/The%20Living%20Loaf.md).
+[Field (2019)](../research/The%20Living%20Loaf.md) argues that they are hungry too.</code></pre>
+<p>On export the first becomes “(Field, 2019, p. 12)” and the second “Field (2019) argues”, in APA. Choose Harvard, Chicago author-date or MLA and they’re written that way instead. The reference list at the end holds the sources you cited and no others.</p>
+<p>Before you send anything, the Research stage lists your loose ends, such as sources you never cited and links that lead nowhere.</p>
+<h2 id="revise-with-co-authors-who-use-word">Revise with co-authors who use Word</h2>
+<p>This is where writing a paper in Markdown usually falls down. Your co-authors and your supervisor use Word, and they’ll return the draft with tracked changes.</p>
+<p>In Grasmere you send the paper as a Word file from the Review screen. They comment and edit in Word, Pages or Google Docs. Drop the returned file back in and each change and comment appears in the page beside your text, in the reviewer’s colour, to accept, reject, defer or reply to. For the next round, Export with My Changes Marked shows them what you did with their suggestions. See <a href="markdown-to-word.html">Markdown to Word, and back again</a>.</p>
+<p class="figure wide"><img src="../assets/review-comment.jpg" alt="A comment being added beside a sentence on Grasmere’s Review stage" width="1920" height="1207" loading="lazy"></p>
+<h2 id="submit">Submit</h2>
+<p>Most journals ask for Word or PDF. The Word file has Word’s own heading styles, real footnotes, embedded figures and the bibliography. The PDF is typeset, with footnotes at the foot of the page and working links.</p>
+<p><em>New in 1.6.</em> For a journal that wants LaTeX, the Publish stage writes a <code>.tex</code> in the journal’s template, with a <code>.bib</code> of the sources you cited. See <a href="latex-and-markdown.html">Using LaTeX with Markdown</a>.</p>
+<h2 id="what-to-check-first">What to check first</h2>
+<p>Grasmere writes four author-date styles. If your journal wants a numbered style such as Vancouver or IEEE, a footnote style, or its own house style, Grasmere’s Word and PDF won’t give you that.</p>
+<h2 id="questions">Questions</h2>
+<h3 id="do-my-co-authors-need-grasmere">Do my co-authors need Grasmere?</h3>
+<p>No. They need Word, Pages or Google Docs, and they review as they always have.</p>
+<h3 id="can-i-keep-the-paper-in-git">Can I keep the paper in git?</h3>
+<p>Yes. A project is a folder of plain files. If it’s a git repository, Grasmere can commit as you save, and the Review screen compares the paper with any earlier commit.</p>
+<h3 id="is-anything-sent-anywhere">Is anything sent anywhere?</h3>
+<p>Not unless you ask. A DOI lookup sends the DOI and nothing else. There’s no account, and Grasmere has no server. See <a href="../privacy.html">Privacy</a>.</p>
+<section class="get" aria-label="Download">
+<h2>Write the next paper in Markdown.</h2>
+<p>Drop in a PDF, cite it, and send your co-author a Word file. The trial is free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="markdown-for-research.html">Markdown for research</a></li>
+<li><a href="latex-and-markdown.html">Using LaTeX with Markdown</a></li>
+<li><a href="markdown-citations.html">Citations and bibliographies in Markdown</a></li>
+<li><a href="../guides/review.html">The Review guide</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing a Book in Markdown · Grasmere</title>
+<meta name="description" content="How to write a book in Markdown: a folder of chapters, a running order, review in Word, and a manuscript or typeset book as PDF. With Grasmere for the Mac.">
+<link rel="canonical" href="https://grasmere.app/markdown/writing-a-book-in-markdown.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Writing a Book in Markdown · Grasmere">
+<meta property="og:description" content="How to write a book in Markdown: a folder of chapters, a running order, review in Word, and a manuscript or typeset book as PDF. With Grasmere for the Mac.">
+<meta property="og:url" content="https://grasmere.app/markdown/writing-a-book-in-markdown.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="writing-a-book-in-markdown">Writing a book in Markdown</h1>
+<p class="lede">A book is too long for one file, and too much work to keep in a format only one app can open. Write it as a folder of Markdown files, a chapter each. Grasmere is a Mac app that puts them back together as a manuscript when you need one.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<p class="figure wide"><img src="../assets/publish-preview.jpg" alt="Grasmere’s Publish stage: four chapters in hand, laid out as the pages of a book, with the title, author, style and citation options beside them" width="1920" height="1205"></p>
+<h2 id="a-folder-of-chapters">A folder of chapters</h2>
+<p>Give each chapter a file of its own, and each part a folder. A book then looks like this on disk, and you can read it there without any app at all.</p>
+<pre><code>The Winter Ferry/
+  project.md
+  chapters/
+    The Last Crossing.md
+    Low Water.md
+    The Seed Tin.md
+    The Shop Window.md
+  research/
+    Lakeland Ferries.md
+    Ferry Timetable.md</code></pre>
+<p>A chapter’s first heading is its title. Drag chapters in the contents to put them in order, and the order is kept in the folder as plain Markdown. Small files are quick to open and easy to move, and a bad afternoon’s edits only ever touch one of them.</p>
+<h2 id="a-line-about-each-chapter">A line about each chapter</h2>
+<p>A couple of lines at the top of a chapter say what happens in it and how far along it is.</p>
+<pre><code>---
+synopsis: Margaret takes the last ferry of the year.
+status: Draft
+---</code></pre>
+<p>Grasmere shows these on the Review stage, where each chapter is an index card with its title, synopsis, word count and status. Drag the cards to try another order. A status is one of Unwritten, Draft, Revised or Final.</p>
+<h2 id="getting-the-words-down">Getting the words down</h2>
+<p>The page is plain Markdown in careful type, with the marks kept faint. Focus mode takes everything else away and fades all but the paragraph you’re writing. Footnotes are written as <code>[^1]</code>. Link one document to another, a chapter to a character’s notes say, and the link still works after you rename either.</p>
+<p>If you’re writing to a length, give the book a word target and a date. The bar beneath the page says how far you’ve got, what you’ve written today, and roughly how many words a day would get you there.</p>
+<h2 id="send-chapters-to-your-editor-in-word">Send chapters to your editor in Word</h2>
+<p>Editors and early readers work in Word. Send a chapter, or the whole book, as a Word file. When it comes back, their tracked changes and comments appear beside your text, each in its own chapter, to accept or reject one at a time. It works even if you carried on writing while they read. See <a href="markdown-to-word.html">Markdown to Word, and back again</a>.</p>
+<h2 id="the-whole-book-as-a-manuscript">The whole book, as a manuscript or a typeset PDF</h2>
+<p>Right-click the chapters folder and choose Publish to PDF. The Publish stage shows the running order on the left and the book read straight through beside it, with a count like “4 in hand · 1,344 words · about 6 pages”. Then choose a style.</p>
+<ul>
+<li><strong>Manuscript</strong> is standard manuscript format, as agents and publishers ask for. Double-spaced 12 pt Times, one-inch margins, a title page with the word count, and your name, the title and the page number at the top of each page.</li>
+<li><strong>Book</strong> uses your theme’s typography, with large chapter titles, a divider page for each part, a contents page with page numbers, and footnotes at the foot of the page.</li>
+</ul>
+<p>Word, beneath Publish PDF, writes the same book as one Word document. You can also build the project as a website.</p>
+<h2 id="for-non-fiction-sources-and-citations">For non-fiction: sources and citations</h2>
+<p>Keep the books, papers and web pages you’re drawing on in the project’s research folder. Type <code>[@</code> to cite one. When you publish, citations are written in APA, Harvard, Chicago or MLA, and the references follow the last chapter. See <a href="markdown-citations.html">Citations and bibliographies in Markdown</a>.</p>
+<h2 id="if-your-book-is-in-scrivener">If your book is in Scrivener</h2>
+<p><em>New in 1.5.</em> File ▸ Import Scrivener Project makes a Grasmere project from a Scrivener one, with your folders and documents in the binder’s order as Markdown. The Scrivener project isn’t changed. See <a href="scrivener-alternative.html">A Scrivener alternative in plain Markdown</a>.</p>
+<h2 id="questions">Questions</h2>
+<h3 id="can-markdown-cope-with-a-whole-book">Can Markdown cope with a whole book?</h3>
+<p>Yes, because the book is never one file. Each chapter is a small document, and the manuscript is put together from them when you read it through or publish.</p>
+<h3 id="can-i-make-an-ebook">Can I make an ebook?</h3>
+<p>Not an EPUB. Grasmere publishes PDF, Word and a website. Many publishers and ebook services take a Word file.</p>
+<h3 id="how-do-i-keep-earlier-versions">How do I keep earlier versions?</h3>
+<p>Your book is a folder, so back it up like any other, with Time Machine or a sync service. If the folder is a git repository, Grasmere can commit your changes as you save and show a chapter’s earlier versions, with the difference marked word by word.</p>
+<h3 id="what-if-i-stop-using-grasmere">What if I stop using Grasmere?</h3>
+<p>You keep everything. The chapters are Markdown files in a folder you chose, and they open in any editor.</p>
+<section class="get" aria-label="Download">
+<h2>Start the book.</h2>
+<p>Open an empty folder, write a chapter, and see it as a manuscript. The trial is free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="markdown-to-pdf.html">Markdown to PDF on a Mac</a></li>
+<li><a href="markdown-to-word.html">Markdown to Word, and back again</a></li>
+<li><a href="scrivener-alternative.html">A Scrivener alternative in plain Markdown</a></li>
+<li><a href="../guides/the-manuscript-view.html">The Manuscript View guide</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>

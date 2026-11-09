@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Markdown for Research: Notes, Sources and Highlights · Grasmere</title>
+<meta name="description" content="Keep your research in Markdown: saved web pages, PDF papers, highlights, annotations and linked notes as plain files in one folder. With Grasmere for the Mac.">
+<link rel="canonical" href="https://grasmere.app/markdown/markdown-for-research.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Markdown for Research: Notes, Sources and Highlights · Grasmere">
+<meta property="og:description" content="Keep your research in Markdown: saved web pages, PDF papers, highlights, annotations and linked notes as plain files in one folder. With Grasmere for the Mac.">
+<meta property="og:url" content="https://grasmere.app/markdown/markdown-for-research.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="markdown-for-research">Markdown for research</h1>
+<p class="lede">Research piles up as web pages, PDFs, highlights and half-finished notes, usually in four different apps. Kept as Markdown files in one folder, it stays readable, searchable and yours. Grasmere is a Mac app built around that folder.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<p class="figure wide"><img src="../assets/research-1.jpg" alt="Grasmere’s Research stage: a question box, the project’s sources as cards, highlights, tasks and loose ends" width="1920" height="1204"></p>
+<h2 id="why-plain-markdown-suits-research">Why plain Markdown suits research</h2>
+<p>Research outlasts the tools it was done in. A note in a plain text file can be opened by any editor, searched by any tool, kept in git and read in ten years. A note in an app’s database lasts as long as the app.</p>
+<p>Markdown adds a little structure to plain text. Headings, links, quotations and lists are enough for most notes, and a few lines at the top of a file can hold the details of the thing it’s about.</p>
+<h2 id="a-source-is-a-markdown-file">A source is a Markdown file</h2>
+<p>In Grasmere, each thing you’ve read is a document in the project’s research folder. Its details sit at the top, and whatever you write beneath them is your notes on it.</p>
+<pre><code>---
+title: How Sourdough Rises
+url: https://theloaf.example/2026/03/how-sourdough-rises/
+author: Rosa Field
+site: The Loaf
+published: 2026-03-14
+accessed: 2026-10-23
+type: webpage
+---</code></pre>
+<p>Those are the details a citation needs, so anything in the folder is ready to cite.</p>
+<h2 id="save-web-pages-as-markdown">Save web pages as Markdown</h2>
+<p>When you find a page worth keeping, choose Project ▸ Save Web Page and paste its address. Grasmere keeps the article and drops what’s around it, like menus, adverts and cookie banners. Headings, lists, quotes and tables come across as Markdown. You can save from Safari’s Share menu too.</p>
+<h2 id="papers-and-books">Papers and books</h2>
+<p>A paper’s PDF dropped into the folder becomes a source, looked up by the DOI or arXiv number in its first pages. A book is added by its ISBN. A library kept in Zotero or another reference manager comes in as a BibTeX or CSL JSON file. See <a href="using-zotero-with-markdown.html">Using Zotero with Markdown</a>.</p>
+<h2 id="highlights-in-one-commonplace-book">Highlights, in one commonplace book</h2>
+<p>Select a passage in a saved page or a PDF and choose Highlight. The words are copied into <code>highlights.md</code>, under a heading for the document they came from.</p>
+<pre><code># Highlights
+
+## [Parish Records of Kelder, 1890–1940](Parish%20Records.md)
+
+&gt; The ferry ran until the ice came, and then the parish paid a boy to walk the shore.</code></pre>
+<p>It’s ordinary Markdown, and you can edit it by hand. Annotate a passage and your note becomes a document of its own, linked from the words you marked. Highlights made in Readwise, or in Zotero’s PDF reader, can be imported into the same book.</p>
+<p class="figure wide"><img src="../assets/research-annotate.jpg" alt="A saved web article in Grasmere’s reading pane, its highlighted passages numbered, with Highlight and Annotate over the selected words" width="1920" height="1201" loading="lazy"></p>
+<h2 id="notes-that-link-to-each-other">Notes that link to each other</h2>
+<p>Link one note to another with an ordinary Markdown link. Each document shows which others link to it, so a source shows every note and chapter that draws on it. Rename or move a file, in Grasmere or in the Finder, and the links to it are rewritten to match.</p>
+<h2 id="ask-your-own-documents">Ask your own documents</h2>
+<p>When you can’t remember where you read something, ask. Ask Your Documents answers a question from your own notes and sources, with numbered citations that open the passage each came from. It reads what you highlighted first. By default it uses Apple’s on-device model, so the question and your documents stay on your Mac.</p>
+<h2 id="loose-ends">Loose ends</h2>
+<p>The Research stage keeps a list of what’s unfinished. Links that lead nowhere are there, each with a button to make the missing document. So are the sources you’ve gathered and never cited.</p>
+<h2 id="from-notes-to-a-draft">From notes to a draft</h2>
+<p>The same project holds what you’re writing. Type <code>[@</code> in a chapter to cite a source, or use Quote on a highlight to drop it in as a block quote with its citation. When you export to Word or PDF, the citations and the reference list are written in APA, Harvard, Chicago or MLA.</p>
+<h2 id="questions">Questions</h2>
+<h3 id="is-my-research-uploaded-anywhere">Is my research uploaded anywhere?</h3>
+<p>No. There’s no account and Grasmere has no server. Your documents are files in a folder you chose. Grasmere fetches a web page when you ask it to save one, and looks up a DOI or ISBN when you ask.</p>
+<h3 id="can-i-use-my-existing-notes">Can I use my existing notes?</h3>
+<p>Yes. Open the folder they’re in. Any Markdown files are listed as they are. Move one into the research folder and Grasmere asks whether it’s a source or should stay as notes.</p>
+<h3 id="does-it-work-with-obsidian">Does it work with an Obsidian vault?</h3>
+<p>Yes, a vault is a folder of Markdown files. See <a href="obsidian-long-form-writing.html">From Obsidian notes to a finished manuscript</a>.</p>
+<section class="get" aria-label="Download">
+<h2>Keep your research in plain files.</h2>
+<p>Open a folder and save your first source. The trial is free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="writing-research-papers-in-markdown.html">Writing research papers in Markdown</a></li>
+<li><a href="using-zotero-with-markdown.html">Using Zotero with Markdown</a></li>
+<li><a href="markdown-citations.html">Citations and bibliographies in Markdown</a></li>
+<li><a href="../guides/research.html">The Research guide</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>

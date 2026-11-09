@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Markdown to Word and Back, with Tracked Changes · Grasmere</title>
+<meta name="description" content="Convert Markdown to Word on a Mac, send it for review, and bring the tracked changes and comments back into your Markdown. Reviewers need only Word.">
+<link rel="canonical" href="https://grasmere.app/markdown/markdown-to-word.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Markdown to Word and Back, with Tracked Changes · Grasmere">
+<meta property="og:description" content="Convert Markdown to Word on a Mac, send it for review, and bring the tracked changes and comments back into your Markdown. Reviewers need only Word.">
+<meta property="og:url" content="https://grasmere.app/markdown/markdown-to-word.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="markdown-to-word-and-back-again">Markdown to Word, and back again</h1>
+<p class="lede">Sooner or later someone asks for a Word file. Turning Markdown into Word is the easy half. The hard half is what to do when the file comes back covered in tracked changes and comments. Grasmere is a Mac app that does both halves.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<p class="figure wide"><video src="../assets/review-word.mp4" poster="../assets/review-word.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Sending a chapter as a Word file and bringing the reviewer’s changes back into it"></video></p>
+<h2 id="markdown-to-word">Markdown to Word</h2>
+<p>With a document open, choose File ▸ Export ▸ Word Document, or press ⇧⌘E. Grasmere saves a <code>.docx</code> on A4 or Letter pages.</p>
+<p>It’s a proper Word document. Headings use Word’s Heading 1, 2 and 3, so they fill the navigation pane and a table of contents. Lists, tables, quotations and code use Word’s own styles too, so changing the style set in Word restyles the whole document. Footnotes are real Word footnotes. Pictures and diagrams are embedded, and citations are written in your chosen style with a bibliography at the end.</p>
+<p>A whole folder of chapters goes out as one Word document from the Publish stage, each chapter from a new page.</p>
+<h2 id="the-problem-with-the-way-back">The problem with the way back</h2>
+<p>Other tools convert Markdown to Word well. Pandoc does it in a line.</p>
+<pre><code>pandoc chapter.md -o chapter.docx</code></pre>
+<p>Then your editor returns <code>chapter-JS-edits.docx</code> with forty tracked changes and a dozen comments. Your choices are to retype each change into your Markdown by hand, or to convert the Word file back and lose your own formatting, links and whatever you’ve written since. Most people give up and finish the piece in Word.</p>
+<h2 id="the-round-trip">The round trip</h2>
+<ol>
+<li><strong>Send.</strong> On the Review screen, choose Send ▸ Export as Word. The file is named for its round, such as “Low Water (Round 1).docx”. Send it however you like.</li>
+<li><strong>They review.</strong> In Word, Pages or Google Docs, with comments and tracked changes as usual. They don’t need Grasmere, and there’s nothing for them to learn.</li>
+<li><strong>Import.</strong> Drop the returned file onto Grasmere. Their changes are marked in your page, struck through and underlined in their colour, with their comments beside it.</li>
+</ol>
+<p>Then you go through them. Accept, reject or defer each change where it sits, or all of one reviewer’s at once. Reply to a comment, or resolve it. Nothing goes into your Markdown until you say so.</p>
+<p class="figure wide"><img src="../assets/review-comment.jpg" alt="A comment being added beside a sentence on Grasmere’s Review stage" width="1920" height="1207"></p>
+<h2 id="keep-writing-while-its-out">Keep writing while it’s out</h2>
+<p>Grasmere keeps a copy of exactly what it sent, so it can tell what the reviewer changed even if you’ve carried on writing. A change accepted into a paragraph you’ve since rewritten goes into your new version. If you both changed the same words, you’re shown what you sent, what they suggested and what you have now, and you decide.</p>
+<h2 id="round-after-round">Round after round</h2>
+<p>Each sending and coming back is a round, and Grasmere keeps them all. For the next one, Export with My Changes Marked sends your edits since the last copy as tracked changes in your name, so your reviewer sees what you did with their suggestions. Replies carry on as threads in Word’s own comments.</p>
+<p>Every round, copy sent and restore point is listed under Versions. Pick one and the page shows what’s changed since, word by word. Restore to Before the Review undoes a whole import.</p>
+<h2 id="a-whole-book-at-once">A whole book at once</h2>
+<p>Send a folder of chapters as one Word file. When it returns, each comment and change goes to its own chapter, even for a passage you’ve since moved to another one. The chapter list shows how many items each still has open.</p>
+<h2 id="questions">Questions</h2>
+<h3 id="does-my-reviewer-need-grasmere-or-a-mac">Does my reviewer need Grasmere, or a Mac?</h3>
+<p>No. They need something that opens a Word file.</p>
+<h3 id="does-it-work-with-google-docs">Does it work with Google Docs?</h3>
+<p>Yes. They upload the file, comment and use Suggesting mode, then choose File ▸ Download ▸ Microsoft Word. Their suggestions come back as tracked changes. From Pages, they export to Word.</p>
+<h3 id="what-if-they-forgot-to-turn-on-track-changes">What if they forgot to turn on Track Changes?</h3>
+<p>Their edits are found anyway, by comparing what came back with what was sent. Changes that are only formatting are ignored.</p>
+<h3 id="is-anything-added-to-my-markdown">Is anything added to my Markdown?</h3>
+<p>No. Comments, changes and rounds are kept in a review file beside the document, never in your text.</p>
+<h3 id="can-i-convert-one-file-and-be-done">Can I convert one file and be done?</h3>
+<p>Yes. File ▸ Export ▸ Word Document saves a plain copy and starts no review.</p>
+<section class="get" aria-label="Download">
+<h2>Your reviewer uses Word. You stay in Markdown.</h2>
+<p>Send a chapter out and bring the changes back. The trial is free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="writing-a-thesis-in-markdown.html">Writing a thesis in Markdown</a></li>
+<li><a href="writing-a-book-in-markdown.html">Writing a book in Markdown</a></li>
+<li><a href="markdown-to-pdf.html">Markdown to PDF on a Mac</a></li>
+<li><a href="../guides/review.html">The Review guide</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>

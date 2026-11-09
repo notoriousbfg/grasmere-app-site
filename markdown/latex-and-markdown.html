@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using LaTeX with Markdown · Grasmere</title>
+<meta name="description" content="Draft in Markdown, typeset in LaTeX. How the two fit together, and how Grasmere writes a .tex in your journal’s template with a .bib of your sources.">
+<link rel="canonical" href="https://grasmere.app/markdown/latex-and-markdown.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Using LaTeX with Markdown · Grasmere">
+<meta property="og:description" content="Draft in Markdown, typeset in LaTeX. How the two fit together, and how Grasmere writes a .tex in your journal’s template with a .bib of your sources.">
+<meta property="og:url" content="https://grasmere.app/markdown/latex-and-markdown.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="using-latex-with-markdown">Using LaTeX with Markdown</h1>
+<p class="lede">LaTeX sets a page beautifully and is tiring to write in. Markdown is pleasant to write in and can’t set a page. So a lot of academics now draft in Markdown and bring LaTeX in at the end, for the journal’s template. Here’s how the two fit together, and how Grasmere does it on a Mac.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<h2 id="markdown-or-latex">Markdown or LaTeX?</h2>
+<p>You don’t have to choose one for everything. They’re good at different halves of the job.</p>
+<table>
+<thead><tr><th></th><th>Markdown</th><th>LaTeX</th></tr></thead>
+<tbody>
+<tr><td>Writing prose</td><td>Reads like the text itself. A few marks for headings, emphasis and lists.</td><td>Commands and braces among the words.</td></tr>
+<tr><td>Maths</td><td>None of its own. Most tools borrow LaTeX’s, between dollar signs.</td><td>The standard.</td></tr>
+<tr><td>Typesetting</td><td>Left to whatever you export with.</td><td>Precise control of the page.</td></tr>
+<tr><td>Journal templates</td><td>Rare.</td><td>Most journals in the sciences publish one.</td></tr>
+<tr><td>Review by people who use Word</td><td>Converts to Word well.</td><td>Awkward.</td></tr>
+<tr><td>When something breaks</td><td>There’s nothing to compile.</td><td>A missing brace stops the build.</td></tr>
+</tbody>
+</table>
+<p>If your work is mostly equations, write in LaTeX. If it’s mostly prose with citations, footnotes and the odd table, draft in Markdown and let LaTeX do the page at the end.</p>
+<h2 id="the-usual-way">The usual way: Pandoc</h2>
+<p>Pandoc converts Markdown to LaTeX and pours it into a template. Citations written as <code>[@key]</code> become <code>\cite</code> commands.</p>
+<pre><code>pandoc paper.md --template journal.tex --natbib --bibliography refs.bib -o paper.tex</code></pre>
+<p>It’s dependable and endlessly adjustable. It’s also a command line, a template language and a set of flags to keep straight for each paper.</p>
+<h2 id="publish-latex-from-grasmere">Publish LaTeX from Grasmere</h2>
+<p><em>New in 1.6.</em> Grasmere’s Publish stage has LaTeX beside Word. Choose a folder and a template, and Grasmere writes three things into it.</p>
+<ul>
+<li><code>Title.tex</code>, your paper or your chapters in the template you chose.</li>
+<li><code>Title.bib</code>, the sources you cited and no others, each under its citation key.</li>
+<li><code>figures/</code>, with the pictures and diagrams.</li>
+</ul>
+<p>Open the folder in TeXShop, or upload it to Overleaf, and compile it there. Grasmere writes the LaTeX and leaves the compiling to them.</p>
+<h2 id="what-your-markdown-becomes">What your Markdown becomes</h2>
+<p>Headings, emphasis, lists, tables, block quotes and footnotes become LaTeX’s own. A picture becomes a figure, with its alt text as the caption. A Mermaid diagram becomes a figure too. Code is set verbatim. A citation becomes <code>\cite[p.~35]{key}</code>, page and all.</p>
+<p>Maths written between dollar signs passes through exactly as you typed it, for LaTeX to set. Everything else that LaTeX would take for a command is escaped.</p>
+<h2 id="templates">Templates, yours or the journal’s</h2>
+<p>Grasmere has three templates built in, called Article, Report and Thesis. Project ▸ Add LaTeX Template copies one into your project as an ordinary <code>.tex</code> file, which is then yours to edit.</p>
+<p>A journal’s own template works as well. Put its <code>.tex</code> in the project, with its class files, and mark where the text goes with <code>$body$</code>.</p>
+<pre><code>\documentclass{article}
+\title{$title$}
+\author{$author$}
+\begin{document}
+\maketitle
+\begin{abstract}
+$abstract$
+\end{abstract}
+
+$body$
+
+\bibliographystyle{plain}
+\bibliography{$bibliography$}
+\end{document}</code></pre>
+<p>These are Pandoc’s slots, so a Pandoc LaTeX template works as it is. The title, author, abstract and keywords come from the front matter at the top of your document. Everything else in the file is left as the journal wrote it.</p>
+<h2 id="your-bib-file-works-already">Your .bib file works already</h2>
+<p>If you’ve been writing LaTeX, you have a <code>.bib</code> file. Project ▸ Import Sources reads it, and each entry becomes a source in your project that you can cite by typing <code>[@</code>. The keys are kept, so the <code>.bib</code> Grasmere writes at the end uses the keys you know.</p>
+<p>A draft that already cites with Pandoc’s <code>[@key]</code> can be converted in one step, with Project ▸ Convert Pandoc Citations.</p>
+<h2 id="when-you-dont-need-latex-at-all">When you don’t need LaTeX at all</h2>
+<p>Plenty of writing only needs a clean PDF or a Word file. Grasmere typesets both itself, with a contents page, footnotes at the foot of the page, and citations and references in APA, Harvard, Chicago or MLA. Nothing has to be installed. See <a href="markdown-to-pdf.html">Markdown to PDF on a Mac</a>.</p>
+<p>And when a co-author wants to mark up a draft, send Word. Their tracked changes come back into your Markdown. See <a href="markdown-to-word.html">Markdown to Word, and back again</a>.</p>
+<h2 id="what-grasmere-doesnt-do">What Grasmere doesn’t do</h2>
+<ul>
+<li>Compile or preview LaTeX. That’s Overleaf’s or TeXShop’s job.</li>
+<li>Bring changes made in the <code>.tex</code> back into your Markdown. Edit the Markdown and publish again.</li>
+<li>Copy a template’s class files into the folder for you.</li>
+</ul>
+<h2 id="questions">Questions</h2>
+<h3 id="do-i-need-tex-installed">Do I need TeX installed on my Mac?</h3>
+<p>Only to compile there. Overleaf compiles in the browser, so you can upload the folder and install nothing.</p>
+<h3 id="can-i-edit-a-template-in-grasmere">Can I edit a template in Grasmere?</h3>
+<p>Yes. A <code>.tex</code> file in the project is listed in the contents and opens as plain text, with its commands coloured.</p>
+<h3 id="which-citation-commands-are-written">Which citation commands are written?</h3>
+<p>Plain <code>\cite</code>, with the page as its optional argument. The template’s bibliography style decides how they look, so numbered styles are the template’s to give.</p>
+<section class="get" aria-label="Download">
+<h2>Draft in Markdown. Typeset in LaTeX.</h2>
+<p>Import your .bib, write the paper, and publish a .tex in your journal’s template. The trial is free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="writing-research-papers-in-markdown.html">Writing research papers in Markdown</a></li>
+<li><a href="writing-a-thesis-in-markdown.html">Writing a thesis in Markdown</a></li>
+<li><a href="markdown-citations.html">Citations and bibliographies in Markdown</a></li>
+<li><a href="../guides/publishing.html">The Publishing guide</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Markdown for Projects: Plans, Tasks and Notes · Grasmere</title>
+<meta name="description" content="Run a project from a folder of Markdown files: a plan, tasks with due dates, a daily journal, linked notes, diagrams and a website. With Grasmere for the Mac.">
+<link rel="canonical" href="https://grasmere.app/markdown/markdown-for-projects.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Markdown for Projects: Plans, Tasks and Notes · Grasmere">
+<meta property="og:description" content="Run a project from a folder of Markdown files: a plan, tasks with due dates, a daily journal, linked notes, diagrams and a website. With Grasmere for the Mac.">
+<meta property="og:url" content="https://grasmere.app/markdown/markdown-for-projects.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="markdown-for-projects">Markdown for projects</h1>
+<p class="lede">A project is a plan, a pile of notes, a list of things to do and, in the end, something written. All four fit in one folder of Markdown files, with nothing to sign up for. Grasmere is a Mac app that treats that folder as the project.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<p class="figure wide"><img src="../assets/draft-links-tasks.jpg" alt="A chapter open in Grasmere, with links to other documents and tasks written in the text" width="1840" height="1156"></p>
+<h2 id="a-project-is-a-folder">A project is a folder</h2>
+<p>Open any folder and it’s a project. Its Markdown files are listed down the left by their titles, in an order you can drag. A <code>project.md</code> at the top holds the project’s summary. Nothing is kept in a database, so the folder works as well in the Finder, in another editor or in git.</p>
+<pre><code>Allotment/
+  project.md
+  Plan.md
+  Budget.md
+  journal/
+    2026-10-11.md
+  people/
+    Margaret.md
+  research/
+    Green Manures.md</code></pre>
+<h2 id="tasks-where-you-write-them">Tasks, where you write them</h2>
+<p>A task is a Markdown checkbox, in whichever document it belongs to. Put a date at the end and it has a due date.</p>
+<pre><code>- [ ] Felt the shed roof 📅 2026-10-17
+- [ ] Order a trailer load due: 2026-10-14
+- [x] Lift the potatoes</code></pre>
+<p>Grasmere gathers every task in the project into one list. Tick one there and it’s ticked in its document. Dates show as chips you can click to pick another day, and a busy project lists the dated tasks first, starting with the overdue.</p>
+<h2 id="a-journal-for-each-day">A journal for each day</h2>
+<p>Press ⌃⌘T for today’s entry. It’s one Markdown file a day, in a journal folder, for what you did and what you’re turning over. A template can start each day the same way.</p>
+<p>When a thought arrives while you’re in another app, press ⌃⌥⌘N, type it and press Return. It goes into today’s entry with the time, and you never leave what you were doing.</p>
+<h2 id="notes-that-stay-connected">Notes that stay connected</h2>
+<p>Link one document to another with an ordinary Markdown link, such as <code>[Margaret](people/Margaret.md)</code>. Each document shows which others link to it. Rename or move a file and every link to it is rewritten, so a project can be tidied up halfway through without breaking anything.</p>
+<h2 id="diagrams-and-tables">Diagrams and tables</h2>
+<p>A flowchart or a timeline is written in Mermaid, inside a code block, and drawn beneath it.</p>
+<pre><code>```mermaid
+flowchart LR
+    L[The landing] --&gt;|8 min| F[Fold End]
+    F --&gt;|bus| S[School]
+```</code></pre>
+<p>Tables are drawn as tables and edited a cell at a time. Both are still plain text in the file, and GitHub shows the same diagram.</p>
+<h2 id="plans-decisions-and-runbooks">Plans, decisions and runbooks</h2>
+<p>Starting a document is the hard part. Brainstorm asks what it’s about and what kind of piece it is, then writes the questions it has to answer and makes them its headings. A decision gets the questions a decision needs. A runbook gets what it’s for, what must be true first, the steps, how you know it worked and what to do if it didn’t. The answers are yours to write.</p>
+<h2 id="share-what-youve-made">Share what you’ve made</h2>
+<p>Project ▸ Build Website turns the folder into a small website, a page for each document with working links. There’s no JavaScript in it and nothing that tracks visitors. A document or a folder can go out as a PDF or a Word file too.</p>
+<p>If the folder is a git repository, Grasmere can commit your changes a couple of minutes after you save, and push them. Its Shortcuts actions do the everyday things from the Shortcuts app or the command line, such as adding a line to today’s entry or checking for broken links.</p>
+<h2 id="questions">Questions</h2>
+<h3 id="is-this-a-project-management-tool">Is this a project management tool?</h3>
+<p>Not in the sense of boards, assignees and charts. It suits a project one person runs and writes up, where the notes and the plan matter more than the workflow.</p>
+<h3 id="can-two-people-work-on-the-same-project">Can two people work on the same project?</h3>
+<p>Through a shared folder or git, yes. If a file changes on disk while you’re editing it, Grasmere asks which version to keep and never saves over either. It isn’t live collaboration.</p>
+<h3 id="what-does-grasmere-add-to-my-folder">What does Grasmere add to my folder?</h3>
+<p>A <code>project.md</code> at the top, and an <code>index.md</code> in a folder you’ve put in an order of your own. Both are ordinary documents.</p>
+<section class="get" aria-label="Download">
+<h2>Keep the whole project in one folder.</h2>
+<p>Open a folder and write the plan. The trial is free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="markdown-for-research.html">Markdown for research</a></li>
+<li><a href="markdown-editor-for-mac.html">A Markdown editor for Mac</a></li>
+<li><a href="../guides/tasks-and-due-dates.html">The Tasks and Due Dates guide</a></li>
+<li><a href="../guides/journal.html">The Journal guide</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>

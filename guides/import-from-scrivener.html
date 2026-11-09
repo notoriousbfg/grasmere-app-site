@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Import from Scrivener · Grasmere</title>
+<meta name="description" content="If your book is in Scrivener, Grasmere can make a project from it: your folders and documents in the binder’s order, as Markdown. The Scrivener project isn’t changed.">
+<link rel="canonical" href="https://grasmere.app/guides/import-from-scrivener.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Import from Scrivener · Grasmere">
+<meta property="og:description" content="If your book is in Scrivener, Grasmere can make a project from it: your folders and documents in the binder’s order, as Markdown. The Scrivener project isn’t changed.">
+<meta property="og:url" content="https://grasmere.app/guides/import-from-scrivener.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="import-from-scrivener">Import from Scrivener</h1>
+<p><em>New in 1.5.</em> If your book is in Scrivener, Grasmere can make a project from it: your folders and documents in the binder’s order, as Markdown files in ordinary folders. Grasmere only reads the Scrivener project. It isn’t changed, and the two aren’t joined afterwards: what you write in one doesn’t reach the other.</p>
+<h2 id="importing">Importing</h2>
+<ol>
+<li>In Scrivener, close the project, so its newest words are saved.</li>
+<li>In Grasmere, choose File ▸ Import Scrivener Project, or click “Import from Scrivener” on a new window’s start screen.</li>
+<li>Choose the project (its <code>.scriv</code>).</li>
+<li>Read the sheet. Before anything is made, it says what comes across, what’s kept to one side, what’s left behind, and the folders and files Grasmere will make, with counts for your project.</li>
+<li>Click Import, then name the new project and choose where to keep its folder.</li>
+</ol>
+<p>The new project opens on a document called “Imported from Scrivener”, which says the same again as done, with a link to every document concerned.</p>
+<p>You can import before starting the free trial, to see your book in Grasmere first.</p>
+<h2 id="what-comes-across">What comes across</h2>
+<table>
+<thead><tr><th>In Scrivener</th><th>In Grasmere</th></tr></thead>
+<tbody>
+<tr><td>Folders and documents</td><td>Folders and <code>.md</code> documents of the same names. A character a file name can’t have is left out, and two of a name in one folder get a number; either way the document keeps its title as a heading.</td></tr>
+<tr><td>The binder’s order</td><td>The order in the contents. Each folder’s order is kept in its <code>index.md</code>.</td></tr>
+<tr><td>The Draft (or Manuscript) folder</td><td>Its documents are in hand, so <a href="review.html">Review</a> and <a href="publishing.html">Publishing</a> show the book.</td></tr>
+<tr><td>A document not ticked Include in Compile</td><td>It comes across in its place but isn’t in hand, so it isn’t in the book. Track it to put it in.</td></tr>
+<tr><td>Synopsis (the index card)</td><td><code>synopsis:</code> at the top of the document, where Review’s cards show it.</td></tr>
+<tr><td>Status</td><td><code>status:</code>. To Do, First Draft, Revised Draft and Final Draft become Unwritten, Draft, Revised and Final. A status of your own is kept as <code>scrivener-status:</code>.</td></tr>
+<tr><td>Label and keywords</td><td><code>label:</code> (or your own name for it, such as <code>pov:</code>) and <code>keywords:</code> at the top of the document.</td></tr>
+<tr><td>Bold, italics, strikethrough, highlights</td><td>Markdown’s. Underlining becomes italics.</td></tr>
+<tr><td>Headings, block quotes, lists, code</td><td>Markdown’s, from Scrivener’s styles of those names.</td></tr>
+<tr><td>Footnotes, inline and linked</td><td>Markdown footnotes.</td></tr>
+<tr><td>Links to other documents, and web links</td><td>Links.</td></tr>
+<tr><td>Comments</td><td><a href="review.html#your-own-comments">Comments of your own</a> in the margin, each on the words it was on.</td></tr>
+<tr><td>Inline annotations</td><td>Taken out of the text and made comments of your own, each on the word before where it stood (the last word of the paragraph before, if it had a line to itself).</td></tr>
+<tr><td>Pictures in the text</td><td>Files in your media folder, each shown where it was.</td></tr>
+<tr><td>Research files (PDFs, pictures, recordings)</td><td>Copied as they are. The Research folder is the new project’s <a href="research.html">research folder</a>.</td></tr>
+<tr><td>Document notes (the Inspector’s)</td><td>A document each in “Document Notes”, linking to the one it’s about, so it shows in that document’s margin under Linked From.</td></tr>
+</tbody>
+</table>
+<p>A scene break typed as <code>#</code> or <code>* * *</code> on a line alone becomes a Markdown one. Anything you typed that Markdown would take for its own, such as a <code>#</code> at the start of a line, is kept as you typed it.</p>
+<h2 id="kept-to-one-side">What’s kept to one side</h2>
+<p>Some things have no place in a Grasmere project. So they aren’t lost, they go in a folder of their own, “Imported from Scrivener”:</p>
+<ul>
+<li><strong>A comment or annotation whose place couldn’t be kept</strong> (one on words in a code block, say) is listed in one document, under its document’s name with the words it was on.</li>
+<li><strong>Snapshots</strong> are a document each, in a folder named for the document they’re of.</li>
+<li><strong>The Trash’s</strong> documents.</li>
+<li><strong>A document whose text couldn’t be read</strong> is empty in the project; its file is kept as Scrivener had it.</li>
+</ul>
+<p>The folder is about the import and nothing else. Once you have what you want from it, delete it.</p>
+<h2 id="left-behind">What’s left behind</h2>
+<ul>
+<li>Fonts, sizes, colours, indents and alignment.</li>
+<li>A table’s grid: each cell’s words come across as a paragraph of their own.</li>
+<li>Collections and saved searches.</li>
+<li>Compile formats.</li>
+<li>The corkboard’s and outliner’s layout, and icons.</li>
+<li>Targets.</li>
+</ul>
+<h2 id="older-projects">Older projects</h2>
+<p>Grasmere reads projects saved by Scrivener 3, on the Mac, Windows or iOS. A project last saved by Scrivener 2, or Scrivener 1 for Windows, keeps its files differently: open it once in Scrivener 3, which brings it up to date, then import it.</p>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="the-contents.html">The Contents</a>, for changing the order</li>
+<li><a href="the-manuscript-view.html">The Manuscript View</a></li>
+<li><a href="review.html">Review</a></li>
+</ul>
+
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a></footer>
+</div>
+</body>
+</html>
