@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Academic CV Template: Markdown to LaTeX · Grasmere</title>
+<meta name="description" content="A free academic CV template. Write your CV in Markdown and typeset it with LaTeX, using Pandoc or Grasmere. Download the template and an example.">
+<link rel="canonical" href="https://grasmere.app/markdown/academic-cv-template.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Academic CV Template: Markdown to LaTeX · Grasmere">
+<meta property="og:description" content="A free academic CV template. Write your CV in Markdown and typeset it with LaTeX, using Pandoc or Grasmere. Download the template and an example.">
+<meta property="og:url" content="https://grasmere.app/markdown/academic-cv-template.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../markdown/index.html">Writing in Markdown</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="an-academic-cv-in-markdown">An academic CV in Markdown, typeset by LaTeX</h1>
+<p class="lede">A CV changes every few months and should look the same for years. Keep the words in a Markdown file you can edit anywhere, and let a LaTeX template do the typesetting. This template is free. It works with Pandoc, and with Grasmere on a Mac.</p>
+<div class="cta">
+<a href="../downloads/academic-cv/academic-cv.zip" class="btn" download><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download the template</a>
+<span class="terms">Free to use and change · .zip, 29 KB</span>
+</div>
+<p class="figure"><a href="../downloads/academic-cv/academic-cv.pdf"><img src="../media/academic-cv.png" alt="The first page of the example CV: the name in small capitals, then Research interests, Education, Appointments and Publications, each under a ruled heading" width="989" height="1400"></a></p>
+<h2 id="whats-in-the-download">What’s in the download</h2>
+<ul>
+<li><code>academic-cv.tex</code>, the template. You can also <a href="../downloads/academic-cv/academic-cv.tex">open it on its own</a>.</li>
+<li><code>cv.md</code>, an example CV in Markdown to write over.</li>
+<li><code>cv.pdf</code>, <a href="../downloads/academic-cv/academic-cv.pdf">what the example looks like</a> when it’s typeset.</li>
+</ul>
+<h2 id="write-the-cv-in-markdown">Write the CV in Markdown</h2>
+<p>The CV is an ordinary Markdown document. Your name goes at the top, as the author. Each <code>##</code> heading is a section, and a list holds the things you’d expect to list.</p>
+<pre><code>---
+author: Rosa Field
+---
+
+# Curriculum Vitae
+
+Department of History, University of Kelder, Fold End, Cumbria
+
+rosa.field@kelder.example · [rosafield.example](https://rosafield.example)
+
+## Education
+
+**PhD in History**, University of Kelder, 2023. Thesis: *Winter Crossings
+on Kelder Water, 1890–1940*. Supervisor: Professor Margaret Abbott.
+
+## Publications
+
+### Books
+
+- *The Living Loaf: Bread and the Household in Northern England*.
+  2nd ed. London: Riverbank Press, 2019.
+
+### Articles and chapters
+
+- “The Boy Who Walked the Shore: Parish Relief and the Frozen Ferry.”
+  *Journal of Lakeland History* 41, no. 2 (2024): 112–138.</code></pre>
+<p>There’s nothing to learn beyond Markdown, and nothing in the file that only one app understands. When you publish something new, you add a line.</p>
+<h2 id="what-the-template-does-with-it">What the template does with it</h2>
+<table>
+<thead><tr><th>In your Markdown</th><th>On the page</th></tr></thead>
+<tbody>
+<tr><td>The author</td><td>Your name, large, in small capitals, and at the foot of each page.</td></tr>
+<tr><td>The <code>#</code> title</td><td>A line in italics beneath your name.</td></tr>
+<tr><td>A <code>##</code> heading</td><td>A section, in small capitals over a rule.</td></tr>
+<tr><td>A <code>###</code> heading</td><td>A bold heading inside a section, such as Books.</td></tr>
+<tr><td>A list</td><td>Entries with a hanging indent and no bullets, as a list of publications is usually set.</td></tr>
+<tr><td>A list inside a list</td><td>Bullets.</td></tr>
+<tr><td>Bold, italics and links</td><td>The same. Links can be clicked in the PDF.</td></tr>
+</tbody>
+</table>
+<p>The type is Palatino, on A4 with one-inch margins, and the pages are numbered.</p>
+<h2 id="make-the-pdf-with-pandoc">Make the PDF with Pandoc</h2>
+<p>If you have Pandoc and a LaTeX engine, one command makes the PDF.</p>
+<pre><code>pandoc cv.md --shift-heading-level-by=-1 --template academic-cv.tex -o cv.pdf</code></pre>
+<p>The <code>--shift-heading-level-by=-1</code> part makes the <code>#</code> heading the title and each <code>##</code> a section. Add <code>--pdf-engine=tectonic</code> or <code>--pdf-engine=xelatex</code> to choose the engine.</p>
+<p>With no LaTeX on your computer, ask Pandoc for the <code>.tex</code> and compile it in Overleaf, which is free and runs in the browser.</p>
+<pre><code>pandoc cv.md --shift-heading-level-by=-1 --template academic-cv.tex -o cv.tex</code></pre>
+<h2 id="make-it-with-grasmere">Make it with Grasmere</h2>
+<p><em>New in 1.6.</em> Grasmere is a Mac app for long writing in Markdown, and its Publish stage writes LaTeX in a template of your choosing.</p>
+<ol>
+<li>Put <code>academic-cv.tex</code> anywhere in your project. A <code>.tex</code> file with a place marked for the text is a template.</li>
+<li>Open your CV and press ⌃T to put it in hand, then go to the Publish stage.</li>
+<li>Type “Curriculum Vitae” as the Title and your name as the Author.</li>
+<li>Click LaTeX, choose a folder, and choose academic-cv as the template.</li>
+</ol>
+<p>Grasmere writes the <code>.tex</code> into the folder. Open it in TeXShop or upload it to Overleaf to make the PDF. Grasmere takes your name from the Author box, so the <code>author:</code> line in the file is only for Pandoc.</p>
+<h2 id="change-how-it-looks">Change how it looks</h2>
+<p>The template is one short file with a comment over each part, and it’s yours to edit.</p>
+<ul>
+<li><strong>Paper.</strong> Change <code>a4paper</code> to <code>letterpaper</code> for US Letter, and <code>margin=1in</code> for the margins.</li>
+<li><strong>Type.</strong> Swap the Palatino lines for another font package.</li>
+<li><strong>Bullets.</strong> Remove the line that begins <code>\setlist[itemize,1]</code> to have ordinary bulleted lists.</li>
+<li><strong>The date.</strong> The foot of each page shows the date when one is given. Grasmere gives today’s. With Pandoc, add <code>date:</code> beside <code>author:</code>.</li>
+</ul>
+<h2 id="questions">Questions</h2>
+<h3 id="do-i-need-grasmere-to-use-it">Do I need Grasmere to use it?</h3>
+<p>No. It’s a Pandoc template, and it works anywhere Pandoc does.</p>
+<h3 id="which-latex-engine-does-it-need">Which LaTeX engine does it need?</h3>
+<p>It’s written for pdfLaTeX, XeLaTeX and LuaLaTeX, and uses only packages that come with TeX Live.</p>
+<h3 id="can-i-use-it-for-a-resume">Can I use it for a résumé?</h3>
+<p>Yes. Leave out the sections you don’t need and keep it to a page or two. It’s plain enough for either.</p>
+<h3 id="may-i-change-and-share-it">May I change it and share it?</h3>
+<p>Yes, for any purpose.</p>
+<section class="get" aria-label="Download">
+<h2>The rest of your writing, in Markdown too.</h2>
+<p>Grasmere takes a thesis, a paper or a book from sources to submission in plain Markdown files. The trial is free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="latex-and-markdown.html">Using LaTeX with Markdown</a></li>
+<li><a href="writing-a-thesis-in-markdown.html">Writing a thesis in Markdown</a></li>
+<li><a href="markdown-editor-for-students.html">A Markdown editor for students</a></li>
+<li><a href="markdown-to-pdf.html">Markdown to PDF on a Mac</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+<p class="updated">Last updated <time datetime="2026-11-09">9 November 2026</time>.</p>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a><a href="../sitemap.html">Sitemap</a></footer>
+</div>
+</body>
+</html>

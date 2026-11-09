@@ -11,5 +11,6 @@
 .doc .pages li{margin:0 0 1em}
 .doc .pages a{font-weight:600}
 .doc .pages span{display:block;color:var(--ink-soft)}
+.doc .updated{margin-top:2.4em;font-size:14px;color:var(--ink-faint)}
 @media (min-width:1100px){.doc p.figure.wide{margin-left:-8rem;margin-right:-8rem}}
 @media (prefers-reduced-motion:reduce){.doc main a.btn{transition:none}}
