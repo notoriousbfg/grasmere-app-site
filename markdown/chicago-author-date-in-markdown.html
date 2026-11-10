@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chicago Author-Date Citations in Markdown · Grasmere</title>
+<meta name="description" content="Chicago author-date citations, 17th edition, from Markdown: (Field 2019, 12) in the text and a References list on export. What to do if you need notes.">
+<link rel="canonical" href="https://grasmere.app/markdown/chicago-author-date-in-markdown.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Chicago Author-Date Citations in Markdown · Grasmere">
+<meta property="og:description" content="Chicago author-date citations, 17th edition, from Markdown: (Field 2019, 12) in the text and a References list on export. What to do if you need notes.">
+<meta property="og:url" content="https://grasmere.app/markdown/chicago-author-date-in-markdown.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../markdown/index.html">Writing in Markdown</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="chicago-author-date-in-markdown">Chicago author-date citations in Markdown</h1>
+<p class="lede">The Chicago Manual of Style has two systems. Notes and bibliography puts the citations in footnotes; author-date puts them in parentheses, as the sciences and social sciences do. Grasmere writes the author-date system, 17th edition, from sources you add by DOI or ISBN, while you write in Markdown.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<h2 id="what-comes-out">What comes out</h2>
+<p>In the text, author and year with no comma between them, and the page after a comma without “p.”:</p>
+<pre><code>(Field 2019, 12)
+(Field and Baker 2019)
+(Field, Baker, and Cole 2019, 45–46)
+(Field et al. 2026)
+(Field 2019, chap. 3)</code></pre>
+<p>In the reference list, headed References, with authors’ full names:</p>
+<pre><code>Field, Rosa. 2019. <em>The Living Loaf: A History of Sourdough</em>. 2nd ed. London: Riverbank Press.
+
+Field, Rosa, and Tom Baker. 2019. “Wild Yeasts in Rye Starters.” <em>Food Microbiology</em> 12 (3): 45–67. https://doi.org/10.1016/j.fm.2019.01.002.
+
+Field, Rosa. 2026. “How Sourdough Rises.” The Loaf, March 14, 2026. https://example.com/sourdough.</code></pre>
+<p>The year comes straight after the names, the serial comma is kept, article titles take double quotation marks, and the volume and issue are set as “12 (3)”.</p>
+<h2 id="how-to-set-it">How to set it</h2>
+<ol>
+<li>Add your sources. Project ▸ New Source with a DOI fills in an article, an ISBN fills in a book, and a web address saves the page. Project ▸ Import Sources reads a BibTeX or CSL JSON export from Zotero.</li>
+<li>Cite by typing <code>[@</code> and choosing the source. Add a page or chapter if you want one.</li>
+<li>When you export to PDF or Word, choose Chicago author-date under Citations. The choice is kept with the project.</li>
+</ol>
+<p>In the Markdown, a citation is a link to the source’s file, <code>[Field 2019, p. 12](../research/The%20Living%20Loaf.md)</code>, with no <code>.bib</code> file behind it. See <a href="markdown-citations-without-bibtex.html">citations in Markdown without BibTeX</a>.</p>
+<h2 id="notes-and-bibliography">If you need notes and bibliography</h2>
+<p>Grasmere doesn’t write the footnote system, which history and the humanities often ask for. What it does have is Markdown footnotes, <code>[^1]</code>, which become real footnotes in PDF and Word. If your citations are few, writing them out in footnotes by hand is honest work and comes through. If they’re many, Zettlr or Pandoc with the Chicago notes CSL file is the better tool, and the sources you’ve gathered can be imported there as BibTeX. <em>New in 1.6.</em> Publishing through a LaTeX template with <code>biblatex-chicago</code> is another route.</p>
+<h2 id="questions">Questions</h2>
+<h3 id="which-edition">Which edition of the manual?</h3>
+<p>The 17th, from 2017.</p>
+<h3 id="two-works-same-year">Two works by one author in the same year?</h3>
+<p>They’re written 2019a and 2019b in the text and in the list.</p>
+<h3 id="a-book-chapter">A chapter in an edited book?</h3>
+<p>Written as Chicago has it: “Field, Rosa. 2018. ‘Starters.’ In <em>The Baker’s Companion</em>, 10–30. London: Riverbank Press.”</p>
+<section class="get" aria-label="Download">
+<h2>Chicago from a DOI.</h2>
+<p>Grasmere is a Mac app for long writing in plain Markdown files, with sources, citations, review and publishing built in. Try it free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="markdown-citations-without-bibtex.html">Citations in Markdown without BibTeX</a></li>
+<li><a href="mla-in-markdown.html">MLA citations in Markdown</a></li>
+<li><a href="writing-a-book-in-markdown.html">Writing a book in Markdown</a></li>
+<li><a href="markdown-for-research.html">Markdown for research</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+<p class="updated">Last updated <time datetime="2026-11-10">10 November 2026</time>.</p>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a><a href="../sitemap.html">Sitemap</a></footer>
+</div>
+</body>
+</html>

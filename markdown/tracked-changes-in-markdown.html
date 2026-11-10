@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracked Changes in Markdown: Word Edits Back into Plain Text · Grasmere</title>
+<meta name="description" content="Get tracked changes and comments from a Word file back into your Markdown, to accept or reject one at a time. How the Word round trip works in Grasmere.">
+<link rel="canonical" href="https://grasmere.app/markdown/tracked-changes-in-markdown.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Tracked Changes in Markdown: Word Edits Back into Plain Text · Grasmere">
+<meta property="og:description" content="Get tracked changes and comments from a Word file back into your Markdown, to accept or reject one at a time. How the Word round trip works in Grasmere.">
+<meta property="og:url" content="https://grasmere.app/markdown/tracked-changes-in-markdown.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../markdown/index.html">Writing in Markdown</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="tracked-changes-from-word-back-into-your-markdown">Tracked changes from Word, back into your Markdown</h1>
+<p class="lede">You write in Markdown. Your editor, co-author or supervisor works in Word, and sends back a file full of tracked changes and comments. Grasmere reads that file and shows each change beside your own text, to accept or reject one at a time. The Markdown stays Markdown throughout.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<h2 id="the-problem">The problem</h2>
+<p>Plain text and tracked changes don’t mix. Word’s review tools work on Word files. The usual answer for Markdown writers is Pandoc, which can convert a returned <code>.docx</code> with every change accepted, or every change rejected, or all of them left in as CriticMarkup to sort through by hand. None of that is reviewing. You want to see what was changed, decide about each one, and keep the file you were writing in.</p>
+<h2 id="how-it-works">How the round trip works</h2>
+<p class="figure wide"><img src="../assets/review-word.jpg" alt="Grasmere’s Review screen: a chapter with two comments beside it, a Send menu above, and a Versions list on the left" width="1840" height="1156"></p>
+<ol>
+<li><strong>Send a Word file.</strong> Open the document’s Review screen (⇧⌘R) and choose Send ▸ Export as Word. Grasmere writes a <code>.docx</code> with proper headings, footnotes and, if the document cites sources, the citations and reference list in your chosen style. The file is named for the round, “Chapter 3 (Round 1).docx”, and Grasmere remembers what it sent.</li>
+<li><strong>They review it in Word.</strong> Or in Pages, LibreOffice, or Google Docs with Suggesting on. Tracked changes, comments and replies all come back. So do changes made without Track Changes switched on, because Grasmere compares the text itself.</li>
+<li><strong>Bring it back.</strong> Drop the returned file on the Review screen, or click Import Returned File. Grasmere matches each paragraph to your Markdown, even if you kept writing in the meantime.</li>
+<li><strong>Decide.</strong> Each change appears on the page in the reviewer’s colour, a deleted word struck through and an added one underlined after it. A comment washes its passage and sits beside the page as a balloon. Click a change for Accept, Reject or Defer. There’s Accept All and Reject All for each reviewer, and ⌃⌘A and ⌃⌘R at the cursor.</li>
+</ol>
+<p>Accepting a change is an ordinary edit to your Markdown, so ⌘Z takes it back. Comments get replies, and a thread can be resolved the way it would be in Google Docs.</p>
+<h2 id="what-comes-through">What comes through, and what doesn’t</h2>
+<p>Insertions, deletions, moved text, added and removed paragraphs, comments and replies all come through. Edits made without Track Changes are found by comparing words. Changes to fonts, styles, spacing, page layout, headers, footers, text boxes and pictures are ignored, since none of those belongs in Markdown. A change that would cut through the middle of a link or an emphasis is shown but not offered for acceptance, so you make that one by hand.</p>
+<p>Grasmere takes any Word file of the document, not only a copy it sent. A file that shares less than a third of its words with the document is refused, which stops the wrong chapter being read as a review of this one.</p>
+<h2 id="a-whole-book">A whole book, a whole thesis</h2>
+<p>From a folder of chapters, Send ▸ Export as Word writes one Word file per chapter, each starting its own round. Returned files can come back in any order and over weeks. A reviewer’s comment on the file as a whole, which belongs to no paragraph, is collected in a Review notes document.</p>
+<h2 id="your-own-changes-marked">Your own changes, marked</h2>
+<p>The trip works the other way too. After you’ve revised, Export with My Changes Marked sends a Word file with your edits since the last copy as tracked changes in your name, so an editor who lives in Word can see what you did without leaving it.</p>
+<h2 id="where-the-review-lives">Where the review lives</h2>
+<p>Reviews are kept beside the document in a <code>.review</code> folder as plain JSON, with its own <code>.gitignore</code>. Before a file is imported, a restore point is made, and Restore to Before the Review puts the document back. Your Markdown file itself is only changed when you accept something.</p>
+<h2 id="questions">Questions</h2>
+<h3 id="does-the-reviewer-need-grasmere">Does the reviewer need Grasmere?</h3>
+<p>No. They need Word, or anything that saves a <code>.docx</code> with tracked changes, and they never see Markdown.</p>
+<h3 id="what-if-i-kept-writing">What if I kept writing while the file was out?</h3>
+<p>Grasmere keeps a copy of what it sent and places each change against your current text. Where you and the reviewer changed the same sentence, it shows Sent, Suggested and Now so you can choose.</p>
+<h3 id="can-i-use-google-docs">Can I use Google Docs?</h3>
+<p>Yes. Have the reviewer use Suggesting, then download the file as Word.</p>
+<h3 id="does-it-work-with-pandoc-markdown">Does it work with Pandoc-style Markdown?</h3>
+<p>Grasmere reads GitHub-flavoured CommonMark, with footnotes. Pandoc citations in <code>[@key]</code> form can be converted to Grasmere’s with Project ▸ Convert Pandoc Citations. There’s more in <a href="what-grasmere-does-with-your-markdown.html">what Grasmere does with your Markdown</a>.</p>
+<section class="get" aria-label="Download">
+<h2>Review in Word. Write in Markdown.</h2>
+<p>Grasmere is a Mac app for long writing in plain Markdown files. The Word round trip is part of it, along with sources, citations and publishing. Try it free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="../guides/review.html">The Review guide</a></li>
+<li><a href="sending-chapters-to-your-supervisor.html">Sending thesis chapters to your supervisor</a></li>
+<li><a href="markdown-to-word.html">Markdown to Word</a></li>
+<li><a href="writing-a-book-in-markdown.html">Writing a book in Markdown</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+<p class="updated">Last updated <time datetime="2026-11-10">10 November 2026</time>.</p>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a><a href="../sitemap.html">Sitemap</a></footer>
+</div>
+</body>
+</html>

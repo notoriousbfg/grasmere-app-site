@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Citations in Markdown Without BibTeX · Grasmere</title>
+<meta name="description" content="Cite papers and books in Markdown with no .bib file: add a source by DOI or ISBN, cite it, and export with APA, Harvard, Chicago or MLA references.">
+<link rel="canonical" href="https://grasmere.app/markdown/markdown-citations-without-bibtex.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Citations in Markdown Without BibTeX · Grasmere">
+<meta property="og:description" content="Cite papers and books in Markdown with no .bib file: add a source by DOI or ISBN, cite it, and export with APA, Harvard, Chicago or MLA references.">
+<meta property="og:url" content="https://grasmere.app/markdown/markdown-citations-without-bibtex.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../markdown/index.html">Writing in Markdown</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="citations-in-markdown-without-bibtex">Citations in Markdown without BibTeX</h1>
+<p class="lede">You want to cite a paper in a Markdown document and have a reference list come out the other end. The standard answer involves a <code>.bib</code> file, a citation key, Pandoc and a CSL style sheet. Grasmere does it with a DOI.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<h2 id="the-bibtex-way">The BibTeX way</h2>
+<p>BibTeX was made for LaTeX in the 1980s and it’s still what most Markdown citation tools expect. You keep a <code>.bib</code> file of entries, each with a key like <code>field2019living</code>, write <code>[@field2019living, p. 12]</code> in the text, and run Pandoc with <code>--citeproc</code>, a bibliography path and a CSL file for the style. It works, and it’s what Zettlr and the Obsidian plugins build on. It also means a second file to maintain, keys to remember, and a toolchain to keep working.</p>
+<h2 id="the-other-way">The other way: a source is a document</h2>
+<p>In Grasmere a source is a Markdown file of its own, in the project’s <code>research</code> folder, with the reference details as front matter and your notes beneath. You don’t write those files by hand.</p>
+<ul>
+<li><strong>A paper:</strong> Project ▸ New Source, paste the DOI. The details come from Crossref or DataCite.</li>
+<li><strong>A book:</strong> paste the ISBN. The details come from Open Library.</li>
+<li><strong>A web page:</strong> paste the address. The page is saved to read offline, with its title, author and date.</li>
+<li><strong>A PDF:</strong> drop it in the research folder. Grasmere looks for a DOI in its first pages and offers to make the source.</li>
+<li><strong>A library you already have:</strong> Project ▸ Import Sources reads BibTeX, including Better BibTeX, and CSL JSON, which is what Zotero exports.</li>
+</ul>
+<p>So BibTeX isn’t refused. It’s one way in, not the thing you maintain.</p>
+<p class="figure wide"><img src="../assets/research-1.jpg" alt="Grasmere’s Research stage: a question box, the project’s sources as cards, highlights, tasks and loose ends" width="1920" height="1204" loading="lazy"></p>
+<h2 id="citing">Citing</h2>
+<p>Type <code>[@</code> in any document, or press ⌥⌘K, and pick the source from a list. What goes into the Markdown is a link to the source’s file.</p>
+<pre><code>Sourdough rises more slowly in winter [Field 2019, p. 12](../research/The%20Living%20Loaf.md).</code></pre>
+<p>That’s still Markdown. Any editor shows it, and the link works in any app that follows links. Put two citations in your own parentheses to cite several works at once, and the usual locators are understood: p., pp., ch., para., sec. and so on.</p>
+<h2 id="the-reference-list">The reference list</h2>
+<p>When you export to PDF or Word, or publish the whole project, you choose a style and each citation is written out in it, with a reference list at the end.</p>
+<table>
+<thead><tr><th>Style</th><th>In the text</th></tr></thead>
+<tbody>
+<tr><td><a href="apa-7-in-markdown.html">APA 7</a></td><td>(Field, 2019, p. 12)</td></tr>
+<tr><td><a href="harvard-referencing-in-markdown.html">Harvard</a></td><td>(Field, 2019, p. 12)</td></tr>
+<tr><td><a href="chicago-author-date-in-markdown.html">Chicago author-date</a></td><td>(Field 2019, 12)</td></tr>
+<tr><td><a href="mla-in-markdown.html">MLA 9</a></td><td>(Field 12)</td></tr>
+</tbody>
+</table>
+<p>The style is kept with the project, so every export uses the same one, and changing it changes every citation at once. There’s also “None (keep links)”, which leaves the citations as they are in the Markdown.</p>
+<h2 id="what-this-doesnt-do">What this doesn’t do</h2>
+<p>Four styles are written, and they’re all author-date. Footnote styles such as Chicago notes and bibliography and OSCOLA aren’t supported, and neither are numbered styles such as Vancouver and IEEE. If you need one of those, or a journal’s own CSL file, Zettlr or Pandoc is the better tool. RIS and Zotero RDF files aren’t read, so export from Zotero as CSL JSON or BibTeX instead.</p>
+<h2 id="questions">Questions</h2>
+<h3 id="can-i-still-use-pandoc-citations">I have documents with <code>[@key]</code> citations already. Can I use them?</h3>
+<p>Yes. Import the <code>.bib</code> file, then Project ▸ Convert Pandoc Citations turns each <code>[@key]</code> into a link to the matching source.</p>
+<h3 id="where-are-the-reference-details-kept">Where are the reference details kept?</h3>
+<p>In the front matter of each source file: <code>title</code>, <code>author</code>, <code>published</code>, <code>journal</code>, <code>volume</code>, <code>pages</code>, <code>doi</code> and so on. You can read and edit them in any text editor.</p>
+<h3 id="can-i-cite-a-page-i-saved">Can I cite a web page I saved?</h3>
+<p>Yes, and the accessed date is filled in when it’s saved, which Harvard wants.</p>
+<h3 id="does-it-need-the-internet">Does it need the internet?</h3>
+<p>Only to look up a DOI, ISBN or web address. Citing and exporting work offline.</p>
+<section class="get" aria-label="Download">
+<h2>References from a DOI, not a .bib file.</h2>
+<p>Grasmere is a Mac app for long writing in plain Markdown files, with sources, citations, review and publishing built in. Try it free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="grasmere-vs-zettlr.html">Grasmere vs Zettlr</a></li>
+<li><a href="../guides/citations.html">The Citations guide</a></li>
+<li><a href="markdown-citations.html">Markdown citations</a></li>
+<li><a href="using-zotero-with-markdown.html">Using Zotero with Markdown</a></li>
+<li><a href="writing-research-papers-in-markdown.html">Writing research papers in Markdown</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+<p class="updated">Last updated <time datetime="2026-11-10">10 November 2026</time>.</p>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a><a href="../sitemap.html">Sitemap</a></footer>
+</div>
+</body>
+</html>

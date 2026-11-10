@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sending Thesis Chapters to Your Supervisor from Markdown · Grasmere</title>
+<meta name="description" content="Write the thesis in Markdown, send each chapter as Word, and bring the tracked changes and comments back onto your text. A workflow for PhD students.">
+<link rel="canonical" href="https://grasmere.app/markdown/sending-chapters-to-your-supervisor.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Sending Thesis Chapters to Your Supervisor from Markdown · Grasmere">
+<meta property="og:description" content="Write the thesis in Markdown, send each chapter as Word, and bring the tracked changes and comments back onto your text. A workflow for PhD students.">
+<meta property="og:url" content="https://grasmere.app/markdown/sending-chapters-to-your-supervisor.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../markdown/index.html">Writing in Markdown</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="sending-thesis-chapters-to-your-supervisor">Sending thesis chapters to your supervisor</h1>
+<p class="lede">Your supervisor wants a Word file, and sends it back with tracked changes and comments in the margin. You’d rather write the thesis in plain text, a chapter to a file, under version control. Grasmere lets you do both: each chapter goes out as Word and the comments come back onto your Markdown.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<h2 id="the-usual-choice">The usual choice, and why it’s a bad one</h2>
+<p>Most students pick Word on day one because the supervisor uses it, then spend three years with a 200-page file that’s slow to open, hard to search, and impossible to see the history of. The alternative, writing in LaTeX or Markdown and converting to Word for each meeting, breaks down the first time comments come back and have to be copied across by hand.</p>
+<p>The way out is to keep the chapters as Markdown files and make the Word file a thing that’s sent and received, not the thing you edit.</p>
+<h2 id="one-chapter-at-a-time">One chapter at a time</h2>
+<ol>
+<li>Open the chapter and press ⇧⌘R for its Review screen.</li>
+<li>Choose Send ▸ Export as Word. The file has real headings and footnotes, and your citations and reference list in APA, Harvard, Chicago or MLA. It’s named for the round, “Chapter 3 (Round 1).docx”.</li>
+<li>Email it. Your supervisor opens it in Word and does what supervisors do.</li>
+<li>When it comes back, drop the file on the Review screen. Every tracked change and comment appears beside the paragraph it belongs to, in your supervisor’s colour.</li>
+<li>Go through them. Accept, Reject or Defer each one. Reply to comments. Resolve what’s dealt with.</li>
+</ol>
+<p class="figure wide"><img src="../assets/review-word.jpg" alt="Grasmere’s Review screen: a chapter with two comments beside it, a Send menu above, and a Versions list on the left" width="1840" height="1156" loading="lazy"></p>
+<p>A second round starts the next time you send. Round 2 goes out with your revisions in it, and if you choose Export with My Changes Marked, your supervisor sees your edits since Round 1 as tracked changes in Word, which is how they’d expect to see them.</p>
+<h2 id="what-your-supervisor-sees">What your supervisor sees</h2>
+<p>A Word document. Nothing in it says Markdown. Headings use Word’s heading styles, so the navigation pane works. Footnotes are Word footnotes. Citations are written out in the style you chose, with the reference list at the end. If they use Pages, LibreOffice or Google Docs with Suggesting on, that works too.</p>
+<h2 id="while-the-chapter-is-away">While the chapter is away</h2>
+<p>Keep writing. Grasmere keeps a copy of what it sent, so when the file returns each comment is placed against the paragraph as it now stands. If you and your supervisor both changed the same sentence, you’re shown the sent, suggested and current versions and choose.</p>
+<h2 id="the-rest-of-the-thesis">The rest of the thesis</h2>
+<ul>
+<li><strong>Sources.</strong> Add papers by DOI and books by ISBN, or import your Zotero library as BibTeX or CSL JSON. Cite by typing <code>[@</code>. See <a href="markdown-citations-without-bibtex.html">citations in Markdown without BibTeX</a>.</li>
+<li><strong>History.</strong> Every round, every copy sent and every restore point is listed under Versions, with git commits beside them if the folder is a repository. Compare any two.</li>
+<li><strong>The whole thing.</strong> When it’s time for the full draft, Send ▸ Export as Word from the thesis folder writes one file per chapter, and the Publish stage makes a single Word document or PDF of all of it.</li>
+<li><strong>Submission.</strong> <em>New in 1.6.</em> If your university wants LaTeX, the Publish stage writes the thesis into a <code>.tex</code> template. See <a href="latex-and-markdown.html">using LaTeX with Markdown</a>.</li>
+</ul>
+<h2 id="questions">Questions</h2>
+<h3 id="will-my-supervisor-know-im-not-using-word">Will my supervisor know I’m not using Word?</h3>
+<p>Only if you tell them. The file is an ordinary <code>.docx</code>.</p>
+<h3 id="what-about-comments-on-the-document-as-a-whole">What about comments on the document as a whole?</h3>
+<p>A comment that can’t be placed against a paragraph is listed under Unplaced, and for a whole book is collected in a Review notes document, rather than lost.</p>
+<h3 id="can-two-people-review-the-same-chapter">Can two people review the same chapter?</h3>
+<p>Yes. Each reviewer has a colour, and Accept All and Reject All work per reviewer.</p>
+<h3 id="what-does-it-cost-a-student">What does it cost a student?</h3>
+<p>$14.99, once, after a 14-day trial. There’s no subscription.</p>
+<section class="get" aria-label="Download">
+<h2>Write the thesis in Markdown. Send it as Word.</h2>
+<p>Grasmere is a Mac app for long writing in plain files. Sources, citations, review and publishing are built in. Try it free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="writing-a-thesis-in-markdown.html">Writing a thesis in Markdown</a></li>
+<li><a href="tracked-changes-in-markdown.html">Tracked changes from Word, back into your Markdown</a></li>
+<li><a href="markdown-editor-for-students.html">A Markdown editor for students</a></li>
+<li><a href="using-zotero-with-markdown.html">Using Zotero with Markdown</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+<p class="updated">Last updated <time datetime="2026-11-10">10 November 2026</time>.</p>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a><a href="../sitemap.html">Sitemap</a></footer>
+</div>
+</body>
+</html>

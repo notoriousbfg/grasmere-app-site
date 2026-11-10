@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harvard Referencing in Markdown · Grasmere</title>
+<meta name="description" content="Harvard references from Markdown, in the Cite Them Right form most UK universities use. Sources from a DOI or ISBN, accessed dates, one reference list.">
+<link rel="canonical" href="https://grasmere.app/markdown/harvard-referencing-in-markdown.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="Harvard Referencing in Markdown · Grasmere">
+<meta property="og:description" content="Harvard references from Markdown, in the Cite Them Right form most UK universities use. Sources from a DOI or ISBN, accessed dates, one reference list.">
+<meta property="og:url" content="https://grasmere.app/markdown/harvard-referencing-in-markdown.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../markdown/index.html">Writing in Markdown</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="harvard-referencing-in-markdown">Harvard referencing in Markdown</h1>
+<p class="lede">Harvard is what most British and Australian universities ask for, and it isn’t one style but a family, which is why every referencing guide disagrees with the last. Grasmere writes the form in Cite Them Right, the guide most UK universities point to, from sources you add by DOI or ISBN, while you write in Markdown.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<h2 id="what-comes-out">What comes out</h2>
+<p>In the text, author and year, with “and” rather than an ampersand, up to three authors named, and “et al.” from four:</p>
+<pre><code>(Field, 2019, p. 12)
+(Field and Baker, 2019)
+(Field, Baker and Cole, 2019)
+(Field et al., 2019)</code></pre>
+<p>In the reference list:</p>
+<pre><code>Field, R. (2019) <em>The Living Loaf: A History of Sourdough</em>. 2nd edn. London: Riverbank Press.
+
+Field, R. and Baker, T. (2019) ‘Wild Yeasts in Rye Starters’, <em>Food Microbiology</em>, 12(3), pp. 45–67. Available at: https://doi.org/10.1016/j.fm.2019.01.002.
+
+Field, R. (2026) <em>How Sourdough Rises</em>. Available at: https://example.com/sourdough (Accessed: 23 October 2026).</code></pre>
+<p>The small things that mark Harvard out are done: no comma after the year, single quotation marks round an article title, “edn.” for an edition, the place before the publisher, “Available at” and an accessed date for anything online, and “no date” where there isn’t one.</p>
+<h2 id="how-to-set-it">How to set it</h2>
+<ol>
+<li>Add your sources. Project ▸ New Source with a DOI fills in an article, an ISBN fills in a book, and a web address saves the page with its accessed date. Project ▸ Import Sources reads a BibTeX or CSL JSON export from Zotero or EndNote.</li>
+<li>Cite by typing <code>[@</code> and choosing the source. Add a page if you want one.</li>
+<li>When you export to PDF or Word, choose Harvard under Citations. The choice is kept with the project.</li>
+</ol>
+<p>In the Markdown, a citation is a link to the source’s file, <code>[Field 2019, p. 12](../research/The%20Living%20Loaf.md)</code>. There’s no <code>.bib</code> file and no key to remember. See <a href="markdown-citations-without-bibtex.html">citations in Markdown without BibTeX</a>.</p>
+<h2 id="your-universitys-harvard">Your university’s Harvard</h2>
+<p>If your department’s guide differs from Cite Them Right in some detail, the reference list is ordinary text in the exported Word file and can be edited there. The in-text form, author and year in parentheses, is the same across every Harvard variant.</p>
+<h2 id="questions">Questions</h2>
+<h3 id="is-this-the-same-as-apa">Is Harvard the same as APA?</h3>
+<p>They’re close cousins, both author-date, but they differ in punctuation and in how authors and editions are written. Grasmere has both, and switching the project from one to the other rewrites every citation. See <a href="apa-7-in-markdown.html">APA 7 in Markdown</a>.</p>
+<h3 id="where-does-the-accessed-date-come-from">Where does the accessed date come from?</h3>
+<p>From the day the web page was saved as a source, kept as <code>accessed:</code> in its front matter. Change it there if you need to.</p>
+<h3 id="what-about-a-dissertation">Does this work for a whole dissertation?</h3>
+<p>Yes. The Publish stage makes one PDF or Word document from a folder of chapters, with a single reference list at the end. See <a href="writing-a-thesis-in-markdown.html">writing a thesis in Markdown</a>.</p>
+<section class="get" aria-label="Download">
+<h2>Harvard, done once, for the whole dissertation.</h2>
+<p>Grasmere is a Mac app for long writing in plain Markdown files, with sources, citations, review and publishing built in. Try it free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="markdown-citations-without-bibtex.html">Citations in Markdown without BibTeX</a></li>
+<li><a href="apa-7-in-markdown.html">APA 7 citations in Markdown</a></li>
+<li><a href="sending-chapters-to-your-supervisor.html">Sending thesis chapters to your supervisor</a></li>
+<li><a href="markdown-editor-for-students.html">A Markdown editor for students</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+<p class="updated">Last updated <time datetime="2026-11-10">10 November 2026</time>.</p>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a><a href="../sitemap.html">Sitemap</a></footer>
+</div>
+</body>
+</html>

@@ -2,3 +2,19 @@ User-agent: *
 Allow: /
 
 Sitemap: https://grasmere.app/sitemap.xml
+
+# AI assistants are welcome to read and cite the site.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

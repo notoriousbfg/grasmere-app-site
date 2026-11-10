@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLA Citations in Markdown · Grasmere</title>
+<meta name="description" content="MLA 9 citations from Markdown: (Field 12) in the text and a Works Cited list on export, from sources added by ISBN or DOI. For essays in the humanities.">
+<link rel="canonical" href="https://grasmere.app/markdown/mla-in-markdown.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="MLA Citations in Markdown · Grasmere">
+<meta property="og:description" content="MLA 9 citations from Markdown: (Field 12) in the text and a Works Cited list on export, from sources added by ISBN or DOI. For essays in the humanities.">
+<meta property="og:url" content="https://grasmere.app/markdown/mla-in-markdown.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../markdown/index.html">Writing in Markdown</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="mla-citations-in-markdown">MLA citations in Markdown</h1>
+<p class="lede">MLA is the style of English departments and the humanities: the author and a page number in the text, no year, and a Works Cited list at the end. Grasmere writes MLA, 9th edition, from sources you add by ISBN or DOI, while the essay stays a Markdown file.</p>
+<div class="cta">
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</div>
+<h2 id="what-comes-out">What comes out</h2>
+<p>In the text, the author’s surname and the page, nothing else, with “et al.” from three authors and a short title where there’s no author:</p>
+<pre><code>(Field 12)
+(Field and Baker 50)
+(Field et al.)
+(Field, ch. 3)
+(“How Sourdough Rises”)</code></pre>
+<p>In the list, headed Works Cited:</p>
+<pre><code>Field, Rosa. <em>The Living Loaf: A History of Sourdough</em>. 2nd ed., Riverbank Press, 2019.
+
+Field, Rosa, and Tom Baker. “Wild Yeasts in Rye Starters.” <em>Food Microbiology</em>, vol. 12, no. 3, 2019, pp. 45–67, https://doi.org/10.1016/j.fm.2019.01.002.
+
+Field, Rosa. “How Sourdough Rises.” <em>The Loaf</em>, 14 Mar. 2026, example.com/sourdough.</code></pre>
+<p>The 9th edition’s habits are kept: “vol.” and “no.”, the date written 14 Mar. 2026, a web address without “https://”, and the container in italics.</p>
+<h2 id="how-to-set-it">How to set it</h2>
+<ol>
+<li>Add your sources. Project ▸ New Source with an ISBN fills in a book from Open Library, a DOI fills in an article, and a web address saves the page. Project ▸ Import Sources reads a BibTeX or CSL JSON export from Zotero.</li>
+<li>Cite by typing <code>[@</code> and choosing the source. Add the page.</li>
+<li>When you export to PDF or Word, choose MLA 9 under Citations. The choice is kept with the project.</li>
+</ol>
+<p>In the Markdown, a citation is a link to the source’s file, <code>[Field 2019, p. 12](../research/The%20Living%20Loaf.md)</code>. The year in the link text is for you; MLA leaves it out when the citation is written. See <a href="markdown-citations-without-bibtex.html">citations in Markdown without BibTeX</a>.</p>
+<h2 id="quoting">Quoting</h2>
+<p>Essays in MLA lean on quotation. In Grasmere a source is read in its own pane, and a highlighted passage can be quoted into the essay with its citation attached, so the page number is never guessed. Block quotations are Markdown blockquotes, <code>&gt;</code>, and are set as such in the PDF.</p>
+<h2 id="questions">Questions</h2>
+<h3 id="is-it-mla-8-or-9">Is it MLA 8 or 9?</h3>
+<p>The 9th edition, from 2021. The two are close; the 9th mostly clarifies the 8th.</p>
+<h3 id="what-about-a-poem-or-a-play">What about a poem or a play?</h3>
+<p>Lines are among the locators, along with pages, chapters, paragraphs, sections, notes and figures. Acts and scenes aren’t, so write those citations by hand.</p>
+<h3 id="the-heading-and-header">Does it do the MLA heading and running header?</h3>
+<p>No. Your name, course and date at the top left, and the surname and page number in the header, are added in Word after export, or set once in a Word template.</p>
+<section class="get" aria-label="Download">
+<h2>Works Cited, written for you.</h2>
+<p>Grasmere is a Mac app for long writing in plain Markdown files, with sources, citations, review and publishing built in. Try it free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="markdown-citations-without-bibtex.html">Citations in Markdown without BibTeX</a></li>
+<li><a href="chicago-author-date-in-markdown.html">Chicago author-date in Markdown</a></li>
+<li><a href="markdown-editor-for-students.html">A Markdown editor for students</a></li>
+<li><a href="markdown-to-word.html">Markdown to Word</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+<p class="updated">Last updated <time datetime="2026-11-10">10 November 2026</time>.</p>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a><a href="../sitemap.html">Sitemap</a></footer>
+</div>
+</body>
+</html>

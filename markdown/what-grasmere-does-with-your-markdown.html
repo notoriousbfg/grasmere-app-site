@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Grasmere Does with Your Markdown · Grasmere</title>
+<meta name="description" content="The Markdown syntax Grasmere reads, the front matter keys it uses, the files it adds to a folder, and what it never touches. For people who keep their own files.">
+<link rel="canonical" href="https://grasmere.app/markdown/what-grasmere-does-with-your-markdown.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grasmere">
+<meta property="og:title" content="What Grasmere Does with Your Markdown · Grasmere">
+<meta property="og:description" content="The Markdown syntax Grasmere reads, the front matter keys it uses, the files it adds to a folder, and what it never touches. For people who keep their own files.">
+<meta property="og:url" content="https://grasmere.app/markdown/what-grasmere-does-with-your-markdown.html">
+<meta property="og:image" content="https://grasmere.app/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="landing.css">
+</head>
+<body>
+<div class="doc">
+<nav class="nav">
+<a href="../index.html" class="brand"><img src="../assets/grasmere-icon.png" alt="" width="32" height="32"><span>Grasmere<span class="sub">, for Markdown</span></span></a>
+<div class="nav-links">
+<a href="../whats-new.html" class="wide">What’s New</a>
+<a href="../guides/index.html" class="keep">Guides</a>
+<a href="../markdown/index.html">Writing in Markdown</a>
+<a href="../support.html" class="wide">Support</a>
+<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+</div>
+</nav>
+<main>
+<article>
+<h1 id="what-grasmere-does-with-your-markdown">What Grasmere does with your Markdown</h1>
+<p class="lede">Before you trust an app with files you’ve kept for years, you want to know what it reads, what it writes, and what it leaves alone. This page is the plain account: the syntax Grasmere understands, the front matter it looks for, the files it adds to a folder, and the things it never touches.</p>
+<h2 id="the-files">The files</h2>
+<p>A project is a folder of Markdown files, nothing more. Any folder will do, including an Obsidian vault or a Git repository. Files are UTF-8 and are saved as you type. Line endings are kept as they were, whether <code>\n</code> or <code>\r\n</code>. Text is never rewrapped, and no file is rewritten unless you edit it. If another app changes a file, Grasmere shows the change at once, and if you were both editing the same file it asks whether to keep yours, take theirs, or keep both.</p>
+<h2 id="the-syntax">The syntax</h2>
+<p>Grasmere reads GitHub’s flavour of CommonMark, which is what GitHub, Obsidian and most editors mean by Markdown today.</p>
+<table>
+<thead><tr><th>Understood</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Headings</td><td><code>#</code> to <code>######</code>, and setext headings underlined with <code>===</code> or <code>---</code>.</td></tr>
+<tr><td>Emphasis</td><td><code>*</code> or <code>_</code> for italics, doubled for bold, <code>~~</code> for strikethrough.</td></tr>
+<tr><td>Lists</td><td>Bulleted, numbered with <code>.</code> or <code>)</code>, nested, and task lists with <code>[ ]</code> and <code>[x]</code>.</td></tr>
+<tr><td>Blockquotes</td><td><code>&gt;</code>, nested as deep as you like.</td></tr>
+<tr><td>Code</td><td>Fenced and indented blocks, with colouring for 14 languages, and inline code.</td></tr>
+<tr><td>Tables</td><td>Pipe tables with column alignment.</td></tr>
+<tr><td>Links and images</td><td>Inline and reference style. Images are shown in place; the path stays in the file.</td></tr>
+<tr><td>Footnotes</td><td><code>[^1]</code> in the text, <code>[^1]:</code> anywhere. They become real footnotes in PDF and Word.</td></tr>
+<tr><td>Rules and breaks</td><td><code>---</code> for a rule; two spaces or a backslash for a hard break.</td></tr>
+<tr><td>HTML comments</td><td><code>&lt;!-- --&gt;</code> is hidden on the page and kept in the file.</td></tr>
+<tr><td>Mermaid</td><td>A <code>mermaid</code> code fence is drawn as a diagram.</td></tr>
+</tbody>
+</table>
+<p>Raw HTML is shown as text and never passed through to a page, so nothing in a file can run. Dates written as <code>2026-10-03</code> are shown as chips.</p>
+<h3 id="not-understood">Not understood</h3>
+<p>Maths in <code>$ $</code>, <code>==highlight==</code> and other extensions are shown as the characters you typed. Wiki links in <code>[[double brackets]]</code> aren’t followed live. Project ▸ Convert Wiki-Links turns them into ordinary Markdown links, including aliases, <code>#Heading</code> targets and <code>![[embeds]]</code>, so a vault moves across in one step. Due dates in the Obsidian Tasks form are read.</p>
+<h2 id="front-matter">Front matter</h2>
+<p>A YAML block at the top of a file is read for a handful of keys and otherwise left alone. Grasmere adds front matter only when you ask for something that needs it, such as setting a chapter’s status from its card.</p>
+<table>
+<thead><tr><th>Key</th><th>Used for</th></tr></thead>
+<tbody>
+<tr><td><code>title</code></td><td>The document’s title where it’s listed, instead of the file name.</td></tr>
+<tr><td><code>synopsis</code></td><td>The line on the chapter’s card.</td></tr>
+<tr><td><code>status</code></td><td>Unwritten, Draft, Revised or Final.</td></tr>
+<tr><td><code>type</code></td><td>Makes the file a source: book, article, chapter, report, webpage or other.</td></tr>
+<tr><td><code>author</code>, <code>published</code>, <code>journal</code>, <code>volume</code>, <code>issue</code>, <code>pages</code>, <code>doi</code>, <code>isbn</code>, <code>publisher</code>, <code>place</code>, <code>edition</code>, <code>url</code>, <code>accessed</code></td><td>A source’s reference details.</td></tr>
+<tr><td><code>key</code></td><td>A citation key kept from an imported BibTeX or CSL JSON library.</td></tr>
+<tr><td><code>keywords</code>, <code>abstract</code></td><td>Passed to a LaTeX template. <em>New in 1.6.</em></td></tr>
+<tr><td><code>draft</code>, <code>publish</code></td><td>Whether a page is included when the project is built as a website.</td></tr>
+</tbody>
+</table>
+<h2 id="what-it-adds-to-a-folder">What it adds to a folder</h2>
+<p>Everything Grasmere keeps about a project is a readable file in the project. There’s no database.</p>
+<ul>
+<li><code>project.md</code>: the project’s summary, word targets, citation style and which documents are in hand, as headed sections of Markdown.</li>
+<li><code>index.md</code> in a folder of chapters: the order of the chapters is the order of the links in it. Drag chapters on the Review stage and this file changes.</li>
+<li><code>research/</code>: one Markdown file per source, with <code>research.md</code> as a table of them, <code>highlights.md</code> for your highlights, and an <code>annotations</code> folder.</li>
+<li><code>.review/</code>: review rounds as JSON, with its own <code>.gitignore</code>.</li>
+<li><code>_site/</code> when you build the project as a website.</li>
+</ul>
+<p>Folds, recovery copies and window state are kept in the app’s own data, never in your files.</p>
+<h2 id="citations">Citations</h2>
+<p>A citation is a link to the source’s file, with the author and year as its text: <code>[Field 2019, p. 12](../research/The%20Living%20Loaf.md)</code>. Any Markdown app shows it as a link. On export it’s written out in APA 7, Harvard, Chicago author-date or MLA 9, with a reference list. Pandoc’s <code>[@key]</code> citations can be converted with Project ▸ Convert Pandoc Citations. See <a href="markdown-citations-without-bibtex.html">citations without BibTeX</a>.</p>
+<h2 id="export">Export</h2>
+<p>A document exports to PDF (⌘P) or Word (⇧⌘E). A folder publishes as one PDF, in standard manuscript format or typeset as a book, or as one Word document with a title page and a chapter to a page. Citations, footnotes, pictures and tables come through in each. <em>New in 1.6.</em> The Publish stage also writes LaTeX into a template of your own.</p>
+<h2 id="keyboard">Keyboard</h2>
+<table>
+<thead><tr><th>Key</th><th>Does</th></tr></thead>
+<tbody>
+<tr><td>⌃1 to ⌃4</td><td>Research, Draft, Review, Publish</td></tr>
+<tr><td>⌃T</td><td>Put the document in hand, to be sent or published</td></tr>
+<tr><td>⇧⌘R</td><td>The document’s Review screen</td></tr>
+<tr><td>⌥⌘K</td><td>Cite a source</td></tr>
+<tr><td>⌥⌘A</td><td>Add a comment</td></tr>
+<tr><td>⇧⌘D</td><td>Focus mode: the current line kept in the middle, the rest faded if you like</td></tr>
+<tr><td>⌥⌘1 to ⌥⌘3</td><td>Heading levels</td></tr>
+<tr><td>⌥⌘T</td><td>A table</td></tr>
+<tr><td>⌘P, ⇧⌘E</td><td>Export as PDF, as Word</td></tr>
+</tbody>
+</table>
+<h2 id="questions">Questions</h2>
+<h3 id="can-i-use-another-editor-at-the-same-time">Can I use another editor at the same time?</h3>
+<p>Yes. Edit a file in Vim, VS Code or Obsidian and the change appears in Grasmere as soon as it’s saved.</p>
+<h3 id="does-it-work-in-a-git-repository">Does it work in a Git repository?</h3>
+<p>Yes. Commits are listed under Versions, with Compare and Restore, and there’s an automatic commit setting under Settings ▸ Automation.</p>
+<h3 id="what-happens-if-i-stop-using-it">What happens if I stop using it?</h3>
+<p>You have a folder of Markdown files, plus a few more Markdown files it made. Delete those if you like.</p>
+<section class="get" aria-label="Download">
+<h2>Your files, unchanged. A workshop around them.</h2>
+<p>Grasmere is a Mac app for long writing in plain Markdown, with sources, citations, review and publishing built in. Try it free for 14 days.</p>
+<a href="https://apps.apple.com/app/id6821596298" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg>Download for macOS</a>
+<span class="terms">Free for 14 days, then $14.99 once · macOS 26+</span>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="markdown-editor-for-mac.html">A Markdown editor for Mac</a></li>
+<li><a href="obsidian-long-form-writing.html">From Obsidian notes to a finished manuscript</a></li>
+<li><a href="markdown-for-projects.html">Markdown for projects</a></li>
+<li><a href="../guides/index.html">The guides</a></li>
+<li><a href="index.html">More on writing in Markdown</a></li>
+</ul>
+<p class="updated">Last updated <time datetime="2026-11-10">10 November 2026</time>.</p>
+</article>
+</main>
+<footer class="foot"><a href="../index.html">Grasmere</a><a href="../guides/index.html">Guides</a><a href="../whats-new.html">What’s New</a><a href="../support.html">Support</a><a href="../privacy.html">Privacy</a><a href="../sitemap.html">Sitemap</a></footer>
+</div>
+</body>
+</html>
