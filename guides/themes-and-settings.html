@@ -36,7 +36,7 @@
 <h1 id="themes-and-settings">Themes and Settings</h1>
 <p>Grasmere is meant to be calm to read and write in, with a readable column of text in good type and your document’s structure shown quietly. This guide covers how the page looks, and lists every setting in one place. To open Settings, choose it from the Grasmere menu or press ⌘,.</p>
 <h2 id="themes">Themes</h2>
-<p>There are five themes, each with its own type:</p>
+<p>There are eight themes, each with its own type:</p>
 <table>
 <thead>
 <tr><th style="text-align: left">Theme</th><th style="text-align: left">Light or dark</th><th style="text-align: left">Type</th></tr>
@@ -44,20 +44,36 @@
 <tbody>
 <tr><td style="text-align: left">Paper</td><td style="text-align: left">Light</td><td style="text-align: left">Serif: cream paper and coloured inks</td></tr>
 <tr><td style="text-align: left">Mono</td><td style="text-align: left">Light</td><td style="text-align: left">Monospace: black on white, ruled and square</td></tr>
-<tr><td style="text-align: left">Native</td><td style="text-align: left">Light</td><td style="text-align: left">Sans-serif: the Mac’s own look, a white page in frosted glass, blue</td></tr>
-<tr><td style="text-align: left">Wallace</td><td style="text-align: left">Light</td><td style="text-align: left">Sans-serif: warm cream and brown, soft cards, primary colours</td></tr>
+<tr><td style="text-align: left">Ending</td><td style="text-align: left">Light</td><td style="text-align: left">IBM Plex Sans, with Plex Mono for code and labels: white, faint greys and blues, a vivid blue accent</td></tr>
 <tr><td style="text-align: left">Slate</td><td style="text-align: left">Dark</td><td style="text-align: left">Serif: blue-grey</td></tr>
 <tr><td style="text-align: left">Graphite</td><td style="text-align: left">Dark</td><td style="text-align: left">Sans-serif: neutral grey, with quiet steel inks</td></tr>
 <tr><td style="text-align: left">Soot</td><td style="text-align: left">Dark</td><td style="text-align: left">Monospace: warm black and army green</td></tr>
-<tr><td style="text-align: left">An Old Hope</td><td style="text-align: left">Dark</td><td style="text-align: left">Monospace: grey, with gold, blue, red, green, pink and orange</td></tr>
 <tr><td style="text-align: left">Lamplight</td><td style="text-align: left">Dark</td><td style="text-align: left">Serif: a dark room, a lit page, gold ink</td></tr>
-<tr><td style="text-align: left">Native Dark</td><td style="text-align: left">Dark</td><td style="text-align: left">Sans-serif: the Mac’s own dark look, frosted glass and blue</td></tr>
-<tr><td style="text-align: left">Wallace Dark</td><td style="text-align: left">Dark</td><td style="text-align: left">Sans-serif: dark chocolate, soft cards, primary colours</td></tr>
+<tr><td style="text-align: left">Ending Dark</td><td style="text-align: left">Dark</td><td style="text-align: left">IBM Plex Sans, with Plex Mono for code and labels: grey-blues on navy, a crimson accent</td></tr>
 </tbody>
 </table>
-<p><em>New in 1.4:</em> An Old Hope is after Jesse Leite’s syntax theme of that name, in mohkale’s palette.</p>
+<p><em>New in 1.6.</em> Ending and Ending Dark are new. Native, Native Dark, Wallace, Wallace Dark and An Old Hope have gone; a theme file of your own can make a look like any of them (see Your own themes, below).</p>
 <p>To have Grasmere go light and dark with your Mac, turn on <strong>Match the Mac’s light or dark mode</strong> in Settings ▸ Appearance and choose a light theme and a dark one. Turn it off to keep one theme all the time, whatever your Mac is doing. The whole app follows the theme, menus and panels included.</p>
 <p class="figure"><img src="../media/slate-theme.jpg" alt="Grasmere in the Slate theme"></p>
+<h2 id="your-own-themes">Your own themes</h2>
+<p><em>New in 1.6.</em> A theme can be a file you write. In Settings ▸ Appearance ▸ Your own themes, click Choose Folder and pick the folder your themes will live in (the panel opens on <code>.grasmere/themes</code> in your home folder; any folder will do). Every <code>.json</code> file in it is a theme, listed with the others in the theme pickers under the name you give it.</p>
+<pre><code class="language-json">{
+  "from": "paper",
+  "name": "Dusk",
+  "blurb": "Paper, with a plum accent",
+  "accent": "#7A3B69",
+  "link": "#7A3B69",
+  "look.radius": 4
+}
+</code></pre>
+<ul>
+<li><strong>from</strong> names the theme the file starts from: <code>paper</code>, <code>mono</code>, <code>ending</code>, <code>slate</code>, <code>graphite</code>, <code>soot</code>, <code>lamplight</code> or <code>endingDark</code>. Without it the file starts from Paper, or from Slate when it says <code>"isDark": true</code>.</li>
+<li><strong>name</strong> and <strong>blurb</strong> are what the picker shows.</li>
+<li><strong>Every other key</strong> is one quality of the theme, by name: a colour as <code>#RRGGBB</code>, a number, or true or false. The file only needs the ones that differ.</li>
+<li><strong>family</strong> chooses the type: <code>serif</code>, <code>sans</code>, <code>mono</code> or <code>plex</code>.</li>
+</ul>
+<p>To see every quality’s name, type a name beside <strong>New theme file</strong> and click Make. Grasmere writes the theme on screen out whole, with every quality in it, and shows the file in the Finder for you to edit. Save the file and the window changes at once, so you can work on a theme with Grasmere open beside your editor.</p>
+<p>A file that can’t be read, or a key Grasmere doesn’t know, is named in red under the folder’s line in Settings, as in “Dusk.json: not taken: look.nothing”. If a theme you’d chosen goes missing, Grasmere falls back to its usual theme. Forget stops reading the folder; the files stay where they are.</p>
 <h2 id="text-size-and-width">Text size and width</h2>
 <ul>
 <li><strong>Text size</strong> is in Settings ▸ Appearance. You can also press ⌘+ and ⌘− to change it, and ⌘0 to go back to the usual size (17 pt).</li>
@@ -86,6 +102,7 @@
 <p><strong>Appearance</strong></p>
 <ul>
 <li>Themes, text size and text width, as above.</li>
+<li><strong>Your own themes</strong> and <strong>New theme file</strong> (<em>new in 1.6</em>), as above.</li>
 <li><strong>Show word count beneath the page.</strong></li>
 <li><strong>In focus mode:</strong> Keep the current line in the middle of the window, and Fade all but the current paragraph. See <a href="focus-mode-and-split-view.html">Focus Mode and Split View</a>.</li>
 <li><strong>Name documents in the sidebar by</strong>, <strong>Show images in the contents</strong>, <strong>Show project.md in the contents</strong>, <strong>Show index.md in the contents</strong>, <strong>Show research.md in the contents and Manuscripts</strong> and <strong>Show highlights.md in the contents and Manuscripts</strong> (<em>new in 1.4</em>, off by default; the Research stage shows and opens the highlights book itself). See <a href="the-contents.html">The Contents</a>, <a href="citations.html">Citations</a> and <a href="research.html">Research</a>.</li>

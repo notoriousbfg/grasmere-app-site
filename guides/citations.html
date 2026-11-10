@@ -83,6 +83,7 @@
 <p>Type <code>[@</code> where the citation goes, or choose Edit ▸ Cite Source (⌥⌘K). A list of your sources appears. Type part of an author’s name, a word of the title or a year to narrow it, and press Return. Grasmere writes a link to the source:</p>
 <pre><code class="language-markdown">Starters are alive [Field 2019<span class="t">](../research/The%20Living%20Loaf.md)</span>.
 </code></pre>
+<p><em>New in 1.6.</em> A source with highlights says how many in the list, “3 highlights →”. Press → to step into them, and type to narrow them by their words. Return quotes the highlight into your document as a block quote with its citation and page, “Holme 1987, p. 2”; a clipped figure arrives as the picture with its citation beneath. Tab cites the page alone, <code>[Holme 1987, p. 2](…)</code>. ← goes back to the sources. Words from a highlight typed after <code>[@</code> find its source too.</p>
 <p>To cite a page, add it after a comma inside the brackets, as in <code>[Field 2019, p. 12](…)</code>. Pages, ranges (<code>pp. 12–14</code>), chapters (<code>ch. 3</code>), paragraphs (<code>para. 4</code>) and sections are all kept, and written the way the style wants. <em>New in 1.4:</em> Chicago and MLA shorten the second number of a range as their rules say, so <code>pp. 1243–1248</code> is written 1243–48.</p>
 <p><em>New in 1.4.</em> To put the author in your sentence, write the year in brackets inside the link: <code>[Field (2019)](…) argues</code> exports as “Field (2019) argues”, and <code>[Field (2019, p. 12)](…)</code> as “Field (2019, p. 12)”. In MLA the year goes and the page stays, “Field (12)”. Convert Pandoc Citations writes <code>@key</code> this way.</p>
 <p>A citation is a link, so it does everything links do. It follows the source when it’s renamed or moved, shows a preview on hover, and puts the citing document under Linked From in the source’s margin. In the editor it stays a link.</p>
@@ -112,6 +113,7 @@
 Style: Chicago
 </code></pre>
 <p>Titles are printed as you wrote them, so use the capitalisation your style asks for. APA, for example, capitalises only the first word and proper nouns in a book’s or article’s title.</p>
+<p><em>New in 1.6.</em> Published as LaTeX, a citation becomes <code>\cite[p.~12]{field2019}</code> and the sources you cited are written to a <code>.bib</code> file beside the <code>.tex</code>. The key is the source’s <code>key:</code> in its front matter when it has one (an imported Zotero library brings its keys), otherwise one made from the author, year and title. See <a href="publishing.html#publish-latex">Publishing</a>.</p>
 <h2 id="researchmd">research.md</h2>
 <p>Grasmere keeps a table of your sources in <code>research.md</code>, in the research folder. It lists each source’s title, linking to it, with the author, year, type, site or publisher, the day you accessed it, and how many documents cite it. The table is brought up to date whenever a source or a citation changes.</p>
 <p>Write anything you like above or below the table. The table itself is Grasmere’s, and any changes you make to it are replaced.</p>
