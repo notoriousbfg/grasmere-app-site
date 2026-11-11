@@ -18,6 +18,7 @@
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="stylesheet" href="../style.css">
+<script src="../theme.js"></script>
 </head>
 <body>
 <div class="doc">
@@ -35,20 +36,20 @@
 <article>
 <h1 id="the-margin">The Margin</h1>
 <p>The margin on the right shows how the document you’re on connects to the rest of your project. To show or hide it, choose View ▸ Show Margin (⌃⌘]; ⌃⌥⌘S still works) or click the button at the right of the running head. Drag its edge to make it wider or narrower.</p>
-<p class="figure"><img src="../media/note-and-margin.jpg" alt="A document with the documents that link to it in the margin"></p>
+<p class="figure"><img src="../media/ending/note-and-margin.jpg" alt="A document with the documents that link to it in the margin"></p>
 <p>It has three tabs, <strong>Page</strong>, <strong>Tasks</strong> (⇧⌘T) and <strong>Ask</strong> (⇧⌘A). This guide covers Page, the tab for the document you’re on. For the other two, see <a href="tasks-and-due-dates.html">Tasks and Due Dates</a> and <a href="ask-your-documents-and-ai.html">Ask Your Documents and AI</a>.</p>
 <p>Click a section’s heading to close or open it, and Grasmere remembers which ones you keep open. Mentioned in, Front Matter, Git History and Problems stay closed when they have nothing to show, and say <em>None</em>, or <em>No problems</em>. Click one to look. It opens by itself once there’s something in it.</p>
 <p><em>New in 1.4:</em> the Page tab starts with <strong>Track for Review</strong> (⌃T), which puts the document in hand for the Review and Publish stages; once it is, the line reads <em>In hand</em> with <strong>Untrack</strong>. While a review is under way, a <strong>Review</strong> section comes next, kept small: who the review is from, <strong>Open Review</strong> (also in the section’s ⋯ menu), and one line an item in document order, the comment or the words struck and underlined, with Accept and Reject or Resolve, and Defer. Click a line and its passage is washed on the page. The header counts what’s open, or says <em>All dealt with</em>. While a round is out, the section starts with “Round 1 sent 26 Oct, 13:20 as “…” · waiting for it to come back”, with <strong>Import Returned File</strong> and <strong>Show in Finder</strong>, and the header says <em>Waiting</em>. Replies, Accept All and the whole conversation are on the Review screen. See <a href="review.html">Review</a>. In the research folder, the top of the margin tells you whether a document is a source, such as “A source · Book”, or a research note you could make into one. See <a href="citations.html">Citations</a>.</p>
 <h2 id="linked-from">Linked from</h2>
 <p>Here you see every document that links to this one, each as a numbered sidenote showing the line with the link. Click a sidenote to open that document at the link.</p>
-<p class="figure"><img src="../media/linked-from.jpg" alt="Linked from, in the margin"></p>
+<p class="figure"><img src="../media/ending/linked-from.jpg" alt="Linked from, in the margin"></p>
 <p>When another document links to a particular passage, a small number beside the passage matches its sidenote. Point at the number and the passage is highlighted. Point at the sidenote to see which passage it quotes.</p>
 <h2 id="links-to">Links to</h2>
 <p>The documents this one links to, with the folder each is in.</p>
-<p class="figure"><img src="../media/links-to.jpg" alt="Links to, in the margin"></p>
+<p class="figure"><img src="../media/ending/links-to.jpg" alt="Links to, in the margin"></p>
 <h2 id="mentioned-in">Mentioned in</h2>
 <p>These are documents that name this one by its title but don’t link to it, with the words highlighted. Click one to open it at the mention, or click <strong>Link</strong> to turn the mention into an ordinary link. You can undo it.</p>
-<p class="figure"><img src="../media/mentioned-in.jpg" alt="Mentioned in, with a mention ready to link"></p>
+<p class="figure"><img src="../media/ending/mentioned-in.jpg" alt="Mentioned in, with a mention ready to link"></p>
 <p>If a document goes by other names, list them in its front matter and Grasmere looks for those too.</p>
 <pre><code>---
 aliases: [Peggy, Mrs Hill]
@@ -60,7 +61,7 @@ aliases: [Peggy, Mrs Hill]
 <p>To change the fields at the top of a document, between its <code>---</code> lines, you can edit them here instead of on the page. Each field is a row, with its key and a value you can edit in place. Press Return or click elsewhere, and the line in the document changes to match. Escape puts the old value back.</p>
 <p>To remove a field, click the × that appears beside its row. To add one, use <strong>Add a field</strong> at the bottom. Give it a key and a value and it becomes the last line of the block. If the document has no front matter, the section is closed and says <em>None</em>. Open it and add a field, and Grasmere makes the <code>---</code> block at the top for you.</p>
 <p>Each change is one step in Undo (⌘Z). If you type in the block on the page instead, the rows catch up a moment later.</p>
-<p class="figure"><img src="../media/front-matter-section.jpg" alt="The Front Matter section in the margin, with four fields and Add a field"></p>
+<p class="figure"><img src="../media/ending/front-matter-section.jpg" alt="The Front Matter section in the margin, with four fields and Add a field"></p>
 <p>A few things worth knowing:</p>
 <ul>
 <li>Values appear as written. Numbers, true and false, and dates are left as they are, and strings lose their quotes.</li>
@@ -72,13 +73,13 @@ aliases: [Peggy, Mrs Hill]
 </ul>
 <h2 id="git-history">Git History</h2>
 <p>If your project folder is a git repository, Git History lists the commits that changed this document, following it through renames. Choose one to see that version and what’s changed since. <strong>Restore This Version</strong> brings it back as a single step you can undo, and <strong>Copy</strong> copies it. Git History is closed until you open it.</p>
-<p class="figure"><img src="../media/note-history.jpg" alt="A document’s history from git"></p>
+<p class="figure"><img src="../media/ending/note-history.jpg" alt="A document’s history from git"></p>
 <p>See <a href="saving-and-safety.html">Saving, Safety and Git</a> for committing automatically.</p>
 <h2 id="problems">Problems</h2>
 <p><em>New in 1.3.</em></p>
 <p>Grasmere catches Markdown mistakes as you go with <strong>Settings ▸ General ▸ Check the Markdown as you write</strong>, on to begin with (<em>new in 1.4</em>; if you’d turned it off before, it stays off). The Page tab ends with a Problems section, listing what’s wrong with this document a line at a time, in plain words that say what to do. Click a problem to put the cursor on its line.</p>
 <p>A red cross is an error, where the Markdown won’t read the way you meant. An amber triangle is a warning. It reads, but not as well as it could. The header says how many there are, or <em>No problems</em>. Grasmere checks about half a second after you stop typing, and never changes anything unless you ask it to.</p>
-<p class="figure"><img src="../media/problems-section.jpg" alt="The Problems section in the margin, with five problems and the line each is on"></p>
+<p class="figure"><img src="../media/ending/problems-section.jpg" alt="The Problems section in the margin, with five problems and the line each is on"></p>
 <p>The check is off until you turn it on. It looks only at the open document, and skips anything inside a code block, front matter or an HTML comment. Broken links are judged the same way as the dotted underlines on the page and the sidebar’s Broken Links, so all three agree.</p>
 <h3 id="quick-fixes">Quick fixes</h3>
 <p><em>New in 1.4.</em> A problem with one obvious repair has a button on its row, named for what it does: <strong>Make Web Link</strong>, <strong>Remove Space at End</strong>, <strong>Add Space After #</strong>, <strong>Close Code Block</strong>, <strong>Close Front Matter</strong>, <strong>Fix Task Box</strong>, <strong>Use “-” Throughout the List</strong>, <strong>Add Footnote Text</strong> (which adds the <code>[^1]: </code> line at the end and puts the cursor after it), <strong>Match the Name</strong> for a link spelt with the wrong capitals, and <strong>Change Link To ▾</strong> for a link to a misspelt document, listing the documents with close names. A link to a document that doesn’t exist gets <strong>Create Document</strong>, which makes the document where following the link would make it, without opening it: you stay on the page, the row goes, and the notice beneath the page says <em>Made “Name” · Open · Undo</em>. There’s no Create Document for a missing picture or PDF, or where there’s no folder to make the document in. Right-click the problem on the page and the same item is at the top of the menu. Each fix is one step, so ⌘Z takes it back. A skipped heading level, an unbalanced <code>*</code>, a picture with no description and an unused footnote have no button; those are yours to judge.</p>
@@ -117,7 +118,7 @@ aliases: [Peggy, Mrs Hill]
 </table>
 <h2 id="when-the-window-is-narrow">When the window is narrow</h2>
 <p>When the window is too narrow for the contents, the page and the margin side by side, the margin is the first to go. Show it again and it floats over the page. Focus mode hides it too.</p>
-<p class="figure"><img src="../media/narrow-window.jpg" alt="A narrow window with the margin floating over the page"></p>
+<p class="figure"><img src="../media/ending/narrow-window.jpg" alt="A narrow window with the margin floating over the page"></p>
 
 </article>
 </main>

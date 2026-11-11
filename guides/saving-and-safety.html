@@ -18,6 +18,7 @@
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="stylesheet" href="../style.css">
+<script src="../theme.js"></script>
 </head>
 <body>
 <div class="doc">
@@ -37,7 +38,7 @@
 <p>Your documents are your own files, so Grasmere is careful with them. It saves as you go and never saves over a change made somewhere else without asking. If the app or your Mac crashes, your unsaved work is kept safe.</p>
 <h2 id="saving">Saving</h2>
 <p>Grasmere saves a document a couple of seconds after you stop typing, and whenever you switch to another document or another app. “Saved” shows briefly in the bar beneath the page. This is Settings ▸ General ▸ <strong>Save automatically</strong>, which is on to begin with.</p>
-<p class="figure"><img src="../media/edited-marker.jpg" alt="The running head marking a document edited"></p>
+<p class="figure"><img src="../media/ending/edited-marker.jpg" alt="The running head marking a document edited"></p>
 <p>If you turn it off, documents are saved when you switch documents, close the window or quit, or when you choose File ▸ Save (⌘S). Until then, the running head marks the document <em>edited</em>.</p>
 <p>Saving doesn’t clear your undo history, so ⌘Z still works afterwards.</p>
 <h2 id="when-another-app-changes-a-document">When another app changes a document</h2>
@@ -50,14 +51,14 @@
 <p>If you have no unsaved changes, the document shows the new version.</p>
 <h2 id="after-a-crash">After a crash</h2>
 <p>As you type, Grasmere keeps a copy of your unsaved changes on your Mac, apart from your documents. If the app or the Mac stops unexpectedly, open the document again and Grasmere offers to <strong>Restore</strong> your changes or <strong>Discard</strong> them. Once the document is saved, the copy is removed.</p>
-<p class="figure"><img src="../media/recovery-offer.jpg" alt="Grasmere offering to restore unsaved changes"></p>
+<p class="figure"><img src="../media/ending/recovery-offer.jpg" alt="Grasmere offering to restore unsaved changes"></p>
 <p>If a document can’t be saved when you quit, Grasmere asks before quitting. Either way, your changes are kept so you can recover them.</p>
 <h2 id="links-and-undo">Links and undo</h2>
 <p>When you rename or move a document, Grasmere rewrites the links to it. A message says how many documents changed, with <strong>Undo</strong>. Edit ▸ Link Updates lists recent updates, and you can undo any of them. See <a href="links-and-backlinks.html">Links and Backlinks</a>.</p>
 <p>Documents you delete go to the Mac’s Trash.</p>
 <h2 id="git">Git</h2>
 <p>If your project folder is a git repository, Grasmere can work with it.</p>
-<p class="figure"><img src="../media/note-history.jpg" alt="A document’s history from git, in the margin"></p>
+<p class="figure"><img src="../media/ending/note-history.jpg" alt="A document’s history from git, in the margin"></p>
 <ul>
 <li><strong>Git History:</strong> the margin lists the commits that changed the open document, each with <strong>Restore This Version</strong>. See <a href="the-margin.html">The Margin</a>. <em>New in 1.4:</em> the same commits appear in the Review screen’s Versions and its <strong>Compare with</strong> menu, where the page shows what’s changed since one, word by word. See <a href="review.html">Review</a>.</li>
 <li><strong>Commit automatically:</strong> with Settings ▸ Automation ▸ <strong>Commit changes after saving</strong> on, Grasmere commits every change in the project together, two minutes after you stop saving, or when you close the window or quit. The message lists the documents that changed. Nothing is ever amended or force-pushed.</li>
@@ -75,7 +76,7 @@
 </ul>
 <h2 id="shortcuts">Shortcuts</h2>
 <p>You can have a Shortcut of your own run when a document is saved, created, or renamed or moved, or when the project is opened. Set it up in Settings ▸ Automation ▸ <strong>Run a shortcut when</strong>. The Shortcut gets the document, or the project folder, as its input. Shortcuts run outside the sandbox, so a “Run Shell Script” action can do anything you can do in Terminal.</p>
-<p class="figure"><img src="../media/automation-settings.jpg" alt="Settings ▸ Automation"></p>
+<p class="figure"><img src="../media/ending/automation-settings.jpg" alt="Settings ▸ Automation"></p>
 <p>The Shortcuts app also has Grasmere’s own actions, for things like opening and making documents or checking, exporting and publishing them. Each can be run from Terminal with <code>shortcuts run</code>. See <a href="shortcuts-and-the-command-line.html">Shortcuts and the Command Line</a>.</p>
 <h2 id="backing-up">Backing up</h2>
 <p>Everything that matters is in your project folder, as ordinary files, so Time Machine, a sync service or git will all back it up. See <a href="../support.html">Support</a>.</p>

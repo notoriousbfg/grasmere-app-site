@@ -1,71 +1,129 @@
-/* grasmere.app. Shared by every page; the home page adds its own layout in index.html. */
-@font-face{font-family:'Geist';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/Geist-normal-400.woff2) format('woff2')}
-@font-face{font-family:'Geist Mono';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/GeistMono-normal-400.woff2) format('woff2')}
-@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/InstrumentSerif-normal-400.woff2) format('woff2')}
-@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/InstrumentSerif-italic-400.woff2) format('woff2')}
+/* grasmere.app. Shared by every page; the home page adds its own layout in index.html.
+   The colours and type are the app's Ending theme, and Ending Dark after dark: theme.js sets
+   data-theme on <html> from the visitor's choice (or their system's), and without it the
+   page follows the system. */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/IBMPlexSans-normal-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/IBMPlexSans-italic-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/IBMPlexSans-normal-500.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/IBMPlexSans-normal-600.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:italic;font-weight:600;font-display:swap;src:url(fonts/IBMPlexSans-italic-600.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/IBMPlexMono-normal-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/IBMPlexMono-normal-500.woff2) format('woff2')}
+
+/* Ending: a white page, faint cool greys, one vivid blue. */
 :root{
   color-scheme:light;
-  --paper:#F3EDE1; --paper-light:#FAF6EE; --paper-deep:#EAE2D3;
-  --ink:#2A2520; --ink-soft:#5E5449; --ink-faint:#73685B;
-  --rule:#CFC3AF; --dim:#BFB4A3;
-  --serif:'Instrument Serif',Georgia,serif;
-  --sans:'Geist',system-ui,-apple-system,sans-serif;
-  --mono:'Geist Mono',ui-monospace,monospace;
+  --bg:#FFFFFF; --side:#F4F6F9; --raised:#E9EDF3; --card:#FFFFFF;
+  --border:#D5DCE6; --selection:#DCE8FB;
+  --text:#1B2432; --muted:#4E5B6E; --faint:#647187; --heading:#0E1726;
+  --accent:#0F62FE; --link:#0F62FE; --marker:#4589FF;
+  --fill:#0F62FE; --fill-hover:#0043CE; --on-fill:#FFFFFF;
+  --row:#E4EBF7; --row-edge:#C3D2EA; --code:#0043CE; --good:#198038;
+  --shadow:0 0 0 1px rgba(14,23,38,.08),0 18px 48px rgba(14,23,38,.12);
+  --scrim:rgba(14,23,38,.88);
+  --radius:3px;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,'Helvetica Neue',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --serif:var(--sans);
+  /* The names the pages were first written with. */
+  --paper:var(--bg); --paper-light:var(--card); --paper-deep:var(--raised);
+  --ink:var(--text); --ink-soft:var(--muted); --ink-faint:var(--faint);
+  --rule:var(--border); --dim:var(--row-edge);
 }
+/* Ending Dark: near-black greys with a breath of violet, purple inks. Written twice: once for
+   a system set to dark with no choice made, once for the choice. */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme=light]){
+    color-scheme:dark;
+    --bg:#141416; --side:#0E0E10; --raised:#1F1F24; --card:#1A1A1E;
+    --border:#2A2A31; --selection:#362B52;
+    --text:#D3D3DA; --muted:#9898A3; --faint:#8A8A96; --heading:#EEEEF3;
+    --accent:#A78BFA; --link:#BBA4FF; --marker:#A78BFA;
+    --fill:#5B34C4; --fill-hover:#6D46DA; --on-fill:#FFFFFF;
+    --row:#221E2E; --row-edge:#3B3157; --code:#CDBDFF; --good:#42BE65;
+    --shadow:0 0 0 1px rgba(255,255,255,.07),0 18px 48px rgba(0,0,0,.5);
+    --scrim:rgba(6,6,8,.9);
+  }
+}
+:root[data-theme=dark]{
+  color-scheme:dark;
+  --bg:#141416; --side:#0E0E10; --raised:#1F1F24; --card:#1A1A1E;
+  --border:#2A2A31; --selection:#362B52;
+  --text:#D3D3DA; --muted:#9898A3; --faint:#8A8A96; --heading:#EEEEF3;
+  --accent:#A78BFA; --link:#BBA4FF; --marker:#A78BFA;
+  --fill:#5B34C4; --fill-hover:#6D46DA; --on-fill:#FFFFFF;
+  --row:#221E2E; --row-edge:#3B3157; --code:#CDBDFF; --good:#42BE65;
+  --shadow:0 0 0 1px rgba(255,255,255,.07),0 18px 48px rgba(0,0,0,.5);
+  --scrim:rgba(6,6,8,.9);
+}
+
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
-a{color:var(--ink-soft)} a:hover{color:var(--ink)}
-a:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:2px}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+::selection{background:var(--selection)}
+a{color:var(--muted)} a:hover{color:var(--heading)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
 
 /* Nav */
 .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:14px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:600;font-size:15px}
-.brand .sub{color:var(--ink-faint);font-weight:500}
-.brand img{width:32px;height:32px;border-radius:8px;box-shadow:0 0 0 1px rgba(42,37,32,.10),0 1px 3px rgba(42,37,32,.14)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--heading);font-weight:600;font-size:15px}
+.brand .sub{color:var(--faint);font-weight:500}
+.brand img{width:32px;height:32px;border-radius:8px;box-shadow:0 0 0 1px rgba(14,23,38,.10),0 1px 3px rgba(14,23,38,.14)}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{text-decoration:none}
-.btn-ghost{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid var(--rule);border-radius:10px;color:var(--ink)!important;font-weight:500;transition:background .2s ease,border-color .2s ease,color .2s ease}
-.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--ink);border-color:var(--ink);color:#F8F3EA!important}
+.btn-ghost{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);color:var(--heading)!important;font-weight:500;transition:background .2s ease,border-color .2s ease,color .2s ease}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--fill);border-color:var(--fill);color:var(--on-fill)!important}
+
+/* The light and dark switch, which theme.js adds to the nav: two segments, the lit one filled,
+   as the app draws its stage bar. */
+.theme-switch{display:inline-flex;padding:2px;gap:0;border-radius:calc(var(--radius) + 2px);background:var(--raised)}
+.theme-switch button{appearance:none;border:0;margin:0;padding:0;width:32px;height:30px;display:inline-flex;align-items:center;justify-content:center;border-radius:var(--radius);background:transparent;color:var(--faint);cursor:pointer;transition:background .2s ease,color .2s ease}
+.theme-switch button:hover{color:var(--heading)}
+.theme-switch button[aria-pressed=true]{background:var(--fill);color:var(--on-fill)}
+.theme-switch svg{display:block;width:16px;height:16px}
 
 /* Reading pages: guides, support, privacy… */
 .doc{padding:24px 40px 0}
 .doc main{max-width:42rem;margin:0 auto;padding:clamp(32px,7vh,72px) 0 64px;font-size:17px;line-height:1.65}
-.doc h1,.doc h2{font-family:var(--serif);font-weight:400;letter-spacing:-.015em;line-height:1.05;margin:1.6em 0 .45em}
-.doc h1{font-size:clamp(46px,7vw,72px);letter-spacing:-.025em;margin-top:0}
-.doc h2{font-size:34px}
-.doc h3{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:2.2em 0 .6em}
-.doc h4,.doc h5,.doc h6{font-size:1em;font-weight:600;margin:1.6em 0 .4em}
+.doc h1,.doc h2{font-family:var(--sans);font-weight:600;color:var(--heading);letter-spacing:-.02em;line-height:1.1;margin:1.6em 0 .45em}
+.doc h1{font-size:clamp(38px,5.6vw,56px);letter-spacing:-.03em;line-height:1.05;margin-top:0}
+.doc h2{font-size:28px}
+.doc h3{font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:2.2em 0 .6em}
+.doc h4,.doc h5,.doc h6{font-size:1em;font-weight:600;color:var(--heading);margin:1.6em 0 .4em}
 .doc p,.doc ul,.doc ol,.doc blockquote,.doc pre,.doc table{margin:0 0 1em}
-.doc main a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:.18em;text-decoration-color:var(--dim)}
-.doc main a:hover{text-decoration-color:var(--ink)}
-.doc strong{font-weight:600}
+.doc main a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:.18em;text-decoration-color:var(--row-edge)}
+.doc main a:hover{color:var(--link);text-decoration-color:var(--link)}
+.doc strong{font-weight:600;color:var(--heading)}
 .doc ul,.doc ol{padding-left:1.3em}
 .doc li{margin:.25em 0}
-.doc li::marker{color:var(--ink-faint)}
-.doc blockquote{margin-left:0;padding:.1em 0 .1em 1.1em;border-left:2px solid var(--rule);color:var(--ink-soft)}
-.doc code{font-family:var(--mono);font-size:.86em;background:var(--paper-deep);border-radius:4px;padding:.1em .35em}
-.doc pre{font-family:var(--mono);font-size:14px;background:var(--paper-deep);border:1px solid #DDD3C2;border-radius:10px;padding:.9em 1.1em;overflow-x:auto;line-height:1.5}
-.doc pre code{background:none;padding:0}
+.doc li::marker{color:var(--faint)}
+.doc blockquote{margin-left:0;padding:.1em 0 .1em 1.1em;border-left:2px solid var(--border);color:var(--muted)}
+.doc code{font-family:var(--mono);font-size:.86em;color:var(--code);background:var(--side);border-radius:var(--radius);padding:.1em .35em}
+.doc pre{font-family:var(--mono);font-size:14px;background:var(--side);border:1px solid var(--border);border-radius:var(--radius);padding:.9em 1.1em;overflow-x:auto;line-height:1.5}
+.doc pre code{background:none;padding:0;color:var(--text)}
 .doc table{border-collapse:collapse;font-size:.92em;display:block;max-width:100%;overflow-x:auto}
-.doc th,.doc td{border-bottom:1px solid var(--rule);padding:.45em .9em .45em 0;text-align:left;vertical-align:top}
-.doc th{font-weight:600}
-.doc hr{border:0;border-top:1px solid var(--rule);margin:2.4em 0}
-.doc img,.doc video{display:block;max-width:100%;height:auto;border-radius:10px;border:1px solid #DDD3C2}
+.doc th,.doc td{border-bottom:1px solid var(--border);padding:.45em .9em .45em 0;text-align:left;vertical-align:top}
+.doc th{font-weight:600;color:var(--heading)}
+.doc hr{border:0;border-top:1px solid var(--border);margin:2.4em 0}
+.doc img,.doc video{display:block;max-width:100%;height:auto;border-radius:6px;border:1px solid var(--border)}
 .doc p.figure{margin:1.6em 0}
-.doc .image-alt{font-style:italic;color:var(--ink-faint)}
-.doc .backlinks{margin-top:4rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:14px}
-.doc .backlinks h2{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 .8em}
+.doc .image-alt{font-style:italic;color:var(--faint)}
+.doc .backlinks{margin-top:4rem;padding-top:1.2rem;border-top:1px solid var(--border);font-size:14px}
+.doc .backlinks h2{font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:0 0 .8em}
 .doc .backlinks ul,.doc .contents ul{list-style:none;padding:0}
-.doc .backlinks .folder,.doc .count{color:var(--ink-faint);font-size:.85em}
+.doc .backlinks .folder,.doc .count{color:var(--faint);font-size:.85em}
 .doc .contents section{margin:0 0 2em}
-.foot{max-width:42rem;margin:0 auto;padding:20px 0 40px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-faint);display:flex;gap:20px;flex-wrap:wrap}
-.foot a{text-decoration:none;color:var(--ink-faint)} .foot a:hover{color:var(--ink)}
+.foot{max-width:42rem;margin:0 auto;padding:20px 0 40px;border-top:1px solid var(--border);font-size:13px;color:var(--faint);display:flex;gap:20px;flex-wrap:wrap}
+.foot a{text-decoration:none;color:var(--faint)} .foot a:hover{color:var(--heading)}
 
 @media (max-width:900px){
   .doc{padding:20px 16px 0}
+  .nav{gap:12px}
+  .nav-links{gap:14px}
   .nav-links a:not(.btn-ghost){display:none}
   .nav-links a.keep,.nav-links a.wide{display:inline}
 }
 @media (max-width:640px){.nav-links a.wide{display:none}}
+@media (max-width:420px){.brand .sub{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 @media print{.nav,.foot,.backlinks{display:none}}

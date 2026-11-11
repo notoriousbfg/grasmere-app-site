@@ -18,6 +18,7 @@
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="stylesheet" href="../style.css">
+<script src="../theme.js"></script>
 </head>
 <body>
 <div class="doc">
@@ -37,7 +38,7 @@
 <p>Grasmere has a few tools that use a language model to help you think about what you’ve written. You can ignore them entirely. Nothing is sent anywhere until you ask.</p>
 <h2 id="ask-your-documents-a">Ask Your Documents (⇧⌘A)</h2>
 <p>When you want to know what your own documents say about something, choose Project ▸ Ask Your Documents (⇧⌘A). The Ask tab opens in the margin. Type a question, and the answer is written from your documents alone, with numbered citations. Click a citation to open the document at the passage it came from.</p>
-<p class="figure"><img src="../media/ask-your-notes.jpg" alt="Ask Your Documents in the margin, with an answer and its sources"></p>
+<p class="figure"><img src="../media/ending/ask-your-notes.jpg" alt="Ask Your Documents in the margin, with an answer and its sources"></p>
 <ul>
 <li><strong>Copy</strong> copies the answer, with its citations as links.</li>
 <li><strong>Save as Insight</strong> saves it as an insight in your research folder, titled with the question: a source of its own kind (<code>type: insight</code>) that you can cite. The citations become links, and the front matter says <code>confidence: unverified</code> until you’ve checked it.</li>
@@ -49,7 +50,7 @@
 <p>Say what the document is about. A title, a claim, a question or a few lines will do. Then choose what kind of piece it is and how many questions you want. The kinds are an essay, an argument, a research document, a decision, a runbook, a story scene, a reflection, or just questions. The model writes Socratic questions for it, the kind that make you say what you mean, what you’re assuming and what your evidence is, what someone who disagrees would say, and what follows.</p>
 <p><em>New in 1.2:</em> a runbook, say how to deploy something, what to do when an alarm fires or how to onboard someone, gets different questions. They’re the ones a runbook has to answer, in the order its reader needs them. What it’s for and when, what must be true first, the steps, how you know it worked, what to do if it didn’t, and who to tell. The document starts a checklist under the first question and a numbered list under the steps.</p>
 <p>Edit or remove any of the questions, then choose Make Document.</p>
-<p class="figure"><img src="../media/note-questions.jpg" alt="The Brainstorm sheet, with questions written for a subject"></p>
+<p class="figure"><img src="../media/ending/note-questions.jpg" alt="The Brainstorm sheet, with questions written for a subject"></p>
 <p>The document has the questions as its headings and nothing else. The writing beneath them is yours. It goes where a new document would, titled from the subject, with the cursor under the first question. With no project open, Grasmere asks where to save it.</p>
 <p>The model is the one in Settings ▸ AI, which is on your Mac by default. With Claude or ChatGPT, only the subject is sent.</p>
 <h2 id="ask-a-follow-up-question-">Ask a Follow-up Question (⌥⌘/)</h2>
@@ -61,14 +62,14 @@
 <li><strong>Dismiss</strong> forgets it.</li>
 </ul>
 <p>It never suggests wording or answers for you, and it only speaks when you ask. With Claude or ChatGPT, the document’s title, the heading and the passage are sent.</p>
-<p class="figure"><img src="../media/follow-up-question.jpg" alt="A follow-up question in the margin, with Add as heading, Another and Dismiss"></p>
+<p class="figure"><img src="../media/ending/follow-up-question.jpg" alt="A follow-up question in the margin, with Add as heading, Another and Dismiss"></p>
 <h2 id="generate-summary">Generate Summary</h2>
 <p>Project ▸ Generate Summary writes a short overview of the project into the Summary section of project.md, which shows at the top of the contents. The rest of project.md is left alone, and you can edit the summary like any other text.</p>
-<p class="figure"><img src="../media/project-summary.jpg" alt="The project summary at the top of the contents"></p>
+<p class="figure"><img src="../media/ending/project-summary.jpg" alt="The project summary at the top of the contents"></p>
 <h2 id="copy-as-context-c">Copy as Context (⌥⌘C)</h2>
 <p>If you’d rather talk your work over with Claude, ChatGPT or another assistant yourself, choose Edit ▸ Copy as Context (⌥⌘C), or its button in the running head. It copies the open document along with the titles and openings of every document it links to and from, ready to paste into the conversation. Grasmere itself sends nothing anywhere.</p>
 <p>Settings ▸ AI ▸ Copy as Context sets how many words it copies. The default is 4,000.</p>
-<p class="figure"><img src="../media/copy-as-context-setting.jpg" alt="Settings ▸ AI ▸ Copy as Context"></p>
+<p class="figure"><img src="../media/ending/copy-as-context-setting.jpg" alt="Settings ▸ AI ▸ Copy as Context"></p>
 <h2 id="which-model-answers">Which model answers</h2>
 <p>Settings ▸ AI ▸ <strong>Provider</strong> chooses the model for Ask Your Documents, Generate Summary, Brainstorm and Ask a Follow-up Question.</p>
 <ul>
@@ -76,10 +77,10 @@
 <li><strong>Claude (Anthropic)</strong> or <strong>ChatGPT (OpenAI)</strong> use your own API key from that company, and you can choose the model too.</li>
 </ul>
 <p>Your API keys are kept in your Mac’s keychain.</p>
-<p class="figure"><img src="../media/ai-settings.jpg" alt="Settings ▸ AI, with the on-device model chosen"></p>
+<p class="figure"><img src="../media/ending/ai-settings.jpg" alt="Settings ▸ AI, with the on-device model chosen"></p>
 <h2 id="what-is-sent-and-when">What is sent, and when</h2>
 <p>With the on-device model, nothing leaves your Mac.</p>
-<p class="figure"><img src="../media/ask-privacy-note.jpg" alt="The Ask tab saying which model answers"></p>
+<p class="figure"><img src="../media/ending/ask-privacy-note.jpg" alt="The Ask tab saying which model answers"></p>
 <p>With Claude or ChatGPT, this is what goes to that company:</p>
 <ul>
 <li>When you <strong>ask a question</strong>, your question and excerpts from the documents Grasmere picks as relevant.</li>
@@ -90,7 +91,7 @@
 <p>Nothing is sent until you ask, and only for that request. The Ask tab says which provider is answering. Your use is covered by your own agreement with that company. See <a href="../privacy.html">Privacy</a>.</p>
 <h2 id="merging-documents">Merging documents</h2>
 <p>This isn’t an AI feature, but it’s another way of thinking with your documents. Pick two or more in the contents, right-click and choose Merge, and you get one document with a section for each. See <a href="the-contents.html">The Contents</a>.</p>
-<p class="figure"><img src="../media/merge-notes.jpg" alt="Merging two documents"></p>
+<p class="figure"><img src="../media/ending/merge-notes.jpg" alt="Merging two documents"></p>
 <h2 id="related">Related</h2>
 <ul>
 <li><a href="quick-capture-and-sharing.html">Quick Capture and Sharing</a>, for saving passages from AI conversations as insights</li>

@@ -18,6 +18,7 @@
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="stylesheet" href="../style.css">
+<script src="../theme.js"></script>
 </head>
 <body>
 <div class="doc">
@@ -35,7 +36,7 @@
 <article>
 <h1 id="links-and-backlinks">Links and Backlinks</h1>
 <p>When one document mentions another, link them. Grasmere uses ordinary Markdown links, written relative to the document they’re in, the way GitHub and website builders read them: <code>[Margaret](people/Margaret.md)</code>. It keeps every link correct as your documents move, and shows each document which others link to it.</p>
-<p class="figure"><img src="../media/link-picker.jpg" alt="The link picker, with matching documents and a preview of the one highlighted"></p>
+<p class="figure"><img src="../media/ending/link-picker.jpg" alt="The link picker, with matching documents and a preview of the one highlighted"></p>
 <h2 id="making-a-link">Making a link</h2>
 <p>The quickest way is to type <code>[text](</code>. A picker opens at the cursor, with documents that match the text first and a preview of the highlighted one beside the list. Press Return to insert the link. If the document isn’t there yet, choose “New document” to make it.</p>
 <p>Other ways to make a link:</p>
@@ -49,7 +50,7 @@
 <p>Names with spaces are written with <code>%20</code>, as the web expects, so the links work in other apps and on a website too.</p>
 <h2 id="links-to-passages">Links to passages</h2>
 <p>Sometimes you want to point at a particular passage rather than a whole document. Select the text, choose Edit ▸ Copy Link to Selection (⌥⌘L), and paste the link into any document. It uses the same text fragments web browsers follow (<code>document.md#:~:text=…</code>).</p>
-<p class="figure"><img src="../media/passage-numbers.jpg" alt="Numbered passages quoted by other documents, in the margin"></p>
+<p class="figure"><img src="../media/ending/passage-numbers.jpg" alt="Numbered passages quoted by other documents, in the margin"></p>
 <p>In the document being quoted, a small number in the margin marks each passage another document links to. Point at the number to see the passage highlighted. If the passage is reworded a little, Grasmere repairs the link to match.</p>
 <h2 id="following-links">Following links</h2>
 <ul>
@@ -71,13 +72,13 @@
 <h2 id="broken-links">Broken links</h2>
 <p>A link to a document that isn’t there is shown muted, over a dotted underline, and its preview says so. When a project has broken links, the contents list them in a section of their own. Click one to go to it.</p>
 <p><em>New in 1.4.</em> A link spelt with different capitals from the document’s name, <code>Research/Notes.md</code> for a folder called <code>research</code>, is found and works on your Mac, but the web and other disks tell capitals apart, so the contents list it as “spelt research, not Research” and the Markdown check offers Match the Name, which rewrites the address as the document is spelt.</p>
-<p class="figure"><img src="../media/broken-links.jpg" alt="A broken link, listed under the contents"></p>
+<p class="figure"><img src="../media/ending/broken-links.jpg" alt="A broken link, listed under the contents"></p>
 <h2 id="backlinks">Backlinks</h2>
 <p>The margin on the right shows three lists for the open document. Linked from has every document that links to it, Links to has the documents it links to, and Mentioned in has documents that name it without linking. See <a href="the-margin.html">The Margin</a>.</p>
-<p class="figure"><img src="../media/linked-from.jpg" alt="The documents that link here, in the margin"></p>
+<p class="figure"><img src="../media/ending/linked-from.jpg" alt="The documents that link here, in the margin"></p>
 <h2 id="settings">Settings</h2>
 <p>In Settings ▸ Links:</p>
-<p class="figure"><img src="../media/link-settings.jpg" alt="Settings ▸ Links"></p>
+<p class="figure"><img src="../media/ending/link-settings.jpg" alt="Settings ▸ Links"></p>
 <ul>
 <li><strong>Shorten link addresses</strong> shows only the end of each address, such as <code>[Sam](Sam.md)</code> for <code>[Sam](../../people/Sam.md)</code>. The full address appears while the cursor is in the link. Your documents aren’t changed.</li>
 <li><strong>Turn pasted web addresses into titled links</strong> can be turned off.</li>
@@ -85,7 +86,7 @@
 <h2 id="wiki-links">Wiki-links</h2>
 <p><em>New in 1.1.</em> If your documents came from Obsidian, they probably link with <code>[[wiki-links]]</code>, which Grasmere doesn’t follow. <strong>Project ▸ Convert Wiki-Links</strong> rewrites every one in the project as a Markdown link, keeping aliases, headings and embedded pictures.</p>
 <p>It also lists any that name a document that isn’t there. You can link those to new documents, made when you follow them, or leave them as written. The whole conversion can be undone. See <a href="../support.html">Support</a> if you’re bringing documents over from Obsidian.</p>
-<p class="figure"><img src="../media/convert-wiki-links.jpg" alt="Convert Wiki-Links: how many links in how many documents will change, with examples"></p>
+<p class="figure"><img src="../media/ending/convert-wiki-links.jpg" alt="Convert Wiki-Links: how many links in how many documents will change, with examples"></p>
 <h2 id="tips">Tips</h2>
 <ul>
 <li>Grasmere doesn’t use <code>[[wiki-links]]</code>. Standard links are what make your documents work everywhere else, and Convert Wiki-Links, above, turns wiki-links into standard ones.</li>

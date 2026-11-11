@@ -18,6 +18,7 @@
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="stylesheet" href="../style.css">
+<script src="../theme.js"></script>
 </head>
 <body>
 <div class="doc">
@@ -53,7 +54,7 @@
 <p>To turn a folder of chapters into one PDF, right-click the folder in the contents and choose Publish to PDF. You can also use the File menu, which offers Publish Project to PDF, or Publish “chapters” to PDF when you’ve highlighted a folder in the contents with the arrow keys. Open as Manuscript does the same. See <a href="the-manuscript-view.html">The Manuscript View</a>.</p>
 <p><em>New in 1.4.</em> Either way, the folder’s documents go in hand, in the folder’s order, and the Publish stage opens. Anything already in hand stays. There’s no sheet any more: the title, author and style are the options on the stage, and Publish PDF asks where to save.</p>
 <p>Grasmere typesets the documents in the order they’re in hand. Each document becomes a chapter on a new page, titled by its first heading, and each folder inside becomes a part.</p>
-<p class="figure"><img src="../media/publish-to-pdf.jpg" alt="Publishing a folder to PDF"></p>
+<p class="figure"><img src="../media/ending/publish-to-pdf.jpg" alt="Publishing a folder to PDF"></p>
 <p>Give the PDF a title, and an author if you like, then choose a style:</p>
 <ul>
 <li><strong>Manuscript:</strong> standard manuscript format, as publishers and agents ask for. Double-spaced 12 pt Times, one-inch margins, a title page with the word count, and the author, title and page number at the top of each page. No contents page: a manuscript by convention has none.</li>
@@ -65,7 +66,7 @@
 <h2 id="export-a-document-as-a-pdf">Export a document as a PDF</h2>
 <p>File ▸ Export ▸ PDF (⌘P) typesets the open document on A4 or Letter pages.</p>
 <p>It goes straight to the save panel, for that document alone, in your theme’s type with no title page; what’s in hand isn’t touched. To publish documents together, with a title page and the options, use the Publish stage.</p>
-<p class="figure"><img src="../media/note-as-pdf.jpg" alt="A document exported as a PDF"></p>
+<p class="figure"><img src="../media/ending/note-as-pdf.jpg" alt="A document exported as a PDF"></p>
 <h2 id="export-a-document-as-a-word-document">Export a document as a Word document</h2>
 <p><em>New in 1.1.</em></p>
 <p>When you need to hand something in, or send it to someone who edits in Word, choose File ▸ Export ▸ Word Document (⇧⌘E). Grasmere saves the document as a <code>.docx</code> on A4 or Letter pages, with page numbers at the foot.</p>
@@ -79,7 +80,7 @@
 <p>The page in the middle of the stage shows the PDF’s layout, not LaTeX’s: the Style, Title page and Citations options are for the PDF and Word, and your template lays out the LaTeX when you compile it. Not supported: <code>\citet</code> and natbib’s other commands, and copying a template’s own class files into the folder.</p>
 <h2 id="build-a-website">Build a website</h2>
 <p>Project ▸ Build Website (⌥⌘B) turns your project into a website, in a <code>_site</code> folder inside it. Each document gets a page, with working links, its pictures, and a list of the documents that link to it.</p>
-<p class="figure"><img src="../media/website-home.jpg" alt="The home page of a website built from a project"></p>
+<p class="figure"><img src="../media/ending/website-home.jpg" alt="The home page of a website built from a project"></p>
 <p>The home page shows the project’s name, the Summary section of project.md, and the contents. Pages are styled with your light and dark themes. There’s no JavaScript and nothing that tracks visitors.</p>
 <p>A few things worth knowing:</p>
 <ul>
@@ -91,7 +92,7 @@
 <p>When it’s done, Open in Browser shows you the site.</p>
 <h2 id="publish">Publish</h2>
 <p>Project ▸ Publish (⇧⌘P) does the whole round in one go. It saves your documents, builds the website if you’ve asked it to and commits anything waiting to git. Then it runs a Shortcut of your choosing with the project folder, to upload the site or push it, say. Choose the Shortcut in Settings ▸ Automation ▸ Publish with.</p>
-<p class="figure"><img src="../media/automation-settings.jpg" alt="Settings ▸ Automation"></p>
+<p class="figure"><img src="../media/ending/automation-settings.jpg" alt="Settings ▸ Automation"></p>
 <h2 id="export-to-anki">Export to Anki</h2>
 <p>Grasmere can turn documents into flash cards for <a href="https://apps.ankiweb.net">Anki</a>, with the document’s title on the front and the document on the back.</p>
 <ul>
