@@ -25,9 +25,8 @@
       ['src', 'poster', 'style'].forEach(function (name) {
         var was = el.getAttribute(name), now = was && repoint(was, theme);
         if (!was || was === now) return;
-        // Pictures change only once the other version has loaded, so one already on screen keeps
-        // showing meanwhile, and one not yet made in that theme stays as it is.
-        if (name === 'src' && el.tagName === 'IMG') {
+        // A picture already on screen keeps showing until its other version has loaded.
+        if (name === 'src' && el.tagName === 'IMG' && el.complete && el.naturalWidth) {
           var next = new Image();
           next.onload = function () { if (root.getAttribute('data-theme') === theme) el.setAttribute('src', now); };
           next.src = now;
