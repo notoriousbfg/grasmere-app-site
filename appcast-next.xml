@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Grasmere</title>
+    <link>https://grasmere.app/</link>
+    <item>
+      <title>Grasmere 1.6</title>
+      <pubDate>Thu, 12 Nov 2026 22:57:43 +0000</pubDate>
+      <sparkle:version>43</sparkle:version>
+      <sparkle:shortVersionString>1.6</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://grasmere.app/whats-new.html</sparkle:releaseNotesLink>
+      <enclosure url="https://github.com/notoriousbfg/grasmere-app-site/releases/download/v1.6-43/Grasmere-1.6-43.dmg" type="application/x-apple-diskimage" sparkle:edSignature="6sRIIlfiZ0Hr3rJJqMpcHZ7rpMcFBujtt3GqQcqC7iT8KU62TuNlEPEqrGKfeRD4WYx6/VUlViNPxrJGDq/6Bw==" length="32487496" />
+    </item>
+  </channel>
+</rss>
