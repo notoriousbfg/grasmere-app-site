@@ -5,12 +5,12 @@
     <link>https://grasmere.app/</link>
     <item>
       <title>Grasmere 1.6</title>
-      <pubDate>Thu, 12 Nov 2026 22:57:43 +0000</pubDate>
-      <sparkle:version>43</sparkle:version>
+      <pubDate>Fri, 13 Nov 2026 15:33:17 +0000</pubDate>
+      <sparkle:version>45</sparkle:version>
       <sparkle:shortVersionString>1.6</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
       <sparkle:releaseNotesLink>https://grasmere.app/whats-new.html</sparkle:releaseNotesLink>
-      <enclosure url="https://github.com/notoriousbfg/grasmere-app-site/releases/download/v1.6-43/Grasmere-1.6-43.dmg" type="application/x-apple-diskimage" sparkle:edSignature="6sRIIlfiZ0Hr3rJJqMpcHZ7rpMcFBujtt3GqQcqC7iT8KU62TuNlEPEqrGKfeRD4WYx6/VUlViNPxrJGDq/6Bw==" length="32487496" />
+      <enclosure url="https://github.com/notoriousbfg/grasmere-app-site/releases/download/v1.6-45/Grasmere-1.6-45.dmg" type="application/x-apple-diskimage" sparkle:edSignature="5HlXZDR/CXEkMr5joP0p/YUF8yOhC9DFtkp/5y9E9G3wKQrLiQbIKp7w3PEDKkjGnNLrKviHZ3yDesFVOkv2Bw==" length="32486480" />
     </item>
   </channel>
 </rss>
