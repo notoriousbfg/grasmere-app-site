@@ -29,7 +29,7 @@
 <a href="../guides/index.html" class="keep">Guides</a>
 <a href="../markdown/index.html">Writing in Markdown</a>
 <a href="../support.html" class="wide">Support</a>
-<a href="https://apps.apple.com/app/id6821596298" class="btn-ghost">Download</a>
+<a href="https://github.com/notoriousbfg/grasmere-app-site/releases/latest/download/Grasmere.dmg" class="btn-ghost">Download</a>
 </div>
 </nav>
 <main>
@@ -68,7 +68,7 @@
 <ul>
 <li>Committing needs git, which comes with Apple’s Command Line Tools. To install them, type <code>xcode-select --install</code> in Terminal.</li>
 <li>Grasmere can only use git when the project folder is the top folder of the repository.</li>
-<li>The Mac App Store’s sandbox stops Grasmere reading your <code>~/.gitconfig</code>. Unless the repository sets its own name and email, give the ones to commit with in Settings ▸ Automation ▸ Commits. Commits aren’t signed.</li>
+<li>Grasmere’s sandbox stops it reading your <code>~/.gitconfig</code>. Unless the repository sets its own name and email, give the ones to commit with in Settings ▸ Automation ▸ Commits. Commits aren’t signed.</li>
 <li>If Grasmere can’t push, a Shortcut can. See below.</li>
 <li>Grasmere keeps its working files out of your commits with a few lines in your project’s <code>.gitignore</code>, making the file if there isn’t one. The lines sit between two comments that mark them as Grasmere’s, and cover the hidden <code>.review</code> folders, its temporary save files, and research.md while it’s hidden from the contents. Anything outside those lines is yours and is never touched.</li>
 <li>project.md and index.md are always committed, because they hold the order of your folders, the summary and the citation style.</li>
